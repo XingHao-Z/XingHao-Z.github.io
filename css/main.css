@@ -18,8 +18,8 @@
   --btn-default-hover-bg: transparent;
   --btn-default-hover-color: var(--link-hover-color);
   --btn-default-hover-border-color: var(--link-hover-color);
-  --highlight-background: #1e1e1e;
-  --highlight-foreground: #dcdcdc;
+  --highlight-background: #eee;
+  --highlight-foreground: #d05;
   --highlight-gutter-background: #313131;
   --highlight-gutter-foreground: #c9c9c9;
   color-scheme: light;
@@ -185,7 +185,7 @@ body {
   box-sizing: border-box;
   color: var(--text-color);
   font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1em;
+  font-size: 0.875em;
   line-height: 2;
   min-height: 100%;
   position: relative;
@@ -376,7 +376,7 @@ pre[class*="language-"] {
 	color: #ccc;
 	background: none;
 	font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-	font-size: 0.875em;
+	font-size: 14px;
 	text-align: left;
 	white-space: pre;
 	word-spacing: normal;
@@ -488,7 +488,6 @@ pre[class*="language-"] {
 .token.inserted {
 	color: green;
 }
-
 pre[class*="language-"].line-numbers {
 	position: relative;
 	padding-left: 3.8em;
@@ -833,8 +832,9 @@ pre code {
   margin-bottom: 20px;
   padding: 1em;
   position: relative;
-  border: 1px solid #eee;
-  border-left-width: 5px;
+  background: #f9f9f9;
+  border: initial;
+  border-left: 3px solid #eee;
 }
 .post-body .note summary {
   cursor: pointer;
@@ -859,6 +859,7 @@ pre code {
   margin-bottom: 0;
 }
 .post-body .note.default {
+  background: #f7f7f7;
   border-left-color: #777;
 }
 .post-body .note.default h2,
@@ -869,6 +870,7 @@ pre code {
   color: #777;
 }
 .post-body .note.primary {
+  background: #f5f0fa;
   border-left-color: #6f42c1;
 }
 .post-body .note.primary h2,
@@ -879,6 +881,7 @@ pre code {
   color: #6f42c1;
 }
 .post-body .note.info {
+  background: #eef7fa;
   border-left-color: #428bca;
 }
 .post-body .note.info h2,
@@ -889,6 +892,7 @@ pre code {
   color: #428bca;
 }
 .post-body .note.success {
+  background: #eff8f0;
   border-left-color: #5cb85c;
 }
 .post-body .note.success h2,
@@ -899,6 +903,7 @@ pre code {
   color: #5cb85c;
 }
 .post-body .note.warning {
+  background: #fdf8ea;
   border-left-color: #f0ad4e;
 }
 .post-body .note.warning h2,
@@ -909,6 +914,7 @@ pre code {
   color: #f0ad4e;
 }
 .post-body .note.danger {
+  background: #fcf1f2;
   border-left-color: #d9534f;
 }
 .post-body .note.danger h2,
@@ -1163,7 +1169,7 @@ pre code {
 }
 .site-title {
   font-family: 'PingFang SC', 'Microsoft YaHei', sans-serif;
-  font-size: 1.375em;
+  font-size: 1.5em;
   font-weight: normal;
   line-height: 1.5;
   margin: 0;
@@ -1522,20 +1528,6 @@ pre code {
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.post-toc .nav .nav-child {
-  --height: 0;
-  height: 0;
-  opacity: 0;
-  overflow: hidden;
-  transition-property: height, opacity, visibility;
-  transition: 0.2s ease-in-out;
-  visibility: hidden;
-}
-.post-toc .nav .active > .nav-child {
-  height: var(--height, auto);
-  opacity: 1;
-  visibility: unset;
-}
 .post-toc .nav .active > a {
   border-bottom-color: #87daff;
   color: #87daff;
@@ -1545,28 +1537,6 @@ pre code {
 }
 .post-toc .nav .active-current > a:hover {
   color: #87daff;
-}
-.site-state {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  line-height: 1.4;
-}
-.site-state-item {
-  padding: 0 15px;
-}
-.site-state-item a {
-  border-bottom: 0;
-  display: block;
-}
-.site-state-item-count {
-  display: block;
-  font-size: 1.25em;
-  font-weight: 600;
-}
-.site-state-item-name {
-  color: inherit;
-  font-size: 0.875em;
 }
 .footer {
   color: #999;
@@ -2615,7 +2585,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #93d439;
+  background: #559aff;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);

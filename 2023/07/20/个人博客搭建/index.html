@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Mist","darkmode":false,"version":"8.17.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":true,"style":"flat"},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":false,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":true,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="1、介绍记录在window下使用hexo搭建博客的步骤。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="个人博客搭建">
+<meta property="og:url" content="http://example.com/2023/07/20/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/index.html">
+<meta property="og:site_name" content="星颢Z的博客">
+<meta property="og:description" content="1、介绍记录在window下使用hexo搭建博客的步骤。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204215864.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204412095.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204503188.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204556024.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204748855.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717205646513.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210153103.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210230985.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210310753.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210341151.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210354519.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210441597.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210525764.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210539598.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210617763.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210628362.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210920155.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717211651140.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717211850855.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213051803.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213233534.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213247366.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213323064.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213337988.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213456752.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213508007.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719220206586.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719215441428.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719220502367.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719220908793.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719221213383.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719221649324.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719221838539.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719222606342.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719222836726.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719223321141.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719223736052.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719224127052.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719224402356.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719224938980.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230718234916638.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230718235141973.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719000020842.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719000240763.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719000701911.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719094622549.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719095802607.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719102335298.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719102512440.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230720230556193.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719234333501.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721130735691.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721132546511.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721132932953.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721134314011.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721213003967.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721213039733.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721213400971.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721223204069.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721223627772.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230720002353941.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721215925565.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721215037384.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721215102252.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230720001033704.png">
+<meta property="og:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230720005437195.png">
+<meta property="article:published_time" content="2023-07-20T04:25:19.000Z">
+<meta property="article:modified_time" content="2023-07-22T16:21:29.322Z">
+<meta property="article:author" content="星颢Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204215864.png">
+
+
+<link rel="canonical" href="http://example.com/2023/07/20/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/07/20/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/","path":"2023/07/20/个人博客搭建/","title":"个人博客搭建"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>个人博客搭建 | 星颢Z的博客</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">星颢Z的博客</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类<span class="badge">4</span></a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签<span class="badge">4</span></a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档<span class="badge">4</span></a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1%E3%80%81%E4%BB%8B%E7%BB%8D"><span class="nav-text">1、介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2%E3%80%81%E5%88%9D%E6%AD%A5%E6%90%AD%E5%BB%BA%EF%BC%8C%E9%83%A8%E7%BD%B2hexo"><span class="nav-text">2、初步搭建，部署hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-1-%E6%B3%A8%E5%86%8CGitHub"><span class="nav-text">2.1 注册GitHub</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-2-%E5%AE%89%E8%A3%85Git"><span class="nav-text">2.2 安装Git</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-3-%E5%AE%89%E8%A3%85Node-js"><span class="nav-text">2.3 安装Node.js</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-4-%E5%AE%89%E8%A3%85hexo"><span class="nav-text">2.4 安装hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-5-%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E5%88%B0GitHub"><span class="nav-text">2.5 免费部署到GitHub</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3%E3%80%81%E9%85%8D%E7%BD%AEhexo"><span class="nav-text">3、配置hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#3-1-hexo%E5%9F%BA%E6%9C%AC%E9%85%8D%E7%BD%AE"><span class="nav-text">3.1 hexo基本配置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-2-%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98"><span class="nav-text">3.2 更换主题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-1-%E5%AE%89%E8%A3%85%E4%B8%BB%E9%A2%98"><span class="nav-text">3.2.1 安装主题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-2-%E9%85%8D%E7%BD%AE%E4%B8%BB%E9%A2%98"><span class="nav-text">3.2.2 配置主题</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%BB%E9%A2%98%E9%80%89%E6%8B%A9"><span class="nav-text">主题选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B3%E9%97%AD%E6%B8%90%E5%85%A5%E6%95%88%E6%9E%9C"><span class="nav-text">关闭渐入效果</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E4%BD%93%E5%92%8C%E4%BB%A3%E7%A0%81"><span class="nav-text">字体和代码</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%9A%E5%AE%A2%E7%9B%AE%E5%BD%95"><span class="nav-text">博客目录</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4%E3%80%81hexo%E6%B7%BB%E5%8A%A0%E5%90%84%E7%A7%8D%E5%8A%9F%E8%83%BD"><span class="nav-text">4、hexo添加各种功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-1-%E5%88%9B%E5%BB%BA%E5%8D%9A%E5%AE%A2"><span class="nav-text">4.1 创建博客</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%8D%9A%E5%AE%A2%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB"><span class="nav-text">4.2 博客添加分类</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-3-%E6%B7%BB%E5%8A%A0%E6%91%98%E8%A6%81"><span class="nav-text">4.3 添加摘要</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-2-%E5%8D%9A%E5%AE%A2%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87"><span class="nav-text">4.2 博客插入图片</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5%E3%80%81%E5%B8%B8%E7%94%A8hexo%E6%8C%87%E4%BB%A4"><span class="nav-text">5、常用hexo指令</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">星颢Z</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/07/20/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="星颢Z">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="星颢Z的博客">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="个人博客搭建 | 星颢Z的博客">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          个人博客搭建
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2023-07-20 12:25:19" itemprop="dateCreated datePublished" datetime="2023-07-20T12:25:19+08:00">2023-07-20</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-07-23 00:21:29" itemprop="dateModified" datetime="2023-07-23T00:21:29+08:00">2023-07-23</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/test/" itemprop="url" rel="index"><span itemprop="name">test</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="1、介绍"><a href="#1、介绍" class="headerlink" title="1、介绍"></a>1、介绍</h1><p>记录在<strong>window</strong>下使用hexo搭建博客的步骤。</p>
+<span id="more"></span>
+
+<p>官网已经写得很详细了，有疑问先看官网。</p>
+<p>参考资料：</p>
+<ol>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/1f8107a8778c">hexo搭建个人博客–NexT主题优化</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/zyq55917/article/details/125073627">Hexo博客搭建之Next主题的安装与设置</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_32767041/article/details/103283808">NexT主题配置</a></li>
+<li><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo官网</a></li>
+<li><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106060640">个人博客第8篇——优化主题（持续更新）</a></li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/u012294515/article/details/83094693">Hexo | NexT打造一个炫酷博客</a></li>
+</ol>
+<p>​	Hexo是一款基于Node.js的静态博客框架，依赖少易于安装使用，可以方便的生成静态网页托管在GitHub和Coding上，是搭建博客的首选框架。可以进入<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo官网</a>进行详细查看</p>
+<h1 id="2、初步搭建，部署hexo"><a href="#2、初步搭建，部署hexo" class="headerlink" title="2、初步搭建，部署hexo"></a>2、初步搭建，部署hexo</h1><p>​	hexo的初级搭建还有部署到github page上，以及个人域名的绑定。</p>
+<h2 id="2-1-注册GitHub"><a href="#2-1-注册GitHub" class="headerlink" title="2.1 注册GitHub"></a>2.1 注册GitHub</h2><p>​	本博客最终免费部署到GitHub上，所以需要GitHub账号。<a target="_blank" rel="noopener" href="https://github.com/">GitHub</a></p>
+<p>​	没有的可以注册一个GitHub账号。</p>
+<p>​	&#x3D;&#x3D;记住GitHub的用户名和邮箱&#x3D;&#x3D;</p>
+<h2 id="2-2-安装Git"><a href="#2-2-安装Git" class="headerlink" title="2.2 安装Git"></a>2.2 安装Git</h2><p>​	Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。也就是用来管理你的hexo博客文章，上传到GitHub的工具。廖雪峰老师的Git教程写的非常好：<a target="_blank" rel="noopener" href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git教程</a></p>
+<p>​	到git官网上下载windows版本，<a target="_blank" rel="noopener" href="https://git-scm.com/download/win">Download for Windows</a>,下载后会有一个Git Bash的命令行工具，以后就用这个工具来使用git。</p>
+<p>​	安装步骤参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/mukes/article/details/115693833">Git 详细安装教程</a></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204215864.png" alt="image-20230717204215864"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204412095.png" alt="image-20230717204412095"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204503188.png" alt="image-20230717204503188"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204556024.png" alt="image-20230717204556024"></p>
+<p>​	这里选择了vscode作为默认编辑器。也可以选择默认的Vim。选择vscode需要先下载vscode再进行下一步，还要在<code>我的电脑-&gt;属性-&gt;高级系统设置-&gt;高级-&gt;环境变量-&gt;系统变量-&gt;Path-&gt;编辑添加</code>（其实这步的设置默认编辑器暂时也没用到过，也许以后会用到，因为本人对vscode熟悉，所以设置成了vscode）</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717204748855.png" alt="image-20230717204748855"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717205646513.png" alt="image-20230717205646513"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210153103.png" alt="image-20230717210153103"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210230985.png" alt="image-20230717210230985"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210310753.png" alt="image-20230717210310753"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210341151.png" alt="image-20230717210341151"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210354519.png" alt="image-20230717210354519"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210441597.png" alt="image-20230717210441597"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210525764.png" alt="image-20230717210525764"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210539598.png" alt="image-20230717210539598"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210617763.png" alt="image-20230717210617763"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210628362.png" alt="image-20230717210628362"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717210920155.png" alt="image-20230717210920155"></p>
+<p>在开始菜单打开<code>Git Bash</code>，输入<code>git --version</code> 查看版本，检查是否安装成功</p>
+<pre class="line-numbers language-none"><code class="language-none">git --version</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717211651140.png" alt="image-20230717211651140"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717211850855.png" alt="image-20230717211850855"></p>
+<p>将Git和GitHub账号绑定，分别输入以下命令：</p>
+<pre class="line-numbers language-none"><code class="language-none">git config --global user.name &quot;你的GitHub用户名&quot;
+git config --global user.email &quot;你的GitHub注册邮箱&quot;</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213051803.png" alt="image-20230717213051803"></p>
+<h2 id="2-3-安装Node-js"><a href="#2-3-安装Node-js" class="headerlink" title="2.3 安装Node.js"></a>2.3 安装Node.js</h2><p>Hexo是基于nodeJS编写的，所以需要安装一下nodeJs和里面的npm工具。<a target="_blank" rel="noopener" href="https://nodejs.org/en/download/">nodejs</a> 选择LTS版本就行了。</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213233534.png" alt="image-20230717213233534"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213247366.png" alt="image-20230717213247366"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213323064.png" alt="image-20230717213323064"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213337988.png" alt="image-20230717213337988"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213456752.png" alt="image-20230717213456752"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230717213508007.png" alt="image-20230717213508007"></p>
+<h2 id="2-4-安装hexo"><a href="#2-4-安装hexo" class="headerlink" title="2.4 安装hexo"></a>2.4 安装hexo</h2><p>官网说明了会使用到的命令，下面详细说明：</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719220206586.png" alt="image-20230719220206586"></p>
+<p>新建一个文件夹，命名最好英文，这里命名为blog，在该文件夹内右键打开 <code>Git Bash</code> ，输入命令安装：</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install hexo-cli -g</code></pre>
+
+<p>安装完后使用 <code>hexo -v</code> 查看版本，验证安装是否完成</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719215441428.png" alt="image-20230719215441428"></p>
+<p>初始化hexo，创建文件夹<code>myblog</code>（可以根据习惯改这个文件夹名），这个文件夹就是<mark>站点根目录了</mark>，后面会多次提到站点根目录</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo init myblog</code></pre>
+
+<p>然后进入<code>myblog</code>文件夹：</p>
+<pre class="line-numbers language-none"><code class="language-none">cd myblog</code></pre>
+
+<p>输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719220502367.png" alt="image-20230719220502367"></p>
+<p>再依次输入：（也可输入简写：<code>hexo g</code> 和 <code>hexo s</code>）</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo generate
+hexo server</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719220908793.png" alt="image-20230719220908793"></p>
+<p>根据命令行最后一行的提示，可以在浏览器输入 <code>http://localhost:4000/</code>，就可以在本地看到博客效果了。在<code>Git Bash</code>中按<code>Ctrl+C</code>退出服务。</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719221213383.png" alt="image-20230719221213383"></p>
+<h2 id="2-5-免费部署到GitHub"><a href="#2-5-免费部署到GitHub" class="headerlink" title="2.5 免费部署到GitHub"></a>2.5 免费部署到GitHub</h2><p>在GitHub中新建仓库</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719221649324.png" alt="image-20230719221649324"></p>
+<p>创建一个和你用户名相同的仓库，后面加.github.io，只有这样，将来要部署到GitHub page的时候，才会被识别，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。点击底部的<code>Create repository</code>创建。</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719221838539.png" alt="image-20230719221838539"></p>
+<p>在<code>Git Bash</code>中输入以下两条，检查一下之前的用户名和邮箱输对没有：</p>
+<pre class="line-numbers language-none"><code class="language-none">git config user.name
+git config user.email</code></pre>
+
+<p>然后创建SSH，&#x3D;&#x3D;输入指令后需要按几次回车&#x3D;&#x3D;</p>
+<pre class="line-numbers language-none"><code class="language-none">ssh-keygen -t rsa -C &quot;你的邮箱&quot;</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719222606342.png" alt="image-20230719222606342"></p>
+<p>这个时候它会告诉你已经生成了.ssh的文件夹。在你的电脑中找到这个文件夹。</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719222836726.png" alt="image-20230719222836726"></p>
+<blockquote>
+<p>ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
+</blockquote>
+<p>在GitHub的<code>setting</code>中，找到<code>SSH keys</code>的设置选项，点击<code>New SSH key</code></p>
+<p>把你的<code>id_rsa.pub</code>（可以用记事本打开）里面的信息复制到key。点击<code>Add SSH key</code></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719223321141.png" alt="image-20230719223321141"></p>
+<p>在<code>Git Bash</code>中，查看是否成功（中间要输入一次yes）：</p>
+<pre class="line-numbers language-none"><code class="language-none">ssh -T git@github.com</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719223736052.png" alt="image-20230719223736052"></p>
+<p>这一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件 <code>_config.yml</code>，翻到最后，修改为：</p>
+<pre class="line-numbers language-none"><code class="language-none">deploy:
+  type: git
+  repo: https:&#x2F;&#x2F;github.com&#x2F;你的GitHub名字&#x2F;你的GitHub名字.github.io.git
+  branch: master</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719224127052.png" alt="image-20230719224127052"></p>
+<p>这个时候需要先安装deploy-git ，也就是部署的命令，这样你才能用命令部署到GitHub。在<code>Git Bash</code>中：</p>
+<pre class="line-numbers language-none"><code class="language-none">npm install hexo-deployer-git --save</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719224402356.png" alt="image-20230719224402356"></p>
+<p>然后依次输入：（输入<code>hexo d</code>可能出问题，大多是网络问题，可以多试几次，或过一会再试）</p>
+<p>（一直出问题可以参考：<a target="_blank" rel="noopener" href="https://blog.csdn.net/Kevin_Carpricron/article/details/124069885">Hexo d部署报错之spawn failed的解决方案</a> 的方法2）</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo clean
+hexo g
+hexo d</code></pre>
+
+<p>其中 <code>hexo clean</code>清除了你之前生成的东西，也可以不加。<br><code>hexo generate</code> 顾名思义，生成静态文章，可以用 <code>hexo g</code>缩写<br><code>hexo deploy</code> 部署文章，可以用<code>hexo d</code>缩写</p>
+<p><code>hexo d</code> 过程中会提示登录GitHub</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719224938980.png" alt="image-20230719224938980"></p>
+<p>部署成功后就可以在浏览器输入：<code>https://用户名.github.io/</code>看到博客了。</p>
+<h1 id="3、配置hexo"><a href="#3、配置hexo" class="headerlink" title="3、配置hexo"></a>3、配置hexo</h1><p>参考资料2里说的比较详细。</p>
+<p><mark>说明</mark>：</p>
+<ul>
+<li><code>站点配置文件</code>：站点根目录下的<code>_config.yml</code>文件</li>
+<li><code>主题配置文件</code>：主题文件夹下的<code>_config.yml</code>文件（后面更换和配置主题时会提到）</li>
+<li>打开<code>Git Bash</code>：没有特殊说明都是指在站点根目录下右键打开</li>
+<li>每次修改配置后，都可以打开<code>Git Bash</code>输入<code>hexo s</code>开启服务在本地查看效果。</li>
+</ul>
+<h2 id="3-1-hexo基本配置"><a href="#3-1-hexo基本配置" class="headerlink" title="3.1 hexo基本配置"></a>3.1 hexo基本配置</h2><p>在站点根目录下的<code>_config.yml</code>，就是整个hexo框架的配置文件了。可以在里面修改大部分的配置。详细可参考<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/configuration">官方的配置</a>描述。</p>
+<p><strong>网站</strong></p>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left"><code>title</code></td>
+<td align="left">网站标题</td>
+</tr>
+<tr>
+<td align="left"><code>subtitle</code></td>
+<td align="left">网站副标题</td>
+</tr>
+<tr>
+<td align="left"><code>description</code></td>
+<td align="left">网站描述</td>
+</tr>
+<tr>
+<td align="left"><code>author</code></td>
+<td align="left">您的名字</td>
+</tr>
+<tr>
+<td align="left"><code>language</code></td>
+<td align="left">网站使用的语言，中文设置为zh-CN</td>
+</tr>
+<tr>
+<td align="left"><code>timezone</code></td>
+<td align="left">网站时区。Hexo 默认使用您电脑的时区。时区列表。比如说：<code>America/New_York</code>, <code>Japan</code>, 和 <code>UTC</code> 。</td>
+</tr>
+</tbody></table>
+<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
+<p><strong>网址</strong></p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>url</code></td>
+<td>网址</td>
+</tr>
+<tr>
+<td><code>root</code></td>
+<td>网站根目录</td>
+</tr>
+<tr>
+<td><code>permalink</code></td>
+<td>文章的 <a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/permalinks">永久链接</a> 格式</td>
+</tr>
+<tr>
+<td><code>permalink_defaults</code></td>
+<td>永久链接中各部分的默认值</td>
+</tr>
+</tbody></table>
+<p>在这里，你需要把url改成你的网站域名。</p>
+<p><strong>Front-matter</strong><br>Front-matter 是文件最上方以<code>---</code>分隔的区域，用于指定个别文件的变量，举例来说：</p>
+<pre class="line-numbers language-none"><code class="language-none">title: Hello World
+date: 2013&#x2F;7&#x2F;13 20:46:25
+---</code></pre>
+
+<p>下是预先定义的参数，您可在模板中使用这些参数值并加以利用。</p>
+<h2 id="3-2-更换主题"><a href="#3-2-更换主题" class="headerlink" title="3.2 更换主题"></a>3.2 更换主题</h2><p>hexo主题默认为<code>landscape</code>，可以在<a target="_blank" rel="noopener" href="https://hexo.io/themes/">官网的主题</a>中，选择喜欢的主题进行修改。</p>
+<p>后面选择NexT主题进行示范。<a target="_blank" rel="noopener" href="https://theme-next.js.org/">NexT主题文档</a></p>
+<p>​	</p>
+<h3 id="3-2-1-安装主题"><a href="#3-2-1-安装主题" class="headerlink" title="3.2.1 安装主题"></a>3.2.1 安装主题</h3><p>在 <code>站点根目录/themes</code> 鼠标右键打开Git Bash，输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next</code></pre>
+
+<p>如果出现以下问题：</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230718234916638.png" alt="image-20230718234916638"></p>
+<p>在网上查找 <a target="_blank" rel="noopener" href="https://blog.csdn.net/shareye1992/article/details/81626554">解决办法</a> 后，输入指令：</p>
+<pre class="line-numbers language-none"><code class="language-none">git clone https:&#x2F;&#x2F;github.com&#x2F;next-theme&#x2F;hexo-theme-next --depth 1</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230718235141973.png" alt="image-20230718235141973"></p>
+<p>修改 <code>站点根目录/_config.yml</code> 里的 <code>theme</code></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719000020842.png" alt="image-20230719000020842"></p>
+<p>&#x3D;&#x3D;注意&#x3D;&#x3D;：这里的 theme 的值要和 <code>站点根目录/themes</code> 下的主题文件夹名字相同，否则下一步的输入命令会报错。如果不同，修改为相同，我这里修改了文件夹名为next</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719000240763.png" alt="image-20230719000240763"></p>
+<p>在 <code>站点根目录/themes</code> 打开Git Bash，依次输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo g
+hexo s</code></pre>
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719000701911.png" alt="image-20230719000701911"></p>
+<p>打开浏览器输入：<code>http://localhost:4000</code> 可在本地查看修改主题的效果。回到 Git Bash 按 Ctrl+c，退出本地预览。也可以输入<code>hexo g</code> 部署，查看效果。（我遇到的部署失败都是网络问题，出问题可以过一会儿多试几次）</p>
+<h3 id="3-2-2-配置主题"><a href="#3-2-2-配置主题" class="headerlink" title="3.2.2 配置主题"></a>3.2.2 配置主题</h3><h4 id="主题选择"><a href="#主题选择" class="headerlink" title="主题选择"></a>主题选择</h4><p>打开<code>站点根目录/themes/_config.yml</code>，通过注释和取消注释选择主题，这里选择Mist，后面也是根据Mist调整。</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719094622549.png" alt="image-20230719094622549"></p>
+<p>也可以试下其他主题，修改保存后，在 <code>站点根目录</code>打开 Git Bash（&#x3D;&#x3D;后面不特殊说明都是在站点根目录下打开Git Bash&#x3D;&#x3D;），输入<code>hexo s</code> 指令在本地查看效果。后面修改配置后都可以用这个指令先在本地查看效果。</p>
+<p>####黑暗模式</p>
+<p>修改 false 或者 true。（但我无法开启黑暗模式，设为 true 效果没变）</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719095802607.png" alt="image-20230719095802607"></p>
+<p>####菜单</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719102335298.png" alt="image-20230719102335298"></p>
+<p>会在顶部&#x3D;&#x3D;根据上图中的顺序依次&#x3D;&#x3D;添加菜单，但此时标签，分类，关于都无法打开，需要添加页面</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719102512440.png" alt="image-20230719102512440"></p>
+<p>Git Bash依次输入：</p>
+<pre class="line-numbers language-none"><code class="language-none">hexo new page tags
+hexo new page categories
+hexo new page about</code></pre>
+
+<p>标签页面还要在<code>站点根目录/source/tags/index.md</code> 中加上 <code>type: &quot;tags&quot;</code>，才会在标签页面显示标签</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230720230556193.png" alt="image-20230720230556193"></p>
+<p>自己任意添加菜单可以参考资料6</p>
+<h4 id="关闭渐入效果"><a href="#关闭渐入效果" class="headerlink" title="关闭渐入效果"></a>关闭渐入效果</h4><p>打开<code>站点根目录/themes/_config.yml</code>，搜索<code>motion</code>，将<code>enable</code>后面改为<code>false</code></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230719234333501.png" alt="image-20230719234333501"></p>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/106060640">https://zhuanlan.zhihu.com/p/106060640</a></p>
+<h4 id="字体和代码"><a href="#字体和代码" class="headerlink" title="字体和代码"></a>字体和代码</h4><p>字体和代码的部分设置是一起的，放在一起说</p>
+<p>修改其中的部分属性折腾了很久，主要是代码块相关的，官网的方法有的不起作用，网上说的也五花八门，很多试了也没用。</p>
+<p>先说修改字体。官网说的比较详细：<a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Fonts-Customization">Fonts Customization</a></p>
+<p>在<code>主题配置文件</code>中</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721130735691.png" alt="image-20230721130735691"></p>
+<p>先把<code>enable</code>设为<code>true</code>。</p>
+<p><code>host</code> 和 后面的每个设置的 <code>external</code> 和 <code>family</code> 我任意修改之后似乎都没起作用，，我也确实不需要设置，就都保持默认了，想修改的可以参考下其他资料。对于我只有<code>size</code>可以设置下。</p>
+<ul>
+<li><code>global</code>：全局设置，size改变后所有字体大小都会变</li>
+<li><code>title</code>：博客名称的字体设置。字体大小受<code>global</code>下的<code>size</code>设置和<code>title</code>的<code>size</code>设置的双重影响</li>
+<li><code>heading</code>：文章中各级题目的设置，即用 <code># 题目</code> 语法的部分。字体大小受<code>global</code>下的<code>size</code>设置和<code>heading</code>的<code>size</code>设置的双重影响</li>
+<li><code>posts</code>：官网说是文章主要字体的设置，但因为这两项我改了都不起作用，所以无法判断具体是什么设置。我也尝试加上<code>size:</code>来设置大小，不起作用</li>
+<li><code>codes</code>：代码块的设置，加上<code>size</code>设置大小，不起作用，虽然可以通过<code>global</code>下的<code>size</code>来设置，但这也会影响其他部分，这也是我折腾最久的。下面代码设置详细说</li>
+</ul>
+<p><strong>修改代码块设置</strong></p>
+<p>先看<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS">hexo官网的说明</a>和<a target="_blank" rel="noopener" href="https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Codeblock-Style">next官网说明</a>，hexo支持两种库： <a target="_blank" rel="noopener" href="https://github.com/highlightjs/highlight.js">highlight.js</a> 和 <a target="_blank" rel="noopener" href="https://github.com/PrismJS/prism">prismjs</a> 。next主题官方也只能设置这两种。在这两种库下都有多种风格可选。</p>
+<p>打开站点配置文件：</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721132546511.png" alt="image-20230721132546511"></p>
+<p>要用哪个库把相应的<code>enable</code>设为<code>true</code>，另一个的<code>enable</code>设为<code>false</code>，我选择了<code>prismjs</code>，其他的设置根据需要参考官网调整，我这里设为默认。</p>
+<p>打开主题配置文件：</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721132932953.png" alt="image-20230721132932953"></p>
+<p>如果前面选择<code>highlight</code>，就是<code>theme</code>后面设置起作用，我选择了<code>prism</code>，所以<code>prism</code>后面两个设置起作用，分别设置了正常模式下的代码主题和黑暗模式下的代码主题，我博客没开黑暗模式，所以根据<code>light</code>选项的设置。不同的风格可以去上图中<code># All available themes：</code>后的网站预览。<a target="_blank" rel="noopener" href="https://theme-next.js.org/highlight/">NexT Highlight Theme Preview</a></p>
+<p>我这里选择了<code>prism-tomorrow</code>，但这个主题的代码字体太大了，所以花费了很多时间找办法调整，网上说的方法我试过后都不起作用。后来找到<code>prism-tomorrow</code>这个主题的文件，在<code>站点根目录\node_modules\prismjs\themes</code>下找到<code>prism-tomorrow.css</code>文件打开：</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721134314011.png" alt="image-20230721134314011"></p>
+<p>修改<code>font-size</code>，默认是<code>1em</code>（<code>1em</code>等于<code>16px</code>），我修改为了<code>0.875em</code>，即<code>14px</code>。</p>
+<p>设置完成后发现这样会导致代码行号错位。查找各种文件后发现是多个地方的设置是按照比例来的，如上图中的18行，每行的高度为1.5（不太确定是否是相对于代码字号的1.5，总之这里的比例会影响），以及代码行号的字体大小（默认设置为的100%字体大小），行号每行的间隔也是很久行号的大小来的，所以最终导致了行号错位。先将上图中的18行的<code>line-height</code>改为<code>24px</code>。</p>
+<p>然后打开 <code>站点根目录\node_modules\prismjs\plugins\line-numbers\prism-line-numbers.css</code> 文件，修改<code>font-size</code>为<code>16px</code>。接着在后面加上<code>margin-top: -3px;</code>，这是因为行号字体大于代码字体，又是整个代码块顶对齐的，所以看着行号比代码向下偏了一点，这句加上就可以将行号整体向上移动3px，行号和代码几乎就按中间对齐了。（感谢万能的chatGPT）</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721213003967.png" alt="image-20230721213003967"></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721213039733.png" alt="image-20230721213039733"></p>
+<p>代码块右上角还可以添加复制按钮，并且可以设置复制按钮样式，将<code>copy_botton</code>下的<code>enable</code>设为<code>true</code>，样式可以自己试试喜欢哪一个</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721213400971.png" alt="image-20230721213400971"></p>
+<h4 id="博客目录"><a href="#博客目录" class="headerlink" title="博客目录"></a>博客目录</h4><p>删除<code>站点概述</code>，只保留<code>文章目录</code>。主题配置文件中找到<code>site_state</code>设为<code>false</code>：</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721223204069.png" alt="image-20230721223204069"></p>
+<p>禁止自动添加序号，因为我自己会加，不需要再给我添加了。并且我希望展开全部目录。修改设置如下：</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721223627772.png" alt="image-20230721223627772"></p>
+<h1 id="4、hexo添加各种功能"><a href="#4、hexo添加各种功能" class="headerlink" title="4、hexo添加各种功能"></a>4、hexo添加各种功能</h1><h2 id="4-1-创建博客"><a href="#4-1-创建博客" class="headerlink" title="4.1 创建博客"></a>4.1 创建博客</h2><pre class="line-numbers language-none"><code class="language-none">hexo n &quot;文章名&quot;
+hexo n post -p 新文件夹&#x2F;文章名.md</code></pre>
+
+<p>第一种方法会在 <code>站点根目录/source/_posts</code> 下创建 <code>文章名.md</code> 文件</p>
+<p>如果文章多了，本地文件会比较乱，可以使用第二种方法分类。在 <code>站点根目录/source/_posts</code> 下创建一个叫 <code>新文件夹</code> 的文件夹，在该文件夹内创建 <code>文章名.md</code> 文件</p>
+<h2 id="4-2-博客添加分类"><a href="#4-2-博客添加分类" class="headerlink" title="4.2 博客添加分类"></a>4.2 博客添加分类</h2><p>参考资料：<a target="_blank" rel="noopener" href="https://blog.csdn.net/benben0729/article/details/87194682">hexo next 文章添加分类</a></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230720002353941.png" alt="image-20230720002353941"></p>
+<p>使用 <code>hexo n &quot;title&quot;</code> 新建的博客开头都有如图所示的第1部分。要添加分类，直接在后面加入第2部分。这里是添加的多级分类，博客会自动根据2添加一个test1分类，下面又有一个test2分类。如果不需要多级分类，例如只将博客分到一个名为“学习”的分类，只需将2中改为：<code>category: 学习</code></p>
+<p>修改<code>站点根目录/scaffolds/post.md</code>的内容，添加<code>categories:</code>，新建博客会自动添加<code>categories:</code>了。（category和categories都行）</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721215925565.png" alt="image-20230721215925565"></p>
+<h2 id="4-3-添加摘要"><a href="#4-3-添加摘要" class="headerlink" title="4.3 添加摘要"></a>4.3 添加摘要</h2><p>文章中使用<code>\&lt;!-- more --&gt;</code>分割为两部分，之上的为摘要。博客主页默认显示的是博客的摘要。</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721215037384.png" alt="image-20230721215037384"></p>
+<p>博客主页显示效果：</p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230721215102252.png" alt="image-20230721215102252"></p>
+<h2 id="4-2-博客插入图片"><a href="#4-2-博客插入图片" class="headerlink" title="4.2 博客插入图片"></a>4.2 博客插入图片</h2><p>参考资料：<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/asset-folders#%E7%9B%B8%E5%AF%B9%E8%B7%AF%E5%BE%84%E5%BC%95%E7%94%A8%E7%9A%84%E6%A0%87%E7%AD%BE%E6%8F%92%E4%BB%B6">资源文件夹</a></p>
+<p>官网给了几种方法，我比较喜欢使用相对路径的方法</p>
+<p> 打开<code>站点根目录/_config.yml</code> ，修改为：<code>post_assets_folder: true</code></p>
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230720001033704.png" alt="image-20230720001033704"></p>
+<p>之后使用 <code>hexo n &quot;title&quot;</code> 新建博客后，在 source&#x2F;_posts 路径下会多添加一个叫和博客同名的文件夹（前面使用的”title”，这里文件夹就为title），把博客要用的图片放在该文件夹内，例如放入图片<code>image.png</code>，要在博客中使用该图片，使用以下语法</p>
+<pre class="line-numbers language-none"><code class="language-none">![这里根据需要填写图片描述](image.png)</code></pre>
+
+<p>注意：</p>
+<p>但这种方法在我使用的Markdown编辑器下看不到图片，因为我使用的Markdown编辑器插入这个图片的语法为 <code>![图片描述](title/image.png)</code>。</p>
+<p>而且不知为什么我一开始使用这种方法，在博客中也无法显示图片，试了很多次后突然又可以了。</p>
+<p>接上一句：发现配置文件需要按照官网最后一种方法添加如下语句：</p>
+<pre class="line-numbers language-none"><code class="language-none">marked:
+ prependRoot: true
+ postAsset: true</code></pre>
+
+
+
+<p><img src="/assets/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA.assets/image-20230720005437195.png" alt="image-20230720005437195"></p>
+<p>然后执行<code>hexo clean</code> <code>hexo g</code> <code>hexo s</code>，才可查看到正确显示的图片</p>
+<h1 id="5、常用hexo指令"><a href="#5、常用hexo指令" class="headerlink" title="5、常用hexo指令"></a>5、常用hexo指令</h1><p><a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/docs/commands">官方文档</a></p>
+<pre class="line-numbers language-none"><code class="language-none">&#x2F;&#x2F;清理缓存
+hexo clean		
+
+&#x2F;&#x2F;生成静态文件
+hexo generate
+hexo g
+
+&#x2F;&#x2F;用于启动服务器，主要用来本地预览
+hexo server
+
+&#x2F;&#x2F;部署网站,用于将本地文件发布到github等git仓库上
+hexo deploy
+hexo d
+
+&#x2F;&#x2F;完整命令为hexo new,用于新建一篇名为“my article”的文章
+hexo n “my article”</code></pre>
+
+
+
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2023/07/20/%E9%80%9A%E4%BF%A1/test/" rel="prev" title="132">
+                  <i class="fa fa-chevron-left"></i> 132
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">星颢Z</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/mist/" rel="noopener" target="_blank">NexT.Mist</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js" integrity="sha256-4mJNT2bMXxcc1GCJaxBmMPdmah5ji0Ldnd79DKd1hoM=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/autoloader/prism-autoloader.min.js" integrity="sha256-AjM0J5XIbiB590BrznLEgZGLnOQWrt62s3BEq65Q/I0=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js" integrity="sha256-9cmf7tcLdXpKsPi/2AWE93PbZpTp4M4tqzFk+lWomjU=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/schemes/muse.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
