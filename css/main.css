@@ -2585,7 +2585,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ad8bff;
+  background: #ffec70;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2725,4 +2725,47 @@ body {
 }
 .posts-collapse .post-content .post-header::before {
   top: 37px;
+}
+code,
+kbd,
+figure.highlight,
+pre {
+  background: rgba(0,0,0,0);
+  color: #d05;
+}
+.category-all-page .category-list {
+  list-style: none;
+}
+.category-all-page .category-list li {
+  position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */
+  padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */
+  margin-top: 15px;
+  margin-right: 10px;
+  margin-bottom: 15px;
+  margin-left: 10px;
+}
+.category-all-page .category-list li::before {
+  content: ""; /* 添加伪元素的内容，此处为空 */
+  position: absolute; /* 将伪元素绝对定位到列表项内 */
+  top: 0; /* 设置伪元素的顶部位置 */
+  left: 0; /* 设置伪元素的左侧位置 */
+  width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */
+  height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */
+  background-color: #3e2ebf; /* 设置竖线的颜色 */
+}
+.category-all-page .category-list-child {
+  list-style: none;
+}
+.category-all-page .category-list-child li {
+  position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */
+  padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */
+}
+.category-all-page .category-list-child li::before {
+  content: ""; /* 添加伪元素的内容，此处为空 */
+  position: absolute; /* 将伪元素绝对定位到列表项内 */
+  top: 0; /* 设置伪元素的顶部位置 */
+  left: 0; /* 设置伪元素的左侧位置 */
+  width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */
+  height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */
+  background-color: #b1a7fe; /* 设置竖线的颜色 */
 }
