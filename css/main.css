@@ -2585,7 +2585,7 @@ header.header {
   vertical-align: middle;
 }
 .links-of-author a::before {
-  background: #ffec70;
+  background: #66ffeb;
   display: inline-block;
   margin-right: 3px;
   transform: translateY(-2px);
@@ -2660,7 +2660,7 @@ header.header {
   border-radius: 3px;
   font-size: 15px;
   box-shadow: inset 0px 0px 10px 0px rgba(0,0,0,0.35);
-  background-image: linear-gradient(90deg, #5270ac 0%, #8f84c3 25%, #bb80ac 50%, #8f84c3 75%, #5270ac 100%);
+  background-image: linear-gradient(90deg, #5270ac 0%, #8f84c3 25%, #a49ec3 50%, #8f84c3 75%, #5270ac 100%);
 }
 body {
   background-image: url("/images/background.jpg");
