@@ -439,9 +439,9 @@ code, kbd, figure.highlight, pre {
     font-size: 18px;    //字体
 }
 
-span{
-  font-size: 18px;  //归档下文章名字体
-}
+// span{
+//   font-size: 18px;  //归档下文章名字体
+// }
 ```
 
 ### variables.styl文件
