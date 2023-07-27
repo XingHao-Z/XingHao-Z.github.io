@@ -110,3 +110,10 @@ deploy:
   #repo: https://github.com/XingHao-Z/XingHao-Z.github.io.git
   repo: git@github.com:XingHao-Z/XingHao-Z.github.io.git
   branch: master
+
+
+search:
+  path: search.xml
+  field: post
+  content: true
+  format: html

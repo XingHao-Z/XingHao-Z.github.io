@@ -140,6 +140,8 @@ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 通过注释和取消注释选择主题，这里选择Mist，后面也是根据Mist调整。也可以试下其他主题，在本地预览效果，挑自己喜欢的。
 
+23.7.27：更换为Pisces，最后的高级配置修改为针对Pisces，其他设置基本没变
+
 ### 菜单
 
 ![image-20230726151423449](image-20230726151423449.png)
@@ -261,6 +263,8 @@ hexo new page about
 
 2、并不是出现了的属性我们才能去设置，比如还能设置上边距等属性
 
+### styles.styl文件
+
 下面放上我使用的`styles.styl`文件，希望可以给出一些参考
 
 ```stylus
@@ -276,108 +280,96 @@ hexo new page about
   }
 }
 
+.post-footer {
+    display: flex;
+}
+
 //[Read More]按钮样式
-.post-button .btn {
-  color: #555 !important;
-  background-color: rgb(255, 255, 255);
-  border-radius: 3px;
-  font-size: 15px;
-  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-  border: none !important;
-  transition-property: unset;
-  padding: 0px 15px;
-}
-.post-button .btn:hover {
-  color: rgb(255, 255, 255) !important;
-  border-radius: 3px;
-  font-size: 15px;
-  box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-  background-image: linear-gradient(90deg, #5270AC 0%, #8F84C3 25%, #A49EC3 50%, #8F84C3 75%, #5270AC 100%);
-}
+// .post-button .btn {
+//   color: #555 !important;
+//   background-color: rgb(255, 255, 255);
+//   border-radius: 3px;
+//   font-size: 15px;
+//   box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+//   border: none !important;
+//   transition-property: unset;
+//   padding: 0px 15px;
+// }
+// .post-button .btn:hover {
+//   color: rgb(255, 255, 255) //!important;
+//   border-radius: 3px;
+//   font-size: 15px;
+//   box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+//   background-image: linear-gradient(90deg, #404040 0%, #707070 25%, #909090 50%, #707070 75%, #404040 100%);
+// }
 
 
 //背景图片设置
-body {
-  background-image: url(/images/background.jpg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  background-size: 100% 100%;
-}
+// body {
+//   background-image: url(/images/background.jpg);
+//   background-repeat: no-repeat;
+//   background-attachment: fixed;
+//   background-size: 100% 100%;
+// }
 
 //文章块设置
 .post-block:first-of-type {
     padding-top: 45px;
 }
-.posts-expand .post-block:not(:first-of-type) {
-    margin-top: 40px;
-}
 .post-block {
-  width: 928px;
-
-  margin-top: 40px;
   margin-bottom: 50px;
-  margin-left: -50px;
 
-  border-radius: 10px;
+  //border-radius: 10px;
   
   padding: 45px 36px 36px 36px;
   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
 }
 
 //博客名
 .posts-expand .post-title {
     font-size: 24px;
     font-weight: 550;
-    margin: initial;
-    overflow-wrap: break-word;
 }
 .posts-expand .post-title-link::before {
-    background-image: linear-gradient(90deg, #5270AC 0%, #8F84C3 25%, #BB80AC 50%, #8F84C3 75%, #5270AC 100%);
+    background-image: linear-gradient(90deg, #404040 0%, #707070 25%, #909090 50%, #707070 75%, #404040 100%);
 }
 
 //侧边栏
 .sidebar {
-  font-size: 16px;  
+  font-size: 18px;  
 }
-
-//博客最顶部
-.column {
-    background-color: rgba(255, 255, 255, 0.8);
+a {
+    border-bottom: 0px; 
 }
-
-//博客最底部
-.footer {
-    background: var(--content-bg-color);
-    color: var(--text-color);
-    padding: 10px 0;
-    background-color: rgba(255, 255, 255, 0.5);
+.post-toc .nav-item {
+    line-height: 2;
 }
 
 //归档
-.posts-collapse .post-content .post-header {
-  border-bottom: 0px dashed #ccc;
-  margin: 30px 2px 0;
-  padding-left: 15px;
-  position: relative;
-  transition: border 0.2s ease-in-out;
+// .posts-collapse .post-content .post-header {
+//   border-bottom: 0px dashed #ccc;
+//   margin: 30px 2px 0;
+//   padding-left: 15px;
+//   position: relative;
+//   transition: border 0.2s ease-in-out;
 
-  font-size: 16px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-  width: 600px;
-  height: 40px;
+//   font-size: 16px;
+//   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+//   width: 600px;
+//   height: 40px;
 
-  padding-top: 25px;
-  padding-bottom: 15px;
-}
-.posts-collapse .post-content .post-meta-container {
-    display: inline;
-    font-size: 16px;
-    margin-right: 10px;
-}
-.posts-collapse .post-content .post-header::before {
-    top: 37px;
-}
+//   padding-top: 25px;
+//   padding-bottom: 15px;
+// }
+// .posts-collapse .post-content .post-meta-container {
+//     display: inline;
+//     font-size: 16px;
+//     margin-right: 10px;
+// }
+// .posts-collapse .post-content .post-header::before {
+//     top: 37px;
+// }
 
 //行内代码
 code, kbd, figure.highlight, pre {
@@ -387,46 +379,85 @@ code, kbd, figure.highlight, pre {
 
 
 //分类页面左边添加竖线，调整间距
-.category-all-page .category-list {
-  list-style: none;
-}
-.category-all-page .category-list li {
-  position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */
-  padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */
+// .category-all-page .category-list {
+//   list-style: none;
+// }
+// .category-all-page .category-list li {
+//   position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */
+//   padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */
 
-  margin-top: 15px;
-  margin-right: 10px;
-  margin-bottom: 15px;
-  margin-left: 10px;
+//   margin-top: 15px;
+//   margin-right: 10px;
+//   margin-bottom: 15px;
+//   margin-left: 10px;
+// }
+// .category-all-page .category-list li::before {
+//   content: ""; /* 添加伪元素的内容，此处为空 */
+//   position: absolute; /* 将伪元素绝对定位到列表项内 */
+//   top: 0; /* 设置伪元素的顶部位置 */
+//   left: 0; /* 设置伪元素的左侧位置 */
+//   width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */
+//   height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */
+//   background-color: #3E2EBF; /* 设置竖线的颜色 */
+// }
+// .category-all-page .category-list-child {
+//   list-style: none;
+// }
+// .category-all-page .category-list-child li {
+//   position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */
+//   padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */
+// }
+// .category-all-page .category-list-child li::before {
+//   content: ""; /* 添加伪元素的内容，此处为空 */
+//   position: absolute; /* 将伪元素绝对定位到列表项内 */
+//   top: 0; /* 设置伪元素的顶部位置 */
+//   left: 0; /* 设置伪元素的左侧位置 */
+//   width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */
+//   height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */
+//   background-color: #B1A7FE; /* 设置竖线的颜色 */
+// }
+
+//隐藏首页文章底部的横线
+.post-eof {
+  display: none;
 }
-.category-all-page .category-list li::before {
-  content: ""; /* 添加伪元素的内容，此处为空 */
-  position: absolute; /* 将伪元素绝对定位到列表项内 */
-  top: 0; /* 设置伪元素的顶部位置 */
-  left: 0; /* 设置伪元素的左侧位置 */
-  width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */
-  height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */
-  background-color: #3E2EBF; /* 设置竖线的颜色 */
+
+//隐藏图片名
+.post-body .image-caption, .post-body img + figcaption, .post-body .fancybox + figcaption {
+  display: none;
 }
-.category-all-page .category-list-child {
-  list-style: none;
+
+//分类页
+
+.category-all-page .category-list {
+    list-style: disc;     //一级分类前加实心圆点
+    font-size: 18px;      //调整字体
 }
-.category-all-page .category-list-child li {
-  position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */
-  padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */
+
+//菜单
+.menu {
+    font-size: 18px;    //字体
 }
-.category-all-page .category-list-child li::before {
-  content: ""; /* 添加伪元素的内容，此处为空 */
-  position: absolute; /* 将伪元素绝对定位到列表项内 */
-  top: 0; /* 设置伪元素的顶部位置 */
-  left: 0; /* 设置伪元素的左侧位置 */
-  width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */
-  height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */
-  background-color: #B1A7FE; /* 设置竖线的颜色 */
+
+span{
+  font-size: 18px;  //归档下文章名字体
 }
 ```
 
+### variables.styl文件
 
+将主题配置文件的`custom_file_path`下的`variables`取消注释
+
+```stylus
+//标签云颜色
+$tag-cloud-start      = #9733EE;
+$tag-cloud-end        = #FF512F;
+
+
+//$content-desktop         = 'calc(100% - %s)' % unit($content-desktop-padding / 2, 'px')
+$content-desktop-large   = 1160px
+$content-desktop-largest = 73%
+```
 
 
 

@@ -27,7 +27,7 @@ custom_file_path:
   #postBodyEnd: source/_data/post-body-end.njk
   #footer: source/_data/footer.njk
   #bodyEnd: source/_data/body-end.njk
-  #variable: source/_data/variables.styl
+  variable: source/_data/variables.styl
   #mixin: source/_data/mixins.styl
   style: source/_data/styles.styl
 
@@ -38,8 +38,8 @@ custom_file_path:
 
 # Schemes
 #scheme: Muse
-scheme: Mist
-#scheme: Pisces
+#scheme: Mist
+scheme: Pisces
 #scheme: Gemini
 
 # Dark Mode
@@ -558,7 +558,7 @@ math:
   every_page: false
 
   mathjax:
-    enable: false
+    enable: true
     # Available values: none | ams | all
     tags: none
 
@@ -593,7 +593,7 @@ lazyload: false
 # Automatically insert whitespace between CJK and half-width characters.
 # For more information: https://github.com/vinta/pangu.js
 # Server-side plugin: https://github.com/next-theme/hexo-pangu
-pangu: false
+pangu: true
 
 # Prefetch links based on what is in the user's viewport.
 # For more information: https://getquick.link
@@ -701,8 +701,8 @@ disqusjs:
 # For more information: https://changyan.kuaizhan.com
 changyan:
   enable: false
-  appid:
-  appkey:
+  appid: cywNtbgWJ
+  appkey: 3fba377b143571d1bce7299c7cc70d84
   # Show comments count
   count: true
 
@@ -855,7 +855,7 @@ algolia_search:
 # Local Search
 # Dependencies: https://github.com/next-theme/hexo-generator-searchdb
 local_search:
-  enable: false
+  enable: true
   # If auto, trigger search by changing input.
   # If manual, trigger search by pressing enter key or search button.
   trigger: auto
