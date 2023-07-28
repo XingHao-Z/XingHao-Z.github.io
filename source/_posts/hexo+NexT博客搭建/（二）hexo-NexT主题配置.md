@@ -142,6 +142,8 @@ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 23.7.27：更换为Pisces，最后的高级配置修改为针对Pisces，其他设置基本没变
 
+23.7.28：更换为Gemini，最后的高级配置修改为针对Gemini，其他设置基本没变
+
 ### 菜单
 
 ![image-20230726151423449](image-20230726151423449.png)
@@ -299,8 +301,8 @@ hexo new page about
 //   color: rgb(255, 255, 255) //!important;
 //   border-radius: 3px;
 //   font-size: 15px;
-//   box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
-//   background-image: linear-gradient(90deg, #404040 0%, #707070 25%, #909090 50%, #707070 75%, #404040 100%);
+//   //box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);
+//   //background-image: linear-gradient(90deg, #404040 0%, #707070 25%, #909090 50%, #707070 75%, #404040 100%);
 // }
 
 
@@ -313,18 +315,19 @@ hexo new page about
 // }
 
 //文章块设置
-.post-block:first-of-type {
-    padding-top: 45px;
-}
-.post-block {
-  margin-bottom: 50px;
+// .post-block:first-of-type {
+//     padding-top: 45px;
+// }
+// .post-block {
+//   //margin-bottom: 50px;
+//   margin-bottom: 20px;
 
-  //border-radius: 10px;
+//   //border-radius: 10px;
   
-  padding: 45px 36px 36px 36px;
-  box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
-  background-color: rgba(255, 255, 255, 1);
-}
+//   padding: 45px 36px 36px 36px;
+//   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);
+//   background-color: rgba(255, 255, 255, 1);
+// }
 
 //博客名
 .posts-expand .post-title {
@@ -373,7 +376,7 @@ a {
 
 //行内代码
 code, kbd, figure.highlight, pre {
-    background: rgba(0, 0, 0, 0);
+    background: #f9f2f4;
     color: #dd0055;
 }
 
@@ -418,9 +421,9 @@ code, kbd, figure.highlight, pre {
 // }
 
 //隐藏首页文章底部的横线
-.post-eof {
-  display: none;
-}
+//.post-eof {
+//  display: none;
+//}
 
 //隐藏图片名
 .post-body .image-caption, .post-body img + figcaption, .post-body .fancybox + figcaption {
@@ -439,7 +442,7 @@ code, kbd, figure.highlight, pre {
     font-size: 18px;    //字体
 }
 
-// span{
+// article {
 //   font-size: 18px;  //归档下文章名字体
 // }
 ```
