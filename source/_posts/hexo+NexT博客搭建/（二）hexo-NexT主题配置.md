@@ -6,6 +6,7 @@ tags:
  - 博客
 categories:
  - hexo+NexT博客搭建
+typora-root-url: （二）hexo-NexT主题配置
 ---
 
 本博客介绍怎么通过修改站点配置文件、主题配置文件和自定义配置文件来配置博客。
@@ -18,11 +19,11 @@ categories:
 
 网上许多hexo+NexT主题配置教程是2020年前的，但这些年hexo和NexT主题已经更新了许多版本，这些教程已经过时，部分操作已经无法实现。
 
-可以打开在`站点根目录`打开`git bash`，输入`hexo -v`查看版本，我这里的版本为6.3.0。NexT在主题根目录下（下面会说明）的`package.json`中查看，我的版本为8.17.1
+可以打开在`站点根目录`打开`git bash`，输入`hexo -v`查看版本，我这里的版本为6.3.0。NexT在主题根目录下的`package.json`中查看，我的版本为8.17.1
 
-其实最好的教程就是官方文档，小伙伴可以参考[hexo官方文档](https://hexo.io/zh-cn/docs/)，中文支持的很不错，[NexT官方文档](https://theme-next.js.org/)虽然是英语，但慢慢看也能有许多帮助（有时候比在网上找到一堆过时教程效率高）。
+其实最好的教程就是官方文档，小伙伴可以参考[hexo官方文档](https://hexo.io/zh-cn/docs/) 和 [NexT官方文档](https://theme-next.js.org/) ，有时相比在网上找到一堆过时的教程，效率更高。
 
-当然，根据本教程也能实现我的配置，但还想自定义的小伙伴就要自己再折腾下了。我也是从慢慢折腾过来的，开始什么也不懂。我这也会介绍我配置中学到的一些东西，并简单教一下怎么自定义配置，如果有错误的话，...，大家好像也没法指正（评论区还没配置）。
+当然，根据本教程也能实现我的配置，但还想自定义的小伙伴就要自己再折腾下了。我也是从慢慢折腾过来的，开始什么也不懂。我也会介绍我配置中学到的一些东西，并简单教一下我是怎么自定义配置的，如果有错误的话，欢迎在评论区指正。
 
 推荐下我找到的比较好的教程：
 
@@ -32,19 +33,19 @@ categories:
 
 [个人博客第8篇——优化主题（持续更新）](https://zhuanlan.zhihu.com/p/106060640)
 
-该节中会修改许多代码文件，最好使用一个编辑器，推荐使用vscode。当然记事本也行。
+该节中会修改许多代码文件，最好使用一个好用的编辑器，推荐使用vscode。（当然记事本也行）
 
 # 2、说明
 
-本节中会多次出现一些术语，我这里给出对应的说明
+本节中会多次出现一些术语，先给出对应的说明
 
-`站点根目录`：上节提到过，使用`hexo init myblog`创建的文件夹`myblog`就是站点根目录，里面有source，themes，_config.yml等文件夹和文件。
+`站点根目录`：在（一）中提到过，使用`hexo init myblog`创建的文件夹`myblog`就是站点根目录，里面有source，themes，_config.yml等文件夹和文件。
 
 `主题根目录`：站点根目录下的themes文件夹里，跟所使用的主题名字相关的一个文件夹，在安装主题后才会有这个文件夹，我这里是next文件夹，即`站点根目录\themes\next`，里面有languages，source等。
 
 `站点配置文件`：`站点根目录`下的`_config.yml`文件。
 
-`主题配置文件`：大多数教程中指的都是`主题根目录`下的`_config.yml`，修改该文件也可以，但新版的Hexo和NexT推荐使用代替配置文件：[配置|Hexo](https://hexo.io/zh-cn/docs/configuration)，方便管理以及Hexo和NexT的更新。所以该教程中指的是`站点根目录`下的`_config.next.yml`文件（后面会创建该文件）。
+`主题配置文件`：其他大多数教程中指的都是`主题根目录`下的`_config.yml`，修改该文件也可以，但新版的Hexo和NexT推荐使用代替配置文件：[配置|Hexo](https://hexo.io/zh-cn/docs/configuration)，方便管理以及Hexo和NexT的更新。所以该教程中指的是`站点根目录`下的`_config.next.yml`文件（后面会创建该文件）。
 
 `高级配置文件`：或者叫自定义样式文件，大多数教程中指的是`主题根目录\source\css\_custom\custom.styl`，但新版本的NexT已经弃用了该文件，现在已经找不到这个文件了，详情参考[NexT官方文档](https://theme-next.js.org/docs/advanced-settings/custom-files.html)。该教程指的是`站点根目录\source\_data\styles.styl`（后面会创建该文件）。
 
@@ -96,7 +97,11 @@ prismjs:
   tab_replace: ''
 ```
 
-这一段是关于代码块风格设置，参考[hexo官网的说明](https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS)和[next官网说明](https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Codeblock-Style)，hexo支持两种库： [highlight.js](https://github.com/highlightjs/highlight.js) 和 [prismjs](https://github.com/PrismJS/prism) 。next主题官方也只能设置这两种。在这两种库下都有多种风格可选。要用哪个库把相应的`enable`设为`true`，另一个的`enable`设为`false`，我选择了`prismjs`，其他的设置根据需要参考官网调整，我这里设为默认。具体用`prismjs`的哪一个主题还需要在后续主题配置文件里修改。
+这一段是关于代码块风格设置，参考[hexo官网的说明](https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS)和[next官网说明](https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Codeblock-Style)，hexo支持两种库： [highlight.js](https://github.com/highlightjs/highlight.js) 和 [prismjs](https://github.com/PrismJS/prism) 。next主题官方也只能设置这两种。在这两种库下都有多种风格可选。
+
+要用哪个库把相应的`enable`设为`true`，另一个的`enable`设为`false`，我选择了`prismjs`。其他的设置根据需要参考官网调整，我这里设为默认。
+
+具体使用`prismjs`的哪一个主题还需要在后续主题配置文件里修改。
 
 **主题选择**
 
@@ -108,15 +113,11 @@ theme: next
 
 
 
-站点配置文件我修改的不多，主要是主题配置文件的修改以及高级配置文件
-
-
-
 # 4、NexT基本配置
 
 主题的修改不完全是主题配置文件的修改以及高级配置文件的修改，有的配置需要改一些特殊的文件，遇到会特殊说明
 
-# 4.1 安装主题
+## 4.1 安装主题
 
 打开Git Bash，输入：
 
@@ -124,15 +125,15 @@ theme: next
 git clone https://github.com/next-theme/hexo-theme-next themes/next
 ```
 
-如果出现问题，可以手动去https://github.com/next-theme/hexo-theme-next下载，放到`站点根目录themes/next`
+如果出现问题，可以手动去https://github.com/next-theme/hexo-theme-next下载，放到`站点根目录/themes/next`
 
-这样，就有了主题根目录，即`站点根目录themes/next`
+这样，就有了主题根目录，即`站点根目录/themes/next`
 
 可以输入`hexo g`和`hexo s`本地预览效果
 
 ## 4.2 主题配置
 
-复制主题根目录下的``_config.yml`文件，粘贴到站点根目录下，修改文件名为`_config.next.yml`。（注意别把站点配置文件覆盖了）这就是主题配置文件。打开该文件。
+复制主题根目录下的``_config.yml`文件，粘贴到站点根目录下，修改文件名为`_config.next.yml`（注意别把站点配置文件覆盖了）。这就是主题配置文件。打开该文件。
 
 ### 主题选择
 
@@ -140,9 +141,9 @@ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 通过注释和取消注释选择主题，这里选择Mist，后面也是根据Mist调整。也可以试下其他主题，在本地预览效果，挑自己喜欢的。
 
-23.7.27：更换为Pisces，最后的高级配置修改为针对Pisces，其他设置基本没变
+23.7.27：更换为Pisces，最后的高级配置修改为针对Pisces。其他设置通用
 
-23.7.28：更换为Gemini，最后的高级配置修改为针对Gemini，其他设置基本没变
+23.7.28：更换为Gemini，最后的高级配置修改为针对Gemini。其他设置通用
 
 ### 菜单
 
@@ -176,8 +177,6 @@ hexo new page about
 
 字体和代码的部分设置是一起的，放在一起说。
 
-修改代码块相关的部分折腾了很久，官网的方法有的不起作用，网上说的也五花八门，很多试了也没用。
-
 先说修改字体。官网说的比较详细：[Fonts Customization](https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Fonts-Customization)
 
 **字体：**
@@ -194,7 +193,7 @@ hexo new page about
 - `title`：博客名称的字体设置。字体大小受`global`下的`size`设置和`title`的`size`设置的双重影响
 - `heading`：文章中各级题目的设置，即用 `# 题目` 语法的部分。字体大小受`global`下的`size`设置和`heading`的`size`设置的双重影响
 - `posts`：官网说是文章主要字体的设置，但因为这两项我改了都不起作用，所以无法判断具体是什么设置。我也尝试加上`size:`来设置大小，不起作用
-- `codes`：代码块的设置，加上`size`设置大小，不起作用，虽然可以通过`global`下的`size`来设置，但这也会影响其他部分，这也是我折腾最久的。下面代码设置详细说
+- `codes`：代码块的设置，试图加上`size`设置大小，不起作用
 
 **代码块**
 
@@ -206,23 +205,9 @@ hexo new page about
 
 如果前面选择`highlight`，就是`theme`后面设置起作用，我选择了`prism`，所以`prism`后面两个设置起作用，分别是正常模式下的代码主题和黑暗模式下的代码主题，我博客没开黑暗模式，所以根据`light`选项的设置。不同的风格可以去上图中364行提到的网站预览。[NexT Highlight Theme Preview](https://theme-next.js.org/highlight/)
 
-我这里选择了`prism-tomorrow`，但这个主题的代码字体太大了，所以花费了很多时间找办法调整，网上说的方法我试过后都不起作用。后来找到`prism-tomorrow`这个主题的文件，在`站点根目录\node_modules\prismjs\themes`下找到`prism-tomorrow.css`文件打开：
+我这里选择了`prism-tomorrow`，但这个主题的代码字体太大，在后面的高级配置中会进行调整
 
-![image-20230726154120105](image-20230726154120105.png)
-
-修改`font-size`，默认是`1em`（`1em`等于`16px`），我修改为了`14px`。
-
-只修改这个会导致行号错位，是因为多个地方的设置是按照比例来的，如上图中的19行，每行的高度为1.5，以及代码行号的字体大小（默认设置为的100%字体大小），行号每行的间隔也是很久行号的大小来的，所以最终导致了行号错位。
-
-先将上图中的`line-height`改为`24px`。
-
-然后打开 `站点根目录\node_modules\prismjs\plugins\line-numbers\prism-line-numbers.css` 文件，修改`font-size`为`16px`。
-
-接着在后面加上`margin-top: -3px;`，这是因为行号字体大于代码字体，又是整个代码块顶对齐的，所以看着行号比代码向下偏了一点，这句加上就可以将行号整体向上移动3px，行号和代码几乎就按中间对齐了。
-
-![image-20230726154417234](image-20230726154417234.png)
-
-博客中代码块右上角还可以添加复制按钮，并且可以设置复制按钮样式，将`copy_botton`下的`enable`设为`true`，样式可以自己试试喜欢哪一个
+博客中代码块右上角还可以添加复制按钮，并且可以设置复制按钮样式，将`copy_botton`下的`enable`设为`true`，样式有三种，可以自己试试喜欢哪一个
 
 ![image-20230726154526462](image-20230726154526462.png)
 
@@ -230,11 +215,27 @@ hexo new page about
 
 
 
-### 博客目录
+### 博客目录序号
 
-禁止自动添加序号，因为我自己会加，不需要再给我添加了。并且我希望默认展开全部目录。修改设置如下：
+禁止自动添加序号，因为我自己会加，不需要自动添加。并且我想要默认展开全部目录。修改设置如下：
 
 ![image-20230726154954945](image-20230726154954945.png)
+
+### 隐藏底部“由...强力驱动”
+
+将`powered`修改为`false`
+
+![image-20230730213548467](image-20230730213548467.png)
+
+
+
+### 头像
+
+![image-20230730214105518](image-20230730214105518.png)
+
+将头像图片放在`主题根目录/source/images`下，url格式如图
+
+
 
 ## 4.3 高级配置
 
@@ -270,6 +271,7 @@ hexo new page about
 下面放上我使用的`styles.styl`文件，希望可以给出一些参考
 
 ```stylus
+//23.7.30更新，使用的Gemini主题
 //文章内链接文本样式
 .post-body p a{
   color: #0593d3;
@@ -282,9 +284,59 @@ hexo new page about
   }
 }
 
-.post-footer {
-    display: flex;
+//代码块
+.code-container {
+  font-size: 14px;
 }
+//行内代码
+code {
+  font-size: 14px;
+}
+code, kbd, figure.highlight, pre {
+    background: #f9f2f4;
+    color: #dd0055;
+}
+
+//博客名
+.posts-expand .post-title {
+    font-size: 24px;
+    font-weight: 550;
+}
+.posts-expand .post-title-link::before {
+    background-image: linear-gradient(90deg, #404040 0%, #707070 25%, #909090 50%, #707070 75%, #404040 100%);
+}
+
+//侧边栏
+.sidebar {
+  font-size: 16px;  
+}
+a {
+    border-bottom: 0px; 
+}
+.post-toc .nav-item {
+    line-height: 2;
+}
+
+
+//隐藏图片名
+.post-body .image-caption, .post-body img + figcaption, .post-body .fancybox + figcaption {
+  display: none;
+}
+
+//分类页
+.category-all-page .category-list {
+    list-style: disc;     //一级分类前加实心圆点
+    font-size: 18px;      //调整字体
+}
+
+//菜单
+.menu {
+    font-size: 18px;    //字体
+}
+
+// .post-footer {
+//     display: flex;
+// }
 
 //[Read More]按钮样式
 // .post-button .btn {
@@ -329,26 +381,6 @@ hexo new page about
 //   background-color: rgba(255, 255, 255, 1);
 // }
 
-//博客名
-.posts-expand .post-title {
-    font-size: 24px;
-    font-weight: 550;
-}
-.posts-expand .post-title-link::before {
-    background-image: linear-gradient(90deg, #404040 0%, #707070 25%, #909090 50%, #707070 75%, #404040 100%);
-}
-
-//侧边栏
-.sidebar {
-  font-size: 18px;  
-}
-a {
-    border-bottom: 0px; 
-}
-.post-toc .nav-item {
-    line-height: 2;
-}
-
 //归档
 // .posts-collapse .post-content .post-header {
 //   border-bottom: 0px dashed #ccc;
@@ -373,13 +405,6 @@ a {
 // .posts-collapse .post-content .post-header::before {
 //     top: 37px;
 // }
-
-//行内代码
-code, kbd, figure.highlight, pre {
-    background: #f9f2f4;
-    color: #dd0055;
-}
-
 
 //分类页面左边添加竖线，调整间距
 // .category-all-page .category-list {
@@ -421,30 +446,14 @@ code, kbd, figure.highlight, pre {
 // }
 
 //隐藏首页文章底部的横线
-//.post-eof {
-//  display: none;
-//}
-
-//隐藏图片名
-.post-body .image-caption, .post-body img + figcaption, .post-body .fancybox + figcaption {
-  display: none;
-}
-
-//分类页
-
-.category-all-page .category-list {
-    list-style: disc;     //一级分类前加实心圆点
-    font-size: 18px;      //调整字体
-}
-
-//菜单
-.menu {
-    font-size: 18px;    //字体
-}
+// .post-eof {
+//   display: none;
+// }
 
 // article {
 //   font-size: 18px;  //归档下文章名字体
 // }
+
 ```
 
 ### variables.styl文件
