@@ -271,18 +271,26 @@ hexo new page about
 下面放上我使用的`styles.styl`文件，希望可以给出一些参考
 
 ```stylus
-//23.7.30更新，使用的Gemini主题
+//23.8.4更新，使用的Gemini主题
 //文章内链接文本样式
-.post-body p a{
-  color: #0593d3;
-  border-bottom: none;
-  border-bottom: 1px solid #0593d3;
-  &:hover {
-    color: #fc6423;
-    border-bottom: none;
-    border-bottom: 1px solid #fc6423;
-  }
+// .post-body p a{
+//   color: #0593d3;
+//   border-bottom: none;
+//   border-bottom: 1px solid #0593d3;
+//   &:hover {
+//     color: #fc6423;
+//     border-bottom: none;
+//     border-bottom: 1px solid #fc6423;
+//   }
+// }
+.post-body p {
+  --link-color: #0593d3;
+  --link-hover-color: #fc6423;  
 }
+// a:hover {
+//     border-bottom-color: var(--link-hover-color);
+//     color: var(--link-hover-color);
+// }
 
 //代码块
 .code-container {
@@ -333,6 +341,12 @@ a {
 .menu {
     font-size: 18px;    //字体
 }
+
+//链接网格取消动画
+.link-grid .link-grid-container {
+  transform: none !important;
+}
+
 
 // .post-footer {
 //     display: flex;

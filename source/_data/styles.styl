@@ -1,14 +1,25 @@
 //文章内链接文本样式
-.post-body p a{
-  color: #0593d3;
-  border-bottom: none;
-  border-bottom: 1px solid #0593d3;
-  &:hover {
-    color: #fc6423;
-    border-bottom: none;
-    border-bottom: 1px solid #fc6423;
-  }
+// .post-body p a{
+//   color: #0593d3;
+//   border-bottom: none;
+//   border-bottom: 1px solid #0593d3;
+//   &:hover {
+//     color: #fc6423;
+//     border-bottom: none;
+//     border-bottom: 1px solid #fc6423;
+//   }
+// }
+.post-body p {
+  --link-color: #0593d3;
+  --link-hover-color: #fc6423;  
 }
+// a:hover {
+//     border-bottom-color: var(--link-hover-color);
+//     color: var(--link-hover-color);
+// }
+
+
+
 
 //代码块
 .code-container {
@@ -60,6 +71,15 @@ a {
 .menu {
     font-size: 18px;    //字体
 }
+
+//链接网格取消动画
+.link-grid .link-grid-container {
+  transform: none !important;
+}
+
+// .link-grid .link-item:hover {
+//   transform: none !important;
+// }
 
 // .post-footer {
 //     display: flex;
