@@ -174,15 +174,26 @@ ssh-keygen -t rsa -C "输入你的邮箱"
 git clone git@github.com:username/username.github.io.git
 ```
 
-文件夹中就会出现 “username.github.io” 文件夹，这个文件夹就是新电脑的站点根目录，可以修改这个文件夹名字。
+文件夹中就会出现 “username.github.io” 文件夹。
 
-在克隆下来的文件夹中打开Git bash，依次执行：（记得，不需要hexo init这条指令）
+继续依次输入：
 
 ```
-npm install hexo
+npm install hexo-cli -g
+hexo init blog
+```
+
+文件中会初始化一个blog文件夹，只保留该文件夹内的**node_modules**文件夹，其他的都删除。
+
+将“username.github.io”文件夹内的所有内容复制到blog文件夹下。
+
+运行
+
+```
 npm install
-npm install hexo-deployer-git
 ```
+
+blog文件夹就是新电脑的站点根目录。
 
 **同步**
 
