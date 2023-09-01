@@ -347,6 +347,12 @@ a {
   transform: none !important;
 }
 
+//选中文字的颜色和背影颜色
+::selection {
+    background: #328cfa;
+    color: #ffffff;
+}
+
 
 // .post-footer {
 //     display: flex;
