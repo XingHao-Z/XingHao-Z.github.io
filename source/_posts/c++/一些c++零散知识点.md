@@ -56,3 +56,78 @@ void f() {
 在标准算法（如 `std::sort`）中将 `bigger` 作为函数对象（比较函数）使用时，需要使用 `bigger()` 创建 `bigger` 的临时实例。`bigger` 后面的 `()` 表示我们正在使用 `bigger` 的默认构造函数创建一个临时对象。
 
 将 `bigger` 作为容器（如 `std::map` 或 `std::priority_queue`）的自定义比较类型时，不需要括号，直接使用 `bigger` 即可。因为容器需要一个比较函数的类型，而不是一个对象。
+
+# 计算程序的运行时间
+
+```cpp
+#include <chrono>
+//...
+auto start = std::chrono::steady_clock::now();
+//todo
+auto end = std::chrono::steady_clock::now();
+std::chrono::duration<double, std::micro> elapsed = end - start; // std::micro 表示以微秒为时间单位
+std::cout<< "time: "  << elapsed.count() << "us" << std::endl;
+```
+
+# 深拷贝
+
+类class1包含成员属性class2，class2中有指针和深拷贝构造函数。创建一个vector存放class1，创建一个class1的对象a，a中的class2对象的指针用new创建。用push_back添加a，会执行class2的深拷贝。
+
+```cpp
+class class2 {
+public:
+	class2() {
+		i = nullptr;
+	}
+	class2(const class2& temp) {
+		i = new int(*temp.i);
+	}
+	int* i;
+};
+
+class class1 {
+public:
+	class2 m;
+};
+
+int main() {
+	std::vector<class1> v;
+	class1 a;
+	a.m.i = new int(10);
+	v.push_back(a);
+	cout << "a.m.i指向的地址：" << hex << b1.a1.i << endl;			//输出：00000176C8BC6180
+	cout << "v[0].a1.i指向的地址：" << hex << v[0].a1.i << endl;		//输出：00000176C8BC6C80 不同
+    return 0;
+}
+```
+
+# 析构函数
+
+当从一个存储类对象的 `std::vector` 中弹出元素时，元素的析构函数会被调用。
+
+```cpp
+#include <iostream>
+#include <vector>
+
+class MyClass {
+public:
+    MyClass() {
+        std::cout << "MyClass constructor" << std::endl;
+    }
+
+    ~MyClass() {
+        std::cout << "MyClass destructor" << std::endl;
+    }
+};
+
+int main() {
+    std::vector<MyClass> myVector;
+
+    myVector.push_back(MyClass()); // 添加一个元素
+
+    myVector.pop_back(); // 移除最后一个元素，会调用其析构函数
+
+    return 0;
+}
+```
+
