@@ -131,3 +131,61 @@ int main() {
 }
 ```
 
+# const成员函数
+
+`const`成员函数不能返回非`const`引用，否则会导致编译错误
+
+```cpp
+class MyClass {
+public:
+    MyClass(int value) : data(value) {}
+
+    // 错误：const函数不能返回非const引用
+    int& GetData() const {
+        return data;
+    }
+
+private:
+    int data;
+};
+```
+
+# 构造函数调用
+
+用 '=' 创建类的对象，使用的是拷贝构造函数，不是重载等号的函数
+
+```cpp
+class MyClass
+{
+public:
+    MyClass() = default;
+    MyClass(const MyClass& a) {
+        std::cout << "拷贝构造函数调用" << std::endl;
+    }
+    ~MyClass() {
+        std::cout << "析构函数调用" << std::endl;
+    }
+    MyClass& operator=(const MyClass& a) {
+        std::cout << "重载=函数调用" << std::endl;
+    }
+};
+int main(){
+    MyClass a;
+    MyClass b = a;  //打印："拷贝构造函数调用"
+}
+```
+
+拷贝构造前不要加`explicit`，会导致以下错误
+
+```cpp
+//......
+explicit MyClass::MyClass(const MyClass& a);
+//......
+int main(){
+    MyClass a;
+    MyClass b = a;  //报错：没有适当的复制构造函数
+}
+```
+
+
+
