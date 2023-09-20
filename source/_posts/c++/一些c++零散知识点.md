@@ -189,3 +189,22 @@ int main(){
 
 
 
+# 迭代器运算
+
+所有迭代器支持的操作
+
+- *iter
+- iter->mem
+- iter++
+- iter--（forward_list迭代器不支持）
+- iter1 == iter2
+- iter1 != iter2
+
+只有`string`、`vector`、`deque`和`array`的迭代器支持的操作
+
+- iter + n
+- iter - n
+- iter += n
+- iter -=n
+- iter1 - iter2
+- \>, <, >=, <=
