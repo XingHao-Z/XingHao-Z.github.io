@@ -1,96 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>软件资源推荐</title>
-    <url>/2023/07/30/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<p>好用的软件</p>
-<span id="more"></span>
-<h1 id="pot">Pot</h1>
-<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
-<p>截图翻译，划词翻译，OCR</p>
-<p> </p>
-<h1 id="snipaste">snipaste</h1>
-<p>链接：<a
-href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
-<p>截图工具。</p>
-<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
-<p> </p>
-<h1 id="dism">Dism++</h1>
-<p>链接：<a
-href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
-<p>window工具箱。</p>
-<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
-<p> </p>
-<h1 id="msi-afterburner">MSI Afterburner</h1>
-<p>链接：<a
-href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
-<p>性能监控软件。</p>
-<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
-<p> </p>
-<h1 id="图吧工具箱">图吧工具箱</h1>
-<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
-<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
-<p> </p>
-<h1 id="simpletex">SimpleTex</h1>
-<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
-<p>公式识别转换</p>
-<p>将图片中的公式转换为LaTeX格式</p>
-<p> </p>
-<h1 id="quicklook">QuickLook：</h1>
-<p>链接：<a
-href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
-<p>查看office的插件：<a
-href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
-<p>快速查看文件内容</p>
-<p>对文件按空格可以快速浏览文件内容</p>
-<p> </p>
-<h1 id="el_display_hub">EL_Display_Hub</h1>
-<p>链接：<a
-href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
-<p>iPad当副屏</p>
-<p>还要在ipad端App Store购买Twomon SE</p>
-<p> </p>
-<h1 id="potplayer">potplayer</h1>
-<p>链接：<a
-href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
-<p>本地视频播放器</p>
-<p>功能强大丰富，支持格式非常多。</p>
-<p> </p>
-<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
-<p>链接：<a
-href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
-<p>把QT的软件及库打包成一个exe文件</p>
-<p> </p>
-<h1 id="everything">everything</h1>
-<p>链接：<a
-href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
-<p>文件搜索</p>
-<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
-<p> </p>
-<h1 id="cajviewer">CAJViewer</h1>
-<p>链接：<a
-href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
-<p>CAJ阅读器</p>
-<p> </p>
-<h1 id="ddu">DDU</h1>
-<p>链接：<a
-href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
-<p>显卡驱动卸载</p>
-<p>常用于AMD显卡驱动卸载</p>
-<p> </p>
-<h1 id="vscode">vscode</h1>
-<p>链接：<a
-href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p>编辑器</p>
-]]></content>
-      <categories>
-        <category>资源推荐</category>
-      </categories>
-      <tags>
-        <tag>资源</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>Verilog代码模板</title>
     <url>/2023/07/20/FPGA/Verilog%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<h1 id="分频">分频</h1>
@@ -356,15 +266,93 @@ endtask</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>通信相关的零散知识点</title>
-    <url>/2023/09/01/%E9%80%9A%E4%BF%A1/%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
-    <content><![CDATA[
+    <title>软件资源推荐</title>
+    <url>/2023/07/30/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<p>好用的软件</p>
+<span id="more"></span>
+<h1 id="pot">Pot</h1>
+<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
+<p>截图翻译，划词翻译，OCR</p>
+<p> </p>
+<h1 id="snipaste">snipaste</h1>
+<p>链接：<a
+href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
+<p>截图工具。</p>
+<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
+<p> </p>
+<h1 id="dism">Dism++</h1>
+<p>链接：<a
+href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
+<p>window工具箱。</p>
+<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
+<p> </p>
+<h1 id="msi-afterburner">MSI Afterburner</h1>
+<p>链接：<a
+href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
+<p>性能监控软件。</p>
+<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
+<p> </p>
+<h1 id="图吧工具箱">图吧工具箱</h1>
+<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
+<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
+<p> </p>
+<h1 id="simpletex">SimpleTex</h1>
+<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
+<p>公式识别转换</p>
+<p>将图片中的公式转换为LaTeX格式</p>
+<p> </p>
+<h1 id="quicklook">QuickLook：</h1>
+<p>链接：<a
+href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
+<p>查看office的插件：<a
+href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
+<p>快速查看文件内容</p>
+<p>对文件按空格可以快速浏览文件内容</p>
+<p> </p>
+<h1 id="el_display_hub">EL_Display_Hub</h1>
+<p>链接：<a
+href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
+<p>iPad当副屏</p>
+<p>还要在ipad端App Store购买Twomon SE</p>
+<p> </p>
+<h1 id="potplayer">potplayer</h1>
+<p>链接：<a
+href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
+<p>本地视频播放器</p>
+<p>功能强大丰富，支持格式非常多。</p>
+<p> </p>
+<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
+<p>链接：<a
+href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
+<p>把QT的软件及库打包成一个exe文件</p>
+<p> </p>
+<h1 id="everything">everything</h1>
+<p>链接：<a
+href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
+<p>文件搜索</p>
+<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
+<p> </p>
+<h1 id="cajviewer">CAJViewer</h1>
+<p>链接：<a
+href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
+<p>CAJ阅读器</p>
+<p> </p>
+<h1 id="ddu">DDU</h1>
+<p>链接：<a
+href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
+<p>显卡驱动卸载</p>
+<p>常用于AMD显卡驱动卸载</p>
+<p> </p>
+<h1 id="vscode">vscode</h1>
+<p>链接：<a
+href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p>编辑器</p>
 ]]></content>
       <categories>
-        <category>通信</category>
+        <category>资源推荐</category>
       </categories>
       <tags>
-        <tag>通信</tag>
+        <tag>资源</tag>
       </tags>
   </entry>
   <entry>
@@ -620,6 +608,31 @@ hexo d</code></pre>
 <figcaption aria-hidden="true">image-20230719224938980</figcaption>
 </figure>
 <p>部署成功后就可以在浏览器输入：<code>https://用户名.github.io/</code>看到博客了。（部署后一般需要等几分钟）</p>
+]]></content>
+      <categories>
+        <category>hexo博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>（五）更换主题</title>
+    <url>/2023/10/15/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%BA%94%EF%BC%89%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[<p>Next主题用着不符合我的习惯，如主页文章占据大小太大，分类点开只显示文章名等。于是决定更换为butterfly主题。</p>
+<p>总体更换步骤并不复杂：<a
+href="https://butterfly.js.org/posts/21cfbf15/">官网参考资料</a></p>
+<ol type="1">
+<li>安装butterfly</li>
+<li>应用主题：修改 Hexo 根目录下的 _config.yml，把主题改为
+butterfly</li>
+<li>安装插件：butterfly需要 pug 以及 stylus 的渲染器</li>
+<li>配置主题：修改主题配置文件</li>
+<li>（可选）删除next主题文件夹和新建的_config.next.yml配置文件</li>
+</ol>
+<p>进行了前3步，主题就已经换为butterfly了。</p>
+<p>主要是第4步，需要跟着官网自定义配置，因为是中文，且非常详细，就不做叙述了，主题配置文件也有许多中文注释。</p>
 ]]></content>
       <categories>
         <category>hexo博客搭建</category>
@@ -1279,31 +1292,6 @@ $content-desktop-largest &#x3D; 73%</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>（五）更换主题</title>
-    <url>/2023/10/15/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%BA%94%EF%BC%89%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/</url>
-    <content><![CDATA[<p>Next主题用着不符合我的习惯，如主页文章占据大小太大，分类点开只显示文章名等。于是决定更换为butterfly主题。</p>
-<p>总体更换步骤并不复杂：<a
-href="https://butterfly.js.org/posts/21cfbf15/">官网参考资料</a></p>
-<ol type="1">
-<li>安装butterfly</li>
-<li>应用主题：修改 Hexo 根目录下的 _config.yml，把主题改为
-butterfly</li>
-<li>安装插件：butterfly需要 pug 以及 stylus 的渲染器</li>
-<li>配置主题：修改主题配置文件</li>
-<li>（可选）删除next主题文件夹和新建的_config.next.yml配置文件</li>
-</ol>
-<p>进行了前3步，主题就已经换为butterfly了。</p>
-<p>主要是第4步，需要跟着官网自定义配置，因为是中文，且非常详细，就不做叙述了，主题配置文件也有许多中文注释。</p>
-]]></content>
-      <categories>
-        <category>hexo博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>（四）插件安装和其他设置</title>
     <url>/2023/07/27/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E5%9B%9B%EF%BC%89%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E5%92%8C%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE/</url>
     <content><![CDATA[<p><mark>虽然更换了主题，但如果想要在新的主题添加这些功能，除了修改主题配置文件外，其他步骤是一样的，然后去新的主题教程里面跟着修改主题配置文件</mark></p>
@@ -1519,11 +1507,69 @@ waline:
       </tags>
   </entry>
   <entry>
+    <title>通信相关的零散知识点</title>
+    <url>/2023/09/01/%E9%80%9A%E4%BF%A1/%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
+    <content><![CDATA[
+]]></content>
+      <categories>
+        <category>通信</category>
+      </categories>
+      <tags>
+        <tag>通信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>QTcreator上位机</title>
+    <url>/2023/07/20/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/%E4%B8%8A%E4%BD%8D%E6%9C%BA/</url>
+    <content><![CDATA[<ul>
+<li><p>检查QByteArray每个字节的bit</p>
+<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">QByteArray byteData;
+const char *pData &#x3D; byteData.constData();
+for (int i &#x3D; 0; i &lt; byteData.size(); ++i) &#123;
+    for (int j &#x3D; 7; j &gt;&#x3D; 0; --j) &#123;
+        if (pData[i] &amp; (1 &lt;&lt; j)) &#123;
+            std::cout &lt;&lt; &quot;1&quot;;
+        &#125; else &#123;
+            std::cout &lt;&lt; &quot;0&quot;;
+        &#125;
+    &#125;
+    std::cout &lt;&lt; std::endl;
+&#125;
+std::cout &lt;&lt; &quot;--------------------&quot; &lt;&lt; std::endl;</code></pre></li>
+<li><p>更换图标，将.ico放到工程文件夹内，在.pro中添加</p>
+<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">RC_ICONS &#x3D; xxxxxx.ico</code></pre></li>
+<li><p>打包可执行文件：</p>
+<ul>
+<li><p>构建切换到Release模式，点击运行</p></li>
+<li><p>在build-xxxxx-Release文件夹中的release文件夹中找到xxx.exe，复制到新创建的一个文件夹（如MyEXE）中，</p></li>
+<li><p>开始菜单搜索qt，打开命令窗口，用" <mark>cd /d 路径</mark>
+"切换到MyEXE下，例如</p>
+<pre class="line-numbers language-none"><code class="language-none">cd &#x2F;d F:\projects\qtcreator\MyEXE</code></pre></li>
+<li><p>再输入：windeployqt xxx.exe</p>
+<pre class="line-numbers language-none"><code class="language-none">windeployqt xxx.exe</code></pre></li>
+<li><p>打包完成，已经可以正常使用了。接下来借用其他软件将所有文件打包到一个exe文件</p></li>
+<li><p>打开Enigma Virtual
+Box，选择刚才打包好的exe文件，点击增加，添加刚才新创建的文件夹（如MyEXE），点击“文件选项”，勾选压缩文件，确定，执行封包，等待，最后就可以得到只有一个可以运行的exe文件</p></li>
+</ul></li>
+</ul>
+<figure>
+<img src="image-20230412122755410.png" alt="image-20230412122755410" />
+<figcaption aria-hidden="true">image-20230412122755410</figcaption>
+</figure>
+]]></content>
+      <categories>
+        <category>软件使用</category>
+      </categories>
+      <tags>
+        <tag>QTCreator</tag>
+        <tag>上位机</tag>
+        <tag>软件打包</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AD20软件使用</title>
     <url>/2023/09/17/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/AD20%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<p>AD20软件基本使用流程</p>
-<span id="more"></span>
-<h1 id="打开ad">打开AD</h1>
+    <content><![CDATA[<h1 id="打开ad">打开AD</h1>
 <p><mark>注意</mark>：不要直接打开AD软件，而是打开对应的工程文件（.PrjPcb文件）。直接打开AD会默认打开之前的文件，但没有对应的工程。如下图：</p>
 <figure>
 <img src="image-20231012144556589.png" alt="image-20231012144556589" />
@@ -1645,58 +1691,10 @@ PCB Document ...
 </ul>
 ]]></content>
       <categories>
-        <category>通信</category>
-      </categories>
-      <tags>
-        <tag>AD</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>QTcreator上位机</title>
-    <url>/2023/07/20/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/%E4%B8%8A%E4%BD%8D%E6%9C%BA/</url>
-    <content><![CDATA[<ul>
-<li><p>检查QByteArray每个字节的bit</p>
-<pre class="line-numbers language-cpp" data-language="cpp"><code class="language-cpp">QByteArray byteData;
-const char *pData &#x3D; byteData.constData();
-for (int i &#x3D; 0; i &lt; byteData.size(); ++i) &#123;
-    for (int j &#x3D; 7; j &gt;&#x3D; 0; --j) &#123;
-        if (pData[i] &amp; (1 &lt;&lt; j)) &#123;
-            std::cout &lt;&lt; &quot;1&quot;;
-        &#125; else &#123;
-            std::cout &lt;&lt; &quot;0&quot;;
-        &#125;
-    &#125;
-    std::cout &lt;&lt; std::endl;
-&#125;
-std::cout &lt;&lt; &quot;--------------------&quot; &lt;&lt; std::endl;</code></pre></li>
-<li><p>更换图标，将.ico放到工程文件夹内，在.pro中添加</p>
-<pre class="line-numbers language-c++" data-language="c++"><code class="language-c++">RC_ICONS &#x3D; xxxxxx.ico</code></pre></li>
-<li><p>打包可执行文件：</p>
-<ul>
-<li><p>构建切换到Release模式，点击运行</p></li>
-<li><p>在build-xxxxx-Release文件夹中的release文件夹中找到xxx.exe，复制到新创建的一个文件夹（如MyEXE）中，</p></li>
-<li><p>开始菜单搜索qt，打开命令窗口，用" <mark>cd /d 路径</mark>
-"切换到MyEXE下，例如</p>
-<pre class="line-numbers language-none"><code class="language-none">cd &#x2F;d F:\projects\qtcreator\MyEXE</code></pre></li>
-<li><p>再输入：windeployqt xxx.exe</p>
-<pre class="line-numbers language-none"><code class="language-none">windeployqt xxx.exe</code></pre></li>
-<li><p>打包完成，已经可以正常使用了。接下来借用其他软件将所有文件打包到一个exe文件</p></li>
-<li><p>打开Enigma Virtual
-Box，选择刚才打包好的exe文件，点击增加，添加刚才新创建的文件夹（如MyEXE），点击“文件选项”，勾选压缩文件，确定，执行封包，等待，最后就可以得到只有一个可以运行的exe文件</p></li>
-</ul></li>
-</ul>
-<figure>
-<img src="image-20230412122755410.png" alt="image-20230412122755410" />
-<figcaption aria-hidden="true">image-20230412122755410</figcaption>
-</figure>
-]]></content>
-      <categories>
         <category>软件使用</category>
       </categories>
       <tags>
-        <tag>QTCreator</tag>
-        <tag>上位机</tag>
-        <tag>软件打包</tag>
+        <tag>AD</tag>
       </tags>
   </entry>
   <entry>
