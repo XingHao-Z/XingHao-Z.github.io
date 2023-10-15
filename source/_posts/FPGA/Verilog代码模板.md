@@ -6,11 +6,8 @@ tags:
  - UART
 category:
  - FPGA
+description: Verilog常用的重复的代码模板
 ---
-
-Verilog常用的重复的代码模板
-
-<!-- more -->
 
 # 分频
 

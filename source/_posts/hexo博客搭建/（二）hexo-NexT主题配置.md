@@ -1,19 +1,16 @@
 ---
-title: （二）hexo+NexT主题配置（持续更新）
+title: （二）hexo+NexT主题配置
 date: 2023-07-25 12:45:04
 tags:
  - hexo
  - 博客
 categories:
- - hexo+NexT博客搭建
+ - hexo博客搭建
+description: 介绍怎么通过修改站点配置文件、主题配置文件和自定义配置文件来配置博客。
 typora-root-url: （二）hexo-NexT主题配置
 ---
 
-本博客介绍怎么通过修改站点配置文件、主题配置文件和自定义配置文件来配置博客。
-
-还有许多配置后续再慢慢修改。
-
-<!--more-->
+<mark>23.10.15：主题更换为butterfly，但本文hexo基本配置部分是通用的</mark>
 
 # 1、前言
 

@@ -5,17 +5,10 @@ tags:
  - hexo
  - 博客
 categories:
- - hexo+NexT博客搭建
+ - hexo博客搭建
+description: 记录在window下使用hexo搭建博客的步骤。本节介绍内容：搭建前的准备；初步生成一个具有默认界面博客；免费部署到GitHub上。
 typora-root-url: （一）hexo的初步生成与部署
 ---
-
-记录在**window**下使用hexo搭建博客的步骤。
-
-本节介绍内容：
-
-搭建前的准备；初步生成一个具有默认界面博客；免费部署到GitHub上。
-
-<!--more-->
 
 参考资料：[hexo史上最全搭建教程](https://blog.csdn.net/sinat_37781304/article/details/82729029)
 
