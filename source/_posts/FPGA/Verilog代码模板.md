@@ -1,6 +1,6 @@
 ---
 title: Verilog代码模板
-date: 2023-07-20 12:03:39
+date: 2023-10-9 12:03:39
 tags:
  - FPGA
  - UART
