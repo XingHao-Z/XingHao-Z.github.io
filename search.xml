@@ -24,91 +24,616 @@
       </tags>
   </entry>
   <entry>
-    <title>软件资源推荐</title>
-    <url>/2023/10/09/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<h1 id="pot">Pot</h1>
-<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
-<p>截图翻译，划词翻译，OCR</p>
-<p> </p>
-<h1 id="snipaste">snipaste</h1>
-<p>链接：<a
-href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
-<p>截图工具。</p>
-<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
-<p> </p>
-<h1 id="dism">Dism++</h1>
-<p>链接：<a
-href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
-<p>window工具箱。</p>
-<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
-<p> </p>
-<h1 id="msi-afterburner">MSI Afterburner</h1>
-<p>链接：<a
-href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
-<p>性能监控软件。</p>
-<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
-<p> </p>
-<h1 id="图吧工具箱">图吧工具箱</h1>
-<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
-<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
-<p> </p>
-<h1 id="simpletex">SimpleTex</h1>
-<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
-<p>公式识别转换</p>
-<p>将图片中的公式转换为LaTeX格式</p>
-<p> </p>
-<h1 id="quicklook">QuickLook：</h1>
-<p>链接：<a
-href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
-<p>查看office的插件：<a
-href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
-<p>快速查看文件内容</p>
-<p>对文件按空格可以快速浏览文件内容</p>
-<p> </p>
-<h1 id="el_display_hub">EL_Display_Hub</h1>
-<p>链接：<a
-href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
-<p>iPad当副屏</p>
-<p>还要在ipad端App Store购买Twomon SE</p>
-<p> </p>
-<h1 id="potplayer">potplayer</h1>
-<p>链接：<a
-href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
-<p>本地视频播放器</p>
-<p>功能强大丰富，支持格式非常多。</p>
-<p> </p>
-<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
-<p>链接：<a
-href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
-<p>把QT的软件及库打包成一个exe文件</p>
-<p> </p>
-<h1 id="everything">everything</h1>
-<p>链接：<a
-href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
-<p>文件搜索</p>
-<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
-<p> </p>
-<h1 id="cajviewer">CAJViewer</h1>
-<p>链接：<a
-href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
-<p>CAJ阅读器</p>
-<p> </p>
-<h1 id="ddu">DDU</h1>
-<p>链接：<a
-href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
-<p>显卡驱动卸载</p>
-<p>常用于AMD显卡驱动卸载</p>
-<p> </p>
-<h1 id="vscode">vscode</h1>
-<p>链接：<a
-href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p>编辑器</p>
+    <title>（一）hexo的初步生成与部署</title>
+    <url>/2023/10/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%B8%80%EF%BC%89hexo%E7%9A%84%E5%88%9D%E6%AD%A5%E7%94%9F%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
+    <content><![CDATA[<p>参考资料：<a
+href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程</a></p>
+<h1 id="注册github">1、注册GitHub</h1>
+<p>​ 本博客最终免费部署到GitHub上，所以需要GitHub账号。<a
+href="https://github.com/">GitHub</a></p>
+<p>​ 没有的可以注册一个GitHub账号。</p>
+<p>​ <mark>记住GitHub的用户名和邮箱</mark></p>
+<h1 id="安装git">2、安装Git</h1>
+<p>​
+Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。这也是用来管理你的hexo博客文章，上传到GitHub的工具。廖雪峰老师的Git教程写的非常好：<a
+href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git教程</a>。可以简单了解下什么是Git，不需要深入了解Git的相关知识，要用什么直接上网查即可。</p>
+<p>​ 到git官网上下载windows版本，<a
+href="https://git-scm.com/download/win">Download for
+Windows</a>,下载安装后会有一个Git
+Bash的命令行工具，以后就用这个工具来使用git。</p>
+<p>​ 安装步骤参考：<a
+href="https://blog.csdn.net/mukes/article/details/115693833">Git
+详细安装教程</a></p>
+<p><img src="image-20230717204215864.png" /></p>
+<p><img src="image-20230717204412095.png" /></p>
+<p><img src="image-20230717204503188.png" /></p>
+<p><img src="image-20230717204556024.png" /></p>
+<p>​
+这里选择了vscode作为默认编辑器。也可以选择默认的Vim。选择vscode需要先下载vscode再进行下一步，还要在<code>我的电脑-&gt;属性-&gt;高级系统设置-&gt;高级-&gt;环境变量-&gt;系统变量-&gt;Path-&gt;编辑添加</code>（其实这步的设置默认编辑器暂时即可，在后续的整个搭建中还没有遇到需要使用这个的情况，仅仅是因为本人对vscode熟悉，所以设置成了vscode）</p>
+<p><img src="image-20230717204748855.png" /></p>
+<p><img src="image-20230717205646513.png" /></p>
+<p><img src="image-20230717210153103.png" /></p>
+<p><img src="image-20230717210230985.png" /></p>
+<p><img src="image-20230717210310753.png" /></p>
+<p><img src="image-20230717210341151.png" /></p>
+<p><img src="image-20230717210354519.png" /></p>
+<p><img src="image-20230717210441597.png" /></p>
+<p><img src="image-20230717210525764.png" /></p>
+<p><img src="image-20230717210539598.png" /></p>
+<p><img src="image-20230717210617763.png" /></p>
+<p><img src="image-20230717210628362.png" /></p>
+<p><img src="image-20230717210920155.png" /></p>
+<p>在开始菜单应用里打开<code>Git Bash</code>，输入<code>git --version</code>
+查看版本，检查是否安装成功</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
+<p><img src="image-20230717211651140.png" /></p>
+<p><img src="image-20230717211850855.png" /></p>
+<p>将Git和GitHub账号绑定，分别输入以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="image-20230717213051803.png" /></p>
+<h1 id="安装node.js">3、安装Node.js</h1>
+<p>Hexo是基于nodeJS编写的，所以需要安装nodeJs和里面的npm工具。<a
+href="https://nodejs.org/en/download/">nodejs</a>
+选择LTS版本就行了。</p>
+<p><img src="image-20230717213233534.png" /></p>
+<p><img src="image-20230717213247366.png" /></p>
+<p><img src="image-20230717213323064.png" /></p>
+<p><img src="image-20230717213337988.png" /></p>
+<p><img src="image-20230717213456752.png" /></p>
+<p><img src="image-20230717213508007.png" /></p>
+<h1 id="安装hexo">4、安装hexo</h1>
+<p>官网主页简单说明了会使用到的命令，下面详细说明：</p>
+<figure>
+<img src="image-20230719220206586.png" alt="image-20230719220206586" />
+<figcaption aria-hidden="true">image-20230719220206586</figcaption>
+</figure>
+<p>新建一个文件夹，命名最好英文，这里命名为<code>blog</code>，在该文件夹内右键打开
+<code>Git Bash</code> ，输入命令安装：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
+<p>安装完后使用 <code>hexo -v</code> 查看版本，验证安装是否完成</p>
+<p><img src="image-20230719215441428.png" /></p>
+<p>初始化hexo，输入命令创建文件夹<code>myblog</code>（也可以根据习惯修改文件夹名），这个文件夹就是<mark>站点根目录</mark>，后面会多次提到站点根目录</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br></pre></td></tr></table></figure>
+<p>然后输入命令进入<code>myblog</code>文件夹：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd myblog</span><br></pre></td></tr></table></figure>
+<p>输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p><img src="image-20230719220502367.png" /></p>
+<p>再依次输入：（也可输入简写：<code>hexo g</code> 和
+<code>hexo s</code>）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
+<p><code>hexo generate</code> 顾名思义，生成静态文章，可以用
+<code>hexo g</code>缩写 <code>hexo server</code>
+在本地开启服务，可以用<code>hexo s</code>缩写。后续修改配置会经常使用这个命令在本地查看效果。</p>
+<p><img src="image-20230719220908793.png" /></p>
+<p>根据命令行最后一行的提示<code>Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop</code>，可以在浏览器输入
+<code>http://localhost:4000/</code>，就可以在本地看到博客效果了。在<code>Git Bash</code>中按<code>Ctrl+C</code>退出服务。</p>
+<p><img src="image-20230719221213383.png" /></p>
+<p>到这里博客就已经生成好了。</p>
+<h1 id="免费部署到github">5、免费部署到GitHub</h1>
+<p>在GitHub中新建仓库</p>
+<p><img src="image-20230719221649324.png" /></p>
+<p>创建一个仓库，命名为
+<code>你的用户名.github.io</code>，只有这样，将来要部署到GitHub
+page的时候，才会被识别，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。点击底部的<code>Create repository</code>创建。</p>
+<p><img src="image-20230719221838539.png" /></p>
+<p>在<code>Git Bash</code>中输入以下两条，检查之前的用户名和邮箱输对没有：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
+<p>然后创建SSH，<mark>输入指令后需要按几次回车</mark></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;输入你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p><img src="image-20230719222606342.png" /></p>
+<p>这个时候它会告诉你已经生成了.ssh的文件夹。在你的电脑中找到这个文件夹。</p>
+<p><img src="image-20230719222836726.png" /></p>
+<blockquote>
+<p>ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
+</blockquote>
+<p>在GitHub的<code>setting</code>中，找到<code>SSH keys</code>的设置选项，点击<code>New SSH key</code></p>
+<p>把你的<code>id_rsa.pub</code>（可以用记事本打开）里面的信息复制到key。点击<code>Add SSH key</code></p>
+<p><img src="image-20230719223321141.png" /></p>
+<p>在<code>Git Bash</code>中，查看是否成功（中间要输入一次yes），最后出现successfully字样就是成功了。</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
+<p><img src="image-20230719223736052.png" /></p>
+<p>这一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件
+<code>_config.yml</code>，翻到最后，修改为：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/你的GitHub名字/你的GitHub名字.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
+<p><img src="image-20230719224127052.png" /></p>
+<p>这个时候需要先安装deploy-git
+，也就是部署的命令，这样你才能用命令部署到GitHub。在<code>Git Bash</code>中：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+<p><img src="image-20230719224402356.png" /></p>
+<p>然后依次输入：（输入<code>hexo d</code>可能出问题，大多是网络问题，可以多试几次，或过一会再试）</p>
+<p>（一直出问题可以参考：<a
+href="https://blog.csdn.net/Kevin_Carpricron/article/details/124069885">Hexo
+d部署报错之spawn failed的解决方案</a> 的方法2）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>其中 <code>hexo clean</code>清除了你之前生成的东西，也可以不加。</p>
+<p><code>hexo deploy</code> 部署文章，可以用<code>hexo d</code>缩写</p>
+<p><code>hexo d</code> 过程中会提示登录GitHub</p>
+<p><img src="image-20230719224938980.png" /></p>
+<p>部署成功后就可以在浏览器输入：<code>https://用户名.github.io/</code>看到博客了。（部署后一般需要等几分钟）</p>
 ]]></content>
       <categories>
-        <category>资源推荐</category>
+        <category>hexo博客搭建</category>
       </categories>
       <tags>
-        <tag>资源</tag>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>（三）Hexo博客的使用以及多端管理</title>
+    <url>/2023/10/04/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%B8%89%EF%BC%89Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%AB%AF%E7%AE%A1%E7%90%86/</url>
+    <content><![CDATA[<h1 id="发表博客">1、发表博客</h1>
+<h2 id="基本流程">1.1、基本流程</h2>
+<p>使用命令<code>hexo n 博客文件名</code>，就会在<code>站点根目录/source/_posts</code>
+下创建 <code>博客文件名.md</code>
+文件，打开该文件，会发现开头有内容了</p>
+<figure>
+<img src="image-20230726200030465.png" alt="image-20230726200030465" />
+<figcaption aria-hidden="true">image-20230726200030465</figcaption>
+</figure>
+<p>博客标题<code>title</code>默认和文件名一样，可以修改。</p>
+<p>写好后一般依次执行以下命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
+<p>过几分钟就能看到网站上有该博客了</p>
+<p>创建本地博客文件也可以不使用命令<code>hexo n 博客文件名</code>，直接在<code>站点根目录/source/_posts</code>
+下新建.md文件，也会被识别到。</p>
+<p>如果文件多了也可以在<code>站点根目录/source/_posts</code>下新建文件夹管理，我习惯把不同分类的博客放不同文件夹。</p>
+<p>根据这段时间搭建博客经验，hexo是通过浏览<code>站点根目录/source/_posts</code>下所有的文件夹和文件，只要是.md文件，就会被认为是博客。</p>
+<h2 id="添加分类和标签">2.2、添加分类和标签</h2>
+<p>在开头添加如下内容：（展示的就是这篇博客的开头）</p>
+<p><img src="image-20230726200857940.png" /></p>
+<p>一个博客可以有多个tag，分类也可以有多级</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"> - 第一级分类</span><br><span class="line"> - 第二级分类</span><br></pre></td></tr></table></figure>
+<p>使用命令创建博客的时候没有自动添加categories。打开<code>站点根目录\scaffolds\post.md</code>，修改如下</p>
+<p><img src="image-20230726201256582.png" /></p>
+<p>使用命令创建博客的时候就会自动增加<code>categories:</code></p>
+<h2 id="添加摘要">2.3、添加摘要</h2>
+<p><mark>只针对next主题</mark></p>
+<p>文章中使用<code>&lt;!-- more --&gt;</code>分割为两部分，之上的为摘要。博客主页默认显示的是博客的摘要。若没有摘要，主页则显示博客所有内容</p>
+<p><img src="image-20230726201432416.png" /></p>
+<h2 id="插入图片">2.4、插入图片</h2>
+<p>参考资料：<a
+href="https://hexo.io/zh-cn/docs/asset-folders#相对路径引用的标签插件">资源文件夹</a></p>
+<p>官网给了几种方法，我比较喜欢使用相对路径的方法</p>
+<p>打开<code>站点根目录/_config.yml</code>
+，修改：<code>post_assets_folder: true</code>，然后在该行下面添加</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">marked:</span><br><span class="line"> prependRoot: true</span><br><span class="line"> postAsset: true</span><br></pre></td></tr></table></figure>
+<p><img src="image-20230726201858689.png" /></p>
+<p>之后使用 <code>hexo n title</code>
+新建博客后，在<code>source/_posts</code>
+路径下会多添加一个叫和博客文件同名的文件夹（前面使用的"title"，这里文件夹就为title），把博客要用的图片放在该文件夹内，例如放入图片<code>image.png</code>，要在博客中使用该图片，使用以下语法</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![这里根据需要填写图片描述](image.png)</span><br></pre></td></tr></table></figure>
+<h1 id="多端管理">2、多端管理</h1>
+<p>参考资料：<a
+href="https://blog.csdn.net/K1052176873/article/details/122879462">Hexo在多台电脑上提交和更新</a></p>
+<p>上面的资料比较详细，我这里只说一下步骤（和资料不完全一样）。</p>
+<p>原本是在台式机搭建的博客，在笔记本上也想管理我的博客。我们称原始搭建博客的电脑为老电脑，另一个为新电脑</p>
+<p><strong>老电脑操作</strong></p>
+<p>在之前部署博客创建的GitHub仓库中新建分支，命名为hexo。打开仓库：</p>
+<p><img src="image-20230726202803755.png" /></p>
+<p>输入hexo，点击create。</p>
+<p>设置hexo分支为默认分支。（不会影响部署博客）</p>
+<p><img src="image-20230726203052804.png" /></p>
+<p>任意创建一个文件夹，在该文件夹下右键打开git bash，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:username/username.github.io.git</span><br></pre></td></tr></table></figure>
+<p>将下载的文件夹里的.git
+文件夹复制粘贴到站点根目录下，删除主题根目录下的.git文件夹（没有就不用管）。</p>
+<p>注意：站点根目录下应该有个<code>.gitignore文件</code>，用来忽略一些不需要的文件，表示这些类型文件不需要git。如果没有，右键新建，我的.gitignore文件里的内容如下</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br></pre></td></tr></table></figure>
+<p>站点根目录下打开git bash依次使用以下三条命令：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit –m add_branch</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>git add .</code>：这个命令用于将当前目录（包括子目录）中的所有更改添加到下一次提交中。当您在
+Git 仓库中进行更改时，这些更改一开始都被视为"未暂存"。使用
+<code>git add .</code> 命令，您告诉 Git
+将所有更改添加到暂存区（也称为"索引"），准备好进行下一次提交。</p>
+</blockquote>
+<blockquote>
+<p><code>git commit –m add_branch</code>：
+这个命令用于创建一个提交，并将暂存区中的所有更改作为一个单元保存到版本历史中。<code>-m</code>
+参数后面的 "add_branch"
+是提交的消息或注释，用于简要描述此次提交所做的更改。在实际使用时，您可以根据实际情况提供更具描述性的提交消息。</p>
+</blockquote>
+<blockquote>
+<p><code>git push</code>：
+这个命令用于将本地的提交推送到远程仓库。在团队协作中，当您完成一些工作并创建了一个或多个提交后，您可以使用
+<code>git push</code>
+命令将这些提交上传到共享的远程仓库，以便其他团队成员也可以看到您的更改。</p>
+</blockquote>
+<blockquote>
+<p>解释来自chatGPT</p>
+</blockquote>
+<p>此时已经成功将整个网站推送到了远程库的默认分支hexo</p>
+<p><strong>新电脑操作</strong></p>
+<p>安装Git和nodejs</p>
+<p>在<code>Git Bash</code>中输入以下两条，关联GitHub账号：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>然后创建SSH，输入指令后需要按几次回车</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;输入你的邮箱&quot;</span><br></pre></td></tr></table></figure>
+<p>如<a
+href="https://xinghao-z.github.io/2023/07/24/hexo+NexT%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%B8%80%EF%BC%89hexo%E7%9A%84%E5%88%9D%E6%AD%A5%E7%94%9F%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2/#5%E3%80%81%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E5%88%B0GitHub">（一）hexo的初步生成与部署</a>的
+“5、免费部署到GitHub” 中，添加新的SSH Key。</p>
+<p>创建一个文件夹，作为新电脑存放站点根目录的地方，克隆hexo分支到该文件夹</p>
+<p>再该文件夹下打开git bash，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:username/username.github.io.git</span><br></pre></td></tr></table></figure>
+<p>文件夹中就会出现 “username.github.io” 文件夹。</p>
+<p>继续依次输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
+<p>文件中会初始化一个blog文件夹，只保留该文件夹内的<strong>node_modules</strong>文件夹，其他的都删除。</p>
+<p>将“username.github.io”文件夹内的所有内容复制到blog文件夹下。</p>
+<p>运行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
+<p>blog文件夹就是新电脑的站点根目录。</p>
+<p><strong>同步</strong></p>
+<p>推荐后续在换设备写博客前，可以先打开Git
+bash执行<code>git pull</code>同步，再编写博客。</p>
+<p>不管是否换设备，编写修改了文件后最好执行以下命令，将更改的文件上传</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit –m ChangeFiles</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
+<p>将修改的文件上传到GitHub</p>
+<blockquote>
+<p>chatGPT：</p>
+<p><code>git pull</code>
+的目的是从远程仓库获取最新的更新，并尝试将这些更新合并到您当前的本地分支中，以便您的本地分支与远程分支保持同步。</p>
+<p>如果您在执行 <code>git pull</code> 前有未提交的更改，Git
+会尝试在合并更新之前先处理这些未提交的更改。这是为了确保在合并时不会覆盖您本地的工作或引起冲突。下面是执行
+<code>git pull</code> 前存在未提交更改的情况下可能发生的情况：</p>
+<ol type="1">
+<li><p><strong>自动合并</strong>：
+如果您的本地修改与远程分支的更新没有冲突，Git
+会尝试自动合并更新。它会先将您的未提交更改暂时存储起来（通常称为"stash"），然后将远程分支的更新合并到您当前的分支上。最后，Git
+会尝试将之前暂存的未提交更改再次应用到合并后的代码上。</p></li>
+<li><p><strong>合并冲突</strong>：
+如果您的本地修改与远程分支的更新产生冲突，Git
+将无法自动合并。在这种情况下，<code>git pull</code>
+操作会被中止，并且会在终端输出冲突的文件和位置。您需要手动解决这些冲突。</p>
+<p>解决冲突的过程需要打开冲突文件，查看并编辑其中的代码，以选择保留哪些更改或者如何合并这些更改。解决冲突后，您需要使用
+<code>git add</code> 命令将解决后的文件标记为已解决冲突状态，并使用
+<code>git commit</code> 提交这次合并的结果。</p></li>
+<li><p><strong>拒绝合并</strong>：
+在某些情况下，如果您的本地修改与远程分支的更新有潜在的不兼容性，Git
+可能会拒绝合并操作，并给出相应的错误提示。在这种情况下，您需要先处理本地的修改，例如，提交或者撤销您的更改，然后再执行
+<code>git pull</code>。</p></li>
+</ol>
+</blockquote>
+]]></content>
+      <categories>
+        <category>hexo博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>（二）hexo+NexT主题配置</title>
+    <url>/2023/10/04/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%BA%8C%EF%BC%89hexo-NexT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
+    <content><![CDATA[<p><mark>23.10.15：主题更换为butterfly，但本文hexo基本配置部分是通用的</mark></p>
+<h1 id="前言">1、前言</h1>
+<p>网上许多hexo+NexT主题配置教程是2020年前的，但这些年hexo和NexT主题已经更新了许多版本，这些教程已经过时，部分操作已经无法实现。</p>
+<p>可以打开在<code>站点根目录</code>打开<code>git bash</code>，输入<code>hexo -v</code>查看版本，我这里的版本为6.3.0。NexT在主题根目录下的<code>package.json</code>中查看，我的版本为8.17.1</p>
+<p>其实最好的教程就是官方文档，小伙伴可以参考<a
+href="https://hexo.io/zh-cn/docs/">hexo官方文档</a> 和 <a
+href="https://theme-next.js.org/">NexT官方文档</a>
+，有时相比在网上找到一堆过时的教程，效率更高。</p>
+<p>当然，根据本教程也能实现我的配置，但还想自定义的小伙伴就要自己再折腾下了。我也是从慢慢折腾过来的，开始什么也不懂。我也会介绍我配置中学到的一些东西，并简单教一下我是怎么自定义配置的，如果有错误的话，欢迎在评论区指正。</p>
+<p>推荐下我找到的比较好的教程：</p>
+<p><a
+href="https://sun_xy.gitee.io/blog/2018/10/16/hexo_next_blog/">Hexo+NexT
+打造一个炫酷博客</a></p>
+<p><a
+href="https://blog.csdn.net/wsmrzx/article/details/81478595">Hexo系列(四)
+NexT主题配置</a></p>
+<p><a
+href="https://zhuanlan.zhihu.com/p/106060640">个人博客第8篇——优化主题（持续更新）</a></p>
+<p>该节中会修改许多代码文件，最好使用一个好用的编辑器，推荐使用vscode。（当然记事本也行）</p>
+<h1 id="说明">2、说明</h1>
+<p>本节中会多次出现一些术语，先给出对应的说明</p>
+<p><code>站点根目录</code>：在（一）中提到过，使用<code>hexo init myblog</code>创建的文件夹<code>myblog</code>就是站点根目录，里面有source，themes，_config.yml等文件夹和文件。</p>
+<p><code>主题根目录</code>：站点根目录下的themes文件夹里，跟所使用的主题名字相关的一个文件夹，在安装主题后才会有这个文件夹，我这里是next文件夹，即<code>站点根目录\themes\next</code>，里面有languages，source等。</p>
+<p><code>站点配置文件</code>：<code>站点根目录</code>下的<code>_config.yml</code>文件。</p>
+<p><code>主题配置文件</code>：其他大多数教程中指的都是<code>主题根目录</code>下的<code>_config.yml</code>，修改该文件也可以，但新版的Hexo和NexT推荐使用代替配置文件：<a
+href="https://hexo.io/zh-cn/docs/configuration">配置|Hexo</a>，方便管理以及Hexo和NexT的更新。所以该教程中指的是<code>站点根目录</code>下的<code>_config.next.yml</code>文件（后面会创建该文件）。</p>
+<p><code>高级配置文件</code>：或者叫自定义样式文件，大多数教程中指的是<code>主题根目录\source\css\_custom\custom.styl</code>，但新版本的NexT已经弃用了该文件，现在已经找不到这个文件了，详情参考<a
+href="https://theme-next.js.org/docs/advanced-settings/custom-files.html">NexT官方文档</a>。该教程指的是<code>站点根目录\source\_data\styles.styl</code>（后面会创建该文件）。</p>
+<p><code>打开Git Bash</code>：无特殊说明都是在<code>站点根目录</code>下右键打开Git
+Bash。</p>
+<p><code>本地预览效果</code>：修改任何配置后，都可以打开Git
+Bash输入<code>hexo s</code>，在浏览器输入http://localhost:4000/在本地查看效果。</p>
+<h1 id="hexo基本配置">3、hexo基本配置</h1>
+<p>修改站点配置文件，详情参考<a
+href="https://hexo.io/zh-cn/docs/configuration">官方的配置</a>描述。下面只讲我修改了的部分。</p>
+<p><strong>网站</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">参数</th>
+<th style="text-align: left;">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><code>title</code></td>
+<td style="text-align: left;">网站标题</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>subtitle</code></td>
+<td style="text-align: left;">网站副标题</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><code>author</code></td>
+<td style="text-align: left;">您的名字</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><code>language</code></td>
+<td style="text-align: left;">网站使用的语言，中文设置为zh-CN</td>
+</tr>
+</tbody>
+</table>
+<blockquote>
+<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
+</blockquote>
+<p><strong>网址</strong></p>
+<table>
+<thead>
+<tr class="header">
+<th>参数</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>url</code></td>
+<td>网址</td>
+</tr>
+</tbody>
+</table>
+<p>在这里，你需要把url改成你的网站域名。</p>
+<p><strong>writing</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>这一段是关于代码块风格设置，参考<a
+href="https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS">hexo官网的说明</a>和<a
+href="https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Codeblock-Style">next官网说明</a>，hexo支持两种库：
+<a href="https://github.com/highlightjs/highlight.js">highlight.js</a>
+和 <a href="https://github.com/PrismJS/prism">prismjs</a>
+。next主题官方也只能设置这两种。在这两种库下都有多种风格可选。</p>
+<p>要用哪个库把相应的<code>enable</code>设为<code>true</code>，另一个的<code>enable</code>设为<code>false</code>，我选择了<code>prismjs</code>。其他的设置根据需要参考官网调整，我这里设为默认。</p>
+<p>具体使用<code>prismjs</code>的哪一个主题还需要在后续主题配置文件里修改。</p>
+<p><strong>主题选择</strong></p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
+<p>要用哪个主题，就把这里设为<code>站点根目录\themes</code>下相应主题所在的文件夹名。</p>
+<h1 id="next基本配置">4、NexT基本配置</h1>
+<p>主题的修改不完全是主题配置文件的修改以及高级配置文件的修改，有的配置需要改一些特殊的文件，遇到会特殊说明</p>
+<h2 id="安装主题">4.1 安装主题</h2>
+<p>打开Git Bash，输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
+<p>如果出现问题，可以手动去https://github.com/next-theme/hexo-theme-next下载，放到<code>站点根目录/themes/next</code></p>
+<p>这样，就有了主题根目录，即<code>站点根目录/themes/next</code></p>
+<p>可以输入<code>hexo g</code>和<code>hexo s</code>本地预览效果</p>
+<h2 id="主题配置">4.2 主题配置</h2>
+<p>复制主题根目录下的`<code>_config.yml</code>文件，粘贴到站点根目录下，修改文件名为<code>_config.next.yml</code>（注意别把站点配置文件覆盖了）。这就是主题配置文件。打开该文件。</p>
+<h3 id="主题选择">主题选择</h3>
+<p><img src="image-20230726151245933.png" /></p>
+<p>通过注释和取消注释选择主题，这里选择Mist，后面也是根据Mist调整。也可以试下其他主题，在本地预览效果，挑自己喜欢的。</p>
+<p>23.7.27：更换为Pisces，最后的高级配置修改为针对Pisces。其他设置通用</p>
+<p>23.7.28：更换为Gemini，最后的高级配置修改为针对Gemini。其他设置通用</p>
+<h3 id="菜单">菜单</h3>
+<p><img src="image-20230726151423449.png" /></p>
+<p>会在博客顶部根据上图中的顺序依次添加菜单，但此时标签，分类，关于都无法打开，需要添加页面</p>
+<p><img src="image-20230726151519546.png" /></p>
+<p>Git Bash依次输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
+<p>标签页面还要在<code>站点根目录/source/tags/index.md</code> 中加上
+<code>type: "tags"</code>，才会在标签页面显示标签</p>
+<p><img src="image-20230726151600771.png" /></p>
+<h3 id="关闭渐入效果">关闭渐入效果</h3>
+<p>搜索<code>motion</code>，将<code>enable</code>后面改为<code>false</code>，喜欢这个效果的的也可以不关</p>
+<p><img src="image-20230726151800143.png" /></p>
+<h3 id="字体和代码">字体和代码</h3>
+<p>字体和代码的部分设置是一起的，放在一起说。</p>
+<p>先说修改字体。官网说的比较详细：<a
+href="https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Fonts-Customization">Fonts
+Customization</a></p>
+<p><strong>字体：</strong></p>
+<p>在<code>主题配置文件</code>中</p>
+<p><img src="image-20230726153050491.png" /></p>
+<p>先把<code>enable</code>设为<code>true</code>。</p>
+<p><code>host</code> 和 后面的每个设置的 <code>external</code> 和
+<code>family</code>
+我任意修改之后似乎都没起作用，，我也不需要设置，就都保持默认了，想修改的可以参考下其他资料。我只设置了<code>size</code>，单位为em（<code>1em</code>等于<code>16px</code>）</p>
+<ul>
+<li><code>global</code>：全局设置，size改变后所有字体大小都会变</li>
+<li><code>title</code>：博客名称的字体设置。字体大小受<code>global</code>下的<code>size</code>设置和<code>title</code>的<code>size</code>设置的双重影响</li>
+<li><code>heading</code>：文章中各级题目的设置，即用 <code># 题目</code>
+语法的部分。字体大小受<code>global</code>下的<code>size</code>设置和<code>heading</code>的<code>size</code>设置的双重影响</li>
+<li><code>posts</code>：官网说是文章主要字体的设置，但因为这两项我改了都不起作用，所以无法判断具体是什么设置。我也尝试加上<code>size:</code>来设置大小，不起作用</li>
+<li><code>codes</code>：代码块的设置，试图加上<code>size</code>设置大小，不起作用</li>
+</ul>
+<p><strong>代码块</strong></p>
+<p>前面提到了：</p>
+<blockquote>
+<p>hexo支持两种库： <a
+href="https://github.com/highlightjs/highlight.js">highlight.js</a> 和
+<a href="https://github.com/PrismJS/prism">prismjs</a>
+。next主题官方也只能设置这两种。在这两种库下都有多种风格可选。要用哪个库把先把站点配置文件下对用主题下的<code>enable</code>设为<code>true</code>，另一个的<code>enable</code>设为<code>false</code>，我选择了<code>prismjs</code>，其他的设置根据需要参考官网调整，我这里设为默认。</p>
+</blockquote>
+<p><img src="image-20230726153648860.png" /></p>
+<p>如果前面选择<code>highlight</code>，就是<code>theme</code>后面设置起作用，我选择了<code>prism</code>，所以<code>prism</code>后面两个设置起作用，分别是正常模式下的代码主题和黑暗模式下的代码主题，我博客没开黑暗模式，所以根据<code>light</code>选项的设置。不同的风格可以去上图中364行提到的网站预览。<a
+href="https://theme-next.js.org/highlight/">NexT Highlight Theme
+Preview</a></p>
+<p>我这里选择了<code>prism-tomorrow</code>，但这个主题的代码字体太大，在后面的高级配置中会进行调整</p>
+<p>博客中代码块右上角还可以添加复制按钮，并且可以设置复制按钮样式，将<code>copy_botton</code>下的<code>enable</code>设为<code>true</code>，样式有三种，可以自己试试喜欢哪一个</p>
+<p><img src="image-20230726154526462.png" /></p>
+<p>设置完成后，行内代码（即用``包含的部分）的颜色也是黑色，会显得非常的突兀，后面的高级配置会修改。</p>
+<h3 id="博客目录序号">博客目录序号</h3>
+<p>禁止自动添加序号，因为我自己会加，不需要自动添加。并且我想要默认展开全部目录。修改设置如下：</p>
+<p><img src="image-20230726154954945.png" /></p>
+<h3 id="隐藏底部由...强力驱动">隐藏底部“由...强力驱动”</h3>
+<p>将<code>powered</code>修改为<code>false</code></p>
+<p><img src="image-20230730213548467.png" /></p>
+<h3 id="头像">头像</h3>
+<p><img src="image-20230730214105518.png" /></p>
+<p>将头像图片放在<code>主题根目录/source/images</code>下，url格式如图</p>
+<h2 id="高级配置">4.3 高级配置</h2>
+<p>参考<a
+href="https://theme-next.js.org/docs/advanced-settings/custom-files.html">NexT官方文档</a></p>
+<p>新建<code>站点根目录\source\_data</code>文件夹，里面新建<code>styles.styl</code>文件，将主题配置文件的<code>custom_file_path</code>下的<code>style</code>取消注释</p>
+<p><img src="image-20230726155327746.png" /></p>
+<p><code>styles.styl</code>文件的优先级很高，许多自定义配置都能在这里面添加，这个是用的CSS语言，虽然我之前也没接触过，但折腾了几下也会一些基本的修改，不懂得也可以去网上查，以及问ChatGPT。</p>
+<p>我简单介绍一下自定义配置的操作思路</p>
+<p><img src="image-20230726160932524.png" /></p>
+<p>在浏览器中打开本地预览，按F12打开控制台（不同浏览器显示位置可能不同，但操作逻辑是一样的，我这里使用的Edge）</p>
+<ul>
+<li>鼠标点击1，用于选择一个网页元素</li>
+<li>鼠标点击2，选择这一个行内代码</li>
+<li>右下方显示了这个元素相关的设置，在3找到背景和字体颜色的设置</li>
+<li>将这个代码复制到<code>styles.styl</code>文件，修改这两个属性即可。</li>
+</ul>
+<p><img src="image-20230726161349059.png" /></p>
+<p>注意：</p>
+<p>1、各元素的相同设置可能会在多个地方出现，一定要找对这个元素独特的类，即上图中的<code>code, kbd, figure.highlight, pre</code>，你可以在上图的控制台更下面也找到color的设置，如果修改了这个设置，可能会影响多个地方。</p>
+<p>2、并不是出现了的属性我们才能去设置，比如还能设置上边距等属性</p>
+<h3 id="styles.styl文件">styles.styl文件</h3>
+<p>下面放上我使用的<code>styles.styl</code>文件，希望可以给出一些参考</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">//23.8.4更新，使用的Gemini主题</span></span><br><span class="line"><span class="comment">//文章内链接文本样式</span></span><br><span class="line"><span class="comment">// .post-body p a&#123;</span></span><br><span class="line"><span class="comment">//   color: #0593d3;</span></span><br><span class="line"><span class="comment">//   border-bottom: none;</span></span><br><span class="line"><span class="comment">//   border-bottom: 1px solid #0593d3;</span></span><br><span class="line"><span class="comment">//   &amp;:hover &#123;</span></span><br><span class="line"><span class="comment">//     color: #fc6423;</span></span><br><span class="line"><span class="comment">//     border-bottom: none;</span></span><br><span class="line"><span class="comment">//     border-bottom: 1px solid #fc6423;</span></span><br><span class="line"><span class="comment">//   &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attr">--link-color</span>: <span class="number">#0593d3</span>;</span><br><span class="line">  <span class="attr">--link-hover-color</span>: <span class="number">#fc6423</span>;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// a:hover &#123;</span></span><br><span class="line"><span class="comment">//     border-bottom-color: var(--link-hover-color);</span></span><br><span class="line"><span class="comment">//     color: var(--link-hover-color);</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//代码块</span></span><br><span class="line"><span class="selector-class">.code-container</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//行内代码</span></span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">code</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">figure</span><span class="selector-class">.highlight</span>, pre &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f9f2f4</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#dd0055</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//博客名</span></span><br><span class="line"><span class="selector-class">.posts-expand</span> <span class="selector-class">.post-title</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24px</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">550</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.posts-expand</span> <span class="selector-class">.post-title-link</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(<span class="number">90deg</span>, <span class="number">#404040</span> <span class="number">0%</span>, <span class="number">#707070</span> <span class="number">25%</span>, <span class="number">#909090</span> <span class="number">50%</span>, <span class="number">#707070</span> <span class="number">75%</span>, <span class="number">#404040</span> <span class="number">100%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//侧边栏</span></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">0px</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.post-toc</span> <span class="selector-class">.nav-item</span> &#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//隐藏图片名</span></span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-class">.image-caption</span>, <span class="selector-class">.post-body</span> <span class="selector-tag">img</span> + <span class="selector-tag">figcaption</span>, <span class="selector-class">.post-body</span> <span class="selector-class">.fancybox</span> + <span class="selector-tag">figcaption</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//分类页</span></span><br><span class="line"><span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: disc;     <span class="comment">//一级分类前加实心圆点</span></span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">18px</span>;      <span class="comment">//调整字体</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//菜单</span></span><br><span class="line"><span class="selector-class">.menu</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">18px</span>;    <span class="comment">//字体</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//链接网格取消动画</span></span><br><span class="line"><span class="selector-class">.link-grid</span> <span class="selector-class">.link-grid-container</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: none <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中文字的颜色和背影颜色</span></span><br><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#328cfa</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// .post-footer &#123;</span></span><br><span class="line"><span class="comment">//     display: flex;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//[Read More]按钮样式</span></span><br><span class="line"><span class="comment">// .post-button .btn &#123;</span></span><br><span class="line"><span class="comment">//   color: #555 !important;</span></span><br><span class="line"><span class="comment">//   background-color: rgb(255, 255, 255);</span></span><br><span class="line"><span class="comment">//   border-radius: 3px;</span></span><br><span class="line"><span class="comment">//   font-size: 15px;</span></span><br><span class="line"><span class="comment">//   box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);</span></span><br><span class="line"><span class="comment">//   border: none !important;</span></span><br><span class="line"><span class="comment">//   transition-property: unset;</span></span><br><span class="line"><span class="comment">//   padding: 0px 15px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .post-button .btn:hover &#123;</span></span><br><span class="line"><span class="comment">//   color: rgb(255, 255, 255) //!important;</span></span><br><span class="line"><span class="comment">//   border-radius: 3px;</span></span><br><span class="line"><span class="comment">//   font-size: 15px;</span></span><br><span class="line"><span class="comment">//   //box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);</span></span><br><span class="line"><span class="comment">//   //background-image: linear-gradient(90deg, #404040 0%, #707070 25%, #909090 50%, #707070 75%, #404040 100%);</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//背景图片设置</span></span><br><span class="line"><span class="comment">// body &#123;</span></span><br><span class="line"><span class="comment">//   background-image: url(/images/background.jpg);</span></span><br><span class="line"><span class="comment">//   background-repeat: no-repeat;</span></span><br><span class="line"><span class="comment">//   background-attachment: fixed;</span></span><br><span class="line"><span class="comment">//   background-size: 100% 100%;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//文章块设置</span></span><br><span class="line"><span class="comment">// .post-block:first-of-type &#123;</span></span><br><span class="line"><span class="comment">//     padding-top: 45px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .post-block &#123;</span></span><br><span class="line"><span class="comment">//   //margin-bottom: 50px;</span></span><br><span class="line"><span class="comment">//   margin-bottom: 20px;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   //border-radius: 10px;</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">//   padding: 45px 36px 36px 36px;</span></span><br><span class="line"><span class="comment">//   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);</span></span><br><span class="line"><span class="comment">//   background-color: rgba(255, 255, 255, 1);</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//归档</span></span><br><span class="line"><span class="comment">// .posts-collapse .post-content .post-header &#123;</span></span><br><span class="line"><span class="comment">//   border-bottom: 0px dashed #ccc;</span></span><br><span class="line"><span class="comment">//   margin: 30px 2px 0;</span></span><br><span class="line"><span class="comment">//   padding-left: 15px;</span></span><br><span class="line"><span class="comment">//   position: relative;</span></span><br><span class="line"><span class="comment">//   transition: border 0.2s ease-in-out;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   font-size: 16px;</span></span><br><span class="line"><span class="comment">//   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);</span></span><br><span class="line"><span class="comment">//   width: 600px;</span></span><br><span class="line"><span class="comment">//   height: 40px;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   padding-top: 25px;</span></span><br><span class="line"><span class="comment">//   padding-bottom: 15px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .posts-collapse .post-content .post-meta-container &#123;</span></span><br><span class="line"><span class="comment">//     display: inline;</span></span><br><span class="line"><span class="comment">//     font-size: 16px;</span></span><br><span class="line"><span class="comment">//     margin-right: 10px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .posts-collapse .post-content .post-header::before &#123;</span></span><br><span class="line"><span class="comment">//     top: 37px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//分类页面左边添加竖线，调整间距</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list &#123;</span></span><br><span class="line"><span class="comment">//   list-style: none;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list li &#123;</span></span><br><span class="line"><span class="comment">//   position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */</span></span><br><span class="line"><span class="comment">//   padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   margin-top: 15px;</span></span><br><span class="line"><span class="comment">//   margin-right: 10px;</span></span><br><span class="line"><span class="comment">//   margin-bottom: 15px;</span></span><br><span class="line"><span class="comment">//   margin-left: 10px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list li::before &#123;</span></span><br><span class="line"><span class="comment">//   content: &quot;&quot;; /* 添加伪元素的内容，此处为空 */</span></span><br><span class="line"><span class="comment">//   position: absolute; /* 将伪元素绝对定位到列表项内 */</span></span><br><span class="line"><span class="comment">//   top: 0; /* 设置伪元素的顶部位置 */</span></span><br><span class="line"><span class="comment">//   left: 0; /* 设置伪元素的左侧位置 */</span></span><br><span class="line"><span class="comment">//   width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */</span></span><br><span class="line"><span class="comment">//   height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */</span></span><br><span class="line"><span class="comment">//   background-color: #3E2EBF; /* 设置竖线的颜色 */</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list-child &#123;</span></span><br><span class="line"><span class="comment">//   list-style: none;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list-child li &#123;</span></span><br><span class="line"><span class="comment">//   position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */</span></span><br><span class="line"><span class="comment">//   padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list-child li::before &#123;</span></span><br><span class="line"><span class="comment">//   content: &quot;&quot;; /* 添加伪元素的内容，此处为空 */</span></span><br><span class="line"><span class="comment">//   position: absolute; /* 将伪元素绝对定位到列表项内 */</span></span><br><span class="line"><span class="comment">//   top: 0; /* 设置伪元素的顶部位置 */</span></span><br><span class="line"><span class="comment">//   left: 0; /* 设置伪元素的左侧位置 */</span></span><br><span class="line"><span class="comment">//   width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */</span></span><br><span class="line"><span class="comment">//   height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */</span></span><br><span class="line"><span class="comment">//   background-color: #B1A7FE; /* 设置竖线的颜色 */</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//隐藏首页文章底部的横线</span></span><br><span class="line"><span class="comment">// .post-eof &#123;</span></span><br><span class="line"><span class="comment">//   display: none;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// article &#123;</span></span><br><span class="line"><span class="comment">//   font-size: 18px;  //归档下文章名字体</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h3 id="variables.styl文件">variables.styl文件</h3>
+<p>将主题配置文件的<code>custom_file_path</code>下的<code>variables</code>取消注释</p>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">//标签云颜色</span></span><br><span class="line"><span class="variable">$tag</span>-cloud-start      = <span class="number">#9733EE</span>;</span><br><span class="line"><span class="variable">$tag</span>-cloud-end        = <span class="number">#FF512F</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//$content-desktop         = &#x27;calc(100% - %s)&#x27; % unit($content-desktop-padding / 2, &#x27;px&#x27;)</span></span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">1160px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">73%</span></span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>hexo博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>（五）更换主题</title>
+    <url>/2023/10/08/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%BA%94%EF%BC%89%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/</url>
+    <content><![CDATA[<p>Next主题用着不符合我的习惯，如主页文章占据大小太大，分类点开只显示文章名等。于是决定更换为butterfly主题。</p>
+<p>总体更换步骤并不复杂：<a
+href="https://butterfly.js.org/posts/21cfbf15/">官网参考资料</a></p>
+<ol type="1">
+<li>安装butterfly</li>
+<li>应用主题：修改 Hexo 根目录下的 _config.yml，把主题改为
+butterfly</li>
+<li>安装插件：butterfly需要 pug 以及 stylus 的渲染器</li>
+<li>配置主题：修改主题配置文件</li>
+<li>（可选）删除next主题文件夹和新建的_config.next.yml配置文件</li>
+</ol>
+<p>进行了前3步，主题就已经换为butterfly了。</p>
+<p>主要是第4步，需要跟着官网自定义配置，因为是中文，且非常详细，就不做叙述了，主题配置文件也有许多中文注释。</p>
+]]></content>
+      <categories>
+        <category>hexo博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>（四）插件安装和其他设置</title>
+    <url>/2023/10/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E5%9B%9B%EF%BC%89%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E5%92%8C%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE/</url>
+    <content><![CDATA[<p><mark>虽然更换了主题，但如果想要在新的主题添加这些功能，除了修改主题配置文件外，其他步骤是一样的，然后去新的主题教程里面跟着修改主题配置文件</mark></p>
+<h1 id="前言">前言</h1>
+<p>NexT中已经自带了许多插件，很多不需要额外安装，只需要在主题配置文件中设置一下即可。但还有一些好用的插件需要额外安装。</p>
+<h1 id="自带插件">自带插件</h1>
+<h2 id="显示数学公式">显示数学公式</h2>
+<p>资料：<a
+href="https://theme-next.js.org/docs/third-party-services/math-equations.html">Math
+Equations|NexT</a></p>
+<p>NexT 提供了两个用于显示数学公式的渲染引擎：<a
+href="https://www.mathjax.org/">MathJax</a>和<a
+href="https://katex.org/">KaTeX</a>。（butterfly也提供）</p>
+<p>我选择了MathJax，虽然说的渲染速度慢一点，但兼容性很好。</p>
+<p>KaTeX只支持LaTeX语法，重要的是在上面的资料中提到了KaTeX存在许多问题，比如使用行内公式，即使用<code>\$公式$</code>语法，前后除了空格不能有其他字符，但我使用行内公式就是为了将公式放入到文字中而不是单独使用一行。</p>
+<p>要使用哪个渲染引擎首先在主题配置文件中修改，将对应的enable改为true：</p>
+<p><img src="image-20230727115452110.png" /></p>
+<p><code>every_page</code>：设置为true，默认为每一个博客渲染数学公式；设置为false，只会为开头加了<code>mathjax: true</code>的博客渲染，如下</p>
+<p><img src="image-20230727115655944.png" /></p>
+<p>hexo自带了一个渲染器hexo-renderer-marked，但并不好用，很容易渲染错误。</p>
+<p>NexT推荐使用hexo-renderer-pandoc</p>
+<p>要使用这个首先要安装<a
+href="https://github.com/jgm/pandoc">pandoc</a></p>
+<p><img src="image-20230727120948271.png" /></p>
+<p><img src="image-20230727121030837.png" /></p>
+<p>安装好后，在站点根目录打开Git bash，依次输入：</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked</span><br><span class="line">npm i hexo-renderer-pandoc</span><br></pre></td></tr></table></figure>
+<p>就可以正常使用了。</p>
+<div class="note warning flat"><p>在编写公式时，如果出现连续的花括号，要在每个<em>左</em>花括号间加空格，否则会被识别成Nunjucks模板语法，导致生成错误，如：</p>
+<p><img src="image-20230806224047166.png" /></p>
+<p>在<code>hexo g</code>时会报错，需要改为：<code>$\overline{ {u_{\mathbf{d}}}}$</code></p>
+</div>
+<h2 id="自动空格">自动空格</h2>
+<p>主题配置文件：</p>
+<p><img src="image-20230727123633622.png" /></p>
+<p>设置后，会自动在连着的英语和中文之间添加空格。</p>
+<h2 id="本地搜索">本地搜索</h2>
+<p>在站点根目录下打开git bash执行</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
+<p>打开站点配置文件，在最后<strong>添加</strong>以下代码</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
+<p>打开主题配置文件，<strong>修改</strong>：</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+<h2 id="评论系统">评论系统</h2>
+<p>NexT内部自带了几个评论系统的设置，但查阅资料后发现<strong>waline</strong>评论系统更加好用，所以选择了<strong>waline</strong>评论系统。</p>
+<p>但waline系统需要一个额外的域名（自带的域名需要魔法上网），才能正常显示评论和写评论等。</p>
+<p>我选择在腾讯云买了一个最便宜的域名，第一年只要9元，后面绑定域名的操作也是基于腾讯云平台的。</p>
+<p><a
+href="https://waline.js.org/guide/get-started/">waline官网</a>步骤已经说的非常详细了，但有几个步骤一点差别。一样步骤的我就简单略过，大家参考官网即可，不一样步骤再详细的说一下。</p>
+<p>进入上面提到的官网</p>
+<h3 id="leancloud设置">LeanCloud设置</h3>
+<p>完全跟官网的步骤做即可</p>
+<h3 id="vercel-部署">Vercel 部署</h3>
+<p>注意第4步输入环境变量，<strong>key</strong>输入的是<strong>LEAN_ID</strong>,
+<strong>LEAN_KEY</strong> 和
+<strong>LEAN_MASTER_KEY</strong>，<strong>value</strong>则是对应的
+<strong>APP ID</strong>, <strong>APP KEY</strong>, <strong>Master
+Key</strong>，输入一个后点<strong>Add
+another</strong>，一共输入三个，最后点右下角<strong>save</strong></p>
+<p><img src="image-20230728164318018.png" /></p>
+<p>其他步骤按官网步骤。</p>
+<h3 id="绑定域名-可选">绑定域名 (可选)</h3>
+<p>先在腾讯云买一个域名（第一次买会有几次审核，我等了2个小时左右，域名最终才可用）。我选择了最便宜的.top。假定买的域名为123.top。</p>
+<p>按第二部输入123.top后，</p>
+<p><img src="image-20230728165607469.png" /></p>
+<p>选第三个。</p>
+<p>添加后会提示我们：</p>
+<p><img src="image-20230728165711515.png" /></p>
+<p>打开腾讯云的控制台，进入<code>DNS 解析 DNSPod</code></p>
+<p><img src="image-20230728170842612.png" /></p>
+<p>选择你的域名，进入，点击<code>添加记录</code></p>
+<p><img src="image-20230728171051026.png" /></p>
+<p>主机记录填写上面<strong>Name</strong>，记录类型选择<strong>Type</strong>，记录值填写<strong>Value</strong></p>
+<p><img src="image-20230728171558589.png" /></p>
+<p>会发现这个界面的<strong>Domains</strong>会多出123.top</p>
+<p>123.top就是评论系统的网址。</p>
+<h3 id="html-引入-客户端">HTML 引入 (客户端)</h3>
+<p>官网上的这一步不需要。跳过。</p>
+<h3 id="评论管理-管理端">评论管理 (管理端)</h3>
+<p>访问<code>123.top/ui/register</code>进行注册，首个注册的人会被设定成管理员。</p>
+<p>管理员登陆后，即可看到评论管理界面。在这里可以修改、标记或删除评论。</p>
+<p>用户也可通过评论框注册账号，登陆后会跳转到自己的档案页。</p>
+<h3 id="本地博客设置">本地博客设置</h3>
+<p><a
+href="https://github.com/walinejs/waline/tree/main/packages/hexo-next">Hexo
+NexT Waline</a></p>
+<p>在站点根目录打开gitbash输入：<code>npm install @waline/hexo-next</code></p>
+<p>在主题配置文件中添加以下内容，enable设为true，serverURL设为123.top，其他设置按照说明根据喜好设置</p>
+<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Waline Config File</span></span><br><span class="line"><span class="comment"># For more information:</span></span><br><span class="line"><span class="comment"># - https://waline.js.org</span></span><br><span class="line"><span class="comment"># - https://waline.js.org/reference/component.html</span></span><br><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="comment"># New! Whether enable this plugin</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Waline server address url, you should set this to your own link</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="string">https://waline.vercel.app</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Waline library CDN url, you can set this to your preferred CDN</span></span><br><span class="line">  <span class="comment"># libUrl: https://unpkg.com/@waline/client@v2/dist/waline.js</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Waline CSS styles CDN url, you can set this to your preferred CDN</span></span><br><span class="line">  <span class="attr">cssUrl:</span> <span class="string">https://unpkg.com/@waline/client@v2/dist/waline.css</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Custom locales</span></span><br><span class="line">  <span class="comment"># locale:</span></span><br><span class="line">  <span class="comment">#   placeholder: Welcome to comment # Comment box placeholder</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  <span class="attr">commentCount:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Pageviews count, <span class="doctag">Note:</span> You should not enable both `waline.pageview` and `leancloud_visitors`.</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Custom emoji</span></span><br><span class="line">  <span class="comment"># emoji:</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/weibo</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/alus</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/bilibili</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/qq</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/tieba</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/tw-emoji</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Comment information, valid meta are nick, mail and link</span></span><br><span class="line">  <span class="comment"># meta:</span></span><br><span class="line">  <span class="comment">#   - nick</span></span><br><span class="line">  <span class="comment">#   - mail</span></span><br><span class="line">  <span class="comment">#   - link</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Set required meta field, e.g.: [nick] | [nick, mail]</span></span><br><span class="line">  <span class="comment"># requiredMeta:</span></span><br><span class="line">  <span class="comment">#   - nick</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP</span></span><br><span class="line">  <span class="comment"># lang: zh-CN</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Word limit, no limit when setting to 0</span></span><br><span class="line">  <span class="comment"># wordLimit: 0</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Whether enable login, can choose from &#x27;enable&#x27;, &#x27;disable&#x27; and &#x27;force&#x27;</span></span><br><span class="line">  <span class="comment"># login: enable</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># comment per page</span></span><br><span class="line">  <span class="comment"># pageSize: 10</span></span><br></pre></td></tr></table></figure>
+<p>保存部署后，就可以看到评论区了。</p>
+<p>但这样分类，标签和关于页面下也有评论区，但我只想在博客里显示评论。</p>
+<p>打开<code>站点根目录\source</code>，打开<code>about</code>，<code>categories</code>，<code>tags</code>文件夹下的<code>index.md</code>，在顶部添加<code>comments: false</code></p>
+<p><img src="image-20230728172758161.png" /></p>
+]]></content>
+      <categories>
+        <category>hexo博客搭建</category>
+      </categories>
+      <tags>
+        <tag>hexo</tag>
+        <tag>博客</tag>
       </tags>
   </entry>
   <entry>
@@ -233,10 +758,7 @@ Classes，右击对应的类，连接-&gt;隐藏，即可隐藏GND。其他Net�
 <li><p><strong>从原理图更新到PCB</strong>：修改原理图后，要更新PCB，在原理图选择：设计-&gt;update
 PCB Document ...
 弹出的界面<strong>要取消勾选下列选项</strong>（或类似选项）</p>
-<figure>
-<img src="image-20231001164736759.png" alt="image-20231001164736759" />
-<figcaption aria-hidden="true">image-20231001164736759</figcaption>
-</figure></li>
+<p><img src="image-20231001164736759.png" /></p></li>
 <li><p><strong>选中线</strong>：<code>s -&gt; c</code>，选中两个焊盘间的整条线。</p></li>
 <li><p>选中网络net：<code>s -&gt; n</code>，选中该网络所有的线和焊盘。（选中后，按delete只会删除线，不会删除焊盘）</p></li>
 <li><p>改变光标移动距离：<code>g</code>，改变每次光标移动的间隔，距离。</p></li>
@@ -418,835 +940,6 @@ Box，选择刚才打包好的exe文件，点击增加，添加刚才新创建�
       </tags>
   </entry>
   <entry>
-    <title>（一）hexo的初步生成与部署</title>
-    <url>/2023/10/03/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%B8%80%EF%BC%89hexo%E7%9A%84%E5%88%9D%E6%AD%A5%E7%94%9F%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2/</url>
-    <content><![CDATA[<p>参考资料：<a
-href="https://blog.csdn.net/sinat_37781304/article/details/82729029">hexo史上最全搭建教程</a></p>
-<h1 id="注册github">1、注册GitHub</h1>
-<p>​ 本博客最终免费部署到GitHub上，所以需要GitHub账号。<a
-href="https://github.com/">GitHub</a></p>
-<p>​ 没有的可以注册一个GitHub账号。</p>
-<p>​ <mark>记住GitHub的用户名和邮箱</mark></p>
-<h1 id="安装git">2、安装Git</h1>
-<p>​
-Git是目前世界上最先进的分布式版本控制系统，可以有效、高速的处理从很小到非常大的项目版本管理。这也是用来管理你的hexo博客文章，上传到GitHub的工具。廖雪峰老师的Git教程写的非常好：<a
-href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">Git教程</a>。可以简单了解下什么是Git，不需要深入了解Git的相关知识，要用什么直接上网查即可。</p>
-<p>​ 到git官网上下载windows版本，<a
-href="https://git-scm.com/download/win">Download for
-Windows</a>,下载安装后会有一个Git
-Bash的命令行工具，以后就用这个工具来使用git。</p>
-<p>​ 安装步骤参考：<a
-href="https://blog.csdn.net/mukes/article/details/115693833">Git
-详细安装教程</a></p>
-<figure>
-<img src="image-20230717204215864.png" alt="image-20230717204215864" />
-<figcaption aria-hidden="true">image-20230717204215864</figcaption>
-</figure>
-<figure>
-<img src="image-20230717204412095.png" alt="image-20230717204412095" />
-<figcaption aria-hidden="true">image-20230717204412095</figcaption>
-</figure>
-<figure>
-<img src="image-20230717204503188.png" alt="image-20230717204503188" />
-<figcaption aria-hidden="true">image-20230717204503188</figcaption>
-</figure>
-<figure>
-<img src="image-20230717204556024.png" alt="image-20230717204556024" />
-<figcaption aria-hidden="true">image-20230717204556024</figcaption>
-</figure>
-<p>​
-这里选择了vscode作为默认编辑器。也可以选择默认的Vim。选择vscode需要先下载vscode再进行下一步，还要在<code>我的电脑-&gt;属性-&gt;高级系统设置-&gt;高级-&gt;环境变量-&gt;系统变量-&gt;Path-&gt;编辑添加</code>（其实这步的设置默认编辑器暂时即可，在后续的整个搭建中还没有遇到需要使用这个的情况，仅仅是因为本人对vscode熟悉，所以设置成了vscode）</p>
-<figure>
-<img src="image-20230717204748855.png" alt="image-20230717204748855" />
-<figcaption aria-hidden="true">image-20230717204748855</figcaption>
-</figure>
-<figure>
-<img src="image-20230717205646513.png" alt="image-20230717205646513" />
-<figcaption aria-hidden="true">image-20230717205646513</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210153103.png" alt="image-20230717210153103" />
-<figcaption aria-hidden="true">image-20230717210153103</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210230985.png" alt="image-20230717210230985" />
-<figcaption aria-hidden="true">image-20230717210230985</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210310753.png" alt="image-20230717210310753" />
-<figcaption aria-hidden="true">image-20230717210310753</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210341151.png" alt="image-20230717210341151" />
-<figcaption aria-hidden="true">image-20230717210341151</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210354519.png" alt="image-20230717210354519" />
-<figcaption aria-hidden="true">image-20230717210354519</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210441597.png" alt="image-20230717210441597" />
-<figcaption aria-hidden="true">image-20230717210441597</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210525764.png" alt="image-20230717210525764" />
-<figcaption aria-hidden="true">image-20230717210525764</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210539598.png" alt="image-20230717210539598" />
-<figcaption aria-hidden="true">image-20230717210539598</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210617763.png" alt="image-20230717210617763" />
-<figcaption aria-hidden="true">image-20230717210617763</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210628362.png" alt="image-20230717210628362" />
-<figcaption aria-hidden="true">image-20230717210628362</figcaption>
-</figure>
-<figure>
-<img src="image-20230717210920155.png" alt="image-20230717210920155" />
-<figcaption aria-hidden="true">image-20230717210920155</figcaption>
-</figure>
-<p>在开始菜单应用里打开<code>Git Bash</code>，输入<code>git --version</code>
-查看版本，检查是否安装成功</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git --version</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="image-20230717211651140.png" alt="image-20230717211651140" />
-<figcaption aria-hidden="true">image-20230717211651140</figcaption>
-</figure>
-<figure>
-<img src="image-20230717211850855.png" alt="image-20230717211850855" />
-<figcaption aria-hidden="true">image-20230717211850855</figcaption>
-</figure>
-<p>将Git和GitHub账号绑定，分别输入以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="image-20230717213051803.png" alt="image-20230717213051803" />
-<figcaption aria-hidden="true">image-20230717213051803</figcaption>
-</figure>
-<h1 id="安装node.js">3、安装Node.js</h1>
-<p>Hexo是基于nodeJS编写的，所以需要安装nodeJs和里面的npm工具。<a
-href="https://nodejs.org/en/download/">nodejs</a>
-选择LTS版本就行了。</p>
-<figure>
-<img src="image-20230717213233534.png" alt="image-20230717213233534" />
-<figcaption aria-hidden="true">image-20230717213233534</figcaption>
-</figure>
-<figure>
-<img src="image-20230717213247366.png" alt="image-20230717213247366" />
-<figcaption aria-hidden="true">image-20230717213247366</figcaption>
-</figure>
-<figure>
-<img src="image-20230717213323064.png" alt="image-20230717213323064" />
-<figcaption aria-hidden="true">image-20230717213323064</figcaption>
-</figure>
-<figure>
-<img src="image-20230717213337988.png" alt="image-20230717213337988" />
-<figcaption aria-hidden="true">image-20230717213337988</figcaption>
-</figure>
-<figure>
-<img src="image-20230717213456752.png" alt="image-20230717213456752" />
-<figcaption aria-hidden="true">image-20230717213456752</figcaption>
-</figure>
-<figure>
-<img src="image-20230717213508007.png" alt="image-20230717213508007" />
-<figcaption aria-hidden="true">image-20230717213508007</figcaption>
-</figure>
-<h1 id="安装hexo">4、安装hexo</h1>
-<p>官网主页简单说明了会使用到的命令，下面详细说明：</p>
-<figure>
-<img src="image-20230719220206586.png" alt="image-20230719220206586" />
-<figcaption aria-hidden="true">image-20230719220206586</figcaption>
-</figure>
-<p>新建一个文件夹，命名最好英文，这里命名为<code>blog</code>，在该文件夹内右键打开
-<code>Git Bash</code> ，输入命令安装：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>安装完后使用 <code>hexo -v</code> 查看版本，验证安装是否完成</p>
-<figure>
-<img src="image-20230719215441428.png" alt="image-20230719215441428" />
-<figcaption aria-hidden="true">image-20230719215441428</figcaption>
-</figure>
-<p>初始化hexo，输入命令创建文件夹<code>myblog</code>（也可以根据习惯修改文件夹名），这个文件夹就是<mark>站点根目录</mark>，后面会多次提到站点根目录</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo init myblog</span><br></pre></td></tr></table></figure>
-<p>然后输入命令进入<code>myblog</code>文件夹：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd myblog</span><br></pre></td></tr></table></figure>
-<p>输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="image-20230719220502367.png" alt="image-20230719220502367" />
-<figcaption aria-hidden="true">image-20230719220502367</figcaption>
-</figure>
-<p>再依次输入：（也可输入简写：<code>hexo g</code> 和
-<code>hexo s</code>）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p><code>hexo generate</code> 顾名思义，生成静态文章，可以用
-<code>hexo g</code>缩写 <code>hexo server</code>
-在本地开启服务，可以用<code>hexo s</code>缩写。后续修改配置会经常使用这个命令在本地查看效果。</p>
-<figure>
-<img src="image-20230719220908793.png" alt="image-20230719220908793" />
-<figcaption aria-hidden="true">image-20230719220908793</figcaption>
-</figure>
-<p>根据命令行最后一行的提示<code>Hexo is running at http://localhost:4000/ . Press Ctrl+C to stop</code>，可以在浏览器输入
-<code>http://localhost:4000/</code>，就可以在本地看到博客效果了。在<code>Git Bash</code>中按<code>Ctrl+C</code>退出服务。</p>
-<figure>
-<img src="image-20230719221213383.png" alt="image-20230719221213383" />
-<figcaption aria-hidden="true">image-20230719221213383</figcaption>
-</figure>
-<p>到这里博客就已经生成好了。</p>
-<h1 id="免费部署到github">5、免费部署到GitHub</h1>
-<p>在GitHub中新建仓库</p>
-<figure>
-<img src="image-20230719221649324.png" alt="image-20230719221649324" />
-<figcaption aria-hidden="true">image-20230719221649324</figcaption>
-</figure>
-<p>创建一个仓库，命名为
-<code>你的用户名.github.io</code>，只有这样，将来要部署到GitHub
-page的时候，才会被识别，也就是xxxx.github.io，其中xxx就是你注册GitHub的用户名。点击底部的<code>Create repository</code>创建。</p>
-<figure>
-<img src="image-20230719221838539.png" alt="image-20230719221838539" />
-<figcaption aria-hidden="true">image-20230719221838539</figcaption>
-</figure>
-<p>在<code>Git Bash</code>中输入以下两条，检查之前的用户名和邮箱输对没有：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config user.name</span><br><span class="line">git config user.email</span><br></pre></td></tr></table></figure>
-<p>然后创建SSH，<mark>输入指令后需要按几次回车</mark></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;输入你的邮箱&quot;</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="image-20230719222606342.png" alt="image-20230719222606342" />
-<figcaption aria-hidden="true">image-20230719222606342</figcaption>
-</figure>
-<p>这个时候它会告诉你已经生成了.ssh的文件夹。在你的电脑中找到这个文件夹。</p>
-<figure>
-<img src="image-20230719222836726.png" alt="image-20230719222836726" />
-<figcaption aria-hidden="true">image-20230719222836726</figcaption>
-</figure>
-<blockquote>
-<p>ssh，简单来讲，就是一个秘钥，其中，id_rsa是你这台电脑的私人秘钥，不能给别人看的，id_rsa.pub是公共秘钥，可以随便给别人看。把这个公钥放在GitHub上，这样当你链接GitHub自己的账户时，它就会根据公钥匹配你的私钥，当能够相互匹配时，才能够顺利的通过git上传你的文件到GitHub上。</p>
-</blockquote>
-<p>在GitHub的<code>setting</code>中，找到<code>SSH keys</code>的设置选项，点击<code>New SSH key</code></p>
-<p>把你的<code>id_rsa.pub</code>（可以用记事本打开）里面的信息复制到key。点击<code>Add SSH key</code></p>
-<figure>
-<img src="image-20230719223321141.png" alt="image-20230719223321141" />
-<figcaption aria-hidden="true">image-20230719223321141</figcaption>
-</figure>
-<p>在<code>Git Bash</code>中，查看是否成功（中间要输入一次yes），最后出现successfully字样就是成功了。</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh -T git@github.com</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="image-20230719223736052.png" alt="image-20230719223736052" />
-<figcaption aria-hidden="true">image-20230719223736052</figcaption>
-</figure>
-<p>这一步，我们就可以将hexo和GitHub关联起来，也就是将hexo生成的文章部署到GitHub上，打开站点配置文件
-<code>_config.yml</code>，翻到最后，修改为：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  type: git</span><br><span class="line">  repo: https://github.com/你的GitHub名字/你的GitHub名字.github.io.git</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="image-20230719224127052.png" alt="image-20230719224127052" />
-<figcaption aria-hidden="true">image-20230719224127052</figcaption>
-</figure>
-<p>这个时候需要先安装deploy-git
-，也就是部署的命令，这样你才能用命令部署到GitHub。在<code>Git Bash</code>中：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="image-20230719224402356.png" alt="image-20230719224402356" />
-<figcaption aria-hidden="true">image-20230719224402356</figcaption>
-</figure>
-<p>然后依次输入：（输入<code>hexo d</code>可能出问题，大多是网络问题，可以多试几次，或过一会再试）</p>
-<p>（一直出问题可以参考：<a
-href="https://blog.csdn.net/Kevin_Carpricron/article/details/124069885">Hexo
-d部署报错之spawn failed的解决方案</a> 的方法2）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>其中 <code>hexo clean</code>清除了你之前生成的东西，也可以不加。</p>
-<p><code>hexo deploy</code> 部署文章，可以用<code>hexo d</code>缩写</p>
-<p><code>hexo d</code> 过程中会提示登录GitHub</p>
-<figure>
-<img src="image-20230719224938980.png" alt="image-20230719224938980" />
-<figcaption aria-hidden="true">image-20230719224938980</figcaption>
-</figure>
-<p>部署成功后就可以在浏览器输入：<code>https://用户名.github.io/</code>看到博客了。（部署后一般需要等几分钟）</p>
-]]></content>
-      <categories>
-        <category>hexo博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>（三）Hexo博客的使用以及多端管理</title>
-    <url>/2023/10/04/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%B8%89%EF%BC%89Hexo%E5%8D%9A%E5%AE%A2%E7%9A%84%E4%BD%BF%E7%94%A8%E4%BB%A5%E5%8F%8A%E5%A4%9A%E7%AB%AF%E7%AE%A1%E7%90%86/</url>
-    <content><![CDATA[<h1 id="发表博客">1、发表博客</h1>
-<h2 id="基本流程">1.1、基本流程</h2>
-<p>使用命令<code>hexo n 博客文件名</code>，就会在<code>站点根目录/source/_posts</code>
-下创建 <code>博客文件名.md</code>
-文件，打开该文件，会发现开头有内容了</p>
-<figure>
-<img src="image-20230726200030465.png" alt="image-20230726200030465" />
-<figcaption aria-hidden="true">image-20230726200030465</figcaption>
-</figure>
-<p>博客标题<code>title</code>默认和文件名一样，可以修改。</p>
-<p>写好后一般依次执行以下命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-<p>过几分钟就能看到网站上有该博客了</p>
-<p>创建本地博客文件也可以不使用命令<code>hexo n 博客文件名</code>，直接在<code>站点根目录/source/_posts</code>
-下新建.md文件，也会被识别到。</p>
-<p>如果文件多了也可以在<code>站点根目录/source/_posts</code>下新建文件夹管理，我习惯把不同分类的博客放不同文件夹。</p>
-<p>根据这段时间搭建博客经验，hexo是通过浏览<code>站点根目录/source/_posts</code>下所有的文件夹和文件，只要是.md文件，就会被认为是博客。</p>
-<h2 id="添加分类和标签">2.2、添加分类和标签</h2>
-<p>在开头添加如下内容：（展示的就是这篇博客的开头）</p>
-<figure>
-<img src="image-20230726200857940.png" alt="image-20230726200857940" />
-<figcaption aria-hidden="true">image-20230726200857940</figcaption>
-</figure>
-<p>一个博客可以有多个tag，分类也可以有多级</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">categories:</span><br><span class="line"> - 第一级分类</span><br><span class="line"> - 第二级分类</span><br></pre></td></tr></table></figure>
-<p>使用命令创建博客的时候没有自动添加categories。打开<code>站点根目录\scaffolds\post.md</code>，修改如下</p>
-<figure>
-<img src="image-20230726201256582.png" alt="image-20230726201256582" />
-<figcaption aria-hidden="true">image-20230726201256582</figcaption>
-</figure>
-<p>使用命令创建博客的时候就会自动增加<code>categories:</code></p>
-<h2 id="添加摘要">2.3、添加摘要</h2>
-<p><mark>只针对next主题</mark></p>
-<p>文章中使用<code>&lt;!-- more --&gt;</code>分割为两部分，之上的为摘要。博客主页默认显示的是博客的摘要。若没有摘要，主页则显示博客所有内容</p>
-<figure>
-<img src="image-20230726201432416.png" alt="image-20230726201432416" />
-<figcaption aria-hidden="true">image-20230726201432416</figcaption>
-</figure>
-<h2 id="插入图片">2.4、插入图片</h2>
-<p>参考资料：<a
-href="https://hexo.io/zh-cn/docs/asset-folders#相对路径引用的标签插件">资源文件夹</a></p>
-<p>官网给了几种方法，我比较喜欢使用相对路径的方法</p>
-<p>打开<code>站点根目录/_config.yml</code>
-，修改：<code>post_assets_folder: true</code>，然后在该行下面添加</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">marked:</span><br><span class="line"> prependRoot: true</span><br><span class="line"> postAsset: true</span><br></pre></td></tr></table></figure>
-<figure>
-<img src="image-20230726201858689.png" alt="image-20230726201858689" />
-<figcaption aria-hidden="true">image-20230726201858689</figcaption>
-</figure>
-<p>之后使用 <code>hexo n title</code>
-新建博客后，在<code>source/_posts</code>
-路径下会多添加一个叫和博客文件同名的文件夹（前面使用的"title"，这里文件夹就为title），把博客要用的图片放在该文件夹内，例如放入图片<code>image.png</code>，要在博客中使用该图片，使用以下语法</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">![这里根据需要填写图片描述](image.png)</span><br></pre></td></tr></table></figure>
-<h1 id="多端管理">2、多端管理</h1>
-<p>参考资料：<a
-href="https://blog.csdn.net/K1052176873/article/details/122879462">Hexo在多台电脑上提交和更新</a></p>
-<p>上面的资料比较详细，我这里只说一下步骤（和资料不完全一样）。</p>
-<p>原本是在台式机搭建的博客，在笔记本上也想管理我的博客。我们称原始搭建博客的电脑为老电脑，另一个为新电脑</p>
-<p><strong>老电脑操作</strong></p>
-<p>在之前部署博客创建的GitHub仓库中新建分支，命名为hexo。打开仓库：</p>
-<figure>
-<img src="image-20230726202803755.png" alt="image-20230726202803755" />
-<figcaption aria-hidden="true">image-20230726202803755</figcaption>
-</figure>
-<p>输入hexo，点击create。</p>
-<p>设置hexo分支为默认分支。（不会影响部署博客）</p>
-<figure>
-<img src="image-20230726203052804.png" alt="image-20230726203052804" />
-<figcaption aria-hidden="true">image-20230726203052804</figcaption>
-</figure>
-<p>任意创建一个文件夹，在该文件夹下右键打开git bash，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:username/username.github.io.git</span><br></pre></td></tr></table></figure>
-<p>将下载的文件夹里的.git
-文件夹复制粘贴到站点根目录下，删除主题根目录下的.git文件夹（没有就不用管）。</p>
-<p>注意：站点根目录下应该有个<code>.gitignore文件</code>，用来忽略一些不需要的文件，表示这些类型文件不需要git。如果没有，右键新建，我的.gitignore文件里的内容如下</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">.DS_Store</span><br><span class="line">Thumbs.db</span><br><span class="line">db.json</span><br><span class="line">*.log</span><br><span class="line">node_modules/</span><br><span class="line">public/</span><br><span class="line">.deploy*/</span><br><span class="line">_multiconfig.yml</span><br></pre></td></tr></table></figure>
-<p>站点根目录下打开git bash依次使用以下三条命令：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit –m add_branch</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-<blockquote>
-<p><code>git add .</code>：这个命令用于将当前目录（包括子目录）中的所有更改添加到下一次提交中。当您在
-Git 仓库中进行更改时，这些更改一开始都被视为"未暂存"。使用
-<code>git add .</code> 命令，您告诉 Git
-将所有更改添加到暂存区（也称为"索引"），准备好进行下一次提交。</p>
-</blockquote>
-<blockquote>
-<p><code>git commit –m add_branch</code>：
-这个命令用于创建一个提交，并将暂存区中的所有更改作为一个单元保存到版本历史中。<code>-m</code>
-参数后面的 "add_branch"
-是提交的消息或注释，用于简要描述此次提交所做的更改。在实际使用时，您可以根据实际情况提供更具描述性的提交消息。</p>
-</blockquote>
-<blockquote>
-<p><code>git push</code>：
-这个命令用于将本地的提交推送到远程仓库。在团队协作中，当您完成一些工作并创建了一个或多个提交后，您可以使用
-<code>git push</code>
-命令将这些提交上传到共享的远程仓库，以便其他团队成员也可以看到您的更改。</p>
-</blockquote>
-<blockquote>
-<p>解释来自chatGPT</p>
-</blockquote>
-<p>此时已经成功将整个网站推送到了远程库的默认分支hexo</p>
-<p><strong>新电脑操作</strong></p>
-<p>安装Git和nodejs</p>
-<p>在<code>Git Bash</code>中输入以下两条，关联GitHub账号：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git config --global user.name &quot;你的GitHub用户名&quot;</span><br><span class="line">git config --global user.email &quot;你的GitHub注册邮箱&quot;</span><br></pre></td></tr></table></figure>
-<p>然后创建SSH，输入指令后需要按几次回车</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;输入你的邮箱&quot;</span><br></pre></td></tr></table></figure>
-<p>如<a
-href="https://xinghao-z.github.io/2023/07/24/hexo+NexT%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%B8%80%EF%BC%89hexo%E7%9A%84%E5%88%9D%E6%AD%A5%E7%94%9F%E6%88%90%E4%B8%8E%E9%83%A8%E7%BD%B2/#5%E3%80%81%E5%85%8D%E8%B4%B9%E9%83%A8%E7%BD%B2%E5%88%B0GitHub">（一）hexo的初步生成与部署</a>的
-“5、免费部署到GitHub” 中，添加新的SSH Key。</p>
-<p>创建一个文件夹，作为新电脑存放站点根目录的地方，克隆hexo分支到该文件夹</p>
-<p>再该文件夹下打开git bash，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone git@github.com:username/username.github.io.git</span><br></pre></td></tr></table></figure>
-<p>文件夹中就会出现 “username.github.io” 文件夹。</p>
-<p>继续依次输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br></pre></td></tr></table></figure>
-<p>文件中会初始化一个blog文件夹，只保留该文件夹内的<strong>node_modules</strong>文件夹，其他的都删除。</p>
-<p>将“username.github.io”文件夹内的所有内容复制到blog文件夹下。</p>
-<p>运行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install</span><br></pre></td></tr></table></figure>
-<p>blog文件夹就是新电脑的站点根目录。</p>
-<p><strong>同步</strong></p>
-<p>推荐后续在换设备写博客前，可以先打开Git
-bash执行<code>git pull</code>同步，再编写博客。</p>
-<p>不管是否换设备，编写修改了文件后最好执行以下命令，将更改的文件上传</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git add .</span><br><span class="line">git commit –m ChangeFiles</span><br><span class="line">git push</span><br></pre></td></tr></table></figure>
-<p>将修改的文件上传到GitHub</p>
-<blockquote>
-<p>chatGPT：</p>
-<p><code>git pull</code>
-的目的是从远程仓库获取最新的更新，并尝试将这些更新合并到您当前的本地分支中，以便您的本地分支与远程分支保持同步。</p>
-<p>如果您在执行 <code>git pull</code> 前有未提交的更改，Git
-会尝试在合并更新之前先处理这些未提交的更改。这是为了确保在合并时不会覆盖您本地的工作或引起冲突。下面是执行
-<code>git pull</code> 前存在未提交更改的情况下可能发生的情况：</p>
-<ol type="1">
-<li><p><strong>自动合并</strong>：
-如果您的本地修改与远程分支的更新没有冲突，Git
-会尝试自动合并更新。它会先将您的未提交更改暂时存储起来（通常称为"stash"），然后将远程分支的更新合并到您当前的分支上。最后，Git
-会尝试将之前暂存的未提交更改再次应用到合并后的代码上。</p></li>
-<li><p><strong>合并冲突</strong>：
-如果您的本地修改与远程分支的更新产生冲突，Git
-将无法自动合并。在这种情况下，<code>git pull</code>
-操作会被中止，并且会在终端输出冲突的文件和位置。您需要手动解决这些冲突。</p>
-<p>解决冲突的过程需要打开冲突文件，查看并编辑其中的代码，以选择保留哪些更改或者如何合并这些更改。解决冲突后，您需要使用
-<code>git add</code> 命令将解决后的文件标记为已解决冲突状态，并使用
-<code>git commit</code> 提交这次合并的结果。</p></li>
-<li><p><strong>拒绝合并</strong>：
-在某些情况下，如果您的本地修改与远程分支的更新有潜在的不兼容性，Git
-可能会拒绝合并操作，并给出相应的错误提示。在这种情况下，您需要先处理本地的修改，例如，提交或者撤销您的更改，然后再执行
-<code>git pull</code>。</p></li>
-</ol>
-</blockquote>
-]]></content>
-      <categories>
-        <category>hexo博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>（五）更换主题</title>
-    <url>/2023/10/08/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%BA%94%EF%BC%89%E6%9B%B4%E6%8D%A2%E4%B8%BB%E9%A2%98/</url>
-    <content><![CDATA[<p>Next主题用着不符合我的习惯，如主页文章占据大小太大，分类点开只显示文章名等。于是决定更换为butterfly主题。</p>
-<p>总体更换步骤并不复杂：<a
-href="https://butterfly.js.org/posts/21cfbf15/">官网参考资料</a></p>
-<ol type="1">
-<li>安装butterfly</li>
-<li>应用主题：修改 Hexo 根目录下的 _config.yml，把主题改为
-butterfly</li>
-<li>安装插件：butterfly需要 pug 以及 stylus 的渲染器</li>
-<li>配置主题：修改主题配置文件</li>
-<li>（可选）删除next主题文件夹和新建的_config.next.yml配置文件</li>
-</ol>
-<p>进行了前3步，主题就已经换为butterfly了。</p>
-<p>主要是第4步，需要跟着官网自定义配置，因为是中文，且非常详细，就不做叙述了，主题配置文件也有许多中文注释。</p>
-]]></content>
-      <categories>
-        <category>hexo博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>（二）hexo+NexT主题配置</title>
-    <url>/2023/10/04/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E4%BA%8C%EF%BC%89hexo-NexT%E4%B8%BB%E9%A2%98%E9%85%8D%E7%BD%AE/</url>
-    <content><![CDATA[<p><mark>23.10.15：主题更换为butterfly，但本文hexo基本配置部分是通用的</mark></p>
-<h1 id="前言">1、前言</h1>
-<p>网上许多hexo+NexT主题配置教程是2020年前的，但这些年hexo和NexT主题已经更新了许多版本，这些教程已经过时，部分操作已经无法实现。</p>
-<p>可以打开在<code>站点根目录</code>打开<code>git bash</code>，输入<code>hexo -v</code>查看版本，我这里的版本为6.3.0。NexT在主题根目录下的<code>package.json</code>中查看，我的版本为8.17.1</p>
-<p>其实最好的教程就是官方文档，小伙伴可以参考<a
-href="https://hexo.io/zh-cn/docs/">hexo官方文档</a> 和 <a
-href="https://theme-next.js.org/">NexT官方文档</a>
-，有时相比在网上找到一堆过时的教程，效率更高。</p>
-<p>当然，根据本教程也能实现我的配置，但还想自定义的小伙伴就要自己再折腾下了。我也是从慢慢折腾过来的，开始什么也不懂。我也会介绍我配置中学到的一些东西，并简单教一下我是怎么自定义配置的，如果有错误的话，欢迎在评论区指正。</p>
-<p>推荐下我找到的比较好的教程：</p>
-<p><a
-href="https://sun_xy.gitee.io/blog/2018/10/16/hexo_next_blog/">Hexo+NexT
-打造一个炫酷博客</a></p>
-<p><a
-href="https://blog.csdn.net/wsmrzx/article/details/81478595">Hexo系列(四)
-NexT主题配置</a></p>
-<p><a
-href="https://zhuanlan.zhihu.com/p/106060640">个人博客第8篇——优化主题（持续更新）</a></p>
-<p>该节中会修改许多代码文件，最好使用一个好用的编辑器，推荐使用vscode。（当然记事本也行）</p>
-<h1 id="说明">2、说明</h1>
-<p>本节中会多次出现一些术语，先给出对应的说明</p>
-<p><code>站点根目录</code>：在（一）中提到过，使用<code>hexo init myblog</code>创建的文件夹<code>myblog</code>就是站点根目录，里面有source，themes，_config.yml等文件夹和文件。</p>
-<p><code>主题根目录</code>：站点根目录下的themes文件夹里，跟所使用的主题名字相关的一个文件夹，在安装主题后才会有这个文件夹，我这里是next文件夹，即<code>站点根目录\themes\next</code>，里面有languages，source等。</p>
-<p><code>站点配置文件</code>：<code>站点根目录</code>下的<code>_config.yml</code>文件。</p>
-<p><code>主题配置文件</code>：其他大多数教程中指的都是<code>主题根目录</code>下的<code>_config.yml</code>，修改该文件也可以，但新版的Hexo和NexT推荐使用代替配置文件：<a
-href="https://hexo.io/zh-cn/docs/configuration">配置|Hexo</a>，方便管理以及Hexo和NexT的更新。所以该教程中指的是<code>站点根目录</code>下的<code>_config.next.yml</code>文件（后面会创建该文件）。</p>
-<p><code>高级配置文件</code>：或者叫自定义样式文件，大多数教程中指的是<code>主题根目录\source\css\_custom\custom.styl</code>，但新版本的NexT已经弃用了该文件，现在已经找不到这个文件了，详情参考<a
-href="https://theme-next.js.org/docs/advanced-settings/custom-files.html">NexT官方文档</a>。该教程指的是<code>站点根目录\source\_data\styles.styl</code>（后面会创建该文件）。</p>
-<p><code>打开Git Bash</code>：无特殊说明都是在<code>站点根目录</code>下右键打开Git
-Bash。</p>
-<p><code>本地预览效果</code>：修改任何配置后，都可以打开Git
-Bash输入<code>hexo s</code>，在浏览器输入http://localhost:4000/在本地查看效果。</p>
-<h1 id="hexo基本配置">3、hexo基本配置</h1>
-<p>修改站点配置文件，详情参考<a
-href="https://hexo.io/zh-cn/docs/configuration">官方的配置</a>描述。下面只讲我修改了的部分。</p>
-<p><strong>网站</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th style="text-align: left;">参数</th>
-<th style="text-align: left;">描述</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td style="text-align: left;"><code>title</code></td>
-<td style="text-align: left;">网站标题</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>subtitle</code></td>
-<td style="text-align: left;">网站副标题</td>
-</tr>
-<tr class="odd">
-<td style="text-align: left;"><code>author</code></td>
-<td style="text-align: left;">您的名字</td>
-</tr>
-<tr class="even">
-<td style="text-align: left;"><code>language</code></td>
-<td style="text-align: left;">网站使用的语言，中文设置为zh-CN</td>
-</tr>
-</tbody>
-</table>
-<blockquote>
-<p>其中，<code>description</code>主要用于SEO，告诉搜索引擎一个关于您站点的简单描述，通常建议在其中包含您网站的关键词。<code>author</code>参数用于主题显示文章的作者。</p>
-</blockquote>
-<p><strong>网址</strong></p>
-<table>
-<thead>
-<tr class="header">
-<th>参数</th>
-<th></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><code>url</code></td>
-<td>网址</td>
-</tr>
-</tbody>
-</table>
-<p>在这里，你需要把url改成你的网站域名。</p>
-<p><strong>writing</strong></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">highlight:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">auto_detect:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br><span class="line">  <span class="attr">wrap:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">hljs:</span> <span class="literal">false</span></span><br><span class="line"><span class="attr">prismjs:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">preprocess:</span> <span class="literal">false</span></span><br><span class="line">  <span class="attr">line_number:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">tab_replace:</span> <span class="string">&#x27;&#x27;</span></span><br></pre></td></tr></table></figure>
-<p>这一段是关于代码块风格设置，参考<a
-href="https://hexo.io/zh-cn/docs/syntax-highlight#PrismJS">hexo官网的说明</a>和<a
-href="https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Codeblock-Style">next官网说明</a>，hexo支持两种库：
-<a href="https://github.com/highlightjs/highlight.js">highlight.js</a>
-和 <a href="https://github.com/PrismJS/prism">prismjs</a>
-。next主题官方也只能设置这两种。在这两种库下都有多种风格可选。</p>
-<p>要用哪个库把相应的<code>enable</code>设为<code>true</code>，另一个的<code>enable</code>设为<code>false</code>，我选择了<code>prismjs</code>。其他的设置根据需要参考官网调整，我这里设为默认。</p>
-<p>具体使用<code>prismjs</code>的哪一个主题还需要在后续主题配置文件里修改。</p>
-<p><strong>主题选择</strong></p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">theme:</span> <span class="string">next</span></span><br></pre></td></tr></table></figure>
-<p>要用哪个主题，就把这里设为<code>站点根目录\themes</code>下相应主题所在的文件夹名。</p>
-<h1 id="next基本配置">4、NexT基本配置</h1>
-<p>主题的修改不完全是主题配置文件的修改以及高级配置文件的修改，有的配置需要改一些特殊的文件，遇到会特殊说明</p>
-<h2 id="安装主题">4.1 安装主题</h2>
-<p>打开Git Bash，输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">git clone https://github.com/next-theme/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure>
-<p>如果出现问题，可以手动去https://github.com/next-theme/hexo-theme-next下载，放到<code>站点根目录/themes/next</code></p>
-<p>这样，就有了主题根目录，即<code>站点根目录/themes/next</code></p>
-<p>可以输入<code>hexo g</code>和<code>hexo s</code>本地预览效果</p>
-<h2 id="主题配置">4.2 主题配置</h2>
-<p>复制主题根目录下的`<code>_config.yml</code>文件，粘贴到站点根目录下，修改文件名为<code>_config.next.yml</code>（注意别把站点配置文件覆盖了）。这就是主题配置文件。打开该文件。</p>
-<h3 id="主题选择">主题选择</h3>
-<figure>
-<img src="image-20230726151245933.png" alt="image-20230726151245933" />
-<figcaption aria-hidden="true">image-20230726151245933</figcaption>
-</figure>
-<p>通过注释和取消注释选择主题，这里选择Mist，后面也是根据Mist调整。也可以试下其他主题，在本地预览效果，挑自己喜欢的。</p>
-<p>23.7.27：更换为Pisces，最后的高级配置修改为针对Pisces。其他设置通用</p>
-<p>23.7.28：更换为Gemini，最后的高级配置修改为针对Gemini。其他设置通用</p>
-<h3 id="菜单">菜单</h3>
-<figure>
-<img src="image-20230726151423449.png" alt="image-20230726151423449" />
-<figcaption aria-hidden="true">image-20230726151423449</figcaption>
-</figure>
-<p>会在博客顶部根据上图中的顺序依次添加菜单，但此时标签，分类，关于都无法打开，需要添加页面</p>
-<figure>
-<img src="image-20230726151519546.png" alt="image-20230726151519546" />
-<figcaption aria-hidden="true">image-20230726151519546</figcaption>
-</figure>
-<p>Git Bash依次输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo new page tags</span><br><span class="line">hexo new page categories</span><br><span class="line">hexo new page about</span><br></pre></td></tr></table></figure>
-<p>标签页面还要在<code>站点根目录/source/tags/index.md</code> 中加上
-<code>type: "tags"</code>，才会在标签页面显示标签</p>
-<figure>
-<img src="image-20230726151600771.png" alt="image-20230726151600771" />
-<figcaption aria-hidden="true">image-20230726151600771</figcaption>
-</figure>
-<h3 id="关闭渐入效果">关闭渐入效果</h3>
-<p>搜索<code>motion</code>，将<code>enable</code>后面改为<code>false</code>，喜欢这个效果的的也可以不关</p>
-<figure>
-<img src="image-20230726151800143.png" alt="image-20230726151800143" />
-<figcaption aria-hidden="true">image-20230726151800143</figcaption>
-</figure>
-<h3 id="字体和代码">字体和代码</h3>
-<p>字体和代码的部分设置是一起的，放在一起说。</p>
-<p>先说修改字体。官网说的比较详细：<a
-href="https://theme-next.js.org/docs/theme-settings/miscellaneous.html#Fonts-Customization">Fonts
-Customization</a></p>
-<p><strong>字体：</strong></p>
-<p>在<code>主题配置文件</code>中</p>
-<figure>
-<img src="image-20230726153050491.png" alt="image-20230726153050491" />
-<figcaption aria-hidden="true">image-20230726153050491</figcaption>
-</figure>
-<p>先把<code>enable</code>设为<code>true</code>。</p>
-<p><code>host</code> 和 后面的每个设置的 <code>external</code> 和
-<code>family</code>
-我任意修改之后似乎都没起作用，，我也不需要设置，就都保持默认了，想修改的可以参考下其他资料。我只设置了<code>size</code>，单位为em（<code>1em</code>等于<code>16px</code>）</p>
-<ul>
-<li><code>global</code>：全局设置，size改变后所有字体大小都会变</li>
-<li><code>title</code>：博客名称的字体设置。字体大小受<code>global</code>下的<code>size</code>设置和<code>title</code>的<code>size</code>设置的双重影响</li>
-<li><code>heading</code>：文章中各级题目的设置，即用 <code># 题目</code>
-语法的部分。字体大小受<code>global</code>下的<code>size</code>设置和<code>heading</code>的<code>size</code>设置的双重影响</li>
-<li><code>posts</code>：官网说是文章主要字体的设置，但因为这两项我改了都不起作用，所以无法判断具体是什么设置。我也尝试加上<code>size:</code>来设置大小，不起作用</li>
-<li><code>codes</code>：代码块的设置，试图加上<code>size</code>设置大小，不起作用</li>
-</ul>
-<p><strong>代码块</strong></p>
-<p>前面提到了：</p>
-<blockquote>
-<p>hexo支持两种库： <a
-href="https://github.com/highlightjs/highlight.js">highlight.js</a> 和
-<a href="https://github.com/PrismJS/prism">prismjs</a>
-。next主题官方也只能设置这两种。在这两种库下都有多种风格可选。要用哪个库把先把站点配置文件下对用主题下的<code>enable</code>设为<code>true</code>，另一个的<code>enable</code>设为<code>false</code>，我选择了<code>prismjs</code>，其他的设置根据需要参考官网调整，我这里设为默认。</p>
-</blockquote>
-<figure>
-<img src="image-20230726153648860.png" alt="image-20230726153648860" />
-<figcaption aria-hidden="true">image-20230726153648860</figcaption>
-</figure>
-<p>如果前面选择<code>highlight</code>，就是<code>theme</code>后面设置起作用，我选择了<code>prism</code>，所以<code>prism</code>后面两个设置起作用，分别是正常模式下的代码主题和黑暗模式下的代码主题，我博客没开黑暗模式，所以根据<code>light</code>选项的设置。不同的风格可以去上图中364行提到的网站预览。<a
-href="https://theme-next.js.org/highlight/">NexT Highlight Theme
-Preview</a></p>
-<p>我这里选择了<code>prism-tomorrow</code>，但这个主题的代码字体太大，在后面的高级配置中会进行调整</p>
-<p>博客中代码块右上角还可以添加复制按钮，并且可以设置复制按钮样式，将<code>copy_botton</code>下的<code>enable</code>设为<code>true</code>，样式有三种，可以自己试试喜欢哪一个</p>
-<figure>
-<img src="image-20230726154526462.png" alt="image-20230726154526462" />
-<figcaption aria-hidden="true">image-20230726154526462</figcaption>
-</figure>
-<p>设置完成后，行内代码（即用``包含的部分）的颜色也是黑色，会显得非常的突兀，后面的高级配置会修改。</p>
-<h3 id="博客目录序号">博客目录序号</h3>
-<p>禁止自动添加序号，因为我自己会加，不需要自动添加。并且我想要默认展开全部目录。修改设置如下：</p>
-<figure>
-<img src="image-20230726154954945.png" alt="image-20230726154954945" />
-<figcaption aria-hidden="true">image-20230726154954945</figcaption>
-</figure>
-<h3 id="隐藏底部由...强力驱动">隐藏底部“由...强力驱动”</h3>
-<p>将<code>powered</code>修改为<code>false</code></p>
-<figure>
-<img src="image-20230730213548467.png" alt="image-20230730213548467" />
-<figcaption aria-hidden="true">image-20230730213548467</figcaption>
-</figure>
-<h3 id="头像">头像</h3>
-<figure>
-<img src="image-20230730214105518.png" alt="image-20230730214105518" />
-<figcaption aria-hidden="true">image-20230730214105518</figcaption>
-</figure>
-<p>将头像图片放在<code>主题根目录/source/images</code>下，url格式如图</p>
-<h2 id="高级配置">4.3 高级配置</h2>
-<p>参考<a
-href="https://theme-next.js.org/docs/advanced-settings/custom-files.html">NexT官方文档</a></p>
-<p>新建<code>站点根目录\source\_data</code>文件夹，里面新建<code>styles.styl</code>文件，将主题配置文件的<code>custom_file_path</code>下的<code>style</code>取消注释</p>
-<figure>
-<img src="image-20230726155327746.png" alt="image-20230726155327746" />
-<figcaption aria-hidden="true">image-20230726155327746</figcaption>
-</figure>
-<p><code>styles.styl</code>文件的优先级很高，许多自定义配置都能在这里面添加，这个是用的CSS语言，虽然我之前也没接触过，但折腾了几下也会一些基本的修改，不懂得也可以去网上查，以及问ChatGPT。</p>
-<p>我简单介绍一下自定义配置的操作思路</p>
-<figure>
-<img src="image-20230726160932524.png" alt="image-20230726160932524" />
-<figcaption aria-hidden="true">image-20230726160932524</figcaption>
-</figure>
-<p>在浏览器中打开本地预览，按F12打开控制台（不同浏览器显示位置可能不同，但操作逻辑是一样的，我这里使用的Edge）</p>
-<ul>
-<li>鼠标点击1，用于选择一个网页元素</li>
-<li>鼠标点击2，选择这一个行内代码</li>
-<li>右下方显示了这个元素相关的设置，在3找到背景和字体颜色的设置</li>
-<li>将这个代码复制到<code>styles.styl</code>文件，修改这两个属性即可。</li>
-</ul>
-<figure>
-<img src="image-20230726161349059.png" alt="image-20230726161349059" />
-<figcaption aria-hidden="true">image-20230726161349059</figcaption>
-</figure>
-<p>注意：</p>
-<p>1、各元素的相同设置可能会在多个地方出现，一定要找对这个元素独特的类，即上图中的<code>code, kbd, figure.highlight, pre</code>，你可以在上图的控制台更下面也找到color的设置，如果修改了这个设置，可能会影响多个地方。</p>
-<p>2、并不是出现了的属性我们才能去设置，比如还能设置上边距等属性</p>
-<h3 id="styles.styl文件">styles.styl文件</h3>
-<p>下面放上我使用的<code>styles.styl</code>文件，希望可以给出一些参考</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">//23.8.4更新，使用的Gemini主题</span></span><br><span class="line"><span class="comment">//文章内链接文本样式</span></span><br><span class="line"><span class="comment">// .post-body p a&#123;</span></span><br><span class="line"><span class="comment">//   color: #0593d3;</span></span><br><span class="line"><span class="comment">//   border-bottom: none;</span></span><br><span class="line"><span class="comment">//   border-bottom: 1px solid #0593d3;</span></span><br><span class="line"><span class="comment">//   &amp;:hover &#123;</span></span><br><span class="line"><span class="comment">//     color: #fc6423;</span></span><br><span class="line"><span class="comment">//     border-bottom: none;</span></span><br><span class="line"><span class="comment">//     border-bottom: 1px solid #fc6423;</span></span><br><span class="line"><span class="comment">//   &#125;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-tag">p</span> &#123;</span><br><span class="line">  <span class="attr">--link-color</span>: <span class="number">#0593d3</span>;</span><br><span class="line">  <span class="attr">--link-hover-color</span>: <span class="number">#fc6423</span>;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// a:hover &#123;</span></span><br><span class="line"><span class="comment">//     border-bottom-color: var(--link-hover-color);</span></span><br><span class="line"><span class="comment">//     color: var(--link-hover-color);</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//代码块</span></span><br><span class="line"><span class="selector-class">.code-container</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//行内代码</span></span><br><span class="line"><span class="selector-tag">code</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">14px</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">code</span>, <span class="selector-tag">kbd</span>, <span class="selector-tag">figure</span><span class="selector-class">.highlight</span>, pre &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#f9f2f4</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#dd0055</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//博客名</span></span><br><span class="line"><span class="selector-class">.posts-expand</span> <span class="selector-class">.post-title</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">24px</span>;</span><br><span class="line">    <span class="attribute">font-weight</span>: <span class="number">550</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.posts-expand</span> <span class="selector-class">.post-title-link</span><span class="selector-pseudo">::before</span> &#123;</span><br><span class="line">    <span class="attribute">background-image</span>: <span class="built_in">linear-gradient</span>(<span class="number">90deg</span>, <span class="number">#404040</span> <span class="number">0%</span>, <span class="number">#707070</span> <span class="number">25%</span>, <span class="number">#909090</span> <span class="number">50%</span>, <span class="number">#707070</span> <span class="number">75%</span>, <span class="number">#404040</span> <span class="number">100%</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//侧边栏</span></span><br><span class="line"><span class="selector-class">.sidebar</span> &#123;</span><br><span class="line">  <span class="attribute">font-size</span>: <span class="number">16px</span>;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-tag">a</span> &#123;</span><br><span class="line">    <span class="attribute">border-bottom</span>: <span class="number">0px</span>; </span><br><span class="line">&#125;</span><br><span class="line"><span class="selector-class">.post-toc</span> <span class="selector-class">.nav-item</span> &#123;</span><br><span class="line">    <span class="attribute">line-height</span>: <span class="number">2</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//隐藏图片名</span></span><br><span class="line"><span class="selector-class">.post-body</span> <span class="selector-class">.image-caption</span>, <span class="selector-class">.post-body</span> <span class="selector-tag">img</span> + <span class="selector-tag">figcaption</span>, <span class="selector-class">.post-body</span> <span class="selector-class">.fancybox</span> + <span class="selector-tag">figcaption</span> &#123;</span><br><span class="line">  <span class="attribute">display</span>: none;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//分类页</span></span><br><span class="line"><span class="selector-class">.category-all-page</span> <span class="selector-class">.category-list</span> &#123;</span><br><span class="line">    <span class="attribute">list-style</span>: disc;     <span class="comment">//一级分类前加实心圆点</span></span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">18px</span>;      <span class="comment">//调整字体</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//菜单</span></span><br><span class="line"><span class="selector-class">.menu</span> &#123;</span><br><span class="line">    <span class="attribute">font-size</span>: <span class="number">18px</span>;    <span class="comment">//字体</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//链接网格取消动画</span></span><br><span class="line"><span class="selector-class">.link-grid</span> <span class="selector-class">.link-grid-container</span> &#123;</span><br><span class="line">  <span class="attribute">transform</span>: none <span class="meta">!important</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//选中文字的颜色和背影颜色</span></span><br><span class="line"><span class="selector-pseudo">::selection</span> &#123;</span><br><span class="line">    <span class="attribute">background</span>: <span class="number">#328cfa</span>;</span><br><span class="line">    <span class="attribute">color</span>: <span class="number">#ffffff</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// .post-footer &#123;</span></span><br><span class="line"><span class="comment">//     display: flex;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//[Read More]按钮样式</span></span><br><span class="line"><span class="comment">// .post-button .btn &#123;</span></span><br><span class="line"><span class="comment">//   color: #555 !important;</span></span><br><span class="line"><span class="comment">//   background-color: rgb(255, 255, 255);</span></span><br><span class="line"><span class="comment">//   border-radius: 3px;</span></span><br><span class="line"><span class="comment">//   font-size: 15px;</span></span><br><span class="line"><span class="comment">//   box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);</span></span><br><span class="line"><span class="comment">//   border: none !important;</span></span><br><span class="line"><span class="comment">//   transition-property: unset;</span></span><br><span class="line"><span class="comment">//   padding: 0px 15px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .post-button .btn:hover &#123;</span></span><br><span class="line"><span class="comment">//   color: rgb(255, 255, 255) //!important;</span></span><br><span class="line"><span class="comment">//   border-radius: 3px;</span></span><br><span class="line"><span class="comment">//   font-size: 15px;</span></span><br><span class="line"><span class="comment">//   //box-shadow: inset 0px 0px 10px 0px rgba(0, 0, 0, 0.35);</span></span><br><span class="line"><span class="comment">//   //background-image: linear-gradient(90deg, #404040 0%, #707070 25%, #909090 50%, #707070 75%, #404040 100%);</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//背景图片设置</span></span><br><span class="line"><span class="comment">// body &#123;</span></span><br><span class="line"><span class="comment">//   background-image: url(/images/background.jpg);</span></span><br><span class="line"><span class="comment">//   background-repeat: no-repeat;</span></span><br><span class="line"><span class="comment">//   background-attachment: fixed;</span></span><br><span class="line"><span class="comment">//   background-size: 100% 100%;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//文章块设置</span></span><br><span class="line"><span class="comment">// .post-block:first-of-type &#123;</span></span><br><span class="line"><span class="comment">//     padding-top: 45px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .post-block &#123;</span></span><br><span class="line"><span class="comment">//   //margin-bottom: 50px;</span></span><br><span class="line"><span class="comment">//   margin-bottom: 20px;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   //border-radius: 10px;</span></span><br><span class="line">  </span><br><span class="line"><span class="comment">//   padding: 45px 36px 36px 36px;</span></span><br><span class="line"><span class="comment">//   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);</span></span><br><span class="line"><span class="comment">//   background-color: rgba(255, 255, 255, 1);</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//归档</span></span><br><span class="line"><span class="comment">// .posts-collapse .post-content .post-header &#123;</span></span><br><span class="line"><span class="comment">//   border-bottom: 0px dashed #ccc;</span></span><br><span class="line"><span class="comment">//   margin: 30px 2px 0;</span></span><br><span class="line"><span class="comment">//   padding-left: 15px;</span></span><br><span class="line"><span class="comment">//   position: relative;</span></span><br><span class="line"><span class="comment">//   transition: border 0.2s ease-in-out;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   font-size: 16px;</span></span><br><span class="line"><span class="comment">//   box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.5);</span></span><br><span class="line"><span class="comment">//   width: 600px;</span></span><br><span class="line"><span class="comment">//   height: 40px;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   padding-top: 25px;</span></span><br><span class="line"><span class="comment">//   padding-bottom: 15px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .posts-collapse .post-content .post-meta-container &#123;</span></span><br><span class="line"><span class="comment">//     display: inline;</span></span><br><span class="line"><span class="comment">//     font-size: 16px;</span></span><br><span class="line"><span class="comment">//     margin-right: 10px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .posts-collapse .post-content .post-header::before &#123;</span></span><br><span class="line"><span class="comment">//     top: 37px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//分类页面左边添加竖线，调整间距</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list &#123;</span></span><br><span class="line"><span class="comment">//   list-style: none;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list li &#123;</span></span><br><span class="line"><span class="comment">//   position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */</span></span><br><span class="line"><span class="comment">//   padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//   margin-top: 15px;</span></span><br><span class="line"><span class="comment">//   margin-right: 10px;</span></span><br><span class="line"><span class="comment">//   margin-bottom: 15px;</span></span><br><span class="line"><span class="comment">//   margin-left: 10px;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list li::before &#123;</span></span><br><span class="line"><span class="comment">//   content: &quot;&quot;; /* 添加伪元素的内容，此处为空 */</span></span><br><span class="line"><span class="comment">//   position: absolute; /* 将伪元素绝对定位到列表项内 */</span></span><br><span class="line"><span class="comment">//   top: 0; /* 设置伪元素的顶部位置 */</span></span><br><span class="line"><span class="comment">//   left: 0; /* 设置伪元素的左侧位置 */</span></span><br><span class="line"><span class="comment">//   width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */</span></span><br><span class="line"><span class="comment">//   height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */</span></span><br><span class="line"><span class="comment">//   background-color: #3E2EBF; /* 设置竖线的颜色 */</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list-child &#123;</span></span><br><span class="line"><span class="comment">//   list-style: none;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list-child li &#123;</span></span><br><span class="line"><span class="comment">//   position: relative; /* 设置列表项为相对定位，以便容纳伪元素 */</span></span><br><span class="line"><span class="comment">//   padding-left: 20px; /* 设置列表项的左内边距，为伪元素的宽度预留空间 */</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"><span class="comment">// .category-all-page .category-list-child li::before &#123;</span></span><br><span class="line"><span class="comment">//   content: &quot;&quot;; /* 添加伪元素的内容，此处为空 */</span></span><br><span class="line"><span class="comment">//   position: absolute; /* 将伪元素绝对定位到列表项内 */</span></span><br><span class="line"><span class="comment">//   top: 0; /* 设置伪元素的顶部位置 */</span></span><br><span class="line"><span class="comment">//   left: 0; /* 设置伪元素的左侧位置 */</span></span><br><span class="line"><span class="comment">//   width: 2px; /* 设置伪元素的宽度，即竖线的宽度 */</span></span><br><span class="line"><span class="comment">//   height: 100%; /* 设置伪元素的高度，与列表项的高度一致，即竖线的高度 */</span></span><br><span class="line"><span class="comment">//   background-color: #B1A7FE; /* 设置竖线的颜色 */</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//隐藏首页文章底部的横线</span></span><br><span class="line"><span class="comment">// .post-eof &#123;</span></span><br><span class="line"><span class="comment">//   display: none;</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// article &#123;</span></span><br><span class="line"><span class="comment">//   font-size: 18px;  //归档下文章名字体</span></span><br><span class="line"><span class="comment">// &#125;</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h3 id="variables.styl文件">variables.styl文件</h3>
-<p>将主题配置文件的<code>custom_file_path</code>下的<code>variables</code>取消注释</p>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><span class="line"><span class="comment">//标签云颜色</span></span><br><span class="line"><span class="variable">$tag</span>-cloud-start      = <span class="number">#9733EE</span>;</span><br><span class="line"><span class="variable">$tag</span>-cloud-end        = <span class="number">#FF512F</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//$content-desktop         = &#x27;calc(100% - %s)&#x27; % unit($content-desktop-padding / 2, &#x27;px&#x27;)</span></span><br><span class="line"><span class="variable">$content</span>-desktop-large   = <span class="number">1160px</span></span><br><span class="line"><span class="variable">$content</span>-desktop-largest = <span class="number">73%</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>hexo博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>（四）插件安装和其他设置</title>
-    <url>/2023/10/05/hexo%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/%EF%BC%88%E5%9B%9B%EF%BC%89%E6%8F%92%E4%BB%B6%E5%AE%89%E8%A3%85%E5%92%8C%E5%85%B6%E4%BB%96%E8%AE%BE%E7%BD%AE/</url>
-    <content><![CDATA[<p><mark>虽然更换了主题，但如果想要在新的主题添加这些功能，除了修改主题配置文件外，其他步骤是一样的，然后去新的主题教程里面跟着修改主题配置文件</mark></p>
-<h1 id="前言">前言</h1>
-<p>NexT中已经自带了许多插件，很多不需要额外安装，只需要在主题配置文件中设置一下即可。但还有一些好用的插件需要额外安装。</p>
-<h1 id="自带插件">自带插件</h1>
-<h2 id="显示数学公式">显示数学公式</h2>
-<p>资料：<a
-href="https://theme-next.js.org/docs/third-party-services/math-equations.html">Math
-Equations|NexT</a></p>
-<p>NexT 提供了两个用于显示数学公式的渲染引擎：<a
-href="https://www.mathjax.org/">MathJax</a>和<a
-href="https://katex.org/">KaTeX</a>。（butterfly也提供）</p>
-<p>我选择了MathJax，虽然说的渲染速度慢一点，但兼容性很好。</p>
-<p>KaTeX只支持LaTeX语法，重要的是在上面的资料中提到了KaTeX存在许多问题，比如使用行内公式，即使用<code>\$公式$</code>语法，前后除了空格不能有其他字符，但我使用行内公式就是为了将公式放入到文字中而不是单独使用一行。</p>
-<p>要使用哪个渲染引擎首先在主题配置文件中修改，将对应的enable改为true：</p>
-<figure>
-<img src="image-20230727115452110.png" alt="image-20230727115452110" />
-<figcaption aria-hidden="true">image-20230727115452110</figcaption>
-</figure>
-<p><code>every_page</code>：设置为true，默认为每一个博客渲染数学公式；设置为false，只会为开头加了<code>mathjax: true</code>的博客渲染，如下</p>
-<figure>
-<img src="image-20230727115655944.png" alt="image-20230727115655944" />
-<figcaption aria-hidden="true">image-20230727115655944</figcaption>
-</figure>
-<p>hexo自带了一个渲染器hexo-renderer-marked，但并不好用，很容易渲染错误。</p>
-<p>NexT推荐使用hexo-renderer-pandoc</p>
-<p>要使用这个首先要安装<a
-href="https://github.com/jgm/pandoc">pandoc</a></p>
-<figure>
-<img src="image-20230727120948271.png" alt="image-20230727120948271" />
-<figcaption aria-hidden="true">image-20230727120948271</figcaption>
-</figure>
-<figure>
-<img src="image-20230727121030837.png" alt="image-20230727121030837" />
-<figcaption aria-hidden="true">image-20230727121030837</figcaption>
-</figure>
-<p>安装好后，在站点根目录打开Git bash，依次输入：</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm un hexo-renderer-marked</span><br><span class="line">npm i hexo-renderer-pandoc</span><br></pre></td></tr></table></figure>
-<p>就可以正常使用了。</p>
-<div class="note warning flat"><p>在编写公式时，如果出现连续的花括号，要在每个<em>左</em>花括号间加空格，否则会被识别成Nunjucks模板语法，导致生成错误，如：</p>
-<figure>
-<img src="image-20230806224047166.png" alt="image-20230806224047166" />
-<figcaption aria-hidden="true">image-20230806224047166</figcaption>
-</figure>
-<p>在<code>hexo g</code>时会报错，需要改为：<code>$\overline{ {u_{\mathbf{d}}}}$</code></p>
-</div>
-<h2 id="自动空格">自动空格</h2>
-<p>主题配置文件：</p>
-<figure>
-<img src="image-20230727123633622.png" alt="image-20230727123633622" />
-<figcaption aria-hidden="true">image-20230727123633622</figcaption>
-</figure>
-<p>设置后，会自动在连着的英语和中文之间添加空格。</p>
-<h2 id="本地搜索">本地搜索</h2>
-<p>在站点根目录下打开git bash执行</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">npm install hexo-generator-searchdb</span><br></pre></td></tr></table></figure>
-<p>打开站点配置文件，在最后<strong>添加</strong>以下代码</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="attr">search:</span></span><br><span class="line">  <span class="attr">path:</span> <span class="string">search.xml</span></span><br><span class="line">  <span class="attr">field:</span> <span class="string">post</span></span><br><span class="line">  <span class="attr">content:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">format:</span> <span class="string">html</span></span><br></pre></td></tr></table></figure>
-<p>打开主题配置文件，<strong>修改</strong>：</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Local search</span></span><br><span class="line"><span class="comment"># Dependencies: https://github.com/next-theme/hexo-generator-searchdb</span></span><br><span class="line"><span class="attr">local_search:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="comment"># If auto, trigger search by changing input.</span></span><br><span class="line">  <span class="comment"># If manual, trigger search by pressing enter key or search button.</span></span><br><span class="line">  <span class="attr">trigger:</span> <span class="string">auto</span></span><br><span class="line">  <span class="comment"># Show top n results per article, show all results by setting to -1</span></span><br><span class="line">  <span class="attr">top_n_per_article:</span> <span class="number">1</span></span><br><span class="line">  <span class="comment"># Unescape html strings to the readable one.</span></span><br><span class="line">  <span class="attr">unescape:</span> <span class="literal">false</span></span><br><span class="line">  <span class="comment"># Preload the search data when the page loads.</span></span><br><span class="line">  <span class="attr">preload:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
-<h2 id="评论系统">评论系统</h2>
-<p>NexT内部自带了几个评论系统的设置，但查阅资料后发现<strong>waline</strong>评论系统更加好用，所以选择了<strong>waline</strong>评论系统。</p>
-<p>但waline系统需要一个额外的域名（自带的域名需要魔法上网），才能正常显示评论和写评论等。</p>
-<p>我选择在腾讯云买了一个最便宜的域名，第一年只要9元，后面绑定域名的操作也是基于腾讯云平台的。</p>
-<p><a
-href="https://waline.js.org/guide/get-started/">waline官网</a>步骤已经说的非常详细了，但有几个步骤一点差别。一样步骤的我就简单略过，大家参考官网即可，不一样步骤再详细的说一下。</p>
-<p>进入上面提到的官网</p>
-<h3 id="leancloud设置">LeanCloud设置</h3>
-<p>完全跟官网的步骤做即可</p>
-<h3 id="vercel-部署">Vercel 部署</h3>
-<p>注意第4步输入环境变量，<strong>key</strong>输入的是<strong>LEAN_ID</strong>,
-<strong>LEAN_KEY</strong> 和
-<strong>LEAN_MASTER_KEY</strong>，<strong>value</strong>则是对应的
-<strong>APP ID</strong>, <strong>APP KEY</strong>, <strong>Master
-Key</strong>，输入一个后点<strong>Add
-another</strong>，一共输入三个，最后点右下角<strong>save</strong></p>
-<figure>
-<img src="image-20230728164318018.png" alt="image-20230728164318018" />
-<figcaption aria-hidden="true">image-20230728164318018</figcaption>
-</figure>
-<p>其他步骤按官网步骤。</p>
-<h3 id="绑定域名-可选">绑定域名 (可选)</h3>
-<p>先在腾讯云买一个域名（第一次买会有几次审核，我等了2个小时左右，域名最终才可用）。我选择了最便宜的.top。假定买的域名为123.top。</p>
-<p>按第二部输入123.top后，</p>
-<figure>
-<img src="image-20230728165607469.png" alt="image-20230728165607469" />
-<figcaption aria-hidden="true">image-20230728165607469</figcaption>
-</figure>
-<p>选第三个。</p>
-<p>添加后会提示我们：</p>
-<figure>
-<img src="image-20230728165711515.png" alt="image-20230728165711515" />
-<figcaption aria-hidden="true">image-20230728165711515</figcaption>
-</figure>
-<p>打开腾讯云的控制台，进入<code>DNS 解析 DNSPod</code></p>
-<figure>
-<img src="image-20230728170842612.png" alt="image-20230728170842612" />
-<figcaption aria-hidden="true">image-20230728170842612</figcaption>
-</figure>
-<p>选择你的域名，进入，点击<code>添加记录</code></p>
-<figure>
-<img src="image-20230728171051026.png" alt="image-20230728171051026" />
-<figcaption aria-hidden="true">image-20230728171051026</figcaption>
-</figure>
-<p>主机记录填写上面<strong>Name</strong>，记录类型选择<strong>Type</strong>，记录值填写<strong>Value</strong></p>
-<figure>
-<img src="image-20230728171558589.png" alt="image-20230728171558589" />
-<figcaption aria-hidden="true">image-20230728171558589</figcaption>
-</figure>
-<p>会发现这个界面的<strong>Domains</strong>会多出123.top</p>
-<p>123.top就是评论系统的网址。</p>
-<h3 id="html-引入-客户端">HTML 引入 (客户端)</h3>
-<p>官网上的这一步不需要。跳过。</p>
-<h3 id="评论管理-管理端">评论管理 (管理端)</h3>
-<p>访问<code>123.top/ui/register</code>进行注册，首个注册的人会被设定成管理员。</p>
-<p>管理员登陆后，即可看到评论管理界面。在这里可以修改、标记或删除评论。</p>
-<p>用户也可通过评论框注册账号，登陆后会跳转到自己的档案页。</p>
-<h3 id="本地博客设置">本地博客设置</h3>
-<p><a
-href="https://github.com/walinejs/waline/tree/main/packages/hexo-next">Hexo
-NexT Waline</a></p>
-<p>在站点根目录打开gitbash输入：<code>npm install @waline/hexo-next</code></p>
-<p>在主题配置文件中添加以下内容，enable设为true，serverURL设为123.top，其他设置按照说明根据喜好设置</p>
-<figure class="highlight yaml"><table><tr><td class="code"><pre><span class="line"><span class="comment"># Waline Config File</span></span><br><span class="line"><span class="comment"># For more information:</span></span><br><span class="line"><span class="comment"># - https://waline.js.org</span></span><br><span class="line"><span class="comment"># - https://waline.js.org/reference/component.html</span></span><br><span class="line"><span class="attr">waline:</span></span><br><span class="line">  <span class="comment"># New! Whether enable this plugin</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Waline server address url, you should set this to your own link</span></span><br><span class="line">  <span class="attr">serverURL:</span> <span class="string">https://waline.vercel.app</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Waline library CDN url, you can set this to your preferred CDN</span></span><br><span class="line">  <span class="comment"># libUrl: https://unpkg.com/@waline/client@v2/dist/waline.js</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Waline CSS styles CDN url, you can set this to your preferred CDN</span></span><br><span class="line">  <span class="attr">cssUrl:</span> <span class="string">https://unpkg.com/@waline/client@v2/dist/waline.css</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Custom locales</span></span><br><span class="line">  <span class="comment"># locale:</span></span><br><span class="line">  <span class="comment">#   placeholder: Welcome to comment # Comment box placeholder</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># If false, comment count will only be displayed in post page, not in home page</span></span><br><span class="line">  <span class="attr">commentCount:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Pageviews count, <span class="doctag">Note:</span> You should not enable both `waline.pageview` and `leancloud_visitors`.</span></span><br><span class="line">  <span class="attr">pageview:</span> <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Custom emoji</span></span><br><span class="line">  <span class="comment"># emoji:</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/weibo</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/alus</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/bilibili</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/qq</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/tieba</span></span><br><span class="line">  <span class="comment">#   - https://unpkg.com/@waline/emojis@1.1.0/tw-emoji</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Comment information, valid meta are nick, mail and link</span></span><br><span class="line">  <span class="comment"># meta:</span></span><br><span class="line">  <span class="comment">#   - nick</span></span><br><span class="line">  <span class="comment">#   - mail</span></span><br><span class="line">  <span class="comment">#   - link</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Set required meta field, e.g.: [nick] | [nick, mail]</span></span><br><span class="line">  <span class="comment"># requiredMeta:</span></span><br><span class="line">  <span class="comment">#   - nick</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Language, available values: en-US, zh-CN, zh-TW, pt-BR, ru-RU, jp-JP</span></span><br><span class="line">  <span class="comment"># lang: zh-CN</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Word limit, no limit when setting to 0</span></span><br><span class="line">  <span class="comment"># wordLimit: 0</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># Whether enable login, can choose from &#x27;enable&#x27;, &#x27;disable&#x27; and &#x27;force&#x27;</span></span><br><span class="line">  <span class="comment"># login: enable</span></span><br><span class="line"></span><br><span class="line">  <span class="comment"># comment per page</span></span><br><span class="line">  <span class="comment"># pageSize: 10</span></span><br></pre></td></tr></table></figure>
-<p>保存部署后，就可以看到评论区了。</p>
-<p>但这样分类，标签和关于页面下也有评论区，但我只想在博客里显示评论。</p>
-<p>打开<code>站点根目录\source</code>，打开<code>about</code>，<code>categories</code>，<code>tags</code>文件夹下的<code>index.md</code>，在顶部添加<code>comments: false</code></p>
-<figure>
-<img src="image-20230728172758161.png" alt="image-20230728172758161" />
-<figcaption aria-hidden="true">image-20230728172758161</figcaption>
-</figure>
-]]></content>
-      <categories>
-        <category>hexo博客搭建</category>
-      </categories>
-      <tags>
-        <tag>hexo</tag>
-        <tag>博客</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>通信相关的零散知识点</title>
     <url>/2023/10/09/%E9%80%9A%E4%BF%A1/%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
     <content><![CDATA[
@@ -1256,6 +949,94 @@ NexT Waline</a></p>
       </categories>
       <tags>
         <tag>通信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件资源推荐</title>
+    <url>/2023/10/09/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h1 id="pot">Pot</h1>
+<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
+<p>截图翻译，划词翻译，OCR</p>
+<p> </p>
+<h1 id="snipaste">snipaste</h1>
+<p>链接：<a
+href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
+<p>截图工具。</p>
+<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
+<p> </p>
+<h1 id="dism">Dism++</h1>
+<p>链接：<a
+href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
+<p>window工具箱。</p>
+<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
+<p> </p>
+<h1 id="msi-afterburner">MSI Afterburner</h1>
+<p>链接：<a
+href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
+<p>性能监控软件。</p>
+<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
+<p> </p>
+<h1 id="图吧工具箱">图吧工具箱</h1>
+<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
+<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
+<p> </p>
+<h1 id="simpletex">SimpleTex</h1>
+<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
+<p>公式识别转换</p>
+<p>将图片中的公式转换为LaTeX格式</p>
+<p> </p>
+<h1 id="quicklook">QuickLook：</h1>
+<p>链接：<a
+href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
+<p>查看office的插件：<a
+href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
+<p>快速查看文件内容</p>
+<p>对文件按空格可以快速浏览文件内容</p>
+<p> </p>
+<h1 id="el_display_hub">EL_Display_Hub</h1>
+<p>链接：<a
+href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
+<p>iPad当副屏</p>
+<p>还要在ipad端App Store购买Twomon SE</p>
+<p> </p>
+<h1 id="potplayer">potplayer</h1>
+<p>链接：<a
+href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
+<p>本地视频播放器</p>
+<p>功能强大丰富，支持格式非常多。</p>
+<p> </p>
+<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
+<p>链接：<a
+href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
+<p>把QT的软件及库打包成一个exe文件</p>
+<p> </p>
+<h1 id="everything">everything</h1>
+<p>链接：<a
+href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
+<p>文件搜索</p>
+<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
+<p> </p>
+<h1 id="cajviewer">CAJViewer</h1>
+<p>链接：<a
+href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
+<p>CAJ阅读器</p>
+<p> </p>
+<h1 id="ddu">DDU</h1>
+<p>链接：<a
+href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
+<p>显卡驱动卸载</p>
+<p>常用于AMD显卡驱动卸载</p>
+<p> </p>
+<h1 id="vscode">vscode</h1>
+<p>链接：<a
+href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p>编辑器</p>
+]]></content>
+      <categories>
+        <category>资源推荐</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
       </tags>
   </entry>
   <entry>
