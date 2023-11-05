@@ -47,15 +47,15 @@ marked:
 relative_link: false
 future: true
 highlight:
-  enable: false
+  enable: true
   line_number: true
   auto_detect: false
   tab_replace: ''
   wrap: true
   hljs: false
 prismjs:
-  enable: true
-  preprocess: false
+  enable: false
+  preprocess: true
   line_number: true
   tab_replace: ''
 
@@ -65,7 +65,6 @@ prismjs:
 # order_by: Posts order. (Order by date descending by default)
 index_generator:
   path: ''
-  #path: /default-index/
   per_page: 10
   order_by: -date
 
