@@ -134,7 +134,7 @@ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 ### 主题选择
 
-![image-20230726151245933](image-20230726151245933.png)
+![](image-20230726151245933.png)
 
 通过注释和取消注释选择主题，这里选择Mist，后面也是根据Mist调整。也可以试下其他主题，在本地预览效果，挑自己喜欢的。
 
@@ -144,11 +144,11 @@ git clone https://github.com/next-theme/hexo-theme-next themes/next
 
 ### 菜单
 
-![image-20230726151423449](image-20230726151423449.png)
+![](image-20230726151423449.png)
 
 会在博客顶部根据上图中的顺序依次添加菜单，但此时标签，分类，关于都无法打开，需要添加页面
 
-![image-20230726151519546](image-20230726151519546.png)
+![](image-20230726151519546.png)
 
 Git Bash依次输入：
 
@@ -160,13 +160,13 @@ hexo new page about
 
 标签页面还要在`站点根目录/source/tags/index.md` 中加上 `type: "tags"`，才会在标签页面显示标签
 
-![image-20230726151600771](image-20230726151600771.png)
+![](image-20230726151600771.png)
 
 ### 关闭渐入效果
 
 搜索`motion`，将`enable`后面改为`false`，喜欢这个效果的的也可以不关
 
-![image-20230726151800143](image-20230726151800143.png)
+![](image-20230726151800143.png)
 
 
 
@@ -180,7 +180,7 @@ hexo new page about
 
 在`主题配置文件`中
 
-![image-20230726153050491](image-20230726153050491.png)
+![](image-20230726153050491.png)
 
 先把`enable`设为`true`。
 
@@ -198,7 +198,7 @@ hexo new page about
 
 > hexo支持两种库： [highlight.js](https://github.com/highlightjs/highlight.js) 和 [prismjs](https://github.com/PrismJS/prism) 。next主题官方也只能设置这两种。在这两种库下都有多种风格可选。要用哪个库把先把站点配置文件下对用主题下的`enable`设为`true`，另一个的`enable`设为`false`，我选择了`prismjs`，其他的设置根据需要参考官网调整，我这里设为默认。
 
-![image-20230726153648860](image-20230726153648860.png)
+![](image-20230726153648860.png)
 
 如果前面选择`highlight`，就是`theme`后面设置起作用，我选择了`prism`，所以`prism`后面两个设置起作用，分别是正常模式下的代码主题和黑暗模式下的代码主题，我博客没开黑暗模式，所以根据`light`选项的设置。不同的风格可以去上图中364行提到的网站预览。[NexT Highlight Theme Preview](https://theme-next.js.org/highlight/)
 
@@ -206,7 +206,7 @@ hexo new page about
 
 博客中代码块右上角还可以添加复制按钮，并且可以设置复制按钮样式，将`copy_botton`下的`enable`设为`true`，样式有三种，可以自己试试喜欢哪一个
 
-![image-20230726154526462](image-20230726154526462.png)
+![](image-20230726154526462.png)
 
 设置完成后，行内代码（即用\``包含的部分）的颜色也是黑色，会显得非常的突兀，后面的高级配置会修改。
 
@@ -216,19 +216,19 @@ hexo new page about
 
 禁止自动添加序号，因为我自己会加，不需要自动添加。并且我想要默认展开全部目录。修改设置如下：
 
-![image-20230726154954945](image-20230726154954945.png)
+![](image-20230726154954945.png)
 
 ### 隐藏底部“由...强力驱动”
 
 将`powered`修改为`false`
 
-![image-20230730213548467](image-20230730213548467.png)
+![](image-20230730213548467.png)
 
 
 
 ### 头像
 
-![image-20230730214105518](image-20230730214105518.png)
+![](image-20230730214105518.png)
 
 将头像图片放在`主题根目录/source/images`下，url格式如图
 
@@ -240,13 +240,13 @@ hexo new page about
 
 新建`站点根目录\source\_data`文件夹，里面新建`styles.styl`文件，将主题配置文件的`custom_file_path`下的`style`取消注释
 
-![image-20230726155327746](image-20230726155327746.png)
+![](image-20230726155327746.png)
 
 `styles.styl`文件的优先级很高，许多自定义配置都能在这里面添加，这个是用的CSS语言，虽然我之前也没接触过，但折腾了几下也会一些基本的修改，不懂得也可以去网上查，以及问ChatGPT。
 
 我简单介绍一下自定义配置的操作思路
 
-![image-20230726160932524](image-20230726160932524.png)
+![](image-20230726160932524.png)
 
 在浏览器中打开本地预览，按F12打开控制台（不同浏览器显示位置可能不同，但操作逻辑是一样的，我这里使用的Edge）
 
@@ -255,7 +255,7 @@ hexo new page about
 - 右下方显示了这个元素相关的设置，在3找到背景和字体颜色的设置
 - 将这个代码复制到`styles.styl`文件，修改这两个属性即可。
 
-![image-20230726161349059](image-20230726161349059.png)
+![](image-20230726161349059.png)
 
 注意：
 
