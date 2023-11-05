@@ -168,10 +168,7 @@ d部署报错之spawn failed的解决方案</a> 的方法2）</p>
 <p>使用命令<code>hexo n 博客文件名</code>，就会在<code>站点根目录/source/_posts</code>
 下创建 <code>博客文件名.md</code>
 文件，打开该文件，会发现开头有内容了</p>
-<figure>
-<img src="image-20230726200030465.png" alt="image-20230726200030465" />
-<figcaption aria-hidden="true">image-20230726200030465</figcaption>
-</figure>
+<p><img src="image-20230726200030465.png" /></p>
 <p>博客标题<code>title</code>默认和文件名一样，可以修改。</p>
 <p>写好后一般依次执行以下命令：</p>
 <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g</span><br><span class="line">hexo d</span><br></pre></td></tr></table></figure>
@@ -637,6 +634,94 @@ NexT Waline</a></p>
       </tags>
   </entry>
   <entry>
+    <title>软件资源推荐</title>
+    <url>/2023/10/09/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h1 id="pot">Pot</h1>
+<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
+<p>截图翻译，划词翻译，OCR</p>
+<p> </p>
+<h1 id="snipaste">snipaste</h1>
+<p>链接：<a
+href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
+<p>截图工具。</p>
+<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
+<p> </p>
+<h1 id="dism">Dism++</h1>
+<p>链接：<a
+href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
+<p>window工具箱。</p>
+<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
+<p> </p>
+<h1 id="msi-afterburner">MSI Afterburner</h1>
+<p>链接：<a
+href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
+<p>性能监控软件。</p>
+<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
+<p> </p>
+<h1 id="图吧工具箱">图吧工具箱</h1>
+<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
+<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
+<p> </p>
+<h1 id="simpletex">SimpleTex</h1>
+<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
+<p>公式识别转换</p>
+<p>将图片中的公式转换为LaTeX格式</p>
+<p> </p>
+<h1 id="quicklook">QuickLook：</h1>
+<p>链接：<a
+href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
+<p>查看office的插件：<a
+href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
+<p>快速查看文件内容</p>
+<p>对文件按空格可以快速浏览文件内容</p>
+<p> </p>
+<h1 id="el_display_hub">EL_Display_Hub</h1>
+<p>链接：<a
+href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
+<p>iPad当副屏</p>
+<p>还要在ipad端App Store购买Twomon SE</p>
+<p> </p>
+<h1 id="potplayer">potplayer</h1>
+<p>链接：<a
+href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
+<p>本地视频播放器</p>
+<p>功能强大丰富，支持格式非常多。</p>
+<p> </p>
+<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
+<p>链接：<a
+href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
+<p>把QT的软件及库打包成一个exe文件</p>
+<p> </p>
+<h1 id="everything">everything</h1>
+<p>链接：<a
+href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
+<p>文件搜索</p>
+<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
+<p> </p>
+<h1 id="cajviewer">CAJViewer</h1>
+<p>链接：<a
+href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
+<p>CAJ阅读器</p>
+<p> </p>
+<h1 id="ddu">DDU</h1>
+<p>链接：<a
+href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
+<p>显卡驱动卸载</p>
+<p>常用于AMD显卡驱动卸载</p>
+<p> </p>
+<h1 id="vscode">vscode</h1>
+<p>链接：<a
+href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p>编辑器</p>
+]]></content>
+      <categories>
+        <category>资源推荐</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>AD20软件使用</title>
     <url>/2023/10/10/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/AD20%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="单位换算">单位换算</h1>
@@ -781,6 +866,39 @@ PCB Document ...
       </tags>
   </entry>
   <entry>
+    <title>QTcreator上位机</title>
+    <url>/2023/10/09/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/%E4%B8%8A%E4%BD%8D%E6%9C%BA/</url>
+    <content><![CDATA[<ul>
+<li><p>检查QByteArray每个字节的bit</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QByteArray byteData;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span> *pData = byteData.<span class="built_in">constData</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; byteData.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">7</span>; j &gt;= <span class="number">0</span>; --j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pData[i] &amp; (<span class="number">1</span> &lt;&lt; j)) &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;1&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;0&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;--------------------&quot;</span> &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure></li>
+<li><p>更换图标，将.ico放到工程文件夹内，在.pro中添加</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">RC_ICONS = xxxxxx.ico</span><br></pre></td></tr></table></figure></li>
+<li><p>打包可执行文件：</p>
+<ul>
+<li><p>构建切换到Release模式，点击运行</p></li>
+<li><p>在build-xxxxx-Release文件夹中的release文件夹中找到xxx.exe，复制到新创建的一个文件夹（如MyEXE）中，</p></li>
+<li><p>开始菜单搜索qt，打开命令窗口，用" <mark>cd /d 路径</mark>
+"切换到MyEXE下，例如</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /d F:\projects\qtcreator\MyEXE</span><br></pre></td></tr></table></figure></li>
+<li><p>再输入：windeployqt xxx.exe</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">windeployqt xxx.exe</span><br></pre></td></tr></table></figure></li>
+<li><p>打包完成，已经可以正常使用了。接下来借用其他软件将所有文件打包到一个exe文件</p></li>
+<li><p>打开Enigma Virtual
+Box，选择刚才打包好的exe文件，点击增加，添加刚才新创建的文件夹（如MyEXE），点击“文件选项”，勾选压缩文件，确定，执行封包，等待，最后就可以得到只有一个可以运行的exe文件</p></li>
+</ul></li>
+</ul>
+<p><img src="image-20230412122755410.png" /></p>
+]]></content>
+      <categories>
+        <category>软件使用</category>
+      </categories>
+      <tags>
+        <tag>QTCreator</tag>
+        <tag>上位机</tag>
+        <tag>软件打包</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>ADS使用</title>
     <url>/2023/10/30/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/ADS%E4%BD%BF%E7%94%A8/</url>
     <content><![CDATA[<h1 id="计算射频线宽">计算射频线宽</h1>
@@ -907,39 +1025,6 @@ Constant为介质介电常数，Loss Tangent为损耗因子（损耗角正切）
       </tags>
   </entry>
   <entry>
-    <title>QTcreator上位机</title>
-    <url>/2023/10/09/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/%E4%B8%8A%E4%BD%8D%E6%9C%BA/</url>
-    <content><![CDATA[<ul>
-<li><p>检查QByteArray每个字节的bit</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QByteArray byteData;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span> *pData = byteData.<span class="built_in">constData</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; byteData.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">7</span>; j &gt;= <span class="number">0</span>; --j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pData[i] &amp; (<span class="number">1</span> &lt;&lt; j)) &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;1&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;0&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;--------------------&quot;</span> &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure></li>
-<li><p>更换图标，将.ico放到工程文件夹内，在.pro中添加</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">RC_ICONS = xxxxxx.ico</span><br></pre></td></tr></table></figure></li>
-<li><p>打包可执行文件：</p>
-<ul>
-<li><p>构建切换到Release模式，点击运行</p></li>
-<li><p>在build-xxxxx-Release文件夹中的release文件夹中找到xxx.exe，复制到新创建的一个文件夹（如MyEXE）中，</p></li>
-<li><p>开始菜单搜索qt，打开命令窗口，用" <mark>cd /d 路径</mark>
-"切换到MyEXE下，例如</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /d F:\projects\qtcreator\MyEXE</span><br></pre></td></tr></table></figure></li>
-<li><p>再输入：windeployqt xxx.exe</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">windeployqt xxx.exe</span><br></pre></td></tr></table></figure></li>
-<li><p>打包完成，已经可以正常使用了。接下来借用其他软件将所有文件打包到一个exe文件</p></li>
-<li><p>打开Enigma Virtual
-Box，选择刚才打包好的exe文件，点击增加，添加刚才新创建的文件夹（如MyEXE），点击“文件选项”，勾选压缩文件，确定，执行封包，等待，最后就可以得到只有一个可以运行的exe文件</p></li>
-</ul></li>
-</ul>
-<p><img src="image-20230412122755410.png" /></p>
-]]></content>
-      <categories>
-        <category>软件使用</category>
-      </categories>
-      <tags>
-        <tag>QTCreator</tag>
-        <tag>上位机</tag>
-        <tag>软件打包</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>通信相关的零散知识点</title>
     <url>/2023/10/09/%E9%80%9A%E4%BF%A1/%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
     <content><![CDATA[
@@ -949,94 +1034,6 @@ Box，选择刚才打包好的exe文件，点击增加，添加刚才新创建�
       </categories>
       <tags>
         <tag>通信</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件资源推荐</title>
-    <url>/2023/10/09/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<h1 id="pot">Pot</h1>
-<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
-<p>截图翻译，划词翻译，OCR</p>
-<p> </p>
-<h1 id="snipaste">snipaste</h1>
-<p>链接：<a
-href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
-<p>截图工具。</p>
-<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
-<p> </p>
-<h1 id="dism">Dism++</h1>
-<p>链接：<a
-href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
-<p>window工具箱。</p>
-<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
-<p> </p>
-<h1 id="msi-afterburner">MSI Afterburner</h1>
-<p>链接：<a
-href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
-<p>性能监控软件。</p>
-<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
-<p> </p>
-<h1 id="图吧工具箱">图吧工具箱</h1>
-<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
-<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
-<p> </p>
-<h1 id="simpletex">SimpleTex</h1>
-<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
-<p>公式识别转换</p>
-<p>将图片中的公式转换为LaTeX格式</p>
-<p> </p>
-<h1 id="quicklook">QuickLook：</h1>
-<p>链接：<a
-href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
-<p>查看office的插件：<a
-href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
-<p>快速查看文件内容</p>
-<p>对文件按空格可以快速浏览文件内容</p>
-<p> </p>
-<h1 id="el_display_hub">EL_Display_Hub</h1>
-<p>链接：<a
-href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
-<p>iPad当副屏</p>
-<p>还要在ipad端App Store购买Twomon SE</p>
-<p> </p>
-<h1 id="potplayer">potplayer</h1>
-<p>链接：<a
-href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
-<p>本地视频播放器</p>
-<p>功能强大丰富，支持格式非常多。</p>
-<p> </p>
-<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
-<p>链接：<a
-href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
-<p>把QT的软件及库打包成一个exe文件</p>
-<p> </p>
-<h1 id="everything">everything</h1>
-<p>链接：<a
-href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
-<p>文件搜索</p>
-<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
-<p> </p>
-<h1 id="cajviewer">CAJViewer</h1>
-<p>链接：<a
-href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
-<p>CAJ阅读器</p>
-<p> </p>
-<h1 id="ddu">DDU</h1>
-<p>链接：<a
-href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
-<p>显卡驱动卸载</p>
-<p>常用于AMD显卡驱动卸载</p>
-<p> </p>
-<h1 id="vscode">vscode</h1>
-<p>链接：<a
-href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p>编辑器</p>
-]]></content>
-      <categories>
-        <category>资源推荐</category>
-      </categories>
-      <tags>
-        <tag>资源</tag>
       </tags>
   </entry>
   <entry>
