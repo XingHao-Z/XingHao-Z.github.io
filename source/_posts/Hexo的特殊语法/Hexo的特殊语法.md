@@ -1,5 +1,5 @@
 ---
-title: butterfly
+title: hexo+butterfly的特殊语法
 tags:
   - null
 categories:
@@ -12,6 +12,8 @@ mathjax: false
 [https://theme-next.js.org/docs/tag-plugins/](https://theme-next.js.org/docs/tag-plugins/)
 
 [https://butterfly.js.org/posts/2df239ce/](https://butterfly.js.org/posts/2df239ce/)
+
+[https://blog.csdn.net/liudonglovehemin/article/details/131095922](https://blog.csdn.net/liudonglovehemin/article/details/131095922)
 
 # Tabs
 
@@ -166,3 +168,38 @@ nano /etc
 # Note
 
 [参考教程](https://theme-next.js.org/docs/tag-plugins/note)
+
+# hide-toggle
+
+## 使用方法
+
+```
+{% hideToggle display,bg,color %}
+content
+{% endhideToggle %}
+```
+
+
+
+## 示例
+
+```
+{% hideToggle Butterfly安裝方法,,red %}
+在你的博客根目錄裏
+git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly
+如果想要安裝比較新的dev分支，可以
+git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly
+{% endhideToggle %}
+```
+
+{% hideToggle Butterfly安裝方法,,red %}
+
+在你的博客根目錄裏
+
+git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly
+
+如果想要安裝比較新的dev分支，可以
+
+git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly
+
+{% endhideToggle %}
