@@ -1,6 +1,133 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>传输线理论</title>
+    <url>/2024/07/30/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<h1 id="传输线模型">1. 传输线模型</h1>
+<p>设无限长均匀传输线为无穷多个无限小线元级联而成。</p>
+<p><img src="image-20240603214919978.png" /></p>
+<p>列出 KVL，KCL 方程，经过变换和求解得到<mark>传输方程的解</mark>：
+<span class="math display">\[
+\begin{cases}V(z)=V_0^+e^{-\gamma z}+V_0^-e^{\gamma
+z}\\I(z)=I_0^+e^{-\gamma z}+I_0^-e^{\gamma z}\end{cases}
+\]</span></p>
+<details class="toggle" ><summary class="toggle-button" style="">传输方程详细求解过程</summary><div class="toggle-content"><p>由 KVL，KCL 得到： <span class="math display">\[
+\begin{cases}V(z)&amp;=R\Delta zI(z)+j\omega L\Delta zI(z)+V(z+\Delta
+z)\\
+I(z)&amp;=G\Delta zV(z+\Delta z)+j\omega C\Delta zV(z+\Delta
+z)+I(z+\Delta z)\end{cases}
+\]</span> 令 <span class="math inline">\(\Delta z\to0\)</span>
+，经过变换得到<mark>传输方程</mark>： <span class="math display">\[
+\begin{cases}\frac{d^2V(z)}{d^2z}-\gamma^2V(z)=0\\\frac{d^2I(z)}{d^2z}-\gamma^2I(z)=0\end{cases}
+\]</span> 其中：<span
+class="math inline">\(\gamma{=}\sqrt{\begin{bmatrix}R+j\omega
+L\end{bmatrix}\begin{bmatrix}G+j\omega
+C\end{bmatrix}}{=}\alpha{+}j\beta\)</span></p>
+<ul>
+<li><span class="math inline">\(\gamma\)</span>：复传播函数</li>
+<li><span class="math inline">\(\alpha\)</span>：衰减常数</li>
+<li><span class="math inline">\(\beta\)</span>​：相位常数</li>
+</ul>
+<blockquote>
+<p>相位常数 <span class="math inline">\(\beta\)</span>
+表示单位长度对应的相位，相位常数与一些变量的关系</p>
+<p>波长：<span
+class="math inline">\(\lambda=\frac{2\pi}\beta\)</span></p>
+<p>相速度：<span
+class="math inline">\(\nu_P=\frac{\omega}{\beta}=\lambda f\)</span>​
+，相速度可以大于光速</p>
+</blockquote>
+<p><mark>传输方程的解</mark>为： <span class="math display">\[
+\begin{cases}V(z)=V_0^+e^{-\gamma z}+V_0^-e^{\gamma
+z}\\I(z)=I_0^+e^{-\gamma z}+I_0^-e^{\gamma z}\end{cases}
+\]</span></p>
+</div></details>
+<p>其中：</p>
+<p><span class="math inline">\(\gamma{=}\sqrt{\begin{bmatrix}R+j\omega
+L\end{bmatrix}\begin{bmatrix}G+j\omega
+C\end{bmatrix}}{=}\alpha{+}j\beta\)</span></p>
+<p><span class="math inline">\(V_0^+,V_0^-,I_0^+,I_0^-\)</span>
+为复<strong>常数</strong>，与传输距离 z
+无关。由传输线边界条件确定。四个参数中只有两个是独立的（即由任意两个可以求出另外两个）。</p>
+<p>方程中只有 <span class="math inline">\(z\)</span>
+是实数，其他均为复数。</p>
+<p>令<mark>特征阻抗</mark>为：<span
+class="math inline">\(Z_{0}=\sqrt{\frac{R+j\omega L}{G+j\omega
+C}}\)</span></p>
+<p>经过方程等式变换，<mark>传输方程的解</mark>也可写为： <span
+class="math display">\[
+\begin{cases}V(z)=V_0^+e^{-\gamma z}+V_0^-e^{\gamma
+z}\\I(z)=\frac{V_0^+}{Z_0}e^{-\gamma z}-\frac{V_0^-}{Z_0}e^{\gamma
+z}\end{cases}\tag{1}
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(Z_0=\sqrt{\frac{R+j\omega L}{G+j\omega
+C}}=r+jx=\frac{V_0^+}{I_0^+}=\frac{-V_0^-}{I_0^-}\)</span></p>
+</blockquote>
+<h1 id="端接负载的无耗传输线">2. 端接负载的无耗传输线</h1>
+<p>在实际射频电路中，传输线较短，损耗可以忽略，即 R=G=0</p>
+<p><span class="math inline">\(\gamma=j\beta=\sqrt{(R+j\omega
+L)(G+j\omega C)}=j\omega\sqrt{LC}\)</span> 虚数</p>
+<p><span class="math inline">\(Z_0=\sqrt{\frac{\left(R+j\omega
+L\right)}{\left(G+j\omega C\right)}}=\sqrt{\frac LC}\)</span> 实数</p>
+<p><img src="image-20240616160333895.png" /></p>
+<p>由方程（1），得到负载端： <span class="math display">\[
+\begin{cases}V_{0}^{+}=\frac{V_{L}}{2}(1+\frac{Z_{0}}{Z_{L}})\\V_{0}^{-}=\frac{V_{L}}{2}(1-\frac{Z_{0}}{Z_{L}})\end{cases}\tag2
+\]</span> <mark>电压反射系数</mark>：<span
+class="math inline">\(\Gamma(z)=\frac{\text{反射波}}{\text{入射波}}=\frac{V_{0}^{-}e^{\gamma
+z}}{V_{0}^{+}e^{\gamma z}}=\frac{V_{0}^{-}}{V_{0}^{+}}e^{2\gamma
+z}\)</span></p>
+<p>对无耗传输线：<span
+class="math inline">\(\Gamma(z)=\Gamma_{0}e^{j_{2}\beta
+z},\quad\Gamma_{0}=\Gamma(0)=\frac{V_{0}^{-}}{V_{0}^{+}}\)</span></p>
+<p>由方程（2），<mark>负载端的反射系数</mark>：<span
+class="math inline">\(\Gamma_{0}=\frac{V_{0}^{-}}{V_{0}^{+}}=\frac{Z_{L}-Z_{0}}{Z_{L}+Z_{0}}\)</span></p>
+<p><span class="math inline">\(\Rightarrow
+Z_{L}=Z_{0}\frac{1+\Gamma_{0}}{1-\Gamma_{0}}\)</span>​</p>
+<p>推广到任意点：<span class="math inline">\(\Gamma
+(z)=\frac{Z(z)-Z_0}{Z(z)-Z_0}\)</span></p>
+<div class="note info modern"><ul>
+<li>终端匹配：<span class="math inline">\(Z_{L}=Z_{0} \quad \Rightarrow
+\quad \Gamma_{0}=0\)</span></li>
+<li>终端开路：<span class="math inline">\(Z_{L}=\infty \quad \Rightarrow
+\quad \Gamma_{0}=1\)</span> （全反射）</li>
+<li>终端短路：<span class="math inline">\(Z_{L}=0 \quad \Rightarrow
+\quad \Gamma_{0}=-1\)</span> （全反射）</li>
+</ul>
+</div>
+<p><mark>驻波比</mark>：<span class="math inline">\(SWR =
+\frac{|V_{\max}|}{|V_{\min}|} =
+\frac{1+|\Gamma_{0}|}{1-|\Gamma_{0}|}\)</span></p>
+<p><span class="math inline">\(\Rightarrow
+|\Gamma_{0}|=\frac{SWR-1}{SWR+1}\)</span></p>
+<p>令 <span class="math inline">\(d=-z\)</span>​：</p>
+<div class="note warning modern"><p><span class="math inline">\(d\)</span>：从右向左</p>
+<p><span class="math inline">\(z\)</span>：从左向右</p>
+</div>
+<p><span class="math inline">\(\Gamma(d)=\Gamma_{0}e^{-j2\beta
+d}\)</span></p>
+<p>由方程（1）：<span
+class="math inline">\(Z_{d}=\frac{V(-d)}{I(-d)}=Z_{0}\frac{1+\Gamma(-d)}{1-\Gamma(-d)}\)</span></p>
+<p>由该式子得到：</p>
+<p><mark>无耗传输线任意点的输入阻抗</mark>： <span
+class="math display">\[
+Z_{in}\equiv Z_{d}=Z_{0}\frac{Z_{L}+jZ_{0}\tan(\beta
+d)}{Z_{0}+jZ_{L}\tan(\beta d)}
+\]</span> 阻抗匹配时：<span
+class="math inline">\(Z_{L}=Z_{0}\quad\Rightarrow\quad
+Z_{in}=Z_{0}\)</span>，任意点的阻抗都为 <span
+class="math inline">\(Z_0\)</span></p>
+<h1 id="终端短路的传输线">3. 终端短路的传输线</h1>
+<p>待更新</p>
+]]></content>
+      <categories>
+        <category>射频电路</category>
+      </categories>
+      <tags>
+        <tag>射频</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Verilog代码模板</title>
     <url>/2023/10/09/FPGA/Verilog%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<h1 id="分频">分频</h1>
@@ -21,208 +148,6 @@
       <tags>
         <tag>FPGA</tag>
         <tag>UART</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>hexo+butterfly的特殊语法</title>
-    <url>/2024/07/17/Hexo%E7%9A%84%E7%89%B9%E6%AE%8A%E8%AF%AD%E6%B3%95/Hexo%E7%9A%84%E7%89%B9%E6%AE%8A%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p><a
-href="https://theme-next.js.org/docs/tag-plugins/">https://theme-next.js.org/docs/tag-plugins/</a></p>
-<p><a
-href="https://butterfly.js.org/posts/2df239ce/">https://butterfly.js.org/posts/2df239ce/</a></p>
-<p><a
-href="https://blog.csdn.net/liudonglovehemin/article/details/131095922">https://blog.csdn.net/liudonglovehemin/article/details/131095922</a></p>
-<h1 id="tabs">Tabs</h1>
-<h2 id="使用方法">使用方法</h2>
-<p><a
-href="https://theme-next.js.org/docs/tag-plugins/tabs">参考另一个主题的教程</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs Unique name, [index] %&#125;</span><br><span class="line">&lt;!-- tab [Tab caption] [@icon] --&gt;</span><br><span class="line">标签页内容 (support inline tags too).</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><code>Unique name</code>：</p>
-<p>标签块标签的唯一名称，不能含逗号。</p>
-<p>将在 #id 中使用，作为每个标签页的前缀和索引号。</p>
-<p>如果名称中有空格，生成 #id 时将用破折号替换所有空格。</p></li>
-<li><p><code>[index]</code>：<strong>可选</strong>。</p>
-<p>活动选项卡的索引号。</p>
-<p>如果未指定，将选择第一个选项卡（1）。</p>
-<p>如果索引为-1，则不会选择任何标签页。</p></li>
-<li><p><code>[Tab caption]</code>：<strong>可选</strong>。</p>
-<p>当前选项卡的标题。</p>
-<p>如果未指定标题，带有标签页索引后缀的 Unique name
-将用作标签页的标题。</p>
-<p>如果未指定标题，但指定了图标，标题将为空。</p></li>
-<li><p><code>[@icon]</code>：<strong>可选</strong>。</p>
-<p>Font Awesome 图标名称。</p>
-<p>可指定带空格或不带空格；例如，"Tab caption <span class="citation"
-data-cites="icon">@icon</span> "与 "Tab caption@icon "相同。</p></li>
-</ul>
-<h2 id="示例">示例</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 标签 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是标签页1**</span><br><span class="line">1. One</span><br><span class="line">2. Two</span><br><span class="line">3. Three</span><br><span class="line">```</span><br><span class="line">nano /etc</span><br><span class="line">```</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 自定义标签名--&gt;</span><br><span class="line">**这是标签页2.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是标签页3.**</span><br><span class="line">&#123;% subtabs 子标签页,2 %&#125;</span><br><span class="line">&lt;!-- tab 自定义标签名--&gt;</span><br><span class="line">**这是子标签页1.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是子标签页2.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endsubtabs %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-<div class="tabs" id="标签"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="标签-1">标签 1</button><button type="button" class="tab " data-href="标签-2">自定义标签名</button><button type="button" class="tab " data-href="标签-3">标签 3</button></ul><div class="tab-contents"><div class="tab-item-content active" id="标签-1"><p><strong>这是标签页1</strong> 1. One 2. Two 3. Three <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc</span><br></pre></td></tr></table></figure></p></div><div class="tab-item-content" id="标签-2"><p><strong>这是标签页2.</strong></p></div><div class="tab-item-content" id="标签-3"><strong>这是标签页3.</strong>
-<div id="子标签页" class="tabs">
-<ul class="nav-tabs">
-<button type="button" class="tab " data-href="子标签页-1">
-自定义标签名
-</button>
-<button type="button" class="tab  active" data-href="子标签页-2">
-子标签页 2
-</button>
-</ul>
-<div class="tab-contents">
-<div id="子标签页-1" class="tab-item-content">
-<p>
-<strong>这是子标签页1.</strong>
-</p>
-</div>
-<div id="子标签页-2" class="tab-item-content active">
-<p>
-<strong>这是子标签页2.</strong>
-</p>
-</div>
-</div>
-<div class="tab-to-top">
-<button type="button" aria-label="scroll to top">
-<i class="fas fa-arrow-up"></i>
-</button>
-</div>
-</div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<h1 id="button">Button</h1>
-<h2 id="使用方法-1">使用方法</h2>
-<p><a
-href="https://theme-next.js.org/docs/tag-plugins/button#">参考教程</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% button url, text, icon [class], [title] %&#125;</span><br></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% btn url, text, icon [class], [title] %&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>url</code>：URL 的绝对或相对路径。</li>
-<li><code>text</code>：按钮文本。如果没有指定图标，则为必填项。</li>
-<li><code>icon</code>：Font Awesome
-图标名称。如果未指定文本，则为必填项。</li>
-<li><code>[class]</code>：可选参数。字体 Awesome class（es）： fa-fw
-fa-lg fa-2x fa-3x fa-5x</li>
-<li><code>[title]</code> ：可选参数。鼠标悬停时的提示。</li>
-</ul>
-<h2 id="示例-1">示例</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;text-center&quot;&gt;&#123;% btn #, Text %&#125;&#123;% btn #, Text &amp; Title,, Title %&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="text-center">
-<a class="btn-beautify " href="#" 
-  title="Text"><span>Text</span></a>
-<a class="btn-beautify Title" href="#" 
-  title="Text & Title"><span>Text & Title</span></a>
-</div>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% btn #,1 %&#125;&#123;% btn #,2 %&#125;</span><br></pre></td></tr></table></figure>
-<a class="btn-beautify " href="#" 
-  title="1"><span>1</span></a>
-<a class="btn-beautify " href="#" 
-  title="2"><span>2</span></a>
-<h1 id="group-pictures">Group Pictures</h1>
-<p><a
-href="https://theme-next.js.org/docs/tag-plugins/group-pictures">参考教程</a></p>
-<h1 id="note">Note</h1>
-<p><a
-href="https://theme-next.js.org/docs/tag-plugins/note">参考教程</a></p>
-<h1 id="hide-toggle">hide-toggle</h1>
-<h2 id="使用方法-2">使用方法</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="示例-2">示例</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle Butterfly安裝方法,,red %&#125;</span><br><span class="line">在你的博客根目錄裏</span><br><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">如果想要安裝比較新的dev分支，可以</span><br><span class="line">git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure>
-<details class="toggle" ><summary class="toggle-button" style="color: red">Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
-<p>git clone -b master
-https://github.com/jerryc127/hexo-theme-butterfly.git
-themes/Butterfly</p>
-<p>如果想要安裝比較新的dev分支，可以</p>
-<p>git clone -b dev
-https://github.com/jerryc127/hexo-theme-butterfly.git
-themes/Butterfly</p>
-</div></details>
-]]></content>
-  </entry>
-  <entry>
-    <title>软件资源推荐</title>
-    <url>/2023/10/09/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<h1 id="pot">Pot</h1>
-<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
-<p>截图翻译，划词翻译，OCR</p>
-<p> </p>
-<h1 id="snipaste">snipaste</h1>
-<p>链接：<a
-href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
-<p>截图工具。</p>
-<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
-<p> </p>
-<h1 id="dism">Dism++</h1>
-<p>链接：<a
-href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
-<p>window工具箱。</p>
-<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
-<p> </p>
-<h1 id="msi-afterburner">MSI Afterburner</h1>
-<p>链接：<a
-href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
-<p>性能监控软件。</p>
-<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
-<p> </p>
-<h1 id="图吧工具箱">图吧工具箱</h1>
-<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
-<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
-<p> </p>
-<h1 id="simpletex">SimpleTex</h1>
-<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
-<p>公式识别转换</p>
-<p>将图片中的公式转换为LaTeX格式</p>
-<p> </p>
-<h1 id="quicklook">QuickLook：</h1>
-<p>链接：<a
-href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
-<p>查看office的插件：<a
-href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
-<p>快速查看文件内容</p>
-<p>对文件按空格可以快速浏览文件内容</p>
-<p> </p>
-<h1 id="el_display_hub">EL_Display_Hub</h1>
-<p>链接：<a
-href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
-<p>iPad当副屏</p>
-<p>还要在ipad端App Store购买Twomon SE</p>
-<p> </p>
-<h1 id="potplayer">potplayer</h1>
-<p>链接：<a
-href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
-<p>本地视频播放器</p>
-<p>功能强大丰富，支持格式非常多。</p>
-<p> </p>
-<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
-<p>链接：<a
-href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
-<p>把QT的软件及库打包成一个exe文件</p>
-<p> </p>
-<h1 id="everything">everything</h1>
-<p>链接：<a
-href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
-<p>文件搜索</p>
-<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
-<p> </p>
-<h1 id="cajviewer">CAJViewer</h1>
-<p>链接：<a
-href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
-<p>CAJ阅读器</p>
-<p> </p>
-<h1 id="ddu">DDU</h1>
-<p>链接：<a
-href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
-<p>显卡驱动卸载</p>
-<p>常用于AMD显卡驱动卸载</p>
-<p> </p>
-<h1 id="vscode">vscode</h1>
-<p>链接：<a
-href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p>编辑器</p>
-]]></content>
-      <categories>
-        <category>资源推荐</category>
-      </categories>
-      <tags>
-        <tag>资源</tag>
       </tags>
   </entry>
   <entry>
@@ -520,6 +445,120 @@ schematic 即可。</p>
         <tag>Virtuoso</tag>
         <tag>RFIC</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>hexo+butterfly的特殊语法</title>
+    <url>/2024/07/17/Hexo%E7%9A%84%E7%89%B9%E6%AE%8A%E8%AF%AD%E6%B3%95/Hexo%E7%9A%84%E7%89%B9%E6%AE%8A%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p><a
+href="https://theme-next.js.org/docs/tag-plugins/">https://theme-next.js.org/docs/tag-plugins/</a></p>
+<p><a
+href="https://butterfly.js.org/posts/2df239ce/">https://butterfly.js.org/posts/2df239ce/</a></p>
+<p><a
+href="https://blog.csdn.net/liudonglovehemin/article/details/131095922">https://blog.csdn.net/liudonglovehemin/article/details/131095922</a></p>
+<h1 id="tabs">Tabs</h1>
+<h2 id="使用方法">使用方法</h2>
+<p><a
+href="https://theme-next.js.org/docs/tag-plugins/tabs">参考另一个主题的教程</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs Unique name, [index] %&#125;</span><br><span class="line">&lt;!-- tab [Tab caption] [@icon] --&gt;</span><br><span class="line">标签页内容 (support inline tags too).</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>Unique name</code>：</p>
+<p>标签块标签的唯一名称，不能含逗号。</p>
+<p>将在 #id 中使用，作为每个标签页的前缀和索引号。</p>
+<p>如果名称中有空格，生成 #id 时将用破折号替换所有空格。</p></li>
+<li><p><code>[index]</code>：<strong>可选</strong>。</p>
+<p>活动选项卡的索引号。</p>
+<p>如果未指定，将选择第一个选项卡（1）。</p>
+<p>如果索引为-1，则不会选择任何标签页。</p></li>
+<li><p><code>[Tab caption]</code>：<strong>可选</strong>。</p>
+<p>当前选项卡的标题。</p>
+<p>如果未指定标题，带有标签页索引后缀的 Unique name
+将用作标签页的标题。</p>
+<p>如果未指定标题，但指定了图标，标题将为空。</p></li>
+<li><p><code>[@icon]</code>：<strong>可选</strong>。</p>
+<p>Font Awesome 图标名称。</p>
+<p>可指定带空格或不带空格；例如，"Tab caption <span class="citation"
+data-cites="icon">@icon</span> "与 "Tab caption@icon "相同。</p></li>
+</ul>
+<h2 id="示例">示例</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 标签 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是标签页1**</span><br><span class="line">1. One</span><br><span class="line">2. Two</span><br><span class="line">3. Three</span><br><span class="line">```</span><br><span class="line">nano /etc</span><br><span class="line">```</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 自定义标签名--&gt;</span><br><span class="line">**这是标签页2.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是标签页3.**</span><br><span class="line">&#123;% subtabs 子标签页,2 %&#125;</span><br><span class="line">&lt;!-- tab 自定义标签名--&gt;</span><br><span class="line">**这是子标签页1.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是子标签页2.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endsubtabs %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<div class="tabs" id="标签"><ul class="nav-tabs"><button type="button" class="tab  active" data-href="标签-1">标签 1</button><button type="button" class="tab " data-href="标签-2">自定义标签名</button><button type="button" class="tab " data-href="标签-3">标签 3</button></ul><div class="tab-contents"><div class="tab-item-content active" id="标签-1"><p><strong>这是标签页1</strong> 1. One 2. Two 3. Three <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc</span><br></pre></td></tr></table></figure></p></div><div class="tab-item-content" id="标签-2"><p><strong>这是标签页2.</strong></p></div><div class="tab-item-content" id="标签-3"><strong>这是标签页3.</strong>
+<div id="子标签页" class="tabs">
+<ul class="nav-tabs">
+<button type="button" class="tab " data-href="子标签页-1">
+自定义标签名
+</button>
+<button type="button" class="tab  active" data-href="子标签页-2">
+子标签页 2
+</button>
+</ul>
+<div class="tab-contents">
+<div id="子标签页-1" class="tab-item-content">
+<p>
+<strong>这是子标签页1.</strong>
+</p>
+</div>
+<div id="子标签页-2" class="tab-item-content active">
+<p>
+<strong>这是子标签页2.</strong>
+</p>
+</div>
+</div>
+<div class="tab-to-top">
+<button type="button" aria-label="scroll to top">
+<i class="fas fa-arrow-up"></i>
+</button>
+</div>
+</div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h1 id="button">Button</h1>
+<h2 id="使用方法-1">使用方法</h2>
+<p><a
+href="https://theme-next.js.org/docs/tag-plugins/button#">参考教程</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% button url, text, icon [class], [title] %&#125;</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% btn url, text, icon [class], [title] %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>url</code>：URL 的绝对或相对路径。</li>
+<li><code>text</code>：按钮文本。如果没有指定图标，则为必填项。</li>
+<li><code>icon</code>：Font Awesome
+图标名称。如果未指定文本，则为必填项。</li>
+<li><code>[class]</code>：可选参数。字体 Awesome class（es）： fa-fw
+fa-lg fa-2x fa-3x fa-5x</li>
+<li><code>[title]</code> ：可选参数。鼠标悬停时的提示。</li>
+</ul>
+<h2 id="示例-1">示例</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;text-center&quot;&gt;&#123;% btn #, Text %&#125;&#123;% btn #, Text &amp; Title,, Title %&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<div class="text-center">
+<a class="btn-beautify " href="#" 
+  title="Text"><span>Text</span></a>
+<a class="btn-beautify Title" href="#" 
+  title="Text & Title"><span>Text & Title</span></a>
+</div>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% btn #,1 %&#125;&#123;% btn #,2 %&#125;</span><br></pre></td></tr></table></figure>
+<a class="btn-beautify " href="#" 
+  title="1"><span>1</span></a>
+<a class="btn-beautify " href="#" 
+  title="2"><span>2</span></a>
+<h1 id="group-pictures">Group Pictures</h1>
+<p><a
+href="https://theme-next.js.org/docs/tag-plugins/group-pictures">参考教程</a></p>
+<h1 id="note">Note</h1>
+<p><a
+href="https://theme-next.js.org/docs/tag-plugins/note">参考教程</a></p>
+<h1 id="hide-toggle">hide-toggle</h1>
+<h2 id="使用方法-2">使用方法</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例-2">示例</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle Butterfly安裝方法,,red %&#125;</span><br><span class="line">在你的博客根目錄裏</span><br><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">如果想要安裝比較新的dev分支，可以</span><br><span class="line">git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure>
+<details class="toggle" ><summary class="toggle-button" style="color: red">Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
+<p>git clone -b master
+https://github.com/jerryc127/hexo-theme-butterfly.git
+themes/Butterfly</p>
+<p>如果想要安裝比較新的dev分支，可以</p>
+<p>git clone -b dev
+https://github.com/jerryc127/hexo-theme-butterfly.git
+themes/Butterfly</p>
+</div></details>
+]]></content>
   </entry>
   <entry>
     <title>AD20软件使用</title>
@@ -868,6 +907,94 @@ size）一样大，放到通孔的位置。</p>
       </categories>
       <tags>
         <tag>通信</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件资源推荐</title>
+    <url>/2023/10/09/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h1 id="pot">Pot</h1>
+<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
+<p>截图翻译，划词翻译，OCR</p>
+<p> </p>
+<h1 id="snipaste">snipaste</h1>
+<p>链接：<a
+href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
+<p>截图工具。</p>
+<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
+<p> </p>
+<h1 id="dism">Dism++</h1>
+<p>链接：<a
+href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
+<p>window工具箱。</p>
+<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
+<p> </p>
+<h1 id="msi-afterburner">MSI Afterburner</h1>
+<p>链接：<a
+href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
+<p>性能监控软件。</p>
+<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
+<p> </p>
+<h1 id="图吧工具箱">图吧工具箱</h1>
+<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
+<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
+<p> </p>
+<h1 id="simpletex">SimpleTex</h1>
+<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
+<p>公式识别转换</p>
+<p>将图片中的公式转换为LaTeX格式</p>
+<p> </p>
+<h1 id="quicklook">QuickLook：</h1>
+<p>链接：<a
+href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
+<p>查看office的插件：<a
+href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
+<p>快速查看文件内容</p>
+<p>对文件按空格可以快速浏览文件内容</p>
+<p> </p>
+<h1 id="el_display_hub">EL_Display_Hub</h1>
+<p>链接：<a
+href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
+<p>iPad当副屏</p>
+<p>还要在ipad端App Store购买Twomon SE</p>
+<p> </p>
+<h1 id="potplayer">potplayer</h1>
+<p>链接：<a
+href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
+<p>本地视频播放器</p>
+<p>功能强大丰富，支持格式非常多。</p>
+<p> </p>
+<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
+<p>链接：<a
+href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
+<p>把QT的软件及库打包成一个exe文件</p>
+<p> </p>
+<h1 id="everything">everything</h1>
+<p>链接：<a
+href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
+<p>文件搜索</p>
+<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
+<p> </p>
+<h1 id="cajviewer">CAJViewer</h1>
+<p>链接：<a
+href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
+<p>CAJ阅读器</p>
+<p> </p>
+<h1 id="ddu">DDU</h1>
+<p>链接：<a
+href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
+<p>显卡驱动卸载</p>
+<p>常用于AMD显卡驱动卸载</p>
+<p> </p>
+<h1 id="vscode">vscode</h1>
+<p>链接：<a
+href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p>编辑器</p>
+]]></content>
+      <categories>
+        <category>资源推荐</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
       </tags>
   </entry>
   <entry>
