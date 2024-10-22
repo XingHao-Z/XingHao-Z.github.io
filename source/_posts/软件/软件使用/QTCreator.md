@@ -6,6 +6,7 @@ tags:
  - 上位机
  - 软件打包
 categories:
+ - 软件
  - 软件使用
 description: 使用QTcreator编写上位机的相关内容，包括：重复的代码模板、工程设置、打包程序等
 ---

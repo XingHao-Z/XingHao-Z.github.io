@@ -3,7 +3,8 @@ title: SolidWorks制作电路腔体
 tags:
   - null
 categories:
-  - null
+  - 软件
+  - 软件使用
 date: 2023-11-06 11:18:54
 description: 使用SolidWorks制作电路腔体的基本操作
 mathjax: false
