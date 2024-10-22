@@ -4,7 +4,7 @@ tags:
   - ADS
   - 仿真
 categories:
-  - 软件
+  - 2-软件
   - 软件使用
 date: 2023-10-30 20:56:08
 description: Advanced Design System软件使用，包括计算特征阻抗，计算射频线宽，阻抗匹配仿真等

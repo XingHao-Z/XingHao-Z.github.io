@@ -3,7 +3,7 @@ title: hexo+butterfly的特殊语法
 tags:
   - null
 categories:
-  - Hexo使用
+  - 3-Hexo使用
 date: 2024-07-17 16:05:20
 description: Hexo 的特殊语法
 mathjax: false
