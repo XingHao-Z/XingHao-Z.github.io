@@ -3,24 +3,52 @@
 
 script.
   (() => {
-    const initWaline = () => {
-      const waline = Waline.init(Object.assign({
-        el: '#waline-wrap',
+    let initFn = window.walineFn || null
+    const isShuoshuo = GLOBAL_CONFIG_SITE.pageType === 'shuoshuo'
+    const option = !{JSON.stringify(option)}
+
+    const destroyWaline = ele => ele.destroy()
+
+    const initWaline = (Fn, el = document, path = window.location.pathname) => {
+      const waline = Fn({
+        el: el.querySelector('#waline-wrap'),
         serverURL: '!{serverURL}',
         pageview: !{lazyload ? false : pageview},
         dark: 'html[data-theme="dark"]',
-        path: window.location.pathname,
         comment: !{lazyload ? false : count},
-      }, !{JSON.stringify(option)}))
+        ...option,
+        path: isShuoshuo ? path : (option && option.path) || path
+      })
+
+      if (isShuoshuo) {
+        window.shuoshuoComment.destroyWaline = () => {
+          destroyWaline(waline)
+          if (el.children.length) {
+            el.innerHTML = ''
+            el.classList.add('no-comment')
+          }
+        }
+      }
     }
 
-    const loadWaline = async () => {
-      if (typeof Waline === 'object') initWaline()
+    const loadWaline = (el, path) => {
+      if (initFn) initWaline(initFn, el, path)
       else {
-        await getCSS('!{url_for(theme.asset.waline_css)}')
-        await getScript('!{url_for(theme.asset.waline_js)}')
-        initWaline()
+        btf.getCSS('!{url_for(theme.asset.waline_css)}')
+          .then(() => import('!{url_for(theme.asset.waline_js)}'))
+          .then(({ init }) => {
+            initFn = init || Waline.init
+            initWaline(initFn, el, path)
+            window.walineFn = initFn
+          })
       }
+    }
+
+    if (isShuoshuo) {
+      '!{use[0]}' === 'Waline'
+        ? window.shuoshuoComment = { loadComment: loadWaline } 
+        : window.loadOtherComment = loadWaline
+      return
     }
 
     if ('!{use[0]}' === 'Waline' || !!{lazyload}) {
