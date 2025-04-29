@@ -6,16 +6,105 @@
 <meta property="og:image" content="https://xinghao-z.github.io/img/HeadPortrait.png">
 <meta property="article:author" content="颢星">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://xinghao-z.github.io/img/HeadPortrait.png"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://xinghao-z.github.io/categories/1-%E9%80%9A%E4%BF%A1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+<meta name="twitter:image" content="https://xinghao-z.github.io/img/HeadPortrait.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://xinghao-z.github.io/categories/1-%E9%80%9A%E4%BF%A1/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>
+    (() => {
+      
+    const saveToLocal = {
+      set: (key, value, ttl) => {
+        if (!ttl) return
+        const expiry = Date.now() + ttl * 86400000
+        localStorage.setItem(key, JSON.stringify({ value, expiry }))
+      },
+      get: key => {
+        const itemStr = localStorage.getItem(key)
+        if (!itemStr) return undefined
+        const { value, expiry } = JSON.parse(itemStr)
+        if (Date.now() > expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return value
+      }
+    }
+
+    window.btf = {
+      saveToLocal,
+      getScript: (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        Object.entries(attr).forEach(([key, val]) => script.setAttribute(key, val))
+        script.onload = script.onreadystatechange = () => {
+          if (!script.readyState || /loaded|complete/.test(script.readyState)) resolve()
+        }
+        script.onerror = reject
+        document.head.appendChild(script)
+      }),
+      getCSS: (url, id) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onload = link.onreadystatechange = () => {
+          if (!link.readyState || /loaded|complete/.test(link.readyState)) resolve()
+        }
+        link.onerror = reject
+        document.head.appendChild(link)
+      }),
+      addGlobalFn: (key, fn, name = false, parent = window) => {
+        if (!false && key.startsWith('pjax')) return
+        const globalFn = parent.globalFn || {}
+        globalFn[key] = globalFn[key] || {}
+        globalFn[key][name || Object.keys(globalFn[key]).length] = fn
+        parent.globalFn = globalFn
+      }
+    }
+  
+      
+      const activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      const activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+
+      btf.activateDarkMode = activateDarkMode
+      btf.activateLightMode = activateLightMode
+
+      const theme = saveToLocal.get('theme')
+    
+          theme === 'dark' ? activateDarkMode() : theme === 'light' ? activateLightMode() : null
+        
+      
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        document.documentElement.classList.toggle('hide-aside', asideStatus === 'hide')
+      }
+    
+      
+    const detectApple = () => {
+      if (/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)) {
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+  
+    })()
+  </script><script>const GLOBAL_CONFIG = {
   root: '/',
   algolia: undefined,
-  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"找不到您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
+  localSearch: {"path":"/search.xml","preload":false,"top_n_per_article":1,"unescape":false,"languages":{"hits_empty":"未找到符合您查询的内容：${query}","hits_stats":"共找到 ${hits} 篇文章"}},
   translate: undefined,
-  noticeOutdate: undefined,
-  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false,"highlightFullpage":false,"highlightMacStyle":false},
   copy: {
     success: '复制成功',
-    error: '复制错误',
+    error: '复制失败',
     noSupport: '浏览器不支持'
   },
   relativeDate: {
@@ -38,7 +127,7 @@
     buttonText: '加载更多'
   },
   isPhotoFigcaption: false,
-  islazyload: false,
+  islazyloadPlugin: false,
   isAnchor: false,
   percent: {
     toc: false,
@@ -47,149 +136,61 @@
   autoDarkmode: false
 }</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
   title: '分类: 1-通信',
-  isPost: false,
-  isHome: false,
-  isHighlightShrink: false,
+  isHighlightShrink: undefined,
   isToc: false,
-  postUpdate: '2024-10-22 15:58:30'
-}</script><script>(win=>{
-      win.saveToLocal = {
-        set: (key, value, ttl) => {
-          if (ttl === 0) return
-          const now = Date.now()
-          const expiry = now + ttl * 86400000
-          const item = {
-            value,
-            expiry
-          }
-          localStorage.setItem(key, JSON.stringify(item))
-        },
-      
-        get: key => {
-          const itemStr = localStorage.getItem(key)
-      
-          if (!itemStr) {
-            return undefined
-          }
-          const item = JSON.parse(itemStr)
-          const now = Date.now()
-      
-          if (now > item.expiry) {
-            localStorage.removeItem(key)
-            return undefined
-          }
-          return item.value
-        }
-      }
-    
-      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
-        const script = document.createElement('script')
-        script.src = url
-        script.async = true
-        script.onerror = reject
-        script.onload = script.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          script.onload = script.onreadystatechange = null
-          resolve()
-        }
-
-        Object.keys(attr).forEach(key => {
-          script.setAttribute(key, attr[key])
-        })
-
-        document.head.appendChild(script)
-      })
-    
-      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
-        const link = document.createElement('link')
-        link.rel = 'stylesheet'
-        link.href = url
-        if (id) link.id = id
-        link.onerror = reject
-        link.onload = link.onreadystatechange = function() {
-          const loadState = this.readyState
-          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
-          link.onload = link.onreadystatechange = null
-          resolve()
-        }
-        document.head.appendChild(link)
-      })
-    
-      win.activateDarkMode = () => {
-        document.documentElement.setAttribute('data-theme', 'dark')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
-        }
-      }
-      win.activateLightMode = () => {
-        document.documentElement.setAttribute('data-theme', 'light')
-        if (document.querySelector('meta[name="theme-color"]') !== null) {
-          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
-        }
-      }
-      const t = saveToLocal.get('theme')
-    
-        if (t === 'dark') activateDarkMode()
-        else if (t === 'light') activateLightMode()
-      
-      const asideStatus = saveToLocal.get('aside-status')
-      if (asideStatus !== undefined) {
-        if (asideStatus === 'hide') {
-          document.documentElement.classList.add('hide-aside')
-        } else {
-          document.documentElement.classList.remove('hide-aside')
-        }
-      }
-    
-      const detectApple = () => {
-        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
-          document.documentElement.classList.add('apple')
-        }
-      }
-      detectApple()
-    })(window)</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/HeadPortrait.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="颢星的博客"><span class="site-name">颢星的博客</span></a></span><div id="menus"><div id="search-button"><a class="site-page social-icon search" href="javascript:void(0);"><i class="fas fa-search fa-fw"></i><span> 搜索</span></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav></header><main class="layout" id="content-inner"><div class="recent-posts category_ui" id="recent-posts"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/30/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA/" title="传输线理论">传输线理论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-30T04:22:01.000Z" title="发表于 2024-07-30 12:22:01">2024-07-30</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:32.901Z" title="更新于 2024-10-22 15:46:32">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/">射频电路</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%B0%84%E9%A2%91/">射频</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2024/07/30/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA/#post-comment"><span class="waline-comment-count" data-path="/2024/07/30/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">射频系统传输线理论</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/21/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89%EF%BC%9A%E7%90%86%E6%83%B3%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/" title="集创赛记录（3）：理想模型搭建">集创赛记录（3）：理想模型搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-21T14:12:46.000Z" title="发表于 2024-07-21 22:12:46">2024-07-21</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:46.224Z" title="更新于 2024-10-22 15:46:46">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9B-IEEE-%E6%9D%AF/">第八届集创赛 IEEE 杯</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%9B%86%E5%88%9B%E8%B5%9B/">集创赛</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Virtuoso/">Virtuoso</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/RFIC/">RFIC</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2024/07/21/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89%EF%BC%9A%E7%90%86%E6%83%B3%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/#post-comment"><span class="waline-comment-count" data-path="/2024/07/21/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89%EF%BC%9A%E7%90%86%E6%83%B3%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">设计思路，以及各个模块的理想模型搭建。（以及 Virtuoso 软件使用：快捷键，可能遇到的问题）</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/20/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%EF%BC%9A%E8%B5%9B%E9%A2%98%E9%A2%98%E7%9B%AE/" title="集创赛记录（2）：赛题题目">集创赛记录（2）：赛题题目</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-20T07:21:25.000Z" title="发表于 2024-07-20 15:21:25">2024-07-20</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:40.530Z" title="更新于 2024-10-22 15:46:40">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9B-IEEE-%E6%9D%AF/">第八届集创赛 IEEE 杯</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%9B%86%E5%88%9B%E8%B5%9B/">集创赛</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Virtuoso/">Virtuoso</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/RFIC/">RFIC</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2024/07/20/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%EF%BC%9A%E8%B5%9B%E9%A2%98%E9%A2%98%E7%9B%AE/#post-comment"><span class="waline-comment-count" data-path="/2024/07/20/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%EF%BC%9A%E8%B5%9B%E9%A2%98%E9%A2%98%E7%9B%AE/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">第八届集创赛 IEEE 杯赛题内容，2.4GHz高效率SCPA设计</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/18/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" title="集创赛记录（1）：准备工作">集创赛记录（1）：准备工作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-18T11:05:55.000Z" title="发表于 2024-07-18 19:05:55">2024-07-18</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:14.027Z" title="更新于 2024-10-22 15:46:14">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9B-IEEE-%E6%9D%AF/">第八届集创赛 IEEE 杯</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%9B%86%E5%88%9B%E8%B5%9B/">集创赛</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/Virtuoso/">Virtuoso</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/RFIC/">RFIC</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2024/07/18/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/#post-comment"><span class="waline-comment-count" data-path="/2024/07/18/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">参加集创赛的准备工作，包括安装虚拟机，安装 Virtuoso，添加工艺库。</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/%EF%BC%88%E4%B8%80%EF%BC%89%20%E9%94%81%E7%9B%B8%E7%8E%AF%E7%AE%80%E4%BB%8B/" title="（一）锁相环简介">（一）锁相环简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-09T14:12:47.000Z" title="发表于 2023-10-09 22:12:47">2023-10-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:53.088Z" title="更新于 2024-10-22 15:46:53">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/">锁相环</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%94%81%E7%9B%B8%E7%8E%AF/">锁相环</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/%EF%BC%88%E4%B8%80%EF%BC%89%20%E9%94%81%E7%9B%B8%E7%8E%AF%E7%AE%80%E4%BB%8B/#post-comment"><span class="waline-comment-count" data-path="/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/%EF%BC%88%E4%B8%80%EF%BC%89%20%E9%94%81%E7%9B%B8%E7%8E%AF%E7%AE%80%E4%BB%8B/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">第一章 锁相环简介</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/09/1-%E9%80%9A%E4%BF%A1/FPGA/Verilog%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/" title="Verilog代码模板">Verilog代码模板</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-09T04:03:39.000Z" title="发表于 2023-10-09 12:03:39">2023-10-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:05.233Z" title="更新于 2024-10-22 15:46:05">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/FPGA/">FPGA</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/FPGA/">FPGA</a><span class="article-meta-link">•</span><a class="article-meta__tags" href="/tags/UART/">UART</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2023/10/09/1-%E9%80%9A%E4%BF%A1/FPGA/Verilog%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/#post-comment"><span class="waline-comment-count" data-path="/2023/10/09/1-%E9%80%9A%E4%BF%A1/FPGA/Verilog%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">Verilog常用的重复的代码模板</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/" title="通信相关的零散知识点">通信相关的零散知识点</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-09T02:51:24.000Z" title="发表于 2023-10-09 10:51:24">2023-10-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:45:54.761Z" title="更新于 2024-10-22 15:45:54">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%80%9A%E4%BF%A1/">通信</a></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-comments"></i><a href="/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/#post-comment"><span class="waline-comment-count" data-path="/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/"><i class="fa-solid fa-spinner fa-spin"></i></span></a><span class="article-meta-label"> 条评论</span></span></div><div class="content">记录一些通信的零散的，常忘的知识点</div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/HeadPortrait.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">颢星</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">13</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
+  pageType: 'category'
+}</script><meta name="generator" content="Hexo 7.0.0"></head><body><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img text-center"><img src="/img/HeadPortrait.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data text-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="page" id="body-wrap"><header class="not-top-img fixed" id="page-header"><nav id="nav"><span id="blog-info"><a class="nav-site-title" href="/"><span class="site-name">颢星的博客</span></a></span><div id="menus"><div id="search-button"><span class="site-page social-icon search"><i class="fas fa-search fa-fw"></i><span> 搜索</span></span></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><span class="site-page"><i class="fas fa-bars fa-fw"></i></span></div></div></nav><h1 class="title-seo">1-通信</h1></header><main class="layout" id="content-inner"><div class="recent-posts nc" id="recent-posts"><div class="recent-post-items"><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2025/04/29/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/PLL%E7%8E%AF%E8%B7%AF%E6%BB%A4%E6%B3%A2%E5%99%A8%E5%92%8C%E7%8E%AF%E8%B7%AF%E5%B8%A6%E5%AE%BD/" title="锁相环的环路带宽和相位裕度">锁相环的环路带宽和相位裕度</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2025-04-29T13:22:30.000Z" title="发表于 2025-04-29 21:22:30">2025-04-29</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2025-04-29T13:29:13.563Z" title="更新于 2025-04-29 21:29:13">2025-04-29</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/">锁相环</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%94%81%E7%9B%B8%E7%8E%AF/">锁相环</a></span></div><div class="content">锁相环的环路特性，包括环路带宽，相位裕度的介绍。</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/30/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA/" title="传输线理论">传输线理论</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-30T04:22:01.000Z" title="发表于 2024-07-30 12:22:01">2024-07-30</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:32.901Z" title="更新于 2024-10-22 15:46:32">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/">射频电路</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E5%B0%84%E9%A2%91/">射频</a></span></div><div class="content">射频系统传输线理论</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/21/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89%EF%BC%9A%E7%90%86%E6%83%B3%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/" title="集创赛记录（3）：理想模型搭建">集创赛记录（3）：理想模型搭建</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-21T14:12:46.000Z" title="发表于 2024-07-21 22:12:46">2024-07-21</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:46.224Z" title="更新于 2024-10-22 15:46:46">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9B-IEEE-%E6%9D%AF/">第八届集创赛 IEEE 杯</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%9B%86%E5%88%9B%E8%B5%9B/">集创赛</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Virtuoso/">Virtuoso</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/RFIC/">RFIC</a></span></div><div class="content">设计思路，以及各个模块的理想模型搭建。（以及 Virtuoso 软件使用：快捷键，可能遇到的问题）</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/20/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%EF%BC%9A%E8%B5%9B%E9%A2%98%E9%A2%98%E7%9B%AE/" title="集创赛记录（2）：赛题题目">集创赛记录（2）：赛题题目</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-20T07:21:25.000Z" title="发表于 2024-07-20 15:21:25">2024-07-20</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:40.530Z" title="更新于 2024-10-22 15:46:40">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9B-IEEE-%E6%9D%AF/">第八届集创赛 IEEE 杯</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%9B%86%E5%88%9B%E8%B5%9B/">集创赛</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Virtuoso/">Virtuoso</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/RFIC/">RFIC</a></span></div><div class="content">第八届集创赛 IEEE 杯赛题内容，2.4GHz高效率SCPA设计</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2024/07/18/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/" title="集创赛记录（1）：准备工作">集创赛记录（1）：准备工作</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-18T11:05:55.000Z" title="发表于 2024-07-18 19:05:55">2024-07-18</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:14.027Z" title="更新于 2024-10-22 15:46:14">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9B-IEEE-%E6%9D%AF/">第八届集创赛 IEEE 杯</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%9B%86%E5%88%9B%E8%B5%9B/">集创赛</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/Virtuoso/">Virtuoso</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/RFIC/">RFIC</a></span></div><div class="content">参加集创赛的准备工作，包括安装虚拟机，安装 Virtuoso，添加工艺库。</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/%EF%BC%88%E4%B8%80%EF%BC%89%20%E9%94%81%E7%9B%B8%E7%8E%AF%E7%AE%80%E4%BB%8B/" title="（一）锁相环简介">（一）锁相环简介</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-09T14:12:47.000Z" title="发表于 2023-10-09 22:12:47">2023-10-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:53.088Z" title="更新于 2024-10-22 15:46:53">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/">锁相环</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%94%81%E7%9B%B8%E7%8E%AF/">锁相环</a></span></div><div class="content">第一章 锁相环简介</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/09/1-%E9%80%9A%E4%BF%A1/FPGA/Verilog%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/" title="Verilog代码模板">Verilog代码模板</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-09T04:03:39.000Z" title="发表于 2023-10-09 12:03:39">2023-10-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:46:05.233Z" title="更新于 2024-10-22 15:46:05">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a><i class="fas fa-angle-right article-meta-link"></i><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/FPGA/">FPGA</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/FPGA/">FPGA</a><span class="article-meta-link">•</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/UART/">UART</a></span></div><div class="content">Verilog常用的重复的代码模板</div></div></div><div class="recent-post-item"><div class="recent-post-info no-cover"><a class="article-title" href="/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/" title="通信相关的零散知识点">通信相关的零散知识点</a><div class="article-meta-wrap"><span class="post-meta-date"><i class="far fa-calendar-alt"></i><span class="article-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-10-09T02:51:24.000Z" title="发表于 2023-10-09 10:51:24">2023-10-09</time><span class="article-meta-separator">|</span><i class="fas fa-history"></i><span class="article-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-10-22T07:45:54.761Z" title="更新于 2024-10-22 15:45:54">2024-10-22</time></span><span class="article-meta"><span class="article-meta-separator">|</span><i class="fas fa-inbox"></i><a class="article-meta__categories" href="/categories/1-%E9%80%9A%E4%BF%A1/">1-通信</a></span><span class="article-meta tags"><span class="article-meta-separator">|</span><i class="fas fa-tag"></i><a class="article-meta__tags" href="/tags/%E9%80%9A%E4%BF%A1/">通信</a></span></div><div class="content">记录一些通信的零散的，常忘的知识点</div></div></div></div><nav id="pagination"><div class="pagination"><span class="page-number current">1</span></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info text-center"><div class="avatar-img"><img src="/img/HeadPortrait.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info-name">颢星</div><div class="author-info-description"></div><div class="site-data"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">15</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">9</div></a></div></div><div class="sticky_layout"><div class="card-widget card-categories"><div class="item-headline">
             <i class="fas fa-folder-open"></i>
             <span>分类</span>
             <a class="card-more-btn" href="/categories/" title="查看更多">
-    <i class="fas fa-angle-right"></i></a>
-            </div>
-            <ul class="card-category-list" id="aside-cat-list">
-            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/"><span class="card-category-list-name">1-通信</span><span class="card-category-list-count">7</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/FPGA/"><span class="card-category-list-name">FPGA</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/"><span class="card-category-list-name">射频电路</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9B-IEEE-%E6%9D%AF/"><span class="card-category-list-name">第八届集创赛 IEEE 杯</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/"><span class="card-category-list-name">锁相环</span><span class="card-category-list-count">1</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/2-%E8%BD%AF%E4%BB%B6/"><span class="card-category-list-name">2-软件</span><span class="card-category-list-count">5</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/2-%E8%BD%AF%E4%BB%B6/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/"><span class="card-category-list-name">资源推荐</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/2-%E8%BD%AF%E4%BB%B6/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"><span class="card-category-list-name">软件使用</span><span class="card-category-list-count">4</span></a></li></ul></li>
-            </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E9%80%9A%E4%BF%A1/" style="font-size: 1.15em; color: rgb(25, 27, 167)">通信</a><a href="/tags/FPGA/" style="font-size: 1.15em; color: rgb(128, 176, 54)">FPGA</a><a href="/tags/UART/" style="font-size: 1.15em; color: rgb(147, 133, 175)">UART</a><a href="/tags/%E5%B0%84%E9%A2%91/" style="font-size: 1.15em; color: rgb(151, 167, 114)">射频</a><a href="/tags/%E9%9B%86%E5%88%9B%E8%B5%9B/" style="font-size: 1.45em; color: rgb(121, 182, 142)">集创赛</a><a href="/tags/Virtuoso/" style="font-size: 1.45em; color: rgb(13, 182, 90)">Virtuoso</a><a href="/tags/RFIC/" style="font-size: 1.45em; color: rgb(111, 62, 122)">RFIC</a><a href="/tags/%E9%94%81%E7%9B%B8%E7%8E%AF/" style="font-size: 1.15em; color: rgb(96, 125, 71)">锁相环</a><a href="/tags/%E8%B5%84%E6%BA%90/" style="font-size: 1.15em; color: rgb(147, 30, 99)">资源</a><a href="/tags/AD/" style="font-size: 1.15em; color: rgb(99, 194, 47)">AD</a><a href="/tags/ADS/" style="font-size: 1.15em; color: rgb(196, 171, 84)">ADS</a><a href="/tags/%E4%BB%BF%E7%9C%9F/" style="font-size: 1.15em; color: rgb(8, 199, 12)">仿真</a><a href="/tags/QTCreator/" style="font-size: 1.15em; color: rgb(184, 28, 67)">QTCreator</a><a href="/tags/%E4%B8%8A%E4%BD%8D%E6%9C%BA/" style="font-size: 1.15em; color: rgb(77, 22, 169)">上位机</a><a href="/tags/%E8%BD%AF%E4%BB%B6%E6%89%93%E5%8C%85/" style="font-size: 1.15em; color: rgb(69, 106, 154)">软件打包</a></div></div><div class="card-widget card-archives"><div class="item-headline"><i class="fas fa-archive"></i><span>归档</span></div><ul class="card-archive-list"><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2024/07/"><span class="card-archive-list-date">七月 2024</span><span class="card-archive-list-count">5</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/11/"><span class="card-archive-list-date">十一月 2023</span><span class="card-archive-list-count">1</span></a></li><li class="card-archive-list-item"><a class="card-archive-list-link" href="/archives/2023/10/"><span class="card-archive-list-date">十月 2023</span><span class="card-archive-list-count">7</span></a></li></ul></div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站资讯</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">13</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2024-10-22T07:58:30.600Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2023 - 2024 By 颢星</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><script>function panguFn () {
-  if (typeof pangu === 'object') pangu.autoSpacingPage()
-  else {
-    getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js')
-      .then(() => {
-        pangu.autoSpacingPage()
-      })
-  }
-}
-
-function panguInit () {
-  if (false){
-    GLOBAL_CONFIG_SITE.isPost && panguFn()
-  } else {
-    panguFn()
-  }
-}
-
-document.addEventListener('DOMContentLoaded', panguInit)</script><div class="js-pjax"><script>(() => {
-  async function loadWaline () {
-    try {
-      const eleGroup = document.querySelectorAll('#recent-posts .waline-comment-count')
-      const keyArray = Array.from(eleGroup).map(i => i.getAttribute('data-path'))
-
-      const res = await fetch(`https://xinghao-z.top/api/comment?type=count&url=${keyArray}`, { method: 'GET' })
-      const result = await res.json()
+      <i class="fas fa-angle-right"></i></a>
+          </div>
+          <ul class="card-category-list" id="aside-cat-list">
+            <li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/"><span class="card-category-list-name">1-通信</span><span class="card-category-list-count">8</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/FPGA/"><span class="card-category-list-name">FPGA</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/"><span class="card-category-list-name">射频电路</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9B-IEEE-%E6%9D%AF/"><span class="card-category-list-name">第八届集创赛 IEEE 杯</span><span class="card-category-list-count">3</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/"><span class="card-category-list-name">锁相环</span><span class="card-category-list-count">2</span></a></li></ul></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/2-%E8%BD%AF%E4%BB%B6/"><span class="card-category-list-name">2-软件</span><span class="card-category-list-count">5</span></a><ul class="card-category-list child"><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/2-%E8%BD%AF%E4%BB%B6/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/"><span class="card-category-list-name">资源推荐</span><span class="card-category-list-count">1</span></a></li><li class="card-category-list-item "><a class="card-category-list-link" href="/categories/2-%E8%BD%AF%E4%BB%B6/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/"><span class="card-category-list-name">软件使用</span><span class="card-category-list-count">4</span></a></li></ul></li>
+          </ul></div><div class="card-widget card-tags"><div class="item-headline"><i class="fas fa-tags"></i><span>标签</span></div><div class="card-tag-cloud"><a href="/tags/%E9%9B%86%E5%88%9B%E8%B5%9B/" style="font-size: 1.5em; color: #99a9bf">集创赛</a> <a href="/tags/%E4%BB%BF%E7%9C%9F/" style="font-size: 1.1em; color: #999">仿真</a> <a href="/tags/Virtuoso/" style="font-size: 1.5em; color: #99a9bf">Virtuoso</a> <a href="/tags/%E8%BD%AF%E4%BB%B6%E6%89%93%E5%8C%85/" style="font-size: 1.1em; color: #999">软件打包</a> <a href="/tags/%E8%B5%84%E6%BA%90/" style="font-size: 1.1em; color: #999">资源</a> <a href="/tags/AD/" style="font-size: 1.1em; color: #999">AD</a> <a href="/tags/FPGA/" style="font-size: 1.1em; color: #999">FPGA</a> <a href="/tags/%E4%B8%8A%E4%BD%8D%E6%9C%BA/" style="font-size: 1.1em; color: #999">上位机</a> <a href="/tags/%E5%B0%84%E9%A2%91/" style="font-size: 1.1em; color: #999">射频</a> <a href="/tags/ADS/" style="font-size: 1.1em; color: #999">ADS</a> <a href="/tags/UART/" style="font-size: 1.1em; color: #999">UART</a> <a href="/tags/RFIC/" style="font-size: 1.5em; color: #99a9bf">RFIC</a> <a href="/tags/%E9%80%9A%E4%BF%A1/" style="font-size: 1.1em; color: #999">通信</a> <a href="/tags/%E9%94%81%E7%9B%B8%E7%8E%AF/" style="font-size: 1.3em; color: #99a1ac">锁相环</a> <a href="/tags/QTCreator/" style="font-size: 1.1em; color: #999">QTCreator</a></div></div><div class="card-widget card-archives">
+    <div class="item-headline">
+      <i class="fas fa-archive"></i>
+      <span>归档</span>
       
-      result.data.forEach((count, index) => {
-        eleGroup[index].textContent = count
-      })
-    } catch (err) {
-      console.error(err)
-    }
-  }
-
-  window.pjax ? loadWaline() : window.addEventListener('load', loadWaline)
-})()</script></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="is-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据库加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
+    </div>
+  
+    <ul class="card-archive-list">
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2025/04/">
+            <span class="card-archive-list-date">
+              四月 2025
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2024/07/">
+            <span class="card-archive-list-date">
+              七月 2024
+            </span>
+            <span class="card-archive-list-count">5</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/11/">
+            <span class="card-archive-list-date">
+              十一月 2023
+            </span>
+            <span class="card-archive-list-count">1</span>
+          </a>
+        </li>
+      
+        <li class="card-archive-list-item">
+          <a class="card-archive-list-link" href="/archives/2023/10/">
+            <span class="card-archive-list-date">
+              十月 2023
+            </span>
+            <span class="card-archive-list-count">7</span>
+          </a>
+        </li>
+      
+    </ul>
+  </div><div class="card-widget card-webinfo"><div class="item-headline"><i class="fas fa-chart-line"></i><span>网站信息</span></div><div class="webinfo"><div class="webinfo-item"><div class="item-name">文章数目 :</div><div class="item-count">14</div></div><div class="webinfo-item"><div class="item-name">本站访客数 :</div><div class="item-count" id="busuanzi_value_site_uv"><i class="fa-solid fa-spinner fa-spin"></i></div></div><div class="webinfo-item"><div class="item-name">最后更新时间 :</div><div class="item-count" id="last-push-date" data-lastPushDate="2025-04-29T13:29:30.159Z"><i class="fa-solid fa-spinner fa-spin"></i></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2025 By 颢星</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="darkmode" type="button" title="日间和夜间模式切换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"></div><script defer="defer" id="ribbon" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-ribbon.min.js" size="150" alpha="0.6" zIndex="-1" mobile="false" data-click="true"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script><div id="local-search"><div class="search-dialog"><nav class="search-nav"><span class="search-dialog-title">搜索</span><span id="loading-status"></span><button class="search-close-button"><i class="fas fa-times"></i></button></nav><div class="text-center" id="loading-database"><i class="fas fa-spinner fa-pulse"></i><span>  数据加载中</span></div><div class="search-wrap"><div id="local-search-input"><div class="local-search-box"><input class="local-search-box--input" placeholder="搜索文章" type="text"/></div></div><hr/><div id="local-search-results"></div><div id="local-search-stats-wrap"></div></div></div><div id="search-mask"></div><script src="/js/search/local-search.js"></script></div></div></body></html>
