@@ -13,169 +13,6 @@
       </tags>
   </entry>
   <entry>
-    <title>集创赛记录（2）：赛题题目</title>
-    <url>/2024/07/20/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%EF%BC%9A%E8%B5%9B%E9%A2%98%E9%A2%98%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="赛题题目">1. 赛题题目</h1>
-<p><a
-href="http://univ.ciciec.com/nd.jsp?id=713#_jcp=1">第八届集创赛杯赛题目——IEEE杯</a></p>
-<h2
-id="一杯赛题目2.4ghz高效率scpa设计"><strong>一、杯赛题目：2.4GHz高效率SCPA设计</strong></h2>
-<h2 id="二参赛组别a组b组"><strong>二、参赛组别：A组、B组</strong></h2>
-<h2 id="三设计指标"><strong>三、设计指标</strong></h2>
-<ol type="1">
-<li>工作频率2.4GHz</li>
-<li>采用架构为开关电容功率放大器(Switched-Capacitor Power Amplifier,
-SCPA)</li>
-<li>饱和输出功率Psat不低于23dBm</li>
-<li>峰值系统效率(System Efficiency) 不低于35%</li>
-<li>匹配网络及功率合成器等无源结构须在片上设计</li>
-<li>采用65nm CMOS工艺</li>
-</ol>
-<h2 id="四背景介绍"><strong>四、背景介绍</strong></h2>
-<ol type="1">
-<li>SCPA原理</li>
-</ol>
-<p>SCPA最早是由Sang-Min
-Yoo提出[1]，电路结构上是由通过晶体管实现的开关控制的电容阵列组成。</p>
-<p><img src="ABUIABAEGAAg0Kn5rAYoz4OF4gYw5AY4ggQ.png" alt=" " style="zoom: 67%;" /></p>
-<p>控制电容的开关以射频频率切换时，此时开关电容视为工作状态；控制电容的开关常接地时，此时开关电容视为关闭状态。通过控制处于工作状态下开关电容的数量，可实现输出电压幅度的变化。</p>
-<p><img src="ABUIABAEGAAg6an5rAYo6a2yugUwxgU44gI.png" /></p>
-<ol start="2" type="1">
-<li>Class-G SCPA</li>
-</ol>
-<p>采用Class-G (双电源)
-的方式对SCPA供电，输出功率较低时，采用电压更低的电源供电，提高回退效率[2]。</p>
-<p><img src="image-20240721143615341.png" /></p>
-<ol start="3" type="1">
-<li>Doherty SCPA</li>
-</ol>
-<p>以SCPA的方式实现Doherty，提高PA饱和输出功率，同时提高PA在功率回退下的效率[3]。</p>
-<p><img src="ABUIABAEGAAgsqr5rAYo5rCGpAIw3AU4mQY.png" alt=" " style="zoom:67%;" /></p>
-<h2 id="五评分规则"><strong>五、评分规则</strong></h2>
-<table>
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 8%" />
-<col style="width: 60%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>内容</strong></th>
-<th><strong>分值</strong></th>
-<th><strong>评分标准</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1.完成SCPA的调研</td>
-<td>20</td>
-<td>了解目前实现SCPA几种主要方法；理解SCPA工作原理；完成电路架构的选择并阐述原因</td>
-</tr>
-<tr class="even">
-<td>2.完成SCPA的完整电路设计（前仿）</td>
-<td>30</td>
-<td>画出电路系统框图；完成原理图的电路设计（电感、变压器可使用合理的带Q模型）；实现目标性能指标</td>
-</tr>
-<tr class="odd">
-<td>3.完成SCPA电路的版图设计（后仿）</td>
-<td>40</td>
-<td>版图实现；EM仿真无源元件；后仿获得整体指标</td>
-</tr>
-<tr class="even">
-<td>4.创新点</td>
-<td>10</td>
-<td>针对现有结构的改进和创新</td>
-</tr>
-</tbody>
-</table>
-<h2 id="六作品提交要求">六、<strong>作品提交要求</strong></h2>
-<ol type="1">
-<li>初赛和企业技术评分：提交技术文档和设计数据，包括如下内容：
-<ol type="1">
-<li>文献调研，选定SCPA的架构</li>
-<li>核心电路原理与原理图仿真：文档和设计数据</li>
-<li>版图实现与后仿真：文档说明和设计数据</li>
-<li>总结：设计的特点、实现了的性能分析，与改进建议等</li>
-</ol></li>
-<li>分赛区决赛、全国总决赛提交内容
-<ol type="1">
-<li>汇报PPT：项目介绍、关键技术介绍、性能指标</li>
-<li>技术文档和设计数据：同上</li>
-</ol></li>
-</ol>
-<h2 id="七参考文献">七、<strong>参考文献</strong></h2>
-<p>[1] S. M. Yoo, J. S. Walling, E. C. Woo, B. Jann, and D. J. Allstot,
-“A switched-capacitor RF power amplifier,” in IEEE Journal of
-Solid-State Circuits, IEEE, 2011, pp. 2977–2987. doi:
-10.1109/JSSC.2011.2163469.</p>
-<p>[2] S. M. Yoo et al., “A class-G switched-capacitor RF power
-amplifier,” IEEE J. Solid-State Circuits, vol. 48, no. 5, pp. 1212–1224,
-May 2013, doi: 10.1109/JSSC.2013.2252754.</p>
-<p>[3] V. Vorapipat, C. S. Levy, and P. M. Asbeck, “Voltage Mode Doherty
-Power Amplifier,” IEEE J. Solid-State Circuits, vol. 52, no. 5, pp.
-1295–1304, 2017, doi: 10.1109/JSSC.2017.2647954.</p>
-]]></content>
-      <categories>
-        <category>1-通信</category>
-        <category>第八届集创赛 IEEE 杯</category>
-      </categories>
-      <tags>
-        <tag>集创赛</tag>
-        <tag>Virtuoso</tag>
-        <tag>RFIC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>集创赛记录（1）：准备工作</title>
-    <url>/2024/07/18/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="虚拟机及软件安装">1. 虚拟机及软件安装</h1>
-<p>进行芯片设计仿真的常用软件为 Cadence Virtuoso，该软件只能在 Linux
-的特定版本下运行，并且安装步骤非常麻烦。</p>
-<p>为了省去这些麻烦，我直接在网上找别人配置好的系统。</p>
-<p><a
-href="https://zhuanlan.zhihu.com/p/30282652">模拟射频IC设计实践软件平台使用说明</a></p>
-<p>他这使用的虚拟机是 vmware-9 版本，我使用的是 vmware-17.5
-，但使用步骤都一样。</p>
-<p>安装 vmwar 的教程网上很多。</p>
-<p>安装Linux很简单，将下载好的
-<code>AnalogIC_Linux实践平台_V2.0.rar</code> 文件解压，使用 vmware
-打开其中的 <code>Red Hat Enterprise Linux 5 64-bit.vmx</code>
-文件即可</p>
-<p><img src="安装Linux.gif" /></p>
-<p>设置共享文件夹，方便虚拟机和主机之间传输文件。</p>
-<p>任意新建一个文件夹，点击 vmware
-<code>编辑虚拟器设置</code>，点击选项，添加共享文件夹。</p>
-<p><img src="添加共享文件夹.gif" /></p>
-<p>共享文件夹在Linux中的目录为：<code>/mnt/hgfs/</code></p>
-<p>启动该虚拟机IC设计软件平台。启动完成以后在虚拟机的左下角有账号登录框（分辨率问题可能没显示，往下拉即可看到）：输入账户名：chris
-，密码：chris
-，登录Linux系统，此外该Linux系统的root账号密码为：chris</p>
-<p>该 Linux 系统中有两个版本的 Virtuoso，我们使用更新的 617 版本。</p>
-<p>右键打开终端，输入以下命令，打开 Virtuoso</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source RFIC_IC617.cshrc</span><br><span class="line">icfb &amp;</span><br></pre></td></tr></table></figure>
-<p><img src="image-20240718203641401.png" /></p>
-<h1 id="工艺库安装">2. 工艺库安装</h1>
-<p>将工艺库文件（我使用的
-<code>65NTSMC.tar.gz</code>）放在共享文件夹内，在 Linux
-中使用命令（根据实际情况修改文件路径）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xzvf /mnt/hgfs/IC_Linux_shared/65NTSMC.tar.gz -C /home/EDA_IC617/kit/65NTSMC/</span><br></pre></td></tr></table></figure>
-<p>解压到 <code>/home/EDA_IC617/kit/65NTSMC</code>下</p>
-<p><img src="image-20240719204337676.png" /></p>
-<p>使用 <code>source RFIC_IC617.cshrc</code> 和 <code>icfb &amp;</code>
-启动 Virtuoso，然后操作如下</p>
-<p><img src="添加工艺库%20.gif" /></p>
-]]></content>
-      <categories>
-        <category>1-通信</category>
-        <category>第八届集创赛 IEEE 杯</category>
-      </categories>
-      <tags>
-        <tag>集创赛</tag>
-        <tag>Virtuoso</tag>
-        <tag>RFIC</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>hexo+butterfly的特殊语法</title>
     <url>/2024/07/17/3-Hexo%E7%9A%84%E4%BD%BF%E7%94%A8/Hexo%E7%9A%84%E7%89%B9%E6%AE%8A%E8%AF%AD%E6%B3%95/</url>
     <content><![CDATA[<p><a
@@ -289,6 +126,134 @@ themes/Butterfly</p>
       </categories>
   </entry>
   <entry>
+    <title>传输线理论</title>
+    <url>/2024/07/30/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA/</url>
+    <content><![CDATA[<h1 id="传输线模型">1. 传输线模型</h1>
+<p>设无限长均匀传输线为无穷多个无限小线元级联而成。</p>
+<p><img src="image-20240603214919978.png" /></p>
+<p>列出 KVL，KCL 方程，经过变换和求解得到<mark>传输方程的解</mark>：
+<span class="math display">\[
+\begin{cases}V(z)=V_0^+e^{-\gamma z}+V_0^-e^{\gamma
+z}\\I(z)=I_0^+e^{-\gamma z}+I_0^-e^{\gamma z}\end{cases}
+\]</span></p>
+<details class="toggle" ><summary class="toggle-button" style="">传输方程详细求解过程</summary><div class="toggle-content"><p>由 KVL，KCL 得到： <span class="math display">\[
+\begin{cases}V(z)&amp;=R\Delta zI(z)+j\omega L\Delta zI(z)+V(z+\Delta
+z)\\
+I(z)&amp;=G\Delta zV(z+\Delta z)+j\omega C\Delta zV(z+\Delta
+z)+I(z+\Delta z)\end{cases}
+\]</span> 令 <span class="math inline">\(\Delta z\to0\)</span>
+，经过变换得到<mark>传输方程</mark>： <span class="math display">\[
+\begin{cases}\frac{d^2V(z)}{d^2z}-\gamma^2V(z)=0\\\frac{d^2I(z)}{d^2z}-\gamma^2I(z)=0\end{cases}
+\]</span> 其中：<span
+class="math inline">\(\gamma{=}\sqrt{\begin{bmatrix}R+j\omega
+L\end{bmatrix}\begin{bmatrix}G+j\omega
+C\end{bmatrix}}{=}\alpha{+}j\beta\)</span></p>
+<ul>
+<li><span class="math inline">\(\gamma\)</span>：复传播函数</li>
+<li><span class="math inline">\(\alpha\)</span>：衰减常数</li>
+<li><span class="math inline">\(\beta\)</span>​：相位常数</li>
+</ul>
+<blockquote>
+<p>相位常数 <span class="math inline">\(\beta\)</span>
+表示单位长度对应的相位，相位常数与一些变量的关系</p>
+<p>波长：<span
+class="math inline">\(\lambda=\frac{2\pi}\beta\)</span></p>
+<p>相速度：<span
+class="math inline">\(\nu_P=\frac{\omega}{\beta}=\lambda f\)</span>​
+，相速度可以大于光速</p>
+</blockquote>
+<p><mark>传输方程的解</mark>为： <span class="math display">\[
+\begin{cases}V(z)=V_0^+e^{-\gamma z}+V_0^-e^{\gamma
+z}\\I(z)=I_0^+e^{-\gamma z}+I_0^-e^{\gamma z}\end{cases}
+\]</span></p>
+</div></details>
+<p>其中：</p>
+<p><span class="math inline">\(\gamma{=}\sqrt{\begin{bmatrix}R+j\omega
+L\end{bmatrix}\begin{bmatrix}G+j\omega
+C\end{bmatrix}}{=}\alpha{+}j\beta\)</span></p>
+<p><span class="math inline">\(V_0^+,V_0^-,I_0^+,I_0^-\)</span>
+为复<strong>常数</strong>，与传输距离 z
+无关。由传输线边界条件确定。四个参数中只有两个是独立的（即由任意两个可以求出另外两个）。</p>
+<p>方程中只有 <span class="math inline">\(z\)</span>
+是实数，其他均为复数。</p>
+<p>令<mark>特征阻抗</mark>为：<span
+class="math inline">\(Z_{0}=\sqrt{\frac{R+j\omega L}{G+j\omega
+C}}\)</span></p>
+<p>经过方程等式变换，<mark>传输方程的解</mark>也可写为： <span
+class="math display">\[
+\begin{cases}V(z)=V_0^+e^{-\gamma z}+V_0^-e^{\gamma
+z}\\I(z)=\frac{V_0^+}{Z_0}e^{-\gamma z}-\frac{V_0^-}{Z_0}e^{\gamma
+z}\end{cases}\tag{1}
+\]</span></p>
+<blockquote>
+<p><span class="math inline">\(Z_0=\sqrt{\frac{R+j\omega L}{G+j\omega
+C}}=r+jx=\frac{V_0^+}{I_0^+}=\frac{-V_0^-}{I_0^-}\)</span></p>
+</blockquote>
+<h1 id="端接负载的无耗传输线">2. 端接负载的无耗传输线</h1>
+<p>在实际射频电路中，传输线较短，损耗可以忽略，即 R=G=0</p>
+<p><span class="math inline">\(\gamma=j\beta=\sqrt{(R+j\omega
+L)(G+j\omega C)}=j\omega\sqrt{LC}\)</span> 虚数</p>
+<p><span class="math inline">\(Z_0=\sqrt{\frac{\left(R+j\omega
+L\right)}{\left(G+j\omega C\right)}}=\sqrt{\frac LC}\)</span> 实数</p>
+<p><img src="image-20240616160333895.png" /></p>
+<p>由方程（1），得到负载端： <span class="math display">\[
+\begin{cases}V_{0}^{+}=\frac{V_{L}}{2}(1+\frac{Z_{0}}{Z_{L}})\\V_{0}^{-}=\frac{V_{L}}{2}(1-\frac{Z_{0}}{Z_{L}})\end{cases}\tag2
+\]</span> <mark>电压反射系数</mark>：<span
+class="math inline">\(\Gamma(z)=\frac{\text{反射波}}{\text{入射波}}=\frac{V_{0}^{-}e^{\gamma
+z}}{V_{0}^{+}e^{\gamma z}}=\frac{V_{0}^{-}}{V_{0}^{+}}e^{2\gamma
+z}\)</span></p>
+<p>对无耗传输线：<span
+class="math inline">\(\Gamma(z)=\Gamma_{0}e^{j_{2}\beta
+z},\quad\Gamma_{0}=\Gamma(0)=\frac{V_{0}^{-}}{V_{0}^{+}}\)</span></p>
+<p>由方程（2），<mark>负载端的反射系数</mark>：<span
+class="math inline">\(\Gamma_{0}=\frac{V_{0}^{-}}{V_{0}^{+}}=\frac{Z_{L}-Z_{0}}{Z_{L}+Z_{0}}\)</span></p>
+<p><span class="math inline">\(\Rightarrow
+Z_{L}=Z_{0}\frac{1+\Gamma_{0}}{1-\Gamma_{0}}\)</span>​</p>
+<p>推广到任意点：<span class="math inline">\(\Gamma
+(z)=\frac{Z(z)-Z_0}{Z(z)-Z_0}\)</span></p>
+<div class="note info modern"><ul>
+<li>终端匹配：<span class="math inline">\(Z_{L}=Z_{0} \quad \Rightarrow
+\quad \Gamma_{0}=0\)</span></li>
+<li>终端开路：<span class="math inline">\(Z_{L}=\infty \quad \Rightarrow
+\quad \Gamma_{0}=1\)</span> （全反射）</li>
+<li>终端短路：<span class="math inline">\(Z_{L}=0 \quad \Rightarrow
+\quad \Gamma_{0}=-1\)</span> （全反射）</li>
+</ul>
+</div>
+<p><mark>驻波比</mark>：<span class="math inline">\(SWR =
+\frac{|V_{\max}|}{|V_{\min}|} =
+\frac{1+|\Gamma_{0}|}{1-|\Gamma_{0}|}\)</span></p>
+<p><span class="math inline">\(\Rightarrow
+|\Gamma_{0}|=\frac{SWR-1}{SWR+1}\)</span></p>
+<p>令 <span class="math inline">\(d=-z\)</span>​：</p>
+<div class="note warning modern"><p><span class="math inline">\(d\)</span>：从右向左</p>
+<p><span class="math inline">\(z\)</span>：从左向右</p>
+</div>
+<p><span class="math inline">\(\Gamma(d)=\Gamma_{0}e^{-j2\beta
+d}\)</span></p>
+<p>由方程（1）：<span
+class="math inline">\(Z_{d}=\frac{V(-d)}{I(-d)}=Z_{0}\frac{1+\Gamma(-d)}{1-\Gamma(-d)}\)</span></p>
+<p>由该式子得到：</p>
+<p><mark>无耗传输线任意点的输入阻抗</mark>： <span
+class="math display">\[
+Z_{in}\equiv Z_{d}=Z_{0}\frac{Z_{L}+jZ_{0}\tan(\beta
+d)}{Z_{0}+jZ_{L}\tan(\beta d)}
+\]</span> 阻抗匹配时：<span
+class="math inline">\(Z_{L}=Z_{0}\quad\Rightarrow\quad
+Z_{in}=Z_{0}\)</span>，任意点的阻抗都为 <span
+class="math inline">\(Z_0\)</span></p>
+<h1 id="终端短路的传输线">3. 终端短路的传输线</h1>
+<p>待更新</p>
+]]></content>
+      <categories>
+        <category>1-通信</category>
+        <category>射频电路</category>
+      </categories>
+      <tags>
+        <tag>射频</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Verilog代码模板</title>
     <url>/2023/10/09/1-%E9%80%9A%E4%BF%A1/FPGA/Verilog%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/</url>
     <content><![CDATA[<h1 id="分频">分频</h1>
@@ -310,142 +275,6 @@ themes/Butterfly</p>
       <tags>
         <tag>FPGA</tag>
         <tag>UART</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>集创赛记录（3）：理想模型搭建</title>
-    <url>/2024/07/21/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89%EF%BC%9A%E7%90%86%E6%83%B3%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<p>Virtuoso常用快捷键：</p>
-<details class="toggle" ><summary class="toggle-button" style="">Virtuoso常用快捷键</summary><div class="toggle-content"><ul>
-<li><p>在 schematic 中：</p>
-<p>按 <code>i</code> 添加元器件，按 <code>p</code> 添加 pin ，按
-<code>w</code> 连线，按 <code>l</code> 给线命名，按 <code>f</code>
-自适应缩放</p>
-<p>按住鼠标左键画框：选择物体</p>
-<p>按住鼠标右键画框：放大</p>
-<p>按住鼠标中键：移到视角</p>
-<p>选中器件按 <code>q</code> 修改参数</p>
-<p><code>u</code> 撤销操作</p></li>
-</ul>
-</div></details>
-<p>Virtuoso 使用过程中可能遇到的问题：</p>
-<details class="toggle" ><summary class="toggle-button" style="">Virtuoso 使用过程中可能遇到的问题</summary><div class="toggle-content"><ul>
-<li><p>无法 edit View，只能 read</p>
-<p><img src="image-20240721210807403.png" /></p>
-<p>将该 View 所在文件夹中的以下这两个文件删掉</p>
-<p><img src="image-20240721211006995.png" /></p></li>
-</ul>
-</div></details>
-<h1 id="设计思路">1. 设计思路</h1>
-<p>本次比赛许多内容参考该视频：<a
-href="https://www.bilibili.com/video/BV1Jx421S7KS">基于RFIC-GPT射频芯片智能设计工具的SCPA（Switched-Capacitor
-Power Amplifier）设计分享</a></p>
-<p><strong>先完成理想模型的搭建、仿真；再逐步替换为 mos
-模型、仿真；最后画版图，提取寄生参数，仿真。</strong></p>
-<p>架构选用 Doherty 架构。</p>
-<p>总体框图：</p>
-<p><img src="image-20240721144847989.png" /></p>
-<p><mark>logic 模块的全部，以及 output
-模块最后的电容前的部分都是数字信号，即方波</mark></p>
-<h1 id="理想模型的搭建">2. 理想模型的搭建</h1>
-<p>先使用 analogLib 中的理想模型搭建，对于一些设计库中没有的模块，
-例如反相器、 与门和升压电路， 编写了 VerilogA 代码来实现这些功能。</p>
-<p>由于权限问题，很多操作无法进行，所以先修改文件权限。</p>
-<p>鼠标右键打开终端，输入 <code>su -</code> ，输入密码
-<code>chris</code> 切换到 root 用户，输入
-<code>cd /home/EDA_IC617/Projects_OA</code> ，输入
-<code>chmod a+w .</code> 修改当前文件夹权限为所有人可读可写。</p>
-<p>打开 Virtuoso，点击
-<code>Tools-&gt;Library Manager</code>，打开库管理器。</p>
-<p>新建一个库 <code>SCPA</code>，关联到工艺库 <code>tsmcN65</code></p>
-<p><img src="新建库.gif" /></p>
-<h2 id="veriloga-代码编写">2.1. VerilogA 代码编写</h2>
-<p>编写反相器、 与门和升压电路的 VerilogA 代码</p>
-<p>新建一个 Inv （反相器）的 cell</p>
-<p><img src="创建Inv.gif" /></p>
-<p>Inv的代码如下：</p>
-<details class="toggle" ><summary class="toggle-button" style="">Inv的VerilogA代码</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, Inv, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module Inv(in, out);</span><br><span class="line"></span><br><span class="line">input in;</span><br><span class="line">output out;</span><br><span class="line"></span><br><span class="line">electrical in, out;</span><br><span class="line"></span><br><span class="line">parameter real vtrans=0.9,</span><br><span class="line">               tdelay=1p from[0:inf),</span><br><span class="line">               trise=1p from[0:inf),</span><br><span class="line">               tfall=1p from[0:inf),</span><br><span class="line">               Vhigh=3.3,</span><br><span class="line">               Vlow=0;</span><br><span class="line"></span><br><span class="line">real OUT_val;//OUT_val</span><br><span class="line">analog begin//</span><br><span class="line">       @(cross(V(in)-vtrans,1))//v(in)vtrans</span><br><span class="line">        OUT_val=Vlow;</span><br><span class="line">       @(cross(V(in)-vtrans,-1))//v(in)vtrans</span><br><span class="line">        OUT_val=Vhigh;</span><br><span class="line">       V(out)&lt;+transition(OUT_val,tdelay,trise,tfall);//Vout</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
-</div></details>
-<blockquote>
-<p>vtrans、tdelay、trise、tfall、Vhigh、Vlow
-这些参数可以在调用该模块时修改</p>
-</blockquote>
-<p>同理新建与门和升压电路</p>
-<p>与门和升压电路的 VerilogA 的代码如下</p>
-<details class="toggle" ><summary class="toggle-button" style="">与门和升压电路的 VerilogA 的代码</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, And, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module AND(Vin1, Vin2, Out);</span><br><span class="line"></span><br><span class="line">input Vin1, Vin2;</span><br><span class="line">output Out;</span><br><span class="line">electrical Vin1, Vin2, Out;</span><br><span class="line"></span><br><span class="line">parameter real vtrans = 0.9;</span><br><span class="line">parameter real vlogic_high = 1.8;</span><br><span class="line">parameter real vlogic_low = 0;</span><br><span class="line"></span><br><span class="line">analog begin</span><br><span class="line">	if(V(Vin1) &gt; vtrans &amp;&amp; V(Vin2) &gt; vtrans) begin</span><br><span class="line">		V(Out) &lt;+ vlogic_high;</span><br><span class="line">	end</span><br><span class="line">	else begin</span><br><span class="line">		V(Out) &lt;+ vlogic_low;</span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, Boost, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module Boost(vin,vout);</span><br><span class="line"></span><br><span class="line">input vin;</span><br><span class="line">output vout;</span><br><span class="line">electrical vin,vout;</span><br><span class="line">parameter real Vin = 1.2;</span><br><span class="line">parameter real Vout = 2.4;</span><br><span class="line"></span><br><span class="line">analog begin</span><br><span class="line"></span><br><span class="line">V(vout) &lt;+ V(vin) +1.2;</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
-</div></details>
-<p><img src="image-20240721164740868.png" /></p>
-<h2 id="logic-部分">2.2. logic 部分</h2>
-<h3 id="s2d">2.2.1. S2D</h3>
-<p>S2D 模块功能是将单端信号转为差分信号。</p>
-<p>新建一个 S2D 的理想电路。（后续还会在该 Cell 下新建mos模型的电路
-schematic_mos）</p>
-<p><img src="image-20240721164949807.png" /></p>
-<p>进入 schematic，按 <code>i</code> 添加元器件，按 <code>p</code> 添加
-pin ，按 <code>w</code> 连线，按 <code>l</code> 给线命名，按
-<code>f</code> 自适应缩放</p>
-<p><mark>修改后需要保存，点击左上角工具栏的第三个，Check and
-Save</mark></p>
-<p><img src="image-20240721170331041.png" /></p>
-<p>选中 Inv 按 <code>q</code>，修改参数，所有 Inv 都要改。因为这里的 VDD
-和 VSS 是 1.2V 和 0，所以改成如下参数。</p>
-<p><img src="image-20240721201317860.png" alt="image-20240721201317860" style="zoom:80%;" /></p>
-<p>然后从 schematic 生成 symbol：</p>
-<p><code>Create → Cellview → From CellView...</code></p>
-<p><img src="image-20240721171616324.png" /></p>
-<p><img src="image-20240721171817054.png" /></p>
-<p>同理搭建其他模块，<strong>注意正确修改参数设置</strong>。</p>
-<h3 id="upconversion">2.2.2. upconversion</h3>
-<p>该模块将使能信号上变频</p>
-<p><img src="image-20240721185506136.png" /></p>
-<h3 id="logic">2.2.3. logic</h3>
-<p>将 S2D 和 upconversion 合并。</p>
-<p>这不是一个底层模块了，不分理想模型还是 mos 模型，所以只需一个
-schematic 即可。</p>
-<p>仿真时要切换理想模型或 mos 模型是切换底层的模型。</p>
-<p><img src="image-20240721191759384.png" /></p>
-<h2 id="output-部分">2.3. output 部分</h2>
-<p>output 部分由 4 个部分组成：Level</p>
-<h3 id="level_shifter">2.3.1. level_shifter</h3>
-<p>该模块将 0 ~ VDD 的信号抬升到 VDD ~ VDD2</p>
-<p><img src="image-20240721193347441.png" /></p>
-<h3 id="driver-up">2.3.2. driver up</h3>
-<p>该模块将信号在 VDD 和 VDD2 之间反相。</p>
-<p><img src="image-20240721194535330.png" /></p>
-<h3 id="driver-down">2.3.3. driver down</h3>
-<p>该模块将信号在 VSS 和 VDD 之间反相。</p>
-<p><img src="image-20240721201051576.png" /></p>
-<h3 id="inv-cascode">2.3.4. inv cascode</h3>
-<p>输出为 0 ~ VDD2 的方波</p>
-<p><img src="image-20240721203806217.png" /></p>
-<p>E0 为 analogLib 下的 vcvs：</p>
-<p><img src="image-20240721203150382.png" /></p>
-<h3 id="output">2.3.5. output</h3>
-<p><img src="image-20240721205321157.png" /></p>
-<p>电容是 analogLib 下的 cap：</p>
-<p><img src="image-20240721205234426.png" /></p>
-<h2 id="unit-cell">2.4. unit cell</h2>
-<p>一个 logic 部分和两个 output 组成一个 unit cell</p>
-<p><img src="image-20240721212013325.png" /></p>
-<h2 id="scpa">2.5. SCPA</h2>
-<p>64 个 unit cell 组成一个 SCPA</p>
-<p><img src="image-20240721213021404.png" /></p>
-<p><img src="image-20240721213028456.png" /></p>
-<h2 id="doherty-scpa">2.6. Doherty SCPA</h2>
-<p>两个 SCPA 分别作为主路和峰值路，加上匹配电路组成 Doherty SCPA</p>
-<p><img src="image-20240721214918649.png" /></p>
-<p>其中一些器件的参数：</p>
-<p><img src="image-20240721215937099.png" /></p>
-]]></content>
-      <categories>
-        <category>1-通信</category>
-        <category>第八届集创赛 IEEE 杯</category>
-      </categories>
-      <tags>
-        <tag>集创赛</tag>
-        <tag>Virtuoso</tag>
-        <tag>RFIC</tag>
       </tags>
   </entry>
   <entry>
@@ -636,6 +465,337 @@ class="math inline">\(K_{VCO}\)</span> 为鉴相器增益和VCO增益，N
       </tags>
   </entry>
   <entry>
+    <title>（一）锁相环简介</title>
+    <url>/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/%EF%BC%88%E4%B8%80%EF%BC%89%20%E9%94%81%E7%9B%B8%E7%8E%AF%E7%AE%80%E4%BB%8B/</url>
+    <content><![CDATA[<h1 id="锁相环工作原理">1 锁相环工作原理</h1>
+<p>基本构成</p>
+<p><img src="image-20230806213832221.png" /></p>
+<p>VCO和PD的传输函数。</p>
+<p>(<span
+class="math inline">\(\mathcal{u}_{\mathbf{f}}\)</span>=控制电压；<span
+class="math inline">\(\omega_{2}\)</span>=输出信号的角频率。) (<span
+class="math inline">\(\overline{
+{u_{\mathbf{d}}}}\)</span>=鉴相器输出信号的平均值；<span
+class="math inline">\(\theta_{\mathrm{e}}\)</span>=相位误差。)</p>
+<p><img src="image-20230806214159294.png" /></p>
+<h1 id="pll的分类">2 PLL的分类</h1>
+<ul>
+<li>混合信号PLL，大多由线性和数字电路混合组成
+<ul>
+<li>线性PLL（LPLL），严格来说是纯模拟电路</li>
+<li>数字PLL（DPLL），混合信号电路</li>
+</ul></li>
+<li>纯数字PLL（ADPLL），纯数字电路</li>
+</ul>
+]]></content>
+      <categories>
+        <category>1-通信</category>
+        <category>锁相环</category>
+      </categories>
+      <tags>
+        <tag>锁相环</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>集创赛记录（1）：准备工作</title>
+    <url>/2024/07/18/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="虚拟机及软件安装">1. 虚拟机及软件安装</h1>
+<p>进行芯片设计仿真的常用软件为 Cadence Virtuoso，该软件只能在 Linux
+的特定版本下运行，并且安装步骤非常麻烦。</p>
+<p>为了省去这些麻烦，我直接在网上找别人配置好的系统。</p>
+<p><a
+href="https://zhuanlan.zhihu.com/p/30282652">模拟射频IC设计实践软件平台使用说明</a></p>
+<p>他这使用的虚拟机是 vmware-9 版本，我使用的是 vmware-17.5
+，但使用步骤都一样。</p>
+<p>安装 vmwar 的教程网上很多。</p>
+<p>安装Linux很简单，将下载好的
+<code>AnalogIC_Linux实践平台_V2.0.rar</code> 文件解压，使用 vmware
+打开其中的 <code>Red Hat Enterprise Linux 5 64-bit.vmx</code>
+文件即可</p>
+<p><img src="安装Linux.gif" /></p>
+<p>设置共享文件夹，方便虚拟机和主机之间传输文件。</p>
+<p>任意新建一个文件夹，点击 vmware
+<code>编辑虚拟器设置</code>，点击选项，添加共享文件夹。</p>
+<p><img src="添加共享文件夹.gif" /></p>
+<p>共享文件夹在Linux中的目录为：<code>/mnt/hgfs/</code></p>
+<p>启动该虚拟机IC设计软件平台。启动完成以后在虚拟机的左下角有账号登录框（分辨率问题可能没显示，往下拉即可看到）：输入账户名：chris
+，密码：chris
+，登录Linux系统，此外该Linux系统的root账号密码为：chris</p>
+<p>该 Linux 系统中有两个版本的 Virtuoso，我们使用更新的 617 版本。</p>
+<p>右键打开终端，输入以下命令，打开 Virtuoso</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source RFIC_IC617.cshrc</span><br><span class="line">icfb &amp;</span><br></pre></td></tr></table></figure>
+<p><img src="image-20240718203641401.png" /></p>
+<h1 id="工艺库安装">2. 工艺库安装</h1>
+<p>将工艺库文件（我使用的
+<code>65NTSMC.tar.gz</code>）放在共享文件夹内，在 Linux
+中使用命令（根据实际情况修改文件路径）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xzvf /mnt/hgfs/IC_Linux_shared/65NTSMC.tar.gz -C /home/EDA_IC617/kit/65NTSMC/</span><br></pre></td></tr></table></figure>
+<p>解压到 <code>/home/EDA_IC617/kit/65NTSMC</code>下</p>
+<p><img src="image-20240719204337676.png" /></p>
+<p>使用 <code>source RFIC_IC617.cshrc</code> 和 <code>icfb &amp;</code>
+启动 Virtuoso，然后操作如下</p>
+<p><img src="添加工艺库%20.gif" /></p>
+]]></content>
+      <categories>
+        <category>1-通信</category>
+        <category>第八届集创赛 IEEE 杯</category>
+      </categories>
+      <tags>
+        <tag>集创赛</tag>
+        <tag>Virtuoso</tag>
+        <tag>RFIC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>集创赛记录（2）：赛题题目</title>
+    <url>/2024/07/20/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%EF%BC%9A%E8%B5%9B%E9%A2%98%E9%A2%98%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="赛题题目">1. 赛题题目</h1>
+<p><a
+href="http://univ.ciciec.com/nd.jsp?id=713#_jcp=1">第八届集创赛杯赛题目——IEEE杯</a></p>
+<h2
+id="一杯赛题目2.4ghz高效率scpa设计"><strong>一、杯赛题目：2.4GHz高效率SCPA设计</strong></h2>
+<h2 id="二参赛组别a组b组"><strong>二、参赛组别：A组、B组</strong></h2>
+<h2 id="三设计指标"><strong>三、设计指标</strong></h2>
+<ol type="1">
+<li>工作频率2.4GHz</li>
+<li>采用架构为开关电容功率放大器(Switched-Capacitor Power Amplifier,
+SCPA)</li>
+<li>饱和输出功率Psat不低于23dBm</li>
+<li>峰值系统效率(System Efficiency) 不低于35%</li>
+<li>匹配网络及功率合成器等无源结构须在片上设计</li>
+<li>采用65nm CMOS工艺</li>
+</ol>
+<h2 id="四背景介绍"><strong>四、背景介绍</strong></h2>
+<ol type="1">
+<li>SCPA原理</li>
+</ol>
+<p>SCPA最早是由Sang-Min
+Yoo提出[1]，电路结构上是由通过晶体管实现的开关控制的电容阵列组成。</p>
+<p><img src="ABUIABAEGAAg0Kn5rAYoz4OF4gYw5AY4ggQ.png" alt=" " style="zoom: 67%;" /></p>
+<p>控制电容的开关以射频频率切换时，此时开关电容视为工作状态；控制电容的开关常接地时，此时开关电容视为关闭状态。通过控制处于工作状态下开关电容的数量，可实现输出电压幅度的变化。</p>
+<p><img src="ABUIABAEGAAg6an5rAYo6a2yugUwxgU44gI.png" /></p>
+<ol start="2" type="1">
+<li>Class-G SCPA</li>
+</ol>
+<p>采用Class-G (双电源)
+的方式对SCPA供电，输出功率较低时，采用电压更低的电源供电，提高回退效率[2]。</p>
+<p><img src="image-20240721143615341.png" /></p>
+<ol start="3" type="1">
+<li>Doherty SCPA</li>
+</ol>
+<p>以SCPA的方式实现Doherty，提高PA饱和输出功率，同时提高PA在功率回退下的效率[3]。</p>
+<p><img src="ABUIABAEGAAgsqr5rAYo5rCGpAIw3AU4mQY.png" alt=" " style="zoom:67%;" /></p>
+<h2 id="五评分规则"><strong>五、评分规则</strong></h2>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 8%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>内容</strong></th>
+<th><strong>分值</strong></th>
+<th><strong>评分标准</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.完成SCPA的调研</td>
+<td>20</td>
+<td>了解目前实现SCPA几种主要方法；理解SCPA工作原理；完成电路架构的选择并阐述原因</td>
+</tr>
+<tr class="even">
+<td>2.完成SCPA的完整电路设计（前仿）</td>
+<td>30</td>
+<td>画出电路系统框图；完成原理图的电路设计（电感、变压器可使用合理的带Q模型）；实现目标性能指标</td>
+</tr>
+<tr class="odd">
+<td>3.完成SCPA电路的版图设计（后仿）</td>
+<td>40</td>
+<td>版图实现；EM仿真无源元件；后仿获得整体指标</td>
+</tr>
+<tr class="even">
+<td>4.创新点</td>
+<td>10</td>
+<td>针对现有结构的改进和创新</td>
+</tr>
+</tbody>
+</table>
+<h2 id="六作品提交要求">六、<strong>作品提交要求</strong></h2>
+<ol type="1">
+<li>初赛和企业技术评分：提交技术文档和设计数据，包括如下内容：
+<ol type="1">
+<li>文献调研，选定SCPA的架构</li>
+<li>核心电路原理与原理图仿真：文档和设计数据</li>
+<li>版图实现与后仿真：文档说明和设计数据</li>
+<li>总结：设计的特点、实现了的性能分析，与改进建议等</li>
+</ol></li>
+<li>分赛区决赛、全国总决赛提交内容
+<ol type="1">
+<li>汇报PPT：项目介绍、关键技术介绍、性能指标</li>
+<li>技术文档和设计数据：同上</li>
+</ol></li>
+</ol>
+<h2 id="七参考文献">七、<strong>参考文献</strong></h2>
+<p>[1] S. M. Yoo, J. S. Walling, E. C. Woo, B. Jann, and D. J. Allstot,
+“A switched-capacitor RF power amplifier,” in IEEE Journal of
+Solid-State Circuits, IEEE, 2011, pp. 2977–2987. doi:
+10.1109/JSSC.2011.2163469.</p>
+<p>[2] S. M. Yoo et al., “A class-G switched-capacitor RF power
+amplifier,” IEEE J. Solid-State Circuits, vol. 48, no. 5, pp. 1212–1224,
+May 2013, doi: 10.1109/JSSC.2013.2252754.</p>
+<p>[3] V. Vorapipat, C. S. Levy, and P. M. Asbeck, “Voltage Mode Doherty
+Power Amplifier,” IEEE J. Solid-State Circuits, vol. 52, no. 5, pp.
+1295–1304, 2017, doi: 10.1109/JSSC.2017.2647954.</p>
+]]></content>
+      <categories>
+        <category>1-通信</category>
+        <category>第八届集创赛 IEEE 杯</category>
+      </categories>
+      <tags>
+        <tag>集创赛</tag>
+        <tag>Virtuoso</tag>
+        <tag>RFIC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>集创赛记录（3）：理想模型搭建</title>
+    <url>/2024/07/21/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89%EF%BC%9A%E7%90%86%E6%83%B3%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p>Virtuoso常用快捷键：</p>
+<details class="toggle" ><summary class="toggle-button" style="">Virtuoso常用快捷键</summary><div class="toggle-content"><ul>
+<li><p>在 schematic 中：</p>
+<p>按 <code>i</code> 添加元器件，按 <code>p</code> 添加 pin ，按
+<code>w</code> 连线，按 <code>l</code> 给线命名，按 <code>f</code>
+自适应缩放</p>
+<p>按住鼠标左键画框：选择物体</p>
+<p>按住鼠标右键画框：放大</p>
+<p>按住鼠标中键：移到视角</p>
+<p>选中器件按 <code>q</code> 修改参数</p>
+<p><code>u</code> 撤销操作</p></li>
+</ul>
+</div></details>
+<p>Virtuoso 使用过程中可能遇到的问题：</p>
+<details class="toggle" ><summary class="toggle-button" style="">Virtuoso 使用过程中可能遇到的问题</summary><div class="toggle-content"><ul>
+<li><p>无法 edit View，只能 read</p>
+<p><img src="image-20240721210807403.png" /></p>
+<p>将该 View 所在文件夹中的以下这两个文件删掉</p>
+<p><img src="image-20240721211006995.png" /></p></li>
+</ul>
+</div></details>
+<h1 id="设计思路">1. 设计思路</h1>
+<p>本次比赛许多内容参考该视频：<a
+href="https://www.bilibili.com/video/BV1Jx421S7KS">基于RFIC-GPT射频芯片智能设计工具的SCPA（Switched-Capacitor
+Power Amplifier）设计分享</a></p>
+<p><strong>先完成理想模型的搭建、仿真；再逐步替换为 mos
+模型、仿真；最后画版图，提取寄生参数，仿真。</strong></p>
+<p>架构选用 Doherty 架构。</p>
+<p>总体框图：</p>
+<p><img src="image-20240721144847989.png" /></p>
+<p><mark>logic 模块的全部，以及 output
+模块最后的电容前的部分都是数字信号，即方波</mark></p>
+<h1 id="理想模型的搭建">2. 理想模型的搭建</h1>
+<p>先使用 analogLib 中的理想模型搭建，对于一些设计库中没有的模块，
+例如反相器、 与门和升压电路， 编写了 VerilogA 代码来实现这些功能。</p>
+<p>由于权限问题，很多操作无法进行，所以先修改文件权限。</p>
+<p>鼠标右键打开终端，输入 <code>su -</code> ，输入密码
+<code>chris</code> 切换到 root 用户，输入
+<code>cd /home/EDA_IC617/Projects_OA</code> ，输入
+<code>chmod a+w .</code> 修改当前文件夹权限为所有人可读可写。</p>
+<p>打开 Virtuoso，点击
+<code>Tools-&gt;Library Manager</code>，打开库管理器。</p>
+<p>新建一个库 <code>SCPA</code>，关联到工艺库 <code>tsmcN65</code></p>
+<p><img src="新建库.gif" /></p>
+<h2 id="veriloga-代码编写">2.1. VerilogA 代码编写</h2>
+<p>编写反相器、 与门和升压电路的 VerilogA 代码</p>
+<p>新建一个 Inv （反相器）的 cell</p>
+<p><img src="创建Inv.gif" /></p>
+<p>Inv的代码如下：</p>
+<details class="toggle" ><summary class="toggle-button" style="">Inv的VerilogA代码</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, Inv, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module Inv(in, out);</span><br><span class="line"></span><br><span class="line">input in;</span><br><span class="line">output out;</span><br><span class="line"></span><br><span class="line">electrical in, out;</span><br><span class="line"></span><br><span class="line">parameter real vtrans=0.9,</span><br><span class="line">               tdelay=1p from[0:inf),</span><br><span class="line">               trise=1p from[0:inf),</span><br><span class="line">               tfall=1p from[0:inf),</span><br><span class="line">               Vhigh=3.3,</span><br><span class="line">               Vlow=0;</span><br><span class="line"></span><br><span class="line">real OUT_val;//OUT_val</span><br><span class="line">analog begin//</span><br><span class="line">       @(cross(V(in)-vtrans,1))//v(in)vtrans</span><br><span class="line">        OUT_val=Vlow;</span><br><span class="line">       @(cross(V(in)-vtrans,-1))//v(in)vtrans</span><br><span class="line">        OUT_val=Vhigh;</span><br><span class="line">       V(out)&lt;+transition(OUT_val,tdelay,trise,tfall);//Vout</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
+</div></details>
+<blockquote>
+<p>vtrans、tdelay、trise、tfall、Vhigh、Vlow
+这些参数可以在调用该模块时修改</p>
+</blockquote>
+<p>同理新建与门和升压电路</p>
+<p>与门和升压电路的 VerilogA 的代码如下</p>
+<details class="toggle" ><summary class="toggle-button" style="">与门和升压电路的 VerilogA 的代码</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, And, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module AND(Vin1, Vin2, Out);</span><br><span class="line"></span><br><span class="line">input Vin1, Vin2;</span><br><span class="line">output Out;</span><br><span class="line">electrical Vin1, Vin2, Out;</span><br><span class="line"></span><br><span class="line">parameter real vtrans = 0.9;</span><br><span class="line">parameter real vlogic_high = 1.8;</span><br><span class="line">parameter real vlogic_low = 0;</span><br><span class="line"></span><br><span class="line">analog begin</span><br><span class="line">	if(V(Vin1) &gt; vtrans &amp;&amp; V(Vin2) &gt; vtrans) begin</span><br><span class="line">		V(Out) &lt;+ vlogic_high;</span><br><span class="line">	end</span><br><span class="line">	else begin</span><br><span class="line">		V(Out) &lt;+ vlogic_low;</span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, Boost, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module Boost(vin,vout);</span><br><span class="line"></span><br><span class="line">input vin;</span><br><span class="line">output vout;</span><br><span class="line">electrical vin,vout;</span><br><span class="line">parameter real Vin = 1.2;</span><br><span class="line">parameter real Vout = 2.4;</span><br><span class="line"></span><br><span class="line">analog begin</span><br><span class="line"></span><br><span class="line">V(vout) &lt;+ V(vin) +1.2;</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
+</div></details>
+<p><img src="image-20240721164740868.png" /></p>
+<h2 id="logic-部分">2.2. logic 部分</h2>
+<h3 id="s2d">2.2.1. S2D</h3>
+<p>S2D 模块功能是将单端信号转为差分信号。</p>
+<p>新建一个 S2D 的理想电路。（后续还会在该 Cell 下新建mos模型的电路
+schematic_mos）</p>
+<p><img src="image-20240721164949807.png" /></p>
+<p>进入 schematic，按 <code>i</code> 添加元器件，按 <code>p</code> 添加
+pin ，按 <code>w</code> 连线，按 <code>l</code> 给线命名，按
+<code>f</code> 自适应缩放</p>
+<p><mark>修改后需要保存，点击左上角工具栏的第三个，Check and
+Save</mark></p>
+<p><img src="image-20240721170331041.png" /></p>
+<p>选中 Inv 按 <code>q</code>，修改参数，所有 Inv 都要改。因为这里的 VDD
+和 VSS 是 1.2V 和 0，所以改成如下参数。</p>
+<p><img src="image-20240721201317860.png" alt="image-20240721201317860" style="zoom:80%;" /></p>
+<p>然后从 schematic 生成 symbol：</p>
+<p><code>Create → Cellview → From CellView...</code></p>
+<p><img src="image-20240721171616324.png" /></p>
+<p><img src="image-20240721171817054.png" /></p>
+<p>同理搭建其他模块，<strong>注意正确修改参数设置</strong>。</p>
+<h3 id="upconversion">2.2.2. upconversion</h3>
+<p>该模块将使能信号上变频</p>
+<p><img src="image-20240721185506136.png" /></p>
+<h3 id="logic">2.2.3. logic</h3>
+<p>将 S2D 和 upconversion 合并。</p>
+<p>这不是一个底层模块了，不分理想模型还是 mos 模型，所以只需一个
+schematic 即可。</p>
+<p>仿真时要切换理想模型或 mos 模型是切换底层的模型。</p>
+<p><img src="image-20240721191759384.png" /></p>
+<h2 id="output-部分">2.3. output 部分</h2>
+<p>output 部分由 4 个部分组成：Level</p>
+<h3 id="level_shifter">2.3.1. level_shifter</h3>
+<p>该模块将 0 ~ VDD 的信号抬升到 VDD ~ VDD2</p>
+<p><img src="image-20240721193347441.png" /></p>
+<h3 id="driver-up">2.3.2. driver up</h3>
+<p>该模块将信号在 VDD 和 VDD2 之间反相。</p>
+<p><img src="image-20240721194535330.png" /></p>
+<h3 id="driver-down">2.3.3. driver down</h3>
+<p>该模块将信号在 VSS 和 VDD 之间反相。</p>
+<p><img src="image-20240721201051576.png" /></p>
+<h3 id="inv-cascode">2.3.4. inv cascode</h3>
+<p>输出为 0 ~ VDD2 的方波</p>
+<p><img src="image-20240721203806217.png" /></p>
+<p>E0 为 analogLib 下的 vcvs：</p>
+<p><img src="image-20240721203150382.png" /></p>
+<h3 id="output">2.3.5. output</h3>
+<p><img src="image-20240721205321157.png" /></p>
+<p>电容是 analogLib 下的 cap：</p>
+<p><img src="image-20240721205234426.png" /></p>
+<h2 id="unit-cell">2.4. unit cell</h2>
+<p>一个 logic 部分和两个 output 组成一个 unit cell</p>
+<p><img src="image-20240721212013325.png" /></p>
+<h2 id="scpa">2.5. SCPA</h2>
+<p>64 个 unit cell 组成一个 SCPA</p>
+<p><img src="image-20240721213021404.png" /></p>
+<p><img src="image-20240721213028456.png" /></p>
+<h2 id="doherty-scpa">2.6. Doherty SCPA</h2>
+<p>两个 SCPA 分别作为主路和峰值路，加上匹配电路组成 Doherty SCPA</p>
+<p><img src="image-20240721214918649.png" /></p>
+<p>其中一些器件的参数：</p>
+<p><img src="image-20240721215937099.png" /></p>
+]]></content>
+      <categories>
+        <category>1-通信</category>
+        <category>第八届集创赛 IEEE 杯</category>
+      </categories>
+      <tags>
+        <tag>集创赛</tag>
+        <tag>Virtuoso</tag>
+        <tag>RFIC</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>软件资源推荐</title>
     <url>/2023/10/09/2-%E8%BD%AF%E4%BB%B6/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
     <content><![CDATA[<h1 id="pot">Pot</h1>
@@ -722,172 +882,6 @@ href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
       </categories>
       <tags>
         <tag>资源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>传输线理论</title>
-    <url>/2024/07/30/1-%E9%80%9A%E4%BF%A1/%E5%B0%84%E9%A2%91%E7%94%B5%E8%B7%AF/%E4%BC%A0%E8%BE%93%E7%BA%BF%E7%90%86%E8%AE%BA/</url>
-    <content><![CDATA[<h1 id="传输线模型">1. 传输线模型</h1>
-<p>设无限长均匀传输线为无穷多个无限小线元级联而成。</p>
-<p><img src="image-20240603214919978.png" /></p>
-<p>列出 KVL，KCL 方程，经过变换和求解得到<mark>传输方程的解</mark>：
-<span class="math display">\[
-\begin{cases}V(z)=V_0^+e^{-\gamma z}+V_0^-e^{\gamma
-z}\\I(z)=I_0^+e^{-\gamma z}+I_0^-e^{\gamma z}\end{cases}
-\]</span></p>
-<details class="toggle" ><summary class="toggle-button" style="">传输方程详细求解过程</summary><div class="toggle-content"><p>由 KVL，KCL 得到： <span class="math display">\[
-\begin{cases}V(z)&amp;=R\Delta zI(z)+j\omega L\Delta zI(z)+V(z+\Delta
-z)\\
-I(z)&amp;=G\Delta zV(z+\Delta z)+j\omega C\Delta zV(z+\Delta
-z)+I(z+\Delta z)\end{cases}
-\]</span> 令 <span class="math inline">\(\Delta z\to0\)</span>
-，经过变换得到<mark>传输方程</mark>： <span class="math display">\[
-\begin{cases}\frac{d^2V(z)}{d^2z}-\gamma^2V(z)=0\\\frac{d^2I(z)}{d^2z}-\gamma^2I(z)=0\end{cases}
-\]</span> 其中：<span
-class="math inline">\(\gamma{=}\sqrt{\begin{bmatrix}R+j\omega
-L\end{bmatrix}\begin{bmatrix}G+j\omega
-C\end{bmatrix}}{=}\alpha{+}j\beta\)</span></p>
-<ul>
-<li><span class="math inline">\(\gamma\)</span>：复传播函数</li>
-<li><span class="math inline">\(\alpha\)</span>：衰减常数</li>
-<li><span class="math inline">\(\beta\)</span>​：相位常数</li>
-</ul>
-<blockquote>
-<p>相位常数 <span class="math inline">\(\beta\)</span>
-表示单位长度对应的相位，相位常数与一些变量的关系</p>
-<p>波长：<span
-class="math inline">\(\lambda=\frac{2\pi}\beta\)</span></p>
-<p>相速度：<span
-class="math inline">\(\nu_P=\frac{\omega}{\beta}=\lambda f\)</span>​
-，相速度可以大于光速</p>
-</blockquote>
-<p><mark>传输方程的解</mark>为： <span class="math display">\[
-\begin{cases}V(z)=V_0^+e^{-\gamma z}+V_0^-e^{\gamma
-z}\\I(z)=I_0^+e^{-\gamma z}+I_0^-e^{\gamma z}\end{cases}
-\]</span></p>
-</div></details>
-<p>其中：</p>
-<p><span class="math inline">\(\gamma{=}\sqrt{\begin{bmatrix}R+j\omega
-L\end{bmatrix}\begin{bmatrix}G+j\omega
-C\end{bmatrix}}{=}\alpha{+}j\beta\)</span></p>
-<p><span class="math inline">\(V_0^+,V_0^-,I_0^+,I_0^-\)</span>
-为复<strong>常数</strong>，与传输距离 z
-无关。由传输线边界条件确定。四个参数中只有两个是独立的（即由任意两个可以求出另外两个）。</p>
-<p>方程中只有 <span class="math inline">\(z\)</span>
-是实数，其他均为复数。</p>
-<p>令<mark>特征阻抗</mark>为：<span
-class="math inline">\(Z_{0}=\sqrt{\frac{R+j\omega L}{G+j\omega
-C}}\)</span></p>
-<p>经过方程等式变换，<mark>传输方程的解</mark>也可写为： <span
-class="math display">\[
-\begin{cases}V(z)=V_0^+e^{-\gamma z}+V_0^-e^{\gamma
-z}\\I(z)=\frac{V_0^+}{Z_0}e^{-\gamma z}-\frac{V_0^-}{Z_0}e^{\gamma
-z}\end{cases}\tag{1}
-\]</span></p>
-<blockquote>
-<p><span class="math inline">\(Z_0=\sqrt{\frac{R+j\omega L}{G+j\omega
-C}}=r+jx=\frac{V_0^+}{I_0^+}=\frac{-V_0^-}{I_0^-}\)</span></p>
-</blockquote>
-<h1 id="端接负载的无耗传输线">2. 端接负载的无耗传输线</h1>
-<p>在实际射频电路中，传输线较短，损耗可以忽略，即 R=G=0</p>
-<p><span class="math inline">\(\gamma=j\beta=\sqrt{(R+j\omega
-L)(G+j\omega C)}=j\omega\sqrt{LC}\)</span> 虚数</p>
-<p><span class="math inline">\(Z_0=\sqrt{\frac{\left(R+j\omega
-L\right)}{\left(G+j\omega C\right)}}=\sqrt{\frac LC}\)</span> 实数</p>
-<p><img src="image-20240616160333895.png" /></p>
-<p>由方程（1），得到负载端： <span class="math display">\[
-\begin{cases}V_{0}^{+}=\frac{V_{L}}{2}(1+\frac{Z_{0}}{Z_{L}})\\V_{0}^{-}=\frac{V_{L}}{2}(1-\frac{Z_{0}}{Z_{L}})\end{cases}\tag2
-\]</span> <mark>电压反射系数</mark>：<span
-class="math inline">\(\Gamma(z)=\frac{\text{反射波}}{\text{入射波}}=\frac{V_{0}^{-}e^{\gamma
-z}}{V_{0}^{+}e^{\gamma z}}=\frac{V_{0}^{-}}{V_{0}^{+}}e^{2\gamma
-z}\)</span></p>
-<p>对无耗传输线：<span
-class="math inline">\(\Gamma(z)=\Gamma_{0}e^{j_{2}\beta
-z},\quad\Gamma_{0}=\Gamma(0)=\frac{V_{0}^{-}}{V_{0}^{+}}\)</span></p>
-<p>由方程（2），<mark>负载端的反射系数</mark>：<span
-class="math inline">\(\Gamma_{0}=\frac{V_{0}^{-}}{V_{0}^{+}}=\frac{Z_{L}-Z_{0}}{Z_{L}+Z_{0}}\)</span></p>
-<p><span class="math inline">\(\Rightarrow
-Z_{L}=Z_{0}\frac{1+\Gamma_{0}}{1-\Gamma_{0}}\)</span>​</p>
-<p>推广到任意点：<span class="math inline">\(\Gamma
-(z)=\frac{Z(z)-Z_0}{Z(z)-Z_0}\)</span></p>
-<div class="note info modern"><ul>
-<li>终端匹配：<span class="math inline">\(Z_{L}=Z_{0} \quad \Rightarrow
-\quad \Gamma_{0}=0\)</span></li>
-<li>终端开路：<span class="math inline">\(Z_{L}=\infty \quad \Rightarrow
-\quad \Gamma_{0}=1\)</span> （全反射）</li>
-<li>终端短路：<span class="math inline">\(Z_{L}=0 \quad \Rightarrow
-\quad \Gamma_{0}=-1\)</span> （全反射）</li>
-</ul>
-</div>
-<p><mark>驻波比</mark>：<span class="math inline">\(SWR =
-\frac{|V_{\max}|}{|V_{\min}|} =
-\frac{1+|\Gamma_{0}|}{1-|\Gamma_{0}|}\)</span></p>
-<p><span class="math inline">\(\Rightarrow
-|\Gamma_{0}|=\frac{SWR-1}{SWR+1}\)</span></p>
-<p>令 <span class="math inline">\(d=-z\)</span>​：</p>
-<div class="note warning modern"><p><span class="math inline">\(d\)</span>：从右向左</p>
-<p><span class="math inline">\(z\)</span>：从左向右</p>
-</div>
-<p><span class="math inline">\(\Gamma(d)=\Gamma_{0}e^{-j2\beta
-d}\)</span></p>
-<p>由方程（1）：<span
-class="math inline">\(Z_{d}=\frac{V(-d)}{I(-d)}=Z_{0}\frac{1+\Gamma(-d)}{1-\Gamma(-d)}\)</span></p>
-<p>由该式子得到：</p>
-<p><mark>无耗传输线任意点的输入阻抗</mark>： <span
-class="math display">\[
-Z_{in}\equiv Z_{d}=Z_{0}\frac{Z_{L}+jZ_{0}\tan(\beta
-d)}{Z_{0}+jZ_{L}\tan(\beta d)}
-\]</span> 阻抗匹配时：<span
-class="math inline">\(Z_{L}=Z_{0}\quad\Rightarrow\quad
-Z_{in}=Z_{0}\)</span>，任意点的阻抗都为 <span
-class="math inline">\(Z_0\)</span></p>
-<h1 id="终端短路的传输线">3. 终端短路的传输线</h1>
-<p>待更新</p>
-]]></content>
-      <categories>
-        <category>1-通信</category>
-        <category>射频电路</category>
-      </categories>
-      <tags>
-        <tag>射频</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>（一）锁相环简介</title>
-    <url>/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%94%81%E7%9B%B8%E7%8E%AF/%EF%BC%88%E4%B8%80%EF%BC%89%20%E9%94%81%E7%9B%B8%E7%8E%AF%E7%AE%80%E4%BB%8B/</url>
-    <content><![CDATA[<h1 id="锁相环工作原理">1 锁相环工作原理</h1>
-<p>基本构成</p>
-<figure>
-<img src="image-20230806213832221.png" alt="image-20230806213832221" />
-<figcaption aria-hidden="true">image-20230806213832221</figcaption>
-</figure>
-<p>VCO和PD的传输函数。</p>
-<p>(<span
-class="math inline">\(\mathcal{u}_{\mathbf{f}}\)</span>=控制电压；<span
-class="math inline">\(\omega_{2}\)</span>=输出信号的角频率。) (<span
-class="math inline">\(\overline{
-{u_{\mathbf{d}}}}\)</span>=鉴相器输出信号的平均值；<span
-class="math inline">\(\theta_{\mathrm{e}}\)</span>=相位误差。)</p>
-<figure>
-<img src="image-20230806214159294.png" alt="image-20230806214159294" />
-<figcaption aria-hidden="true">image-20230806214159294</figcaption>
-</figure>
-<h1 id="pll的分类">2 PLL的分类</h1>
-<ul>
-<li>混合信号PLL，大多由线性和数字电路混合组成
-<ul>
-<li>线性PLL（LPLL），严格来说是纯模拟电路</li>
-<li>数字PLL（DPLL），混合信号电路</li>
-</ul></li>
-<li>纯数字PLL（ADPLL），纯数字电路</li>
-</ul>
-]]></content>
-      <categories>
-        <category>1-通信</category>
-        <category>锁相环</category>
-      </categories>
-      <tags>
-        <tag>锁相环</tag>
       </tags>
   </entry>
   <entry>
