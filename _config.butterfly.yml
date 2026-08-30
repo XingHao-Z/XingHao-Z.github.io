@@ -265,7 +265,9 @@ footer:
     since: 2019
   custom_text:
   # Copyright of theme and framework
-  copyright: true
+  copyright:
+    enable: true
+    version: true
 
 # --------------------------------------
 # Aside Settings
@@ -970,11 +972,6 @@ pjax:
   exclude:
     # - /xxxxxx/
 
-# Inject the css and script (aplayer/meting)
-aplayerInject:
-  enable: false
-  per_page: true
-
 # Snackbar - Toast Notification
 # https://github.com/polonel/SnackBar
 # position: top-left / top-center / top-right / bottom-left / bottom-center / bottom-right
@@ -1024,7 +1021,9 @@ Open_Graph_meta:
 
 # Structured Data
 # https://developers.google.com/search/docs/guides/intro-structured-data
-structured_data: true
+structured_data:
+  enable: true
+  alternate_name:
 
 # Add the vendor prefixes to ensure compatibility
 css_prefix: true
