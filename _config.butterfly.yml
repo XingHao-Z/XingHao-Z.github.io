@@ -313,9 +313,9 @@ aside:
   card_categories:
     enable: true
     # If set 0 will show all
-    limit: 8
+    limit: 10
     # Choose: none / true / false
-    expand: none
+    expand: true
     sort_order:
   card_tags:
     enable: true
@@ -1035,6 +1035,9 @@ inject:
     # - <link rel="stylesheet" href="/xxx.css">
   bottom:
     # - <script src="xxxx"></script>
+    # Butterfly 5.7.0 puts the initial category expand class on the caret icon.
+    # Move it to the parent link expected by the theme CSS and toggle script.
+    - '<script>(()=>{const init=()=>document.querySelectorAll("#aside-cat-list > .parent > a > i.expand").forEach(icon=>{icon.classList.remove("expand");icon.parentElement.classList.add("expand")});init();document.addEventListener("pjax:complete",init)})()</script>'
 
 # CDN Settings
 # Don't modify the following settings unless you know how they work
