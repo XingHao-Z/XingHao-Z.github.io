@@ -5,8 +5,7 @@ tags:
  - FPGA
  - UART
 category:
- - 1-通信
- - FPGA
+ - 0-归档
 description: Verilog常用的重复的代码模板
 ---
 
