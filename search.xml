@@ -1,6 +1,76 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>QTcreator上位机</title>
+    <url>/2023/10/09/0-%E5%BD%92%E6%A1%A3/QTCreator/</url>
+    <content><![CDATA[<ul>
+<li><p>让字体适应高分辨率，在<code>main</code>函数开始加以下语句：</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QCoreApplication::<span class="built_in">setAttribute</span>(Qt::AA_EnableHighDpiScaling);</span><br></pre></td></tr></table></figure></li>
+<li><p>检查QByteArray每个字节的bit</p>
+<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QByteArray byteData;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span> *pData = byteData.<span class="built_in">constData</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; byteData.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">7</span>; j &gt;= <span class="number">0</span>; --j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pData[i] &amp; (<span class="number">1</span> &lt;&lt; j)) &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;1&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;0&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;--------------------&quot;</span> &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure></li>
+<li><p>QByteArray通过SerialPort.wirte()发送时，是从下标为0的字节开始发送，每个字节内是从低位开始发送</p></li>
+<li><p>更换图标，将.ico放到工程文件夹内，在.pro中添加</p>
+<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">RC_ICONS = xxxxxx.ico</span><br></pre></td></tr></table></figure></li>
+<li><p>打包可执行文件：</p>
+<ul>
+<li><p>构建切换到Release模式，点击运行</p></li>
+<li><p>在build-xxxxx-Release文件夹中的release文件夹中找到xxx.exe，复制到新创建的一个文件夹（如MyEXE）中，</p></li>
+<li><p>开始菜单搜索qt，打开命令窗口，用" <mark>cd /d 路径</mark>
+"切换到MyEXE下，例如</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /d F:\projects\qtcreator\MyEXE</span><br></pre></td></tr></table></figure></li>
+<li><p>再输入：windeployqt xxx.exe</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">windeployqt xxx.exe</span><br></pre></td></tr></table></figure></li>
+<li><p>打包完成，已经可以正常使用了。接下来借用其他软件将所有文件打包到一个exe文件</p></li>
+<li><p>打开Enigma Virtual
+Box，选择刚才打包好的exe文件，点击增加，增加刚才新创建的文件夹（如MyEXE），点击“文件选项”，勾选压缩文件，确定，执行封包，等待，最后就可以得到只有一个可以运行的exe文件</p></li>
+</ul></li>
+</ul>
+<p><img src="image-20230412122755410.png" /></p>
+]]></content>
+      <categories>
+        <category>0-归档</category>
+      </categories>
+      <tags>
+        <tag>QTCreator</tag>
+        <tag>上位机</tag>
+        <tag>软件打包</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>SolidWorks制作电路腔体</title>
+    <url>/2023/11/06/0-%E5%BD%92%E6%A1%A3/SolidWorks2023/</url>
+    <content><![CDATA[<h1 id="修改字体">修改字体</h1>
+<p>SolidWorks默认的尺寸字体非常不清晰，推荐修改为其他字体。<img
+src="image-20231107105220484.png" alt="image-20231107105220484" /></p>
+<h1 id="ad导入solidworks">AD导入SolidWorks</h1>
+<h2 id="ad操作">AD操作</h2>
+<h3 id="螺丝孔">螺丝孔</h3>
+<p>AD的PCB上用通孔表示螺丝孔，但导入到SolidWorks看不到，需要进行特殊的操作</p>
+<p>在PCB的keep-out layer层画圆，与螺丝孔（hole
+size）一样大，放到通孔的位置。</p>
+<p>依次选中各个圆，点击工具→转换→以选中的元素创建板切割槽（推荐使用快捷键：T→V→B）。</p>
+<p>然后点击文件→导出→STEP 3D</p>
+<p>导出时取消勾选<code>导出折叠板</code>，勾选<code>以单一部件导出</code>。</p>
+<p><img src="image-20231106151507686.png" /></p>
+<p>再PCB界面按<code>3</code>，调出3D视图，按<code>L</code>，</p>
+<p><img src="image-20231106160155226.png" /></p>
+<p>刚好贴着边缘把板子截图。</p>
+<h2 id="solidworks操作">SolidWorks操作</h2>
+<p>用SolidWorks打开导出的.step文件。</p>
+<p>点击板子，右击，选择<code>外观</code>，</p>
+<p><img src="image-20231106160324897.png" /></p>
+<p>左边，选择高级，外观文件路径选择刚才的截图。</p>
+<p>点击映射，勾选<code>将宽度套合到选择</code>和<code>将高度套合到选择</code>。</p>
+<p>完成后保存。</p>
+<p>新建一个装配体，选择保存的文件和之前画的盒子文件，选择要贴合到一起的面，右击选择<code>配合</code>→<code>重合</code></p>
+<p><img src="image-20231106162952440.png" /></p>
+<p>如果是间隔一点距离，点击<code>配合</code>→<code>距离</code></p>
+]]></content>
+      <categories>
+        <category>0-归档</category>
+      </categories>
+  </entry>
+  <entry>
     <title>通信相关的零散知识点</title>
     <url>/2023/10/09/1-%E9%80%9A%E4%BF%A1/%E9%80%9A%E4%BF%A1%E7%9B%B8%E5%85%B3%E7%9A%84%E9%9B%B6%E6%95%A3%E7%9F%A5%E8%AF%86%E7%82%B9/</url>
     <content><![CDATA[
@@ -13,117 +83,27 @@
       </tags>
   </entry>
   <entry>
-    <title>hexo+butterfly的特殊语法</title>
-    <url>/2024/07/17/3-Hexo%E7%9A%84%E4%BD%BF%E7%94%A8/Hexo%E7%9A%84%E7%89%B9%E6%AE%8A%E8%AF%AD%E6%B3%95/</url>
-    <content><![CDATA[<p><a
-href="https://theme-next.js.org/docs/tag-plugins/">https://theme-next.js.org/docs/tag-plugins/</a></p>
-<p><a
-href="https://butterfly.js.org/posts/2df239ce/">https://butterfly.js.org/posts/2df239ce/</a></p>
-<p><a
-href="https://blog.csdn.net/liudonglovehemin/article/details/131095922">https://blog.csdn.net/liudonglovehemin/article/details/131095922</a></p>
-<h1 id="tabs">Tabs</h1>
-<h2 id="使用方法">使用方法</h2>
-<p><a
-href="https://theme-next.js.org/docs/tag-plugins/tabs">参考另一个主题的教程</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs Unique name, [index] %&#125;</span><br><span class="line">&lt;!-- tab [Tab caption] [@icon] --&gt;</span><br><span class="line">标签页内容 (support inline tags too).</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><p><code>Unique name</code>：</p>
-<p>标签块标签的唯一名称，不能含逗号。</p>
-<p>将在 #id 中使用，作为每个标签页的前缀和索引号。</p>
-<p>如果名称中有空格，生成 #id 时将用破折号替换所有空格。</p></li>
-<li><p><code>[index]</code>：<strong>可选</strong>。</p>
-<p>活动选项卡的索引号。</p>
-<p>如果未指定，将选择第一个选项卡（1）。</p>
-<p>如果索引为-1，则不会选择任何标签页。</p></li>
-<li><p><code>[Tab caption]</code>：<strong>可选</strong>。</p>
-<p>当前选项卡的标题。</p>
-<p>如果未指定标题，带有标签页索引后缀的 Unique name
-将用作标签页的标题。</p>
-<p>如果未指定标题，但指定了图标，标题将为空。</p></li>
-<li><p><code>[@icon]</code>：<strong>可选</strong>。</p>
-<p>Font Awesome 图标名称。</p>
-<p>可指定带空格或不带空格；例如，"Tab caption <span class="citation"
-data-cites="icon">@icon</span> "与 "Tab caption@icon "相同。</p></li>
-</ul>
-<h2 id="示例">示例</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 标签 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是标签页1**</span><br><span class="line">1. One</span><br><span class="line">2. Two</span><br><span class="line">3. Three</span><br><span class="line">```</span><br><span class="line">nano /etc</span><br><span class="line">```</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 自定义标签名--&gt;</span><br><span class="line">**这是标签页2.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是标签页3.**</span><br><span class="line">&#123;% subtabs 子标签页,2 %&#125;</span><br><span class="line">&lt;!-- tab 自定义标签名--&gt;</span><br><span class="line">**这是子标签页1.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是子标签页2.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endsubtabs %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
-<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">标签 1</button><button type="button" class="tab">自定义标签名</button><button type="button" class="tab">标签 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>这是标签页1</strong> 1. One 2. Two 3. Three <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc</span><br></pre></td></tr></table></figure></p></div><div class="tab-item-content"><p><strong>这是标签页2.</strong></p></div><div class="tab-item-content"><strong>这是标签页3.</strong>
-<div class="tabs">
-<div class="nav-tabs">
-<button type="button" class="tab">
-自定义标签名
-</button>
-<button type="button" class="tab active">
-子标签页 2
-</button>
-</div>
-<div class="tab-contents">
-<div class="tab-item-content">
-<p>
-<strong>这是子标签页1.</strong>
-</p>
-</div>
-<div class="tab-item-content active">
-<p>
-<strong>这是子标签页2.</strong>
-</p>
-</div>
-</div>
-<div class="tab-to-top">
-<button type="button" aria-label="scroll to top">
-<i class="fas fa-arrow-up"></i>
-</button>
-</div>
-</div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
-<h1 id="button">Button</h1>
-<h2 id="使用方法-1">使用方法</h2>
-<p><a
-href="https://theme-next.js.org/docs/tag-plugins/button#">参考教程</a></p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% button url, text, icon [class], [title] %&#125;</span><br></pre></td></tr></table></figure>
-<p>或</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% btn url, text, icon [class], [title] %&#125;</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>url</code>：URL 的绝对或相对路径。</li>
-<li><code>text</code>：按钮文本。如果没有指定图标，则为必填项。</li>
-<li><code>icon</code>：Font Awesome
-图标名称。如果未指定文本，则为必填项。</li>
-<li><code>[class]</code>：可选参数。字体 Awesome class（es）： fa-fw
-fa-lg fa-2x fa-3x fa-5x</li>
-<li><code>[title]</code> ：可选参数。鼠标悬停时的提示。</li>
-</ul>
-<h2 id="示例-1">示例</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;text-center&quot;&gt;&#123;% btn #, Text %&#125;&#123;% btn #, Text &amp; Title,, Title %&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-<div class="text-center">
-<a class="btn-beautify " href="#" title="Text"><span>Text</span></a>
-<a class="btn-beautify Title" href="#" title="Text &amp; Title"><span>Text &amp; Title</span></a>
-</div>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% btn #,1 %&#125;&#123;% btn #,2 %&#125;</span><br></pre></td></tr></table></figure>
-<a class="btn-beautify " href="#" title="1"><span>1</span></a>
-<a class="btn-beautify " href="#" title="2"><span>2</span></a>
-<h1 id="group-pictures">Group Pictures</h1>
-<p><a
-href="https://theme-next.js.org/docs/tag-plugins/group-pictures">参考教程</a></p>
-<h1 id="note">Note</h1>
-<p><a
-href="https://theme-next.js.org/docs/tag-plugins/note">参考教程</a></p>
-<h1 id="hide-toggle">hide-toggle</h1>
-<h2 id="使用方法-2">使用方法</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="示例-2">示例</h2>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle Butterfly安裝方法,,red %&#125;</span><br><span class="line">在你的博客根目錄裏</span><br><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">如果想要安裝比較新的dev分支，可以</span><br><span class="line">git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure>
-<details class="toggle" ><summary class="toggle-button" style="color: red">Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
-<p>git clone -b master
-https://github.com/jerryc127/hexo-theme-butterfly.git
-themes/Butterfly</p>
-<p>如果想要安裝比較新的dev分支，可以</p>
-<p>git clone -b dev
-https://github.com/jerryc127/hexo-theme-butterfly.git
-themes/Butterfly</p>
-</div></details>
+    <title>Verilog代码模板</title>
+    <url>/2023/10/09/0-%E5%BD%92%E6%A1%A3/Verilog%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/</url>
+    <content><![CDATA[<h1 id="分频">分频</h1>
+<h2 id="偶数分频">偶数分频</h2>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> divider #(</span><br><span class="line">    <span class="keyword">parameter</span> DIV_NUM = <span class="number">8</span>       <span class="comment">//分频系数</span></span><br><span class="line">) (</span><br><span class="line">    <span class="keyword">input</span>               sys_clk,</span><br><span class="line">    <span class="keyword">input</span>               rst_n,</span><br><span class="line">    <span class="keyword">output</span>              clk_out</span><br><span class="line">);</span><br><span class="line"><span class="keyword">reg</span>         clk_out_reg = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">parameter</span> cnt_width	= <span class="built_in">$clog2</span>(DIV_NUM)	    ;	<span class="comment">// 求分频系数相应计数器的位数</span></span><br><span class="line"><span class="keyword">parameter</span> cnt_max	= (DIV_NUM &gt;&gt; <span class="number">1</span>) - <span class="number">1</span>	;	<span class="comment">// 设置计数器的最大值，即 (N/2)-1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">reg</span> [cnt_width - <span class="number">1</span> : <span class="number">0</span>]     cnt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        cnt &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        cnt &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        cnt &lt;= cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        clk_out_reg &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        clk_out_reg &lt;= ~clk_out_reg;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        clk_out_reg &lt;= clk_out_reg;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">assign</span> clk_out = clk_out_reg;</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h2 id="奇数分频">奇数分频</h2>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> divider #(</span><br><span class="line">    <span class="keyword">parameter</span> DIV_NUM = <span class="number">9</span>       <span class="comment">//分频系数</span></span><br><span class="line">) (</span><br><span class="line">    <span class="keyword">input</span>               sys_clk,</span><br><span class="line">    <span class="keyword">input</span>               rst_n,</span><br><span class="line">    <span class="keyword">output</span>              clk_out</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">parameter</span> cnt_width	= <span class="built_in">$clog2</span>(DIV_NUM)	;	<span class="comment">// 求分频系数相应计数器的位数</span></span><br><span class="line"><span class="keyword">parameter</span> cnt_max	= DIV_NUM - <span class="number">1</span>	    ;	<span class="comment">// 设置计数器的最大值，即 N-1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">reg</span> [cnt_width - <span class="number">1</span> : <span class="number">0</span>]     cnt;</span><br><span class="line"><span class="keyword">reg</span>                         clk1;</span><br><span class="line"><span class="keyword">reg</span>                         clk2;          </span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        cnt &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        cnt &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        cnt &lt;= cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        clk1 &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max&gt;&gt;<span class="number">1</span>)</span><br><span class="line">        clk1 &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        clk1 &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">negedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        clk2 &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max&gt;&gt;<span class="number">1</span>)</span><br><span class="line">        clk2 &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        clk2 &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">assign</span> clk_out = clk1 | clk2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
+<h1 id="uart">UART</h1>
+<h2 id="uart_rx">UART_RX</h2>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//接收到一个字节的数据后，并行发送出去，同时发送标志信号</span></span><br><span class="line"><span class="comment">//uart_byte_out 和 byte_end_flag 常低</span></span><br><span class="line"><span class="keyword">module</span> UART_RX#(</span><br><span class="line">    <span class="keyword">parameter</span> clk_rate      = <span class="number">50_000_000</span>,       <span class="comment">//系统时钟</span></span><br><span class="line">    <span class="keyword">parameter</span> buad_rate     = <span class="number">9600</span>,             <span class="comment">//波特率</span></span><br><span class="line">    <span class="keyword">parameter</span> data_width    = <span class="number">8</span>,                <span class="comment">//数据位</span></span><br><span class="line">    <span class="keyword">parameter</span> hold          = <span class="number">5</span>                 <span class="comment">//输出保持的周期数</span></span><br><span class="line">) (</span><br><span class="line">    <span class="keyword">input</span>                               clk,                    <span class="comment">//时钟信号</span></span><br><span class="line">    <span class="keyword">input</span>                               rst_n,                    </span><br><span class="line">    <span class="keyword">input</span>                               uart_data_in,           <span class="comment">//从低位到高位的bit流</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">output</span>          [data_width-<span class="number">1</span> : <span class="number">0</span>]  uart_byte_out,          <span class="comment">//送出的数据为8bit</span></span><br><span class="line">    <span class="keyword">output</span>                              byte_end_flag           <span class="comment">//表示数据是否准备好，高：准备好；</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">localparam</span>  CNT_MAX     = clk_rate / buad_rate      ;   <span class="comment">//每个bit对应的时钟数</span></span><br><span class="line"><span class="keyword">localparam</span>  CNT_HALF    = clk_rate / (buad_rate*<span class="number">2</span>)  ;   <span class="comment">//CNT_MAX的一半</span></span><br><span class="line"><span class="keyword">localparam</span>  CNT_WIDTH	= <span class="built_in">$clog2</span>(CNT_MAX)           ;   <span class="comment">//计数寄存器的位宽</span></span><br><span class="line"><span class="keyword">reg</span>     [CNT_WIDTH : <span class="number">0</span>]   clk_cnt = <span class="number">0</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">localparam</span>  HOLD_CNT_WIDTH  = <span class="built_in">$clog2</span>(hold)          ;</span><br><span class="line"><span class="keyword">localparam</span>  DATA_CNT_WIDTH  = <span class="built_in">$clog2</span>(data_width)    ;</span><br><span class="line"><span class="keyword">reg</span>     [HOLD_CNT_WIDTH : <span class="number">0</span>]  hold_cnt = <span class="number">0</span>    ;</span><br><span class="line"><span class="keyword">reg</span>     [DATA_CNT_WIDTH : <span class="number">0</span>]  data_cnt = <span class="number">0</span>    ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">reg</span>     [data_width-<span class="number">1</span> : <span class="number">0</span>]   data_reg = <span class="number">0</span>   ;       <span class="comment">//暂存输出的寄存器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//状态机</span></span><br><span class="line"><span class="keyword">localparam</span>  IDLE        = <span class="number">3&#x27;d0</span>  ;       <span class="comment">//空闲</span></span><br><span class="line"><span class="keyword">localparam</span>  START       = <span class="number">3&#x27;d1</span>  ;       <span class="comment">//接收到起始位</span></span><br><span class="line"><span class="keyword">localparam</span>  DATA        = <span class="number">3&#x27;d2</span>  ;       <span class="comment">//接收数据</span></span><br><span class="line"><span class="keyword">localparam</span>  STOP        = <span class="number">3&#x27;d3</span>  ;       <span class="comment">//接收到停止位</span></span><br><span class="line"><span class="keyword">localparam</span>  HOLD        = <span class="number">3&#x27;d4</span>  ;       <span class="comment">//发送数据和一个字节结束标志</span></span><br><span class="line"><span class="keyword">reg</span> [<span class="number">2</span>:<span class="number">0</span>] state, next_state;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//-----------------状态转移--------------------</span></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        state &lt;= IDLE;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        state &lt;= next_state;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//--------------------------下一状态---------------------------</span></span><br><span class="line"><span class="keyword">always</span> @(*) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">case</span>(state)</span><br><span class="line">        IDLE:           next_state = (uart_data_in ? IDLE : START);</span><br><span class="line">        START:          next_state = (clk_cnt == CNT_HALF) ? (uart_data_in ? IDLE : DATA) : START;</span><br><span class="line">        DATA:           next_state = (data_cnt == data_width) ? STOP : DATA;</span><br><span class="line">        STOP:           next_state = (clk_cnt == CNT_MAX) ? (uart_data_in ? HOLD : IDLE) : STOP;</span><br><span class="line">        HOLD:           next_state = (hold_cnt == hold - <span class="number">1&#x27;b1</span>) ? IDLE : HOLD;</span><br><span class="line">        <span class="keyword">default</span>:        next_state = IDLE;</span><br><span class="line">    <span class="keyword">endcase</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//--------------------------每个状态的处理-------------------------</span></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n) <span class="keyword">begin</span></span><br><span class="line">        clk_cnt     &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">case</span>(state)</span><br><span class="line">            IDLE:   clk_cnt     &lt;= <span class="number">0</span>;     </span><br><span class="line"></span><br><span class="line">            START:  <span class="keyword">begin</span></span><br><span class="line">                        <span class="keyword">if</span>(clk_cnt == CNT_HALF)<span class="keyword">begin</span></span><br><span class="line">                            clk_cnt     &lt;= <span class="number">0</span>;</span><br><span class="line">                        <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">                            clk_cnt     &lt;= clk_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line">                        <span class="keyword">end</span></span><br><span class="line">                    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">            DATA,STOP:   <span class="keyword">begin</span>                        </span><br><span class="line">                        <span class="keyword">if</span>(clk_cnt == CNT_MAX)<span class="keyword">begin</span></span><br><span class="line">                            clk_cnt     &lt;= <span class="number">0</span>;</span><br><span class="line">                        <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">                            clk_cnt     &lt;= clk_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line">                        <span class="keyword">end</span></span><br><span class="line">                    <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">endcase</span></span><br><span class="line">                    </span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n) <span class="keyword">begin</span></span><br><span class="line">        data_cnt    &lt;= <span class="number">0</span>;</span><br><span class="line">        data_reg    &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">case</span> (state)</span><br><span class="line">            IDLE: <span class="keyword">begin</span></span><br><span class="line">                data_cnt    &lt;= <span class="number">0</span>;</span><br><span class="line">                data_reg    &lt;= <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">            DATA: <span class="keyword">begin</span></span><br><span class="line">                <span class="keyword">if</span>(clk_cnt == CNT_MAX)<span class="keyword">begin</span></span><br><span class="line">                    data_cnt            &lt;= data_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line">                    data_reg[data_cnt]  &lt;= uart_data_in;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">default</span>: <span class="keyword">begin</span></span><br><span class="line">                data_cnt    &lt;= data_cnt;</span><br><span class="line">                data_reg    &lt;= data_reg;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">endcase</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n) <span class="keyword">begin</span></span><br><span class="line">        hold_cnt    &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(state == HOLD)<span class="keyword">begin</span></span><br><span class="line">        hold_cnt    &lt;= hold_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">        hold_cnt    &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//--------------------------输出-------------------------------------</span></span><br><span class="line"><span class="keyword">assign</span> uart_byte_out = (state == HOLD) ? data_reg : <span class="number">0</span>;</span><br><span class="line"><span class="keyword">assign</span> byte_end_flag = (state == HOLD);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<h1 id="testbench">testbench</h1>
+<h2 id="uart接收1字节数据">UART接收1字节数据</h2>
+<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">parameter</span> clk_rate = <span class="number">50_000_000</span>;</span><br><span class="line"><span class="keyword">parameter</span> buad_rate = <span class="number">9600</span>;</span><br><span class="line"><span class="keyword">parameter</span> interval = clk_rate / buad_rate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">task</span> receive_data;</span><br><span class="line">    <span class="keyword">input</span>[<span class="number">31</span>:<span class="number">0</span>] A;</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">repeat</span>(<span class="number">100</span>)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">        uart_data_in = <span class="number">1&#x27;b0</span>; </span><br><span class="line">        <span class="keyword">repeat</span>(<span class="number">8</span>)<span class="keyword">begin</span></span><br><span class="line">            <span class="keyword">repeat</span>(interval)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">            uart_data_in = A[<span class="number">0</span>];</span><br><span class="line">            A = A&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">repeat</span>(interval)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">        uart_data_in = <span class="number">1&#x27;b1</span>;</span><br><span class="line">        <span class="keyword">repeat</span>(interval)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">        <span class="keyword">repeat</span>(interval*<span class="number">2</span>)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">endtask</span></span><br></pre></td></tr></table></figure>
 ]]></content>
       <categories>
-        <category>3-Hexo使用</category>
+        <category>0-归档</category>
       </categories>
+      <tags>
+        <tag>FPGA</tag>
+        <tag>UART</tag>
+      </tags>
   </entry>
   <entry>
     <title>传输线理论</title>
@@ -254,327 +234,117 @@ class="math inline">\(Z_0\)</span></p>
       </tags>
   </entry>
   <entry>
-    <title>Verilog代码模板</title>
-    <url>/2023/10/09/1-%E9%80%9A%E4%BF%A1/FPGA/Verilog%E4%BB%A3%E7%A0%81%E6%A8%A1%E6%9D%BF/</url>
-    <content><![CDATA[<h1 id="分频">分频</h1>
-<h2 id="偶数分频">偶数分频</h2>
-<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> divider #(</span><br><span class="line">    <span class="keyword">parameter</span> DIV_NUM = <span class="number">8</span>       <span class="comment">//分频系数</span></span><br><span class="line">) (</span><br><span class="line">    <span class="keyword">input</span>               sys_clk,</span><br><span class="line">    <span class="keyword">input</span>               rst_n,</span><br><span class="line">    <span class="keyword">output</span>              clk_out</span><br><span class="line">);</span><br><span class="line"><span class="keyword">reg</span>         clk_out_reg = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">parameter</span> cnt_width	= <span class="built_in">$clog2</span>(DIV_NUM)	    ;	<span class="comment">// 求分频系数相应计数器的位数</span></span><br><span class="line"><span class="keyword">parameter</span> cnt_max	= (DIV_NUM &gt;&gt; <span class="number">1</span>) - <span class="number">1</span>	;	<span class="comment">// 设置计数器的最大值，即 (N/2)-1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">reg</span> [cnt_width - <span class="number">1</span> : <span class="number">0</span>]     cnt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        cnt &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        cnt &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        cnt &lt;= cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        clk_out_reg &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        clk_out_reg &lt;= ~clk_out_reg;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        clk_out_reg &lt;= clk_out_reg;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">assign</span> clk_out = clk_out_reg;</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
-<h2 id="奇数分频">奇数分频</h2>
-<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">module</span> divider #(</span><br><span class="line">    <span class="keyword">parameter</span> DIV_NUM = <span class="number">9</span>       <span class="comment">//分频系数</span></span><br><span class="line">) (</span><br><span class="line">    <span class="keyword">input</span>               sys_clk,</span><br><span class="line">    <span class="keyword">input</span>               rst_n,</span><br><span class="line">    <span class="keyword">output</span>              clk_out</span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"><span class="keyword">parameter</span> cnt_width	= <span class="built_in">$clog2</span>(DIV_NUM)	;	<span class="comment">// 求分频系数相应计数器的位数</span></span><br><span class="line"><span class="keyword">parameter</span> cnt_max	= DIV_NUM - <span class="number">1</span>	    ;	<span class="comment">// 设置计数器的最大值，即 N-1</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">reg</span> [cnt_width - <span class="number">1</span> : <span class="number">0</span>]     cnt;</span><br><span class="line"><span class="keyword">reg</span>                         clk1;</span><br><span class="line"><span class="keyword">reg</span>                         clk2;          </span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        cnt &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        cnt &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        cnt &lt;= cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        clk1 &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max&gt;&gt;<span class="number">1</span>)</span><br><span class="line">        clk1 &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        clk1 &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">negedge</span> sys_clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        clk2 &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max&gt;&gt;<span class="number">1</span>)</span><br><span class="line">        clk2 &lt;= <span class="number">1&#x27;b1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(cnt == cnt_max)</span><br><span class="line">        clk2 &lt;= <span class="number">1&#x27;b0</span>;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">assign</span> clk_out = clk1 | clk2;</span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure>
-<h1 id="uart">UART</h1>
-<h2 id="uart_rx">UART_RX</h2>
-<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="comment">//接收到一个字节的数据后，并行发送出去，同时发送标志信号</span></span><br><span class="line"><span class="comment">//uart_byte_out 和 byte_end_flag 常低</span></span><br><span class="line"><span class="keyword">module</span> UART_RX#(</span><br><span class="line">    <span class="keyword">parameter</span> clk_rate      = <span class="number">50_000_000</span>,       <span class="comment">//系统时钟</span></span><br><span class="line">    <span class="keyword">parameter</span> buad_rate     = <span class="number">9600</span>,             <span class="comment">//波特率</span></span><br><span class="line">    <span class="keyword">parameter</span> data_width    = <span class="number">8</span>,                <span class="comment">//数据位</span></span><br><span class="line">    <span class="keyword">parameter</span> hold          = <span class="number">5</span>                 <span class="comment">//输出保持的周期数</span></span><br><span class="line">) (</span><br><span class="line">    <span class="keyword">input</span>                               clk,                    <span class="comment">//时钟信号</span></span><br><span class="line">    <span class="keyword">input</span>                               rst_n,                    </span><br><span class="line">    <span class="keyword">input</span>                               uart_data_in,           <span class="comment">//从低位到高位的bit流</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">output</span>          [data_width-<span class="number">1</span> : <span class="number">0</span>]  uart_byte_out,          <span class="comment">//送出的数据为8bit</span></span><br><span class="line">    <span class="keyword">output</span>                              byte_end_flag           <span class="comment">//表示数据是否准备好，高：准备好；</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">localparam</span>  CNT_MAX     = clk_rate / buad_rate      ;   <span class="comment">//每个bit对应的时钟数</span></span><br><span class="line"><span class="keyword">localparam</span>  CNT_HALF    = clk_rate / (buad_rate*<span class="number">2</span>)  ;   <span class="comment">//CNT_MAX的一半</span></span><br><span class="line"><span class="keyword">localparam</span>  CNT_WIDTH	= <span class="built_in">$clog2</span>(CNT_MAX)           ;   <span class="comment">//计数寄存器的位宽</span></span><br><span class="line"><span class="keyword">reg</span>     [CNT_WIDTH : <span class="number">0</span>]   clk_cnt = <span class="number">0</span> ;</span><br><span class="line"></span><br><span class="line"><span class="keyword">localparam</span>  HOLD_CNT_WIDTH  = <span class="built_in">$clog2</span>(hold)          ;</span><br><span class="line"><span class="keyword">localparam</span>  DATA_CNT_WIDTH  = <span class="built_in">$clog2</span>(data_width)    ;</span><br><span class="line"><span class="keyword">reg</span>     [HOLD_CNT_WIDTH : <span class="number">0</span>]  hold_cnt = <span class="number">0</span>    ;</span><br><span class="line"><span class="keyword">reg</span>     [DATA_CNT_WIDTH : <span class="number">0</span>]  data_cnt = <span class="number">0</span>    ;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">reg</span>     [data_width-<span class="number">1</span> : <span class="number">0</span>]   data_reg = <span class="number">0</span>   ;       <span class="comment">//暂存输出的寄存器</span></span><br><span class="line"></span><br><span class="line"><span class="comment">//状态机</span></span><br><span class="line"><span class="keyword">localparam</span>  IDLE        = <span class="number">3&#x27;d0</span>  ;       <span class="comment">//空闲</span></span><br><span class="line"><span class="keyword">localparam</span>  START       = <span class="number">3&#x27;d1</span>  ;       <span class="comment">//接收到起始位</span></span><br><span class="line"><span class="keyword">localparam</span>  DATA        = <span class="number">3&#x27;d2</span>  ;       <span class="comment">//接收数据</span></span><br><span class="line"><span class="keyword">localparam</span>  STOP        = <span class="number">3&#x27;d3</span>  ;       <span class="comment">//接收到停止位</span></span><br><span class="line"><span class="keyword">localparam</span>  HOLD        = <span class="number">3&#x27;d4</span>  ;       <span class="comment">//发送数据和一个字节结束标志</span></span><br><span class="line"><span class="keyword">reg</span> [<span class="number">2</span>:<span class="number">0</span>] state, next_state;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//-----------------状态转移--------------------</span></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n)</span><br><span class="line">        state &lt;= IDLE;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">        state &lt;= next_state;</span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//--------------------------下一状态---------------------------</span></span><br><span class="line"><span class="keyword">always</span> @(*) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">case</span>(state)</span><br><span class="line">        IDLE:           next_state = (uart_data_in ? IDLE : START);</span><br><span class="line">        START:          next_state = (clk_cnt == CNT_HALF) ? (uart_data_in ? IDLE : DATA) : START;</span><br><span class="line">        DATA:           next_state = (data_cnt == data_width) ? STOP : DATA;</span><br><span class="line">        STOP:           next_state = (clk_cnt == CNT_MAX) ? (uart_data_in ? HOLD : IDLE) : STOP;</span><br><span class="line">        HOLD:           next_state = (hold_cnt == hold - <span class="number">1&#x27;b1</span>) ? IDLE : HOLD;</span><br><span class="line">        <span class="keyword">default</span>:        next_state = IDLE;</span><br><span class="line">    <span class="keyword">endcase</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//--------------------------每个状态的处理-------------------------</span></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n) <span class="keyword">begin</span></span><br><span class="line">        clk_cnt     &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">case</span>(state)</span><br><span class="line">            IDLE:   clk_cnt     &lt;= <span class="number">0</span>;     </span><br><span class="line"></span><br><span class="line">            START:  <span class="keyword">begin</span></span><br><span class="line">                        <span class="keyword">if</span>(clk_cnt == CNT_HALF)<span class="keyword">begin</span></span><br><span class="line">                            clk_cnt     &lt;= <span class="number">0</span>;</span><br><span class="line">                        <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">                            clk_cnt     &lt;= clk_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line">                        <span class="keyword">end</span></span><br><span class="line">                    <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">            DATA,STOP:   <span class="keyword">begin</span>                        </span><br><span class="line">                        <span class="keyword">if</span>(clk_cnt == CNT_MAX)<span class="keyword">begin</span></span><br><span class="line">                            clk_cnt     &lt;= <span class="number">0</span>;</span><br><span class="line">                        <span class="keyword">end</span></span><br><span class="line">                        <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">                            clk_cnt     &lt;= clk_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line">                        <span class="keyword">end</span></span><br><span class="line">                    <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">endcase</span></span><br><span class="line">                    </span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n) <span class="keyword">begin</span></span><br><span class="line">        data_cnt    &lt;= <span class="number">0</span>;</span><br><span class="line">        data_reg    &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">case</span> (state)</span><br><span class="line">            IDLE: <span class="keyword">begin</span></span><br><span class="line">                data_cnt    &lt;= <span class="number">0</span>;</span><br><span class="line">                data_reg    &lt;= <span class="number">0</span>;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">            DATA: <span class="keyword">begin</span></span><br><span class="line">                <span class="keyword">if</span>(clk_cnt == CNT_MAX)<span class="keyword">begin</span></span><br><span class="line">                    data_cnt            &lt;= data_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line">                    data_reg[data_cnt]  &lt;= uart_data_in;</span><br><span class="line">                <span class="keyword">end</span></span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">default</span>: <span class="keyword">begin</span></span><br><span class="line">                data_cnt    &lt;= data_cnt;</span><br><span class="line">                data_reg    &lt;= data_reg;</span><br><span class="line">            <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">endcase</span></span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">always</span> @(<span class="keyword">posedge</span> clk <span class="keyword">or</span> <span class="keyword">negedge</span> rst_n) <span class="keyword">begin</span></span><br><span class="line">    <span class="keyword">if</span>(!rst_n) <span class="keyword">begin</span></span><br><span class="line">        hold_cnt    &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(state == HOLD)<span class="keyword">begin</span></span><br><span class="line">        hold_cnt    &lt;= hold_cnt + <span class="number">1&#x27;b1</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">begin</span></span><br><span class="line">        hold_cnt    &lt;= <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">end</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//--------------------------输出-------------------------------------</span></span><br><span class="line"><span class="keyword">assign</span> uart_byte_out = (state == HOLD) ? data_reg : <span class="number">0</span>;</span><br><span class="line"><span class="keyword">assign</span> byte_end_flag = (state == HOLD);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<h1 id="testbench">testbench</h1>
-<h2 id="uart接收1字节数据">UART接收1字节数据</h2>
-<figure class="highlight verilog"><table><tr><td class="code"><pre><span class="line"><span class="keyword">parameter</span> clk_rate = <span class="number">50_000_000</span>;</span><br><span class="line"><span class="keyword">parameter</span> buad_rate = <span class="number">9600</span>;</span><br><span class="line"><span class="keyword">parameter</span> interval = clk_rate / buad_rate;</span><br><span class="line"></span><br><span class="line"><span class="keyword">task</span> receive_data;</span><br><span class="line">    <span class="keyword">input</span>[<span class="number">31</span>:<span class="number">0</span>] A;</span><br><span class="line">    <span class="keyword">begin</span></span><br><span class="line">        <span class="keyword">repeat</span>(<span class="number">100</span>)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">        uart_data_in = <span class="number">1&#x27;b0</span>; </span><br><span class="line">        <span class="keyword">repeat</span>(<span class="number">8</span>)<span class="keyword">begin</span></span><br><span class="line">            <span class="keyword">repeat</span>(interval)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">            uart_data_in = A[<span class="number">0</span>];</span><br><span class="line">            A = A&gt;&gt;<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">end</span></span><br><span class="line">        <span class="keyword">repeat</span>(interval)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">        uart_data_in = <span class="number">1&#x27;b1</span>;</span><br><span class="line">        <span class="keyword">repeat</span>(interval)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">        <span class="keyword">repeat</span>(interval*<span class="number">2</span>)@(<span class="keyword">posedge</span> clk);</span><br><span class="line">    <span class="keyword">end</span></span><br><span class="line"><span class="keyword">endtask</span></span><br></pre></td></tr></table></figure>
-]]></content>
-      <categories>
-        <category>1-通信</category>
-        <category>FPGA</category>
-      </categories>
-      <tags>
-        <tag>FPGA</tag>
-        <tag>UART</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>集创赛记录（1）：准备工作</title>
-    <url>/2024/07/18/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/</url>
-    <content><![CDATA[<h1 id="虚拟机及软件安装">1. 虚拟机及软件安装</h1>
-<p>进行芯片设计仿真的常用软件为 Cadence Virtuoso，该软件只能在 Linux
-的特定版本下运行，并且安装步骤非常麻烦。</p>
-<p>为了省去这些麻烦，我直接在网上找别人配置好的系统。</p>
+    <title>hexo+butterfly的特殊语法</title>
+    <url>/2024/07/17/3-Hexo%E7%9A%84%E4%BD%BF%E7%94%A8/Hexo%E7%9A%84%E7%89%B9%E6%AE%8A%E8%AF%AD%E6%B3%95/</url>
+    <content><![CDATA[<p><a
+href="https://theme-next.js.org/docs/tag-plugins/">https://theme-next.js.org/docs/tag-plugins/</a></p>
 <p><a
-href="https://zhuanlan.zhihu.com/p/30282652">模拟射频IC设计实践软件平台使用说明</a></p>
-<p>他这使用的虚拟机是 vmware-9 版本，我使用的是 vmware-17.5
-，但使用步骤都一样。</p>
-<p>安装 vmwar 的教程网上很多。</p>
-<p>安装Linux很简单，将下载好的
-<code>AnalogIC_Linux实践平台_V2.0.rar</code> 文件解压，使用 vmware
-打开其中的 <code>Red Hat Enterprise Linux 5 64-bit.vmx</code>
-文件即可</p>
-<p><img src="安装Linux.gif" /></p>
-<p>设置共享文件夹，方便虚拟机和主机之间传输文件。</p>
-<p>任意新建一个文件夹，点击 vmware
-<code>编辑虚拟器设置</code>，点击选项，添加共享文件夹。</p>
-<p><img src="添加共享文件夹.gif" /></p>
-<p>共享文件夹在Linux中的目录为：<code>/mnt/hgfs/</code></p>
-<p>启动该虚拟机IC设计软件平台。启动完成以后在虚拟机的左下角有账号登录框（分辨率问题可能没显示，往下拉即可看到）：输入账户名：chris
-，密码：chris
-，登录Linux系统，此外该Linux系统的root账号密码为：chris</p>
-<p>该 Linux 系统中有两个版本的 Virtuoso，我们使用更新的 617 版本。</p>
-<p>右键打开终端，输入以下命令，打开 Virtuoso</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source RFIC_IC617.cshrc</span><br><span class="line">icfb &amp;</span><br></pre></td></tr></table></figure>
-<p><img src="image-20240718203641401.png" /></p>
-<h1 id="工艺库安装">2. 工艺库安装</h1>
-<p>将工艺库文件（我使用的
-<code>65NTSMC.tar.gz</code>）放在共享文件夹内，在 Linux
-中使用命令（根据实际情况修改文件路径）</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xzvf /mnt/hgfs/IC_Linux_shared/65NTSMC.tar.gz -C /home/EDA_IC617/kit/65NTSMC/</span><br></pre></td></tr></table></figure>
-<p>解压到 <code>/home/EDA_IC617/kit/65NTSMC</code>下</p>
-<p><img src="image-20240719204337676.png" /></p>
-<p>使用 <code>source RFIC_IC617.cshrc</code> 和 <code>icfb &amp;</code>
-启动 Virtuoso，然后操作如下</p>
-<p><img src="添加工艺库%20.gif" /></p>
-]]></content>
-      <categories>
-        <category>1-通信</category>
-        <category>第八届集创赛 IEEE 杯</category>
-      </categories>
-      <tags>
-        <tag>集创赛</tag>
-        <tag>Virtuoso</tag>
-        <tag>RFIC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>集创赛记录（3）：理想模型搭建</title>
-    <url>/2024/07/21/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89%EF%BC%9A%E7%90%86%E6%83%B3%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/</url>
-    <content><![CDATA[<p>Virtuoso常用快捷键：</p>
-<details class="toggle" ><summary class="toggle-button" style="">Virtuoso常用快捷键</summary><div class="toggle-content"><ul>
-<li><p>在 schematic 中：</p>
-<p>按 <code>i</code> 添加元器件，按 <code>p</code> 添加 pin ，按
-<code>w</code> 连线，按 <code>l</code> 给线命名，按 <code>f</code>
-自适应缩放</p>
-<p>按住鼠标左键画框：选择物体</p>
-<p>按住鼠标右键画框：放大</p>
-<p>按住鼠标中键：移到视角</p>
-<p>选中器件按 <code>q</code> 修改参数</p>
-<p><code>u</code> 撤销操作</p></li>
-</ul>
-</div></details>
-<p>Virtuoso 使用过程中可能遇到的问题：</p>
-<details class="toggle" ><summary class="toggle-button" style="">Virtuoso 使用过程中可能遇到的问题</summary><div class="toggle-content"><ul>
-<li><p>无法 edit View，只能 read</p>
-<p><img src="image-20240721210807403.png" /></p>
-<p>将该 View 所在文件夹中的以下这两个文件删掉</p>
-<p><img src="image-20240721211006995.png" /></p></li>
-</ul>
-</div></details>
-<h1 id="设计思路">1. 设计思路</h1>
-<p>本次比赛许多内容参考该视频：<a
-href="https://www.bilibili.com/video/BV1Jx421S7KS">基于RFIC-GPT射频芯片智能设计工具的SCPA（Switched-Capacitor
-Power Amplifier）设计分享</a></p>
-<p><strong>先完成理想模型的搭建、仿真；再逐步替换为 mos
-模型、仿真；最后画版图，提取寄生参数，仿真。</strong></p>
-<p>架构选用 Doherty 架构。</p>
-<p>总体框图：</p>
-<p><img src="image-20240721144847989.png" /></p>
-<p><mark>logic 模块的全部，以及 output
-模块最后的电容前的部分都是数字信号，即方波</mark></p>
-<h1 id="理想模型的搭建">2. 理想模型的搭建</h1>
-<p>先使用 analogLib 中的理想模型搭建，对于一些设计库中没有的模块，
-例如反相器、 与门和升压电路， 编写了 VerilogA 代码来实现这些功能。</p>
-<p>由于权限问题，很多操作无法进行，所以先修改文件权限。</p>
-<p>鼠标右键打开终端，输入 <code>su -</code> ，输入密码
-<code>chris</code> 切换到 root 用户，输入
-<code>cd /home/EDA_IC617/Projects_OA</code> ，输入
-<code>chmod a+w .</code> 修改当前文件夹权限为所有人可读可写。</p>
-<p>打开 Virtuoso，点击
-<code>Tools-&gt;Library Manager</code>，打开库管理器。</p>
-<p>新建一个库 <code>SCPA</code>，关联到工艺库 <code>tsmcN65</code></p>
-<p><img src="新建库.gif" /></p>
-<h2 id="veriloga-代码编写">2.1. VerilogA 代码编写</h2>
-<p>编写反相器、 与门和升压电路的 VerilogA 代码</p>
-<p>新建一个 Inv （反相器）的 cell</p>
-<p><img src="创建Inv.gif" /></p>
-<p>Inv的代码如下：</p>
-<details class="toggle" ><summary class="toggle-button" style="">Inv的VerilogA代码</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, Inv, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module Inv(in, out);</span><br><span class="line"></span><br><span class="line">input in;</span><br><span class="line">output out;</span><br><span class="line"></span><br><span class="line">electrical in, out;</span><br><span class="line"></span><br><span class="line">parameter real vtrans=0.9,</span><br><span class="line">               tdelay=1p from[0:inf),</span><br><span class="line">               trise=1p from[0:inf),</span><br><span class="line">               tfall=1p from[0:inf),</span><br><span class="line">               Vhigh=3.3,</span><br><span class="line">               Vlow=0;</span><br><span class="line"></span><br><span class="line">real OUT_val;//OUT_val</span><br><span class="line">analog begin//</span><br><span class="line">       @(cross(V(in)-vtrans,1))//v(in)vtrans</span><br><span class="line">        OUT_val=Vlow;</span><br><span class="line">       @(cross(V(in)-vtrans,-1))//v(in)vtrans</span><br><span class="line">        OUT_val=Vhigh;</span><br><span class="line">       V(out)&lt;+transition(OUT_val,tdelay,trise,tfall);//Vout</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
-</div></details>
-<blockquote>
-<p>vtrans、tdelay、trise、tfall、Vhigh、Vlow
-这些参数可以在调用该模块时修改</p>
-</blockquote>
-<p>同理新建与门和升压电路</p>
-<p>与门和升压电路的 VerilogA 的代码如下</p>
-<details class="toggle" ><summary class="toggle-button" style="">与门和升压电路的 VerilogA 的代码</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, And, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module AND(Vin1, Vin2, Out);</span><br><span class="line"></span><br><span class="line">input Vin1, Vin2;</span><br><span class="line">output Out;</span><br><span class="line">electrical Vin1, Vin2, Out;</span><br><span class="line"></span><br><span class="line">parameter real vtrans = 0.9;</span><br><span class="line">parameter real vlogic_high = 1.8;</span><br><span class="line">parameter real vlogic_low = 0;</span><br><span class="line"></span><br><span class="line">analog begin</span><br><span class="line">	if(V(Vin1) &gt; vtrans &amp;&amp; V(Vin2) &gt; vtrans) begin</span><br><span class="line">		V(Out) &lt;+ vlogic_high;</span><br><span class="line">	end</span><br><span class="line">	else begin</span><br><span class="line">		V(Out) &lt;+ vlogic_low;</span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, Boost, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module Boost(vin,vout);</span><br><span class="line"></span><br><span class="line">input vin;</span><br><span class="line">output vout;</span><br><span class="line">electrical vin,vout;</span><br><span class="line">parameter real Vin = 1.2;</span><br><span class="line">parameter real Vout = 2.4;</span><br><span class="line"></span><br><span class="line">analog begin</span><br><span class="line"></span><br><span class="line">V(vout) &lt;+ V(vin) +1.2;</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
-</div></details>
-<p><img src="image-20240721164740868.png" /></p>
-<h2 id="logic-部分">2.2. logic 部分</h2>
-<h3 id="s2d">2.2.1. S2D</h3>
-<p>S2D 模块功能是将单端信号转为差分信号。</p>
-<p>新建一个 S2D 的理想电路。（后续还会在该 Cell 下新建mos模型的电路
-schematic_mos）</p>
-<p><img src="image-20240721164949807.png" /></p>
-<p>进入 schematic，按 <code>i</code> 添加元器件，按 <code>p</code> 添加
-pin ，按 <code>w</code> 连线，按 <code>l</code> 给线命名，按
-<code>f</code> 自适应缩放</p>
-<p><mark>修改后需要保存，点击左上角工具栏的第三个，Check and
-Save</mark></p>
-<p><img src="image-20240721170331041.png" /></p>
-<p>选中 Inv 按 <code>q</code>，修改参数，所有 Inv 都要改。因为这里的 VDD
-和 VSS 是 1.2V 和 0，所以改成如下参数。</p>
-<p><img src="image-20240721201317860.png" alt="image-20240721201317860" style="zoom:80%;" /></p>
-<p>然后从 schematic 生成 symbol：</p>
-<p><code>Create → Cellview → From CellView...</code></p>
-<p><img src="image-20240721171616324.png" /></p>
-<p><img src="image-20240721171817054.png" /></p>
-<p>同理搭建其他模块，<strong>注意正确修改参数设置</strong>。</p>
-<h3 id="upconversion">2.2.2. upconversion</h3>
-<p>该模块将使能信号上变频</p>
-<p><img src="image-20240721185506136.png" /></p>
-<h3 id="logic">2.2.3. logic</h3>
-<p>将 S2D 和 upconversion 合并。</p>
-<p>这不是一个底层模块了，不分理想模型还是 mos 模型，所以只需一个
-schematic 即可。</p>
-<p>仿真时要切换理想模型或 mos 模型是切换底层的模型。</p>
-<p><img src="image-20240721191759384.png" /></p>
-<h2 id="output-部分">2.3. output 部分</h2>
-<p>output 部分由 4 个部分组成：Level</p>
-<h3 id="level_shifter">2.3.1. level_shifter</h3>
-<p>该模块将 0 ~ VDD 的信号抬升到 VDD ~ VDD2</p>
-<p><img src="image-20240721193347441.png" /></p>
-<h3 id="driver-up">2.3.2. driver up</h3>
-<p>该模块将信号在 VDD 和 VDD2 之间反相。</p>
-<p><img src="image-20240721194535330.png" /></p>
-<h3 id="driver-down">2.3.3. driver down</h3>
-<p>该模块将信号在 VSS 和 VDD 之间反相。</p>
-<p><img src="image-20240721201051576.png" /></p>
-<h3 id="inv-cascode">2.3.4. inv cascode</h3>
-<p>输出为 0 ~ VDD2 的方波</p>
-<p><img src="image-20240721203806217.png" /></p>
-<p>E0 为 analogLib 下的 vcvs：</p>
-<p><img src="image-20240721203150382.png" /></p>
-<h3 id="output">2.3.5. output</h3>
-<p><img src="image-20240721205321157.png" /></p>
-<p>电容是 analogLib 下的 cap：</p>
-<p><img src="image-20240721205234426.png" /></p>
-<h2 id="unit-cell">2.4. unit cell</h2>
-<p>一个 logic 部分和两个 output 组成一个 unit cell</p>
-<p><img src="image-20240721212013325.png" /></p>
-<h2 id="scpa">2.5. SCPA</h2>
-<p>64 个 unit cell 组成一个 SCPA</p>
-<p><img src="image-20240721213021404.png" /></p>
-<p><img src="image-20240721213028456.png" /></p>
-<h2 id="doherty-scpa">2.6. Doherty SCPA</h2>
-<p>两个 SCPA 分别作为主路和峰值路，加上匹配电路组成 Doherty SCPA</p>
-<p><img src="image-20240721214918649.png" /></p>
-<p>其中一些器件的参数：</p>
-<p><img src="image-20240721215937099.png" /></p>
-]]></content>
-      <categories>
-        <category>1-通信</category>
-        <category>第八届集创赛 IEEE 杯</category>
-      </categories>
-      <tags>
-        <tag>集创赛</tag>
-        <tag>Virtuoso</tag>
-        <tag>RFIC</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>集创赛记录（2）：赛题题目</title>
-    <url>/2024/07/20/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%EF%BC%9A%E8%B5%9B%E9%A2%98%E9%A2%98%E7%9B%AE/</url>
-    <content><![CDATA[<h1 id="赛题题目">1. 赛题题目</h1>
+href="https://butterfly.js.org/posts/2df239ce/">https://butterfly.js.org/posts/2df239ce/</a></p>
 <p><a
-href="http://univ.ciciec.com/nd.jsp?id=713#_jcp=1">第八届集创赛杯赛题目——IEEE杯</a></p>
-<h2
-id="一杯赛题目2.4ghz高效率scpa设计"><strong>一、杯赛题目：2.4GHz高效率SCPA设计</strong></h2>
-<h2 id="二参赛组别a组b组"><strong>二、参赛组别：A组、B组</strong></h2>
-<h2 id="三设计指标"><strong>三、设计指标</strong></h2>
-<ol type="1">
-<li>工作频率2.4GHz</li>
-<li>采用架构为开关电容功率放大器(Switched-Capacitor Power Amplifier,
-SCPA)</li>
-<li>饱和输出功率Psat不低于23dBm</li>
-<li>峰值系统效率(System Efficiency) 不低于35%</li>
-<li>匹配网络及功率合成器等无源结构须在片上设计</li>
-<li>采用65nm CMOS工艺</li>
-</ol>
-<h2 id="四背景介绍"><strong>四、背景介绍</strong></h2>
-<ol type="1">
-<li>SCPA原理</li>
-</ol>
-<p>SCPA最早是由Sang-Min
-Yoo提出[1]，电路结构上是由通过晶体管实现的开关控制的电容阵列组成。</p>
-<p><img src="ABUIABAEGAAg0Kn5rAYoz4OF4gYw5AY4ggQ.png" alt=" " style="zoom: 67%;" /></p>
-<p>控制电容的开关以射频频率切换时，此时开关电容视为工作状态；控制电容的开关常接地时，此时开关电容视为关闭状态。通过控制处于工作状态下开关电容的数量，可实现输出电压幅度的变化。</p>
-<p><img src="ABUIABAEGAAg6an5rAYo6a2yugUwxgU44gI.png" /></p>
-<ol start="2" type="1">
-<li>Class-G SCPA</li>
-</ol>
-<p>采用Class-G (双电源)
-的方式对SCPA供电，输出功率较低时，采用电压更低的电源供电，提高回退效率[2]。</p>
-<p><img src="image-20240721143615341.png" /></p>
-<ol start="3" type="1">
-<li>Doherty SCPA</li>
-</ol>
-<p>以SCPA的方式实现Doherty，提高PA饱和输出功率，同时提高PA在功率回退下的效率[3]。</p>
-<p><img src="ABUIABAEGAAgsqr5rAYo5rCGpAIw3AU4mQY.png" alt=" " style="zoom:67%;" /></p>
-<h2 id="五评分规则"><strong>五、评分规则</strong></h2>
-<table>
-<colgroup>
-<col style="width: 32%" />
-<col style="width: 8%" />
-<col style="width: 60%" />
-</colgroup>
-<thead>
-<tr class="header">
-<th><strong>内容</strong></th>
-<th><strong>分值</strong></th>
-<th><strong>评分标准</strong></th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>1.完成SCPA的调研</td>
-<td>20</td>
-<td>了解目前实现SCPA几种主要方法；理解SCPA工作原理；完成电路架构的选择并阐述原因</td>
-</tr>
-<tr class="even">
-<td>2.完成SCPA的完整电路设计（前仿）</td>
-<td>30</td>
-<td>画出电路系统框图；完成原理图的电路设计（电感、变压器可使用合理的带Q模型）；实现目标性能指标</td>
-</tr>
-<tr class="odd">
-<td>3.完成SCPA电路的版图设计（后仿）</td>
-<td>40</td>
-<td>版图实现；EM仿真无源元件；后仿获得整体指标</td>
-</tr>
-<tr class="even">
-<td>4.创新点</td>
-<td>10</td>
-<td>针对现有结构的改进和创新</td>
-</tr>
-</tbody>
-</table>
-<h2 id="六作品提交要求">六、<strong>作品提交要求</strong></h2>
-<ol type="1">
-<li>初赛和企业技术评分：提交技术文档和设计数据，包括如下内容：
-<ol type="1">
-<li>文献调研，选定SCPA的架构</li>
-<li>核心电路原理与原理图仿真：文档和设计数据</li>
-<li>版图实现与后仿真：文档说明和设计数据</li>
-<li>总结：设计的特点、实现了的性能分析，与改进建议等</li>
-</ol></li>
-<li>分赛区决赛、全国总决赛提交内容
-<ol type="1">
-<li>汇报PPT：项目介绍、关键技术介绍、性能指标</li>
-<li>技术文档和设计数据：同上</li>
-</ol></li>
-</ol>
-<h2 id="七参考文献">七、<strong>参考文献</strong></h2>
-<p>[1] S. M. Yoo, J. S. Walling, E. C. Woo, B. Jann, and D. J. Allstot,
-“A switched-capacitor RF power amplifier,” in IEEE Journal of
-Solid-State Circuits, IEEE, 2011, pp. 2977–2987. doi:
-10.1109/JSSC.2011.2163469.</p>
-<p>[2] S. M. Yoo et al., “A class-G switched-capacitor RF power
-amplifier,” IEEE J. Solid-State Circuits, vol. 48, no. 5, pp. 1212–1224,
-May 2013, doi: 10.1109/JSSC.2013.2252754.</p>
-<p>[3] V. Vorapipat, C. S. Levy, and P. M. Asbeck, “Voltage Mode Doherty
-Power Amplifier,” IEEE J. Solid-State Circuits, vol. 52, no. 5, pp.
-1295–1304, 2017, doi: 10.1109/JSSC.2017.2647954.</p>
+href="https://blog.csdn.net/liudonglovehemin/article/details/131095922">https://blog.csdn.net/liudonglovehemin/article/details/131095922</a></p>
+<h1 id="tabs">Tabs</h1>
+<h2 id="使用方法">使用方法</h2>
+<p><a
+href="https://theme-next.js.org/docs/tag-plugins/tabs">参考另一个主题的教程</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs Unique name, [index] %&#125;</span><br><span class="line">&lt;!-- tab [Tab caption] [@icon] --&gt;</span><br><span class="line">标签页内容 (support inline tags too).</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><p><code>Unique name</code>：</p>
+<p>标签块标签的唯一名称，不能含逗号。</p>
+<p>将在 #id 中使用，作为每个标签页的前缀和索引号。</p>
+<p>如果名称中有空格，生成 #id 时将用破折号替换所有空格。</p></li>
+<li><p><code>[index]</code>：<strong>可选</strong>。</p>
+<p>活动选项卡的索引号。</p>
+<p>如果未指定，将选择第一个选项卡（1）。</p>
+<p>如果索引为-1，则不会选择任何标签页。</p></li>
+<li><p><code>[Tab caption]</code>：<strong>可选</strong>。</p>
+<p>当前选项卡的标题。</p>
+<p>如果未指定标题，带有标签页索引后缀的 Unique name
+将用作标签页的标题。</p>
+<p>如果未指定标题，但指定了图标，标题将为空。</p></li>
+<li><p><code>[@icon]</code>：<strong>可选</strong>。</p>
+<p>Font Awesome 图标名称。</p>
+<p>可指定带空格或不带空格；例如，"Tab caption <span class="citation"
+data-cites="icon">@icon</span> "与 "Tab caption@icon "相同。</p></li>
+</ul>
+<h2 id="示例">示例</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% tabs 标签 %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是标签页1**</span><br><span class="line">1. One</span><br><span class="line">2. Two</span><br><span class="line">3. Three</span><br><span class="line">```</span><br><span class="line">nano /etc</span><br><span class="line">```</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab 自定义标签名--&gt;</span><br><span class="line">**这是标签页2.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line"></span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是标签页3.**</span><br><span class="line">&#123;% subtabs 子标签页,2 %&#125;</span><br><span class="line">&lt;!-- tab 自定义标签名--&gt;</span><br><span class="line">**这是子标签页1.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&lt;!-- tab --&gt;</span><br><span class="line">**这是子标签页2.**</span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endsubtabs %&#125;</span><br><span class="line"></span><br><span class="line">&lt;!-- endtab --&gt;</span><br><span class="line">&#123;% endtabs %&#125;</span><br></pre></td></tr></table></figure>
+<div class="tabs"><div class="nav-tabs"><button type="button" class="tab active">标签 1</button><button type="button" class="tab">自定义标签名</button><button type="button" class="tab">标签 3</button></div><div class="tab-contents"><div class="tab-item-content active"><p><strong>这是标签页1</strong> 1. One 2. Two 3. Three <figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">nano /etc</span><br></pre></td></tr></table></figure></p></div><div class="tab-item-content"><p><strong>这是标签页2.</strong></p></div><div class="tab-item-content"><strong>这是标签页3.</strong>
+<div class="tabs">
+<div class="nav-tabs">
+<button type="button" class="tab">
+自定义标签名
+</button>
+<button type="button" class="tab active">
+子标签页 2
+</button>
+</div>
+<div class="tab-contents">
+<div class="tab-item-content">
+<p>
+<strong>这是子标签页1.</strong>
+</p>
+</div>
+<div class="tab-item-content active">
+<p>
+<strong>这是子标签页2.</strong>
+</p>
+</div>
+</div>
+<div class="tab-to-top">
+<button type="button" aria-label="scroll to top">
+<i class="fas fa-arrow-up"></i>
+</button>
+</div>
+</div></div></div><div class="tab-to-top"><button type="button" aria-label="scroll to top"><i class="fas fa-arrow-up"></i></button></div></div>
+<h1 id="button">Button</h1>
+<h2 id="使用方法-1">使用方法</h2>
+<p><a
+href="https://theme-next.js.org/docs/tag-plugins/button#">参考教程</a></p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% button url, text, icon [class], [title] %&#125;</span><br></pre></td></tr></table></figure>
+<p>或</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% btn url, text, icon [class], [title] %&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>url</code>：URL 的绝对或相对路径。</li>
+<li><code>text</code>：按钮文本。如果没有指定图标，则为必填项。</li>
+<li><code>icon</code>：Font Awesome
+图标名称。如果未指定文本，则为必填项。</li>
+<li><code>[class]</code>：可选参数。字体 Awesome class（es）： fa-fw
+fa-lg fa-2x fa-3x fa-5x</li>
+<li><code>[title]</code> ：可选参数。鼠标悬停时的提示。</li>
+</ul>
+<h2 id="示例-1">示例</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&lt;div class=&quot;text-center&quot;&gt;&#123;% btn #, Text %&#125;&#123;% btn #, Text &amp; Title,, Title %&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+<div class="text-center">
+<a class="btn-beautify " href="#" title="Text"><span>Text</span></a>
+<a class="btn-beautify Title" href="#" title="Text &amp; Title"><span>Text &amp; Title</span></a>
+</div>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% btn #,1 %&#125;&#123;% btn #,2 %&#125;</span><br></pre></td></tr></table></figure>
+<a class="btn-beautify " href="#" title="1"><span>1</span></a>
+<a class="btn-beautify " href="#" title="2"><span>2</span></a>
+<h1 id="group-pictures">Group Pictures</h1>
+<p><a
+href="https://theme-next.js.org/docs/tag-plugins/group-pictures">参考教程</a></p>
+<h1 id="note">Note</h1>
+<p><a
+href="https://theme-next.js.org/docs/tag-plugins/note">参考教程</a></p>
+<h1 id="hide-toggle">hide-toggle</h1>
+<h2 id="使用方法-2">使用方法</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle display,bg,color %&#125;</span><br><span class="line">content</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="示例-2">示例</h2>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">&#123;% hideToggle Butterfly安裝方法,,red %&#125;</span><br><span class="line">在你的博客根目錄裏</span><br><span class="line">git clone -b master https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">如果想要安裝比較新的dev分支，可以</span><br><span class="line">git clone -b dev https://github.com/jerryc127/hexo-theme-butterfly.git themes/Butterfly</span><br><span class="line">&#123;% endhideToggle %&#125;</span><br></pre></td></tr></table></figure>
+<details class="toggle" ><summary class="toggle-button" style="color: red">Butterfly安裝方法</summary><div class="toggle-content"><p>在你的博客根目錄裏</p>
+<p>git clone -b master
+https://github.com/jerryc127/hexo-theme-butterfly.git
+themes/Butterfly</p>
+<p>如果想要安裝比較新的dev分支，可以</p>
+<p>git clone -b dev
+https://github.com/jerryc127/hexo-theme-butterfly.git
+themes/Butterfly</p>
+</div></details>
 ]]></content>
       <categories>
-        <category>1-通信</category>
-        <category>第八届集创赛 IEEE 杯</category>
+        <category>3-Hexo使用</category>
       </categories>
-      <tags>
-        <tag>集创赛</tag>
-        <tag>Virtuoso</tag>
-        <tag>RFIC</tag>
-      </tags>
   </entry>
   <entry>
     <title>（一）锁相环简介</title>
@@ -606,241 +376,6 @@ class="math inline">\(\theta_{\mathrm{e}}\)</span>=相位误差。)</p>
       </categories>
       <tags>
         <tag>锁相环</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>软件资源推荐</title>
-    <url>/2023/10/09/2-%E8%BD%AF%E4%BB%B6/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
-    <content><![CDATA[<h1 id="pot">Pot</h1>
-<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
-<p>截图翻译，划词翻译，OCR</p>
-<p> </p>
-<h1 id="snipaste">snipaste</h1>
-<p>链接：<a
-href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
-<p>截图工具。</p>
-<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
-<p> </p>
-<h1 id="dism">Dism++</h1>
-<p>链接：<a
-href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
-<p>window工具箱。</p>
-<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
-<p> </p>
-<h1 id="msi-afterburner">MSI Afterburner</h1>
-<p>链接：<a
-href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
-<p>性能监控软件。</p>
-<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
-<p> </p>
-<h1 id="图吧工具箱">图吧工具箱</h1>
-<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
-<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
-<p> </p>
-<h1 id="simpletex">SimpleTex</h1>
-<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
-<p>公式识别转换</p>
-<p>将图片中的公式转换为LaTeX格式</p>
-<p> </p>
-<h1 id="quicklook">QuickLook：</h1>
-<p>链接：<a
-href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
-<p>查看office的插件：<a
-href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
-<p>快速查看文件内容</p>
-<p>对文件按空格可以快速浏览文件内容</p>
-<p> </p>
-<h1 id="el_display_hub">EL_Display_Hub</h1>
-<p>链接：<a
-href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
-<p>iPad当副屏</p>
-<p>还要在ipad端App Store购买Twomon SE</p>
-<p> </p>
-<h1 id="potplayer">potplayer</h1>
-<p>链接：<a
-href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
-<p>本地视频播放器</p>
-<p>功能强大丰富，支持格式非常多。</p>
-<p> </p>
-<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
-<p>链接：<a
-href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
-<p>把QT的软件及库打包成一个exe文件</p>
-<p> </p>
-<h1 id="everything">everything</h1>
-<p>链接：<a
-href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
-<p>文件搜索</p>
-<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
-<p> </p>
-<h1 id="cajviewer">CAJViewer</h1>
-<p>链接：<a
-href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
-<p>CAJ阅读器</p>
-<p> </p>
-<h1 id="ddu">DDU</h1>
-<p>链接：<a
-href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
-<p>显卡驱动卸载</p>
-<p>常用于AMD显卡驱动卸载</p>
-<p> </p>
-<h1 id="vscode">vscode</h1>
-<p>链接：<a
-href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
-<p>编辑器</p>
-]]></content>
-      <categories>
-        <category>2-软件</category>
-        <category>资源推荐</category>
-      </categories>
-      <tags>
-        <tag>资源</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>AD20软件使用</title>
-    <url>/2023/10/10/2-%E8%BD%AF%E4%BB%B6/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/AD20%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
-    <content><![CDATA[<h1 id="单位换算">单位换算</h1>
-<ul>
-<li><mark>1mil = 0.0254mm</mark></li>
-<li><mark>1mm = 39.37mil</mark></li>
-<li>1oz = 0.035mm = 1.38mil（oz是重量单位，1oz =
-28.35g。在PCB上，1OZ意思是1平方英尺的面积上平均铜箔的重量在
-28.35g，用单位面积的重量来表示铜薄的平均厚度！）</li>
-</ul>
-<h1 id="打开ad">打开AD</h1>
-<p><mark>注意</mark>：不要直接打开AD软件，而是打开对应的工程文件（.PrjPcb文件）。直接打开AD会默认打开之前的文件，但没有对应的工程。如下图：</p>
-<p><img src="image-20231012144556589.png" /></p>
-<p>这种情况下也可以进行一些操作，但许多与工程相关的设置，选项等无法打开，如下面的原理图报错设置无法打开。</p>
-<p>如果只是简单浏览，也可以直接打开AD，或者对应的文件。</p>
-<h1 id="原理图器件命名标值等">原理图器件命名，标值等</h1>
-<p>原理图库中，每个元件的属性如下</p>
-<p><img src="image-20231025153559595.png" /></p>
-<p><mark>Comment</mark>用于导入原理图后，标值。</p>
-<blockquote>
-<p>建议不要从官方的原理图库中导入原理图。官方库中有许多不需要的属性，并且阻值会写在value里，导出的bom表里不会有value这一列</p>
-</blockquote>
-<p>导入原理图后：</p>
-<p><img src="image-20231025214519199.png" /></p>
-<ul>
-<li>Designator：标志符，可以理解为名字，同一原理图<strong>不能重复</strong></li>
-<li>comment：一般写值，芯片写对应的型号</li>
-<li>Description：同一类型写一样的</li>
-</ul>
-<blockquote>
-<p>以上主要是为了到处bom表方便</p>
-</blockquote>
-<h1 id="原理图报错设置">原理图报错设置</h1>
-<p>工程-&gt;工程选项（快捷键：c-&gt;o）</p>
-<p><img src="image-20230917170107300.png" /></p>
-<p>需要修改的：（根据b站凡亿教育）</p>
-<p><code>Violations Associated with Components</code>下的<code>Duplicate Part Designators</code>，重复命名问题</p>
-<p><img src="image-20230917170509729.png" /></p>
-<p><code>Violations Associated with Nets</code>：<code>Floating net labels</code>
-和<code>Floating power objects</code>，悬浮问题。<code>Nets with only one pin</code>，单端网络问题。</p>
-<p><img src="image-20230917170719702.png" /></p>
-<h1 id="规则设置">规则设置</h1>
-<h2 id="间距规则">间距规则</h2>
-<p><code>Electrical</code>-&gt;<code>Clearance</code>：最小间距5mil</p>
-<h2 id="线宽规则">线宽规则</h2>
-<p><code>Routing</code> -&gt; <code>Width</code></p>
-<p>射频线需要仿真确定线宽，连线时可以先设置为10mil</p>
-<p>电源线宽度为20mil或30mil，连到器件前一点的时候可以减小为10mil</p>
-<h2 id="过孔规则">过孔规则</h2>
-<p><code>Routing</code> -&gt; <code>Routing Via Style</code></p>
-<p>盘的大小 = 过孔大小 * 2 ± 2 mil</p>
-<p>注意区分 Hole Size 和 Diameter</p>
-<p>过孔放置时默认不会按规则来，还需要去AD设置里，AD界面右上角进入设置：<code>PCB Editor</code>-&gt;<code>Defaults</code>，右边最下边选择via，设置默认Hole
-Size 和 Diameter为最常用的，其他大小可以放置后手动调大小</p>
-<h2 id="铺铜规则">铺铜规则</h2>
-<ul>
-<li>正片：默认无铜，走线和铺铜意味着这些地方有铜</li>
-<li>负片：默认有铜，走线和铺铜意味着这些地方无铜</li>
-</ul>
-<p><code>plane</code></p>
-<h1 id="操作相关">操作相关</h1>
-<p><mark>注意有的快捷键受中文输入法影响</mark></p>
-<p><code>x1 + x2</code>：按住x1，再按x2</p>
-<p><code>x1 -&gt; x2</code>：依次按x1，x2</p>
-<h2 id="原理图schdoc常用操作">原理图SchDoc常用操作</h2>
-<ul>
-<li><p>栅格设置：工具-&gt;原理图优先项（t -&gt; p）</p>
-<p><img src="image-20231007153053615.png" /></p>
-<ul>
-<li>捕捉栅格：光标每次移动的距离。</li>
-<li>捕捉距离（电气栅格）：移动、放置元件或线时，距离小于捕捉距离会吸附。</li>
-<li>可见栅格：工作区上见到的网格的大小。</li>
-</ul></li>
-<li><p>切换栅格：视图-&gt;栅格（v -&gt; g）</p>
-<p><img src="image-20231007160333396.png" /></p>
-<ul>
-<li>切换捕捉栅格：会同时切换3个栅格设置</li>
-<li>切换捕捉栅格：显示/不显示栅格</li>
-<li>切换电气栅格：只切换电气栅格（捕捉距离）设置</li>
-<li>设置捕捉栅格：单独设置捕捉栅格</li>
-</ul></li>
-</ul>
-<blockquote>
-<p>原理图SchDoc的栅格设置最好和原理图库SCHLIB的设置<strong>保持一致</strong>（单位和大小都一致）</p>
-</blockquote>
-<ul>
-<li>对齐到栅格上：选择器件，<code>a -&gt; g</code>。是按<strong>捕捉栅格</strong>对齐，即光标能移动到的位置，想移动到<strong>可视栅格</strong>上，要把捕捉栅格设为和可视栅格一样。</li>
-</ul>
-<h2 id="pcb文件pcbdoc常用操作">PCB文件PcbDoc常用操作：</h2>
-<ul>
-<li><p><strong>修改PCB板子大小</strong>：在丝印层 Mechanical 1
-画线（不要用ctrl+w快捷键），例如画一个4mm x
-7mm的长方形，选中4条边。<code>设计-&gt;板子形状-&gt;按照选择对象定义</code>，或快捷键<code>d-&gt;s-&gt;d</code></p></li>
-<li><p>原点：<code>e-&gt;o-&gt;s</code>，设置原点位置。</p></li>
-<li><p><strong>切换单层显示</strong>：<code>Shift + s</code>，在三个等级间切换，我习惯在默认情况下排版，第二个等级上（按一次Shift
-+ s）情况下连线</p></li>
-<li><p>高量网络net：按住Ctrl点击某个网络，相应的所有相同网络高亮。按住Ctrl点击其他位置，取消高亮</p></li>
-<li><p><strong>连线</strong>：<code>Ctrl + w</code></p></li>
-<li><p><strong>隐藏报错</strong>：<code>T + M</code></p></li>
-<li><p>连线时调节线宽：在连线时按<code>3</code>可以在规则设置中的<strong>最小宽度</strong>、<strong>首选宽度</strong>、<strong>最大宽度</strong>切换</p></li>
-<li><p>走弧线：pcb界面中上方放置栏，右击最右边的线条模样的，选择圆弧（边沿），放置时按空格切换弧线方向</p></li>
-<li><p>选择单个器件：不要点击到焊盘，这样会选择到焊盘。点丝印（黄色）或其他</p></li>
-<li><p>放置过孔：放置过孔后需要双击，在右边属性栏的Net选择相应网络，否则没法相连</p></li>
-<li><p><strong>对齐</strong>：选择要对齐的器件，按A。常用的：左右、顶底对齐；垂直、水平分布；<strong>两个焊盘的中心对齐</strong>：水平、垂直中心对齐。</p></li>
-<li><p><strong>交叉选择</strong>：原理图SchDoc界面，选择：工具-&gt;交叉选择模式。分屏的时候，在原理图上选择的器件，会在pcb上高亮。</p></li>
-<li><p><strong>器件按矩形摆放</strong>：选择器件后按
-<code>t -&gt; o -&gt; l</code>
-，画一个矩形，对应器件会自动排列在这个矩形中。应用：将原理图导入到PCB后，想在PCB上按不同部分分开摆放，原理图选择某部分的器件（如某个芯片及其外接的电阻容等），在PCB文件中，对应器件会高亮，想把这些器件摆放在一起，可以在选择pcb文件后（鼠标右键在pcb界面轻微移动一下即可，左键点容易把高亮消除），按快捷键
-t + o + l，画一个矩形，对应器件会自动排列在这个矩形中。</p></li>
-<li><p><strong>更改封装</strong>：如果只是在对应的封装库更改，需要选择左下角PCB
-Library在封装库对应封装右击，选择 'Update PCB With
-xx'。如果改了封装，需要在原理图：工具-&gt;封装管理器，选择新的封装库和对应封装，然后再在新的封装库右击选择'Update
-PCB With xx'</p></li>
-<li><p><strong>切换距离单位</strong>：空白处按<code>q</code>，切换mil和mm</p></li>
-<li><p>测距：<code>Ctrl + m</code></p></li>
-<li><p>取消测距：消除测距的数据：<code>Shift + c</code></p></li>
-<li><p><strong>隐藏GND地网络</strong>：地一般通过铺铜相连，并不需要连线，不需要显示出GND的连接关系。在PCB，点击：设计-&gt;类，右击Net
-Classes，添加类，取类名，将地网络（如GND）添加到类成员中，确定。再在AD左下角选择PCB，可以看到创建的Net
-Classes，右击对应的类，连接-&gt;隐藏，即可隐藏GND。其他Net也可通过类似方法隐藏</p></li>
-<li><p><strong>从原理图更新到PCB</strong>：修改原理图后，要更新PCB，在原理图选择：设计-&gt;update
-PCB Document ...
-弹出的界面<strong>要取消勾选下列选项</strong>（或类似选项）</p>
-<p><img src="image-20231001164736759.png" /></p></li>
-<li><p><strong>选中线</strong>：<code>s -&gt; c</code>，选中两个焊盘间的整条线。</p></li>
-<li><p>选中网络net：<code>s -&gt; n</code>，选中该网络所有的线和焊盘。（选中后，按delete只会删除线，不会删除焊盘）</p></li>
-<li><p>改变光标移动距离：<code>g</code>，改变每次光标移动的间隔，距离。</p></li>
-<li><p><mark>铺铜相关</mark>：</p>
-<ul>
-<li>铜的Net一般是地GND，在铺铜的时候，按<code>Tab</code>，修改右边Net为GND，再按<code>Esc</code>，继续完成铺铜。（这样可以避免铺完铜，再改Net，然后重新铺铜这样繁琐的操作）</li>
-<li></li>
-</ul></li>
-</ul>
-<h1 id="注意事项">注意事项</h1>
-<ul>
-<li>射频线周围打孔：孔间距40~50mil</li>
-</ul>
-]]></content>
-      <categories>
-        <category>2-软件</category>
-        <category>软件使用</category>
-      </categories>
-      <tags>
-        <tag>AD</tag>
       </tags>
   </entry>
   <entry>
@@ -1031,76 +566,449 @@ class="math inline">\(K_{VCO}\)</span> 为鉴相器增益和VCO增益，N
       </tags>
   </entry>
   <entry>
-    <title>QTcreator上位机</title>
-    <url>/2023/10/09/2-%E8%BD%AF%E4%BB%B6/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/QTCreator/</url>
-    <content><![CDATA[<ul>
-<li><p>让字体适应高分辨率，在<code>main</code>函数开始加以下语句：</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QCoreApplication::<span class="built_in">setAttribute</span>(Qt::AA_EnableHighDpiScaling);</span><br></pre></td></tr></table></figure></li>
-<li><p>检查QByteArray每个字节的bit</p>
-<figure class="highlight cpp"><table><tr><td class="code"><pre><span class="line">QByteArray byteData;</span><br><span class="line"><span class="type">const</span> <span class="type">char</span> *pData = byteData.<span class="built_in">constData</span>();</span><br><span class="line"><span class="keyword">for</span> (<span class="type">int</span> i = <span class="number">0</span>; i &lt; byteData.<span class="built_in">size</span>(); ++i) &#123;</span><br><span class="line">    <span class="keyword">for</span> (<span class="type">int</span> j = <span class="number">7</span>; j &gt;= <span class="number">0</span>; --j) &#123;</span><br><span class="line">        <span class="keyword">if</span> (pData[i] &amp; (<span class="number">1</span> &lt;&lt; j)) &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;1&quot;</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            std::cout &lt;&lt; <span class="string">&quot;0&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    std::cout &lt;&lt; std::endl;</span><br><span class="line">&#125;</span><br><span class="line">std::cout &lt;&lt; <span class="string">&quot;--------------------&quot;</span> &lt;&lt; std::endl;</span><br></pre></td></tr></table></figure></li>
-<li><p>QByteArray通过SerialPort.wirte()发送时，是从下标为0的字节开始发送，每个字节内是从低位开始发送</p></li>
-<li><p>更换图标，将.ico放到工程文件夹内，在.pro中添加</p>
-<figure class="highlight c++"><table><tr><td class="code"><pre><span class="line">RC_ICONS = xxxxxx.ico</span><br></pre></td></tr></table></figure></li>
-<li><p>打包可执行文件：</p>
+    <title>集创赛记录（1）：准备工作</title>
+    <url>/2024/07/18/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%881%EF%BC%89%EF%BC%9A%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C/</url>
+    <content><![CDATA[<h1 id="虚拟机及软件安装">1. 虚拟机及软件安装</h1>
+<p>进行芯片设计仿真的常用软件为 Cadence Virtuoso，该软件只能在 Linux
+的特定版本下运行，并且安装步骤非常麻烦。</p>
+<p>为了省去这些麻烦，我直接在网上找别人配置好的系统。</p>
+<p><a
+href="https://zhuanlan.zhihu.com/p/30282652">模拟射频IC设计实践软件平台使用说明</a></p>
+<p>他这使用的虚拟机是 vmware-9 版本，我使用的是 vmware-17.5
+，但使用步骤都一样。</p>
+<p>安装 vmwar 的教程网上很多。</p>
+<p>安装Linux很简单，将下载好的
+<code>AnalogIC_Linux实践平台_V2.0.rar</code> 文件解压，使用 vmware
+打开其中的 <code>Red Hat Enterprise Linux 5 64-bit.vmx</code>
+文件即可</p>
+<p><img src="安装Linux.gif" /></p>
+<p>设置共享文件夹，方便虚拟机和主机之间传输文件。</p>
+<p>任意新建一个文件夹，点击 vmware
+<code>编辑虚拟器设置</code>，点击选项，添加共享文件夹。</p>
+<p><img src="添加共享文件夹.gif" /></p>
+<p>共享文件夹在Linux中的目录为：<code>/mnt/hgfs/</code></p>
+<p>启动该虚拟机IC设计软件平台。启动完成以后在虚拟机的左下角有账号登录框（分辨率问题可能没显示，往下拉即可看到）：输入账户名：chris
+，密码：chris
+，登录Linux系统，此外该Linux系统的root账号密码为：chris</p>
+<p>该 Linux 系统中有两个版本的 Virtuoso，我们使用更新的 617 版本。</p>
+<p>右键打开终端，输入以下命令，打开 Virtuoso</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">source RFIC_IC617.cshrc</span><br><span class="line">icfb &amp;</span><br></pre></td></tr></table></figure>
+<p><img src="image-20240718203641401.png" /></p>
+<h1 id="工艺库安装">2. 工艺库安装</h1>
+<p>将工艺库文件（我使用的
+<code>65NTSMC.tar.gz</code>）放在共享文件夹内，在 Linux
+中使用命令（根据实际情况修改文件路径）</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">tar -xzvf /mnt/hgfs/IC_Linux_shared/65NTSMC.tar.gz -C /home/EDA_IC617/kit/65NTSMC/</span><br></pre></td></tr></table></figure>
+<p>解压到 <code>/home/EDA_IC617/kit/65NTSMC</code>下</p>
+<p><img src="image-20240719204337676.png" /></p>
+<p>使用 <code>source RFIC_IC617.cshrc</code> 和 <code>icfb &amp;</code>
+启动 Virtuoso，然后操作如下</p>
+<p><img src="添加工艺库%20.gif" /></p>
+]]></content>
+      <categories>
+        <category>1-通信</category>
+        <category>第八届集创赛 IEEE 杯</category>
+      </categories>
+      <tags>
+        <tag>集创赛</tag>
+        <tag>Virtuoso</tag>
+        <tag>RFIC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>集创赛记录（2）：赛题题目</title>
+    <url>/2024/07/20/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%882%EF%BC%89%EF%BC%9A%E8%B5%9B%E9%A2%98%E9%A2%98%E7%9B%AE/</url>
+    <content><![CDATA[<h1 id="赛题题目">1. 赛题题目</h1>
+<p><a
+href="http://univ.ciciec.com/nd.jsp?id=713#_jcp=1">第八届集创赛杯赛题目——IEEE杯</a></p>
+<h2
+id="一杯赛题目2.4ghz高效率scpa设计"><strong>一、杯赛题目：2.4GHz高效率SCPA设计</strong></h2>
+<h2 id="二参赛组别a组b组"><strong>二、参赛组别：A组、B组</strong></h2>
+<h2 id="三设计指标"><strong>三、设计指标</strong></h2>
+<ol type="1">
+<li>工作频率2.4GHz</li>
+<li>采用架构为开关电容功率放大器(Switched-Capacitor Power Amplifier,
+SCPA)</li>
+<li>饱和输出功率Psat不低于23dBm</li>
+<li>峰值系统效率(System Efficiency) 不低于35%</li>
+<li>匹配网络及功率合成器等无源结构须在片上设计</li>
+<li>采用65nm CMOS工艺</li>
+</ol>
+<h2 id="四背景介绍"><strong>四、背景介绍</strong></h2>
+<ol type="1">
+<li>SCPA原理</li>
+</ol>
+<p>SCPA最早是由Sang-Min
+Yoo提出[1]，电路结构上是由通过晶体管实现的开关控制的电容阵列组成。</p>
+<p><img src="ABUIABAEGAAg0Kn5rAYoz4OF4gYw5AY4ggQ.png" alt=" " style="zoom: 67%;" /></p>
+<p>控制电容的开关以射频频率切换时，此时开关电容视为工作状态；控制电容的开关常接地时，此时开关电容视为关闭状态。通过控制处于工作状态下开关电容的数量，可实现输出电压幅度的变化。</p>
+<p><img src="ABUIABAEGAAg6an5rAYo6a2yugUwxgU44gI.png" /></p>
+<ol start="2" type="1">
+<li>Class-G SCPA</li>
+</ol>
+<p>采用Class-G (双电源)
+的方式对SCPA供电，输出功率较低时，采用电压更低的电源供电，提高回退效率[2]。</p>
+<p><img src="image-20240721143615341.png" /></p>
+<ol start="3" type="1">
+<li>Doherty SCPA</li>
+</ol>
+<p>以SCPA的方式实现Doherty，提高PA饱和输出功率，同时提高PA在功率回退下的效率[3]。</p>
+<p><img src="ABUIABAEGAAgsqr5rAYo5rCGpAIw3AU4mQY.png" alt=" " style="zoom:67%;" /></p>
+<h2 id="五评分规则"><strong>五、评分规则</strong></h2>
+<table>
+<colgroup>
+<col style="width: 32%" />
+<col style="width: 8%" />
+<col style="width: 60%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th><strong>内容</strong></th>
+<th><strong>分值</strong></th>
+<th><strong>评分标准</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1.完成SCPA的调研</td>
+<td>20</td>
+<td>了解目前实现SCPA几种主要方法；理解SCPA工作原理；完成电路架构的选择并阐述原因</td>
+</tr>
+<tr class="even">
+<td>2.完成SCPA的完整电路设计（前仿）</td>
+<td>30</td>
+<td>画出电路系统框图；完成原理图的电路设计（电感、变压器可使用合理的带Q模型）；实现目标性能指标</td>
+</tr>
+<tr class="odd">
+<td>3.完成SCPA电路的版图设计（后仿）</td>
+<td>40</td>
+<td>版图实现；EM仿真无源元件；后仿获得整体指标</td>
+</tr>
+<tr class="even">
+<td>4.创新点</td>
+<td>10</td>
+<td>针对现有结构的改进和创新</td>
+</tr>
+</tbody>
+</table>
+<h2 id="六作品提交要求">六、<strong>作品提交要求</strong></h2>
+<ol type="1">
+<li>初赛和企业技术评分：提交技术文档和设计数据，包括如下内容：
+<ol type="1">
+<li>文献调研，选定SCPA的架构</li>
+<li>核心电路原理与原理图仿真：文档和设计数据</li>
+<li>版图实现与后仿真：文档说明和设计数据</li>
+<li>总结：设计的特点、实现了的性能分析，与改进建议等</li>
+</ol></li>
+<li>分赛区决赛、全国总决赛提交内容
+<ol type="1">
+<li>汇报PPT：项目介绍、关键技术介绍、性能指标</li>
+<li>技术文档和设计数据：同上</li>
+</ol></li>
+</ol>
+<h2 id="七参考文献">七、<strong>参考文献</strong></h2>
+<p>[1] S. M. Yoo, J. S. Walling, E. C. Woo, B. Jann, and D. J. Allstot,
+“A switched-capacitor RF power amplifier,” in IEEE Journal of
+Solid-State Circuits, IEEE, 2011, pp. 2977–2987. doi:
+10.1109/JSSC.2011.2163469.</p>
+<p>[2] S. M. Yoo et al., “A class-G switched-capacitor RF power
+amplifier,” IEEE J. Solid-State Circuits, vol. 48, no. 5, pp. 1212–1224,
+May 2013, doi: 10.1109/JSSC.2013.2252754.</p>
+<p>[3] V. Vorapipat, C. S. Levy, and P. M. Asbeck, “Voltage Mode Doherty
+Power Amplifier,” IEEE J. Solid-State Circuits, vol. 52, no. 5, pp.
+1295–1304, 2017, doi: 10.1109/JSSC.2017.2647954.</p>
+]]></content>
+      <categories>
+        <category>1-通信</category>
+        <category>第八届集创赛 IEEE 杯</category>
+      </categories>
+      <tags>
+        <tag>集创赛</tag>
+        <tag>Virtuoso</tag>
+        <tag>RFIC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>集创赛记录（3）：理想模型搭建</title>
+    <url>/2024/07/21/1-%E9%80%9A%E4%BF%A1/%E7%AC%AC%E5%85%AB%E5%B1%8A%E9%9B%86%E5%88%9B%E8%B5%9BIEEE%E6%9D%AF/%E9%9B%86%E5%88%9B%E8%B5%9B%E8%AE%B0%E5%BD%95%EF%BC%883%EF%BC%89%EF%BC%9A%E7%90%86%E6%83%B3%E6%A8%A1%E5%9E%8B%E6%90%AD%E5%BB%BA/</url>
+    <content><![CDATA[<p>Virtuoso常用快捷键：</p>
+<details class="toggle" ><summary class="toggle-button" style="">Virtuoso常用快捷键</summary><div class="toggle-content"><ul>
+<li><p>在 schematic 中：</p>
+<p>按 <code>i</code> 添加元器件，按 <code>p</code> 添加 pin ，按
+<code>w</code> 连线，按 <code>l</code> 给线命名，按 <code>f</code>
+自适应缩放</p>
+<p>按住鼠标左键画框：选择物体</p>
+<p>按住鼠标右键画框：放大</p>
+<p>按住鼠标中键：移到视角</p>
+<p>选中器件按 <code>q</code> 修改参数</p>
+<p><code>u</code> 撤销操作</p></li>
+</ul>
+</div></details>
+<p>Virtuoso 使用过程中可能遇到的问题：</p>
+<details class="toggle" ><summary class="toggle-button" style="">Virtuoso 使用过程中可能遇到的问题</summary><div class="toggle-content"><ul>
+<li><p>无法 edit View，只能 read</p>
+<p><img src="image-20240721210807403.png" /></p>
+<p>将该 View 所在文件夹中的以下这两个文件删掉</p>
+<p><img src="image-20240721211006995.png" /></p></li>
+</ul>
+</div></details>
+<h1 id="设计思路">1. 设计思路</h1>
+<p>本次比赛许多内容参考该视频：<a
+href="https://www.bilibili.com/video/BV1Jx421S7KS">基于RFIC-GPT射频芯片智能设计工具的SCPA（Switched-Capacitor
+Power Amplifier）设计分享</a></p>
+<p><strong>先完成理想模型的搭建、仿真；再逐步替换为 mos
+模型、仿真；最后画版图，提取寄生参数，仿真。</strong></p>
+<p>架构选用 Doherty 架构。</p>
+<p>总体框图：</p>
+<p><img src="image-20240721144847989.png" /></p>
+<p><mark>logic 模块的全部，以及 output
+模块最后的电容前的部分都是数字信号，即方波</mark></p>
+<h1 id="理想模型的搭建">2. 理想模型的搭建</h1>
+<p>先使用 analogLib 中的理想模型搭建，对于一些设计库中没有的模块，
+例如反相器、 与门和升压电路， 编写了 VerilogA 代码来实现这些功能。</p>
+<p>由于权限问题，很多操作无法进行，所以先修改文件权限。</p>
+<p>鼠标右键打开终端，输入 <code>su -</code> ，输入密码
+<code>chris</code> 切换到 root 用户，输入
+<code>cd /home/EDA_IC617/Projects_OA</code> ，输入
+<code>chmod a+w .</code> 修改当前文件夹权限为所有人可读可写。</p>
+<p>打开 Virtuoso，点击
+<code>Tools-&gt;Library Manager</code>，打开库管理器。</p>
+<p>新建一个库 <code>SCPA</code>，关联到工艺库 <code>tsmcN65</code></p>
+<p><img src="新建库.gif" /></p>
+<h2 id="veriloga-代码编写">2.1. VerilogA 代码编写</h2>
+<p>编写反相器、 与门和升压电路的 VerilogA 代码</p>
+<p>新建一个 Inv （反相器）的 cell</p>
+<p><img src="创建Inv.gif" /></p>
+<p>Inv的代码如下：</p>
+<details class="toggle" ><summary class="toggle-button" style="">Inv的VerilogA代码</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, Inv, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module Inv(in, out);</span><br><span class="line"></span><br><span class="line">input in;</span><br><span class="line">output out;</span><br><span class="line"></span><br><span class="line">electrical in, out;</span><br><span class="line"></span><br><span class="line">parameter real vtrans=0.9,</span><br><span class="line">               tdelay=1p from[0:inf),</span><br><span class="line">               trise=1p from[0:inf),</span><br><span class="line">               tfall=1p from[0:inf),</span><br><span class="line">               Vhigh=3.3,</span><br><span class="line">               Vlow=0;</span><br><span class="line"></span><br><span class="line">real OUT_val;//OUT_val</span><br><span class="line">analog begin//</span><br><span class="line">       @(cross(V(in)-vtrans,1))//v(in)vtrans</span><br><span class="line">        OUT_val=Vlow;</span><br><span class="line">       @(cross(V(in)-vtrans,-1))//v(in)vtrans</span><br><span class="line">        OUT_val=Vhigh;</span><br><span class="line">       V(out)&lt;+transition(OUT_val,tdelay,trise,tfall);//Vout</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
+</div></details>
+<blockquote>
+<p>vtrans、tdelay、trise、tfall、Vhigh、Vlow
+这些参数可以在调用该模块时修改</p>
+</blockquote>
+<p>同理新建与门和升压电路</p>
+<p>与门和升压电路的 VerilogA 的代码如下</p>
+<details class="toggle" ><summary class="toggle-button" style="">与门和升压电路的 VerilogA 的代码</summary><div class="toggle-content"><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, And, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module AND(Vin1, Vin2, Out);</span><br><span class="line"></span><br><span class="line">input Vin1, Vin2;</span><br><span class="line">output Out;</span><br><span class="line">electrical Vin1, Vin2, Out;</span><br><span class="line"></span><br><span class="line">parameter real vtrans = 0.9;</span><br><span class="line">parameter real vlogic_high = 1.8;</span><br><span class="line">parameter real vlogic_low = 0;</span><br><span class="line"></span><br><span class="line">analog begin</span><br><span class="line">	if(V(Vin1) &gt; vtrans &amp;&amp; V(Vin2) &gt; vtrans) begin</span><br><span class="line">		V(Out) &lt;+ vlogic_high;</span><br><span class="line">	end</span><br><span class="line">	else begin</span><br><span class="line">		V(Out) &lt;+ vlogic_low;</span><br><span class="line">	end</span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">// VerilogA for SCPA, Boost, veriloga</span><br><span class="line"></span><br><span class="line">`include &quot;constants.vams&quot;</span><br><span class="line">`include &quot;disciplines.vams&quot;</span><br><span class="line"></span><br><span class="line">module Boost(vin,vout);</span><br><span class="line"></span><br><span class="line">input vin;</span><br><span class="line">output vout;</span><br><span class="line">electrical vin,vout;</span><br><span class="line">parameter real Vin = 1.2;</span><br><span class="line">parameter real Vout = 2.4;</span><br><span class="line"></span><br><span class="line">analog begin</span><br><span class="line"></span><br><span class="line">V(vout) &lt;+ V(vin) +1.2;</span><br><span class="line"></span><br><span class="line">end</span><br><span class="line"></span><br><span class="line">endmodule</span><br></pre></td></tr></table></figure>
+</div></details>
+<p><img src="image-20240721164740868.png" /></p>
+<h2 id="logic-部分">2.2. logic 部分</h2>
+<h3 id="s2d">2.2.1. S2D</h3>
+<p>S2D 模块功能是将单端信号转为差分信号。</p>
+<p>新建一个 S2D 的理想电路。（后续还会在该 Cell 下新建mos模型的电路
+schematic_mos）</p>
+<p><img src="image-20240721164949807.png" /></p>
+<p>进入 schematic，按 <code>i</code> 添加元器件，按 <code>p</code> 添加
+pin ，按 <code>w</code> 连线，按 <code>l</code> 给线命名，按
+<code>f</code> 自适应缩放</p>
+<p><mark>修改后需要保存，点击左上角工具栏的第三个，Check and
+Save</mark></p>
+<p><img src="image-20240721170331041.png" /></p>
+<p>选中 Inv 按 <code>q</code>，修改参数，所有 Inv 都要改。因为这里的 VDD
+和 VSS 是 1.2V 和 0，所以改成如下参数。</p>
+<p><img src="image-20240721201317860.png" alt="image-20240721201317860" style="zoom:80%;" /></p>
+<p>然后从 schematic 生成 symbol：</p>
+<p><code>Create → Cellview → From CellView...</code></p>
+<p><img src="image-20240721171616324.png" /></p>
+<p><img src="image-20240721171817054.png" /></p>
+<p>同理搭建其他模块，<strong>注意正确修改参数设置</strong>。</p>
+<h3 id="upconversion">2.2.2. upconversion</h3>
+<p>该模块将使能信号上变频</p>
+<p><img src="image-20240721185506136.png" /></p>
+<h3 id="logic">2.2.3. logic</h3>
+<p>将 S2D 和 upconversion 合并。</p>
+<p>这不是一个底层模块了，不分理想模型还是 mos 模型，所以只需一个
+schematic 即可。</p>
+<p>仿真时要切换理想模型或 mos 模型是切换底层的模型。</p>
+<p><img src="image-20240721191759384.png" /></p>
+<h2 id="output-部分">2.3. output 部分</h2>
+<p>output 部分由 4 个部分组成：Level</p>
+<h3 id="level_shifter">2.3.1. level_shifter</h3>
+<p>该模块将 0 ~ VDD 的信号抬升到 VDD ~ VDD2</p>
+<p><img src="image-20240721193347441.png" /></p>
+<h3 id="driver-up">2.3.2. driver up</h3>
+<p>该模块将信号在 VDD 和 VDD2 之间反相。</p>
+<p><img src="image-20240721194535330.png" /></p>
+<h3 id="driver-down">2.3.3. driver down</h3>
+<p>该模块将信号在 VSS 和 VDD 之间反相。</p>
+<p><img src="image-20240721201051576.png" /></p>
+<h3 id="inv-cascode">2.3.4. inv cascode</h3>
+<p>输出为 0 ~ VDD2 的方波</p>
+<p><img src="image-20240721203806217.png" /></p>
+<p>E0 为 analogLib 下的 vcvs：</p>
+<p><img src="image-20240721203150382.png" /></p>
+<h3 id="output">2.3.5. output</h3>
+<p><img src="image-20240721205321157.png" /></p>
+<p>电容是 analogLib 下的 cap：</p>
+<p><img src="image-20240721205234426.png" /></p>
+<h2 id="unit-cell">2.4. unit cell</h2>
+<p>一个 logic 部分和两个 output 组成一个 unit cell</p>
+<p><img src="image-20240721212013325.png" /></p>
+<h2 id="scpa">2.5. SCPA</h2>
+<p>64 个 unit cell 组成一个 SCPA</p>
+<p><img src="image-20240721213021404.png" /></p>
+<p><img src="image-20240721213028456.png" /></p>
+<h2 id="doherty-scpa">2.6. Doherty SCPA</h2>
+<p>两个 SCPA 分别作为主路和峰值路，加上匹配电路组成 Doherty SCPA</p>
+<p><img src="image-20240721214918649.png" /></p>
+<p>其中一些器件的参数：</p>
+<p><img src="image-20240721215937099.png" /></p>
+]]></content>
+      <categories>
+        <category>1-通信</category>
+        <category>第八届集创赛 IEEE 杯</category>
+      </categories>
+      <tags>
+        <tag>集创赛</tag>
+        <tag>Virtuoso</tag>
+        <tag>RFIC</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>AD20软件使用</title>
+    <url>/2023/10/10/2-%E8%BD%AF%E4%BB%B6/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/AD20%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/</url>
+    <content><![CDATA[<h1 id="单位换算">单位换算</h1>
 <ul>
-<li><p>构建切换到Release模式，点击运行</p></li>
-<li><p>在build-xxxxx-Release文件夹中的release文件夹中找到xxx.exe，复制到新创建的一个文件夹（如MyEXE）中，</p></li>
-<li><p>开始菜单搜索qt，打开命令窗口，用" <mark>cd /d 路径</mark>
-"切换到MyEXE下，例如</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">cd /d F:\projects\qtcreator\MyEXE</span><br></pre></td></tr></table></figure></li>
-<li><p>再输入：windeployqt xxx.exe</p>
-<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">windeployqt xxx.exe</span><br></pre></td></tr></table></figure></li>
-<li><p>打包完成，已经可以正常使用了。接下来借用其他软件将所有文件打包到一个exe文件</p></li>
-<li><p>打开Enigma Virtual
-Box，选择刚才打包好的exe文件，点击增加，增加刚才新创建的文件夹（如MyEXE），点击“文件选项”，勾选压缩文件，确定，执行封包，等待，最后就可以得到只有一个可以运行的exe文件</p></li>
+<li><mark>1mil = 0.0254mm</mark></li>
+<li><mark>1mm = 39.37mil</mark></li>
+<li>1oz = 0.035mm = 1.38mil（oz是重量单位，1oz =
+28.35g。在PCB上，1OZ意思是1平方英尺的面积上平均铜箔的重量在
+28.35g，用单位面积的重量来表示铜薄的平均厚度！）</li>
+</ul>
+<h1 id="打开ad">打开AD</h1>
+<p><mark>注意</mark>：不要直接打开AD软件，而是打开对应的工程文件（.PrjPcb文件）。直接打开AD会默认打开之前的文件，但没有对应的工程。如下图：</p>
+<p><img src="image-20231012144556589.png" /></p>
+<p>这种情况下也可以进行一些操作，但许多与工程相关的设置，选项等无法打开，如下面的原理图报错设置无法打开。</p>
+<p>如果只是简单浏览，也可以直接打开AD，或者对应的文件。</p>
+<h1 id="原理图器件命名标值等">原理图器件命名，标值等</h1>
+<p>原理图库中，每个元件的属性如下</p>
+<p><img src="image-20231025153559595.png" /></p>
+<p><mark>Comment</mark>用于导入原理图后，标值。</p>
+<blockquote>
+<p>建议不要从官方的原理图库中导入原理图。官方库中有许多不需要的属性，并且阻值会写在value里，导出的bom表里不会有value这一列</p>
+</blockquote>
+<p>导入原理图后：</p>
+<p><img src="image-20231025214519199.png" /></p>
+<ul>
+<li>Designator：标志符，可以理解为名字，同一原理图<strong>不能重复</strong></li>
+<li>comment：一般写值，芯片写对应的型号</li>
+<li>Description：同一类型写一样的</li>
+</ul>
+<blockquote>
+<p>以上主要是为了到处bom表方便</p>
+</blockquote>
+<h1 id="原理图报错设置">原理图报错设置</h1>
+<p>工程-&gt;工程选项（快捷键：c-&gt;o）</p>
+<p><img src="image-20230917170107300.png" /></p>
+<p>需要修改的：（根据b站凡亿教育）</p>
+<p><code>Violations Associated with Components</code>下的<code>Duplicate Part Designators</code>，重复命名问题</p>
+<p><img src="image-20230917170509729.png" /></p>
+<p><code>Violations Associated with Nets</code>：<code>Floating net labels</code>
+和<code>Floating power objects</code>，悬浮问题。<code>Nets with only one pin</code>，单端网络问题。</p>
+<p><img src="image-20230917170719702.png" /></p>
+<h1 id="规则设置">规则设置</h1>
+<h2 id="间距规则">间距规则</h2>
+<p><code>Electrical</code>-&gt;<code>Clearance</code>：最小间距5mil</p>
+<h2 id="线宽规则">线宽规则</h2>
+<p><code>Routing</code> -&gt; <code>Width</code></p>
+<p>射频线需要仿真确定线宽，连线时可以先设置为10mil</p>
+<p>电源线宽度为20mil或30mil，连到器件前一点的时候可以减小为10mil</p>
+<h2 id="过孔规则">过孔规则</h2>
+<p><code>Routing</code> -&gt; <code>Routing Via Style</code></p>
+<p>盘的大小 = 过孔大小 * 2 ± 2 mil</p>
+<p>注意区分 Hole Size 和 Diameter</p>
+<p>过孔放置时默认不会按规则来，还需要去AD设置里，AD界面右上角进入设置：<code>PCB Editor</code>-&gt;<code>Defaults</code>，右边最下边选择via，设置默认Hole
+Size 和 Diameter为最常用的，其他大小可以放置后手动调大小</p>
+<h2 id="铺铜规则">铺铜规则</h2>
+<ul>
+<li>正片：默认无铜，走线和铺铜意味着这些地方有铜</li>
+<li>负片：默认有铜，走线和铺铜意味着这些地方无铜</li>
+</ul>
+<p><code>plane</code></p>
+<h1 id="操作相关">操作相关</h1>
+<p><mark>注意有的快捷键受中文输入法影响</mark></p>
+<p><code>x1 + x2</code>：按住x1，再按x2</p>
+<p><code>x1 -&gt; x2</code>：依次按x1，x2</p>
+<h2 id="原理图schdoc常用操作">原理图SchDoc常用操作</h2>
+<ul>
+<li><p>栅格设置：工具-&gt;原理图优先项（t -&gt; p）</p>
+<p><img src="image-20231007153053615.png" /></p>
+<ul>
+<li>捕捉栅格：光标每次移动的距离。</li>
+<li>捕捉距离（电气栅格）：移动、放置元件或线时，距离小于捕捉距离会吸附。</li>
+<li>可见栅格：工作区上见到的网格的大小。</li>
+</ul></li>
+<li><p>切换栅格：视图-&gt;栅格（v -&gt; g）</p>
+<p><img src="image-20231007160333396.png" /></p>
+<ul>
+<li>切换捕捉栅格：会同时切换3个栅格设置</li>
+<li>切换捕捉栅格：显示/不显示栅格</li>
+<li>切换电气栅格：只切换电气栅格（捕捉距离）设置</li>
+<li>设置捕捉栅格：单独设置捕捉栅格</li>
 </ul></li>
 </ul>
-<p><img src="image-20230412122755410.png" /></p>
+<blockquote>
+<p>原理图SchDoc的栅格设置最好和原理图库SCHLIB的设置<strong>保持一致</strong>（单位和大小都一致）</p>
+</blockquote>
+<ul>
+<li>对齐到栅格上：选择器件，<code>a -&gt; g</code>。是按<strong>捕捉栅格</strong>对齐，即光标能移动到的位置，想移动到<strong>可视栅格</strong>上，要把捕捉栅格设为和可视栅格一样。</li>
+</ul>
+<h2 id="pcb文件pcbdoc常用操作">PCB文件PcbDoc常用操作：</h2>
+<ul>
+<li><p><strong>修改PCB板子大小</strong>：在丝印层 Mechanical 1
+画线（不要用ctrl+w快捷键），例如画一个4mm x
+7mm的长方形，选中4条边。<code>设计-&gt;板子形状-&gt;按照选择对象定义</code>，或快捷键<code>d-&gt;s-&gt;d</code></p></li>
+<li><p>原点：<code>e-&gt;o-&gt;s</code>，设置原点位置。</p></li>
+<li><p><strong>切换单层显示</strong>：<code>Shift + s</code>，在三个等级间切换，我习惯在默认情况下排版，第二个等级上（按一次Shift
++ s）情况下连线</p></li>
+<li><p>高量网络net：按住Ctrl点击某个网络，相应的所有相同网络高亮。按住Ctrl点击其他位置，取消高亮</p></li>
+<li><p><strong>连线</strong>：<code>Ctrl + w</code></p></li>
+<li><p><strong>隐藏报错</strong>：<code>T + M</code></p></li>
+<li><p>连线时调节线宽：在连线时按<code>3</code>可以在规则设置中的<strong>最小宽度</strong>、<strong>首选宽度</strong>、<strong>最大宽度</strong>切换</p></li>
+<li><p>走弧线：pcb界面中上方放置栏，右击最右边的线条模样的，选择圆弧（边沿），放置时按空格切换弧线方向</p></li>
+<li><p>选择单个器件：不要点击到焊盘，这样会选择到焊盘。点丝印（黄色）或其他</p></li>
+<li><p>放置过孔：放置过孔后需要双击，在右边属性栏的Net选择相应网络，否则没法相连</p></li>
+<li><p><strong>对齐</strong>：选择要对齐的器件，按A。常用的：左右、顶底对齐；垂直、水平分布；<strong>两个焊盘的中心对齐</strong>：水平、垂直中心对齐。</p></li>
+<li><p><strong>交叉选择</strong>：原理图SchDoc界面，选择：工具-&gt;交叉选择模式。分屏的时候，在原理图上选择的器件，会在pcb上高亮。</p></li>
+<li><p><strong>器件按矩形摆放</strong>：选择器件后按
+<code>t -&gt; o -&gt; l</code>
+，画一个矩形，对应器件会自动排列在这个矩形中。应用：将原理图导入到PCB后，想在PCB上按不同部分分开摆放，原理图选择某部分的器件（如某个芯片及其外接的电阻容等），在PCB文件中，对应器件会高亮，想把这些器件摆放在一起，可以在选择pcb文件后（鼠标右键在pcb界面轻微移动一下即可，左键点容易把高亮消除），按快捷键
+t + o + l，画一个矩形，对应器件会自动排列在这个矩形中。</p></li>
+<li><p><strong>更改封装</strong>：如果只是在对应的封装库更改，需要选择左下角PCB
+Library在封装库对应封装右击，选择 'Update PCB With
+xx'。如果改了封装，需要在原理图：工具-&gt;封装管理器，选择新的封装库和对应封装，然后再在新的封装库右击选择'Update
+PCB With xx'</p></li>
+<li><p><strong>切换距离单位</strong>：空白处按<code>q</code>，切换mil和mm</p></li>
+<li><p>测距：<code>Ctrl + m</code></p></li>
+<li><p>取消测距：消除测距的数据：<code>Shift + c</code></p></li>
+<li><p><strong>隐藏GND地网络</strong>：地一般通过铺铜相连，并不需要连线，不需要显示出GND的连接关系。在PCB，点击：设计-&gt;类，右击Net
+Classes，添加类，取类名，将地网络（如GND）添加到类成员中，确定。再在AD左下角选择PCB，可以看到创建的Net
+Classes，右击对应的类，连接-&gt;隐藏，即可隐藏GND。其他Net也可通过类似方法隐藏</p></li>
+<li><p><strong>从原理图更新到PCB</strong>：修改原理图后，要更新PCB，在原理图选择：设计-&gt;update
+PCB Document ...
+弹出的界面<strong>要取消勾选下列选项</strong>（或类似选项）</p>
+<p><img src="image-20231001164736759.png" /></p></li>
+<li><p><strong>选中线</strong>：<code>s -&gt; c</code>，选中两个焊盘间的整条线。</p></li>
+<li><p>选中网络net：<code>s -&gt; n</code>，选中该网络所有的线和焊盘。（选中后，按delete只会删除线，不会删除焊盘）</p></li>
+<li><p>改变光标移动距离：<code>g</code>，改变每次光标移动的间隔，距离。</p></li>
+<li><p><mark>铺铜相关</mark>：</p>
+<ul>
+<li>铜的Net一般是地GND，在铺铜的时候，按<code>Tab</code>，修改右边Net为GND，再按<code>Esc</code>，继续完成铺铜。（这样可以避免铺完铜，再改Net，然后重新铺铜这样繁琐的操作）</li>
+<li></li>
+</ul></li>
+</ul>
+<h1 id="注意事项">注意事项</h1>
+<ul>
+<li>射频线周围打孔：孔间距40~50mil</li>
+</ul>
 ]]></content>
       <categories>
         <category>2-软件</category>
         <category>软件使用</category>
       </categories>
       <tags>
-        <tag>QTCreator</tag>
-        <tag>上位机</tag>
-        <tag>软件打包</tag>
+        <tag>AD</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>SolidWorks制作电路腔体</title>
-    <url>/2023/11/06/2-%E8%BD%AF%E4%BB%B6/%E8%BD%AF%E4%BB%B6%E4%BD%BF%E7%94%A8/SolidWorks2023/</url>
-    <content><![CDATA[<h1 id="修改字体">修改字体</h1>
-<p>SolidWorks默认的尺寸字体非常不清晰，推荐修改为其他字体。<img
-src="image-20231107105220484.png" alt="image-20231107105220484" /></p>
-<h1 id="ad导入solidworks">AD导入SolidWorks</h1>
-<h2 id="ad操作">AD操作</h2>
-<h3 id="螺丝孔">螺丝孔</h3>
-<p>AD的PCB上用通孔表示螺丝孔，但导入到SolidWorks看不到，需要进行特殊的操作</p>
-<p>在PCB的keep-out layer层画圆，与螺丝孔（hole
-size）一样大，放到通孔的位置。</p>
-<p>依次选中各个圆，点击工具→转换→以选中的元素创建板切割槽（推荐使用快捷键：T→V→B）。</p>
-<p>然后点击文件→导出→STEP 3D</p>
-<p>导出时取消勾选<code>导出折叠板</code>，勾选<code>以单一部件导出</code>。</p>
-<p><img src="image-20231106151507686.png" /></p>
-<p>再PCB界面按<code>3</code>，调出3D视图，按<code>L</code>，</p>
-<p><img src="image-20231106160155226.png" /></p>
-<p>刚好贴着边缘把板子截图。</p>
-<h2 id="solidworks操作">SolidWorks操作</h2>
-<p>用SolidWorks打开导出的.step文件。</p>
-<p>点击板子，右击，选择<code>外观</code>，</p>
-<p><img src="image-20231106160324897.png" /></p>
-<p>左边，选择高级，外观文件路径选择刚才的截图。</p>
-<p>点击映射，勾选<code>将宽度套合到选择</code>和<code>将高度套合到选择</code>。</p>
-<p>完成后保存。</p>
-<p>新建一个装配体，选择保存的文件和之前画的盒子文件，选择要贴合到一起的面，右击选择<code>配合</code>→<code>重合</code></p>
-<p><img src="image-20231106162952440.png" /></p>
-<p>如果是间隔一点距离，点击<code>配合</code>→<code>距离</code></p>
-]]></content>
-      <categories>
-        <category>2-软件</category>
-        <category>软件使用</category>
-      </categories>
   </entry>
   <entry>
     <title>ADS使用</title>
@@ -1227,6 +1135,95 @@ Constant为介质介电常数，Loss Tangent为损耗因子（损耗角正切）
       <tags>
         <tag>ADS</tag>
         <tag>仿真</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>软件资源推荐</title>
+    <url>/2023/10/09/2-%E8%BD%AF%E4%BB%B6/%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/%E8%BD%AF%E4%BB%B6%E8%B5%84%E6%BA%90%E6%8E%A8%E8%8D%90/</url>
+    <content><![CDATA[<h1 id="pot">Pot</h1>
+<p>链接：<a href="https://pot-app.com/">https://pot-app.com/</a></p>
+<p>截图翻译，划词翻译，OCR</p>
+<p> </p>
+<h1 id="snipaste">snipaste</h1>
+<p>链接：<a
+href="https://zh.snipaste.com/">https://zh.snipaste.com/</a></p>
+<p>截图工具。</p>
+<p>可以将截图贴在屏幕上，避免两个界面来回切换。</p>
+<p> </p>
+<h1 id="dism">Dism++</h1>
+<p>链接：<a
+href="https://github.com/Chuyu-Team/Dism-Multi-language/releases/">https://github.com/Chuyu-Team/Dism-Multi-language/releases/</a></p>
+<p>window工具箱。</p>
+<p>多种系统设置，如把win11鼠标右键变为win10鼠标右键样式，管理部分鼠标右键的内容等</p>
+<p> </p>
+<h1 id="msi-afterburner">MSI Afterburner</h1>
+<p>链接：<a
+href="https://www.msi.com/Landing/afterburner/graphics-cards">https://www.msi.com/Landing/afterburner/graphics-cards</a></p>
+<p>性能监控软件。</p>
+<p>电脑硬件性能监控最常用软件。打游戏时可以显示硬件占用情况等</p>
+<p> </p>
+<h1 id="图吧工具箱">图吧工具箱</h1>
+<p>链接：<a href="http://www.tbtool.cn/">http://www.tbtool.cn/</a></p>
+<p>多种电脑硬件相关工具的集合。如CPU-z，等（会提示有危险，不用管）</p>
+<p> </p>
+<h1 id="simpletex">SimpleTex</h1>
+<p>链接：<a href="https://simpletex.cn/">https://simpletex.cn/</a></p>
+<p>公式识别转换</p>
+<p>将图片中的公式转换为LaTeX格式</p>
+<p> </p>
+<h1 id="quicklook">QuickLook：</h1>
+<p>链接：<a
+href="https://github.com/QL-Win/QuickLook/releases">https://github.com/QL-Win/QuickLook/releases</a></p>
+<p>查看office的插件：<a
+href="https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases">https://github.com/QL-Win/QuickLook.Plugin.OfficeViewer-Native/releases</a></p>
+<p>快速查看文件内容</p>
+<p>对文件按空格可以快速浏览文件内容</p>
+<p> </p>
+<h1 id="el_display_hub">EL_Display_Hub</h1>
+<p>链接：<a
+href="http://www.easynlight.com/en/twomonse/">http://www.easynlight.com/en/twomonse/</a></p>
+<p>iPad当副屏</p>
+<p>还要在ipad端App Store购买Twomon SE</p>
+<p> </p>
+<h1 id="potplayer">potplayer</h1>
+<p>链接：<a
+href="https://potplayer.daum.net/?lang=zh_CN">https://potplayer.daum.net/?lang=zh_CN</a></p>
+<p>本地视频播放器</p>
+<p>功能强大丰富，支持格式非常多。</p>
+<p> </p>
+<h1 id="enigma文件打包工具">Enigma文件打包工具</h1>
+<p>链接：<a
+href="https://enigmaprotector.com/cn/downloads.html">https://enigmaprotector.com/cn/downloads.html</a></p>
+<p>把QT的软件及库打包成一个exe文件</p>
+<p> </p>
+<h1 id="everything">everything</h1>
+<p>链接：<a
+href="https://www.voidtools.com/zh-cn/">https://www.voidtools.com/zh-cn/</a></p>
+<p>文件搜索</p>
+<p>搜索速度远快于window自带搜索；还能按照一定规则重命名多个文件</p>
+<p> </p>
+<h1 id="cajviewer">CAJViewer</h1>
+<p>链接：<a
+href="https://cajviewer.cnki.net/">https://cajviewer.cnki.net/</a></p>
+<p>CAJ阅读器</p>
+<p> </p>
+<h1 id="ddu">DDU</h1>
+<p>链接：<a
+href="https://www.wagnardsoft.com/display-driver-uninstaller-DDU-">https://www.wagnardsoft.com/display-driver-uninstaller-DDU-</a></p>
+<p>显卡驱动卸载</p>
+<p>常用于AMD显卡驱动卸载</p>
+<p> </p>
+<h1 id="vscode">vscode</h1>
+<p>链接：<a
+href="https://code.visualstudio.com/">https://code.visualstudio.com/</a></p>
+<p>编辑器</p>
+]]></content>
+      <categories>
+        <category>2-软件</category>
+        <category>资源推荐</category>
+      </categories>
+      <tags>
+        <tag>资源</tag>
       </tags>
   </entry>
 </search>
