@@ -4,7 +4,7 @@ date: 2025-4-29 21:22:30
 tags:
  - 锁相环
 categories:
- - 1-通信
+ - 1-硬件
  - 锁相环
 description: 锁相环的环路特性，包括环路带宽，相位裕度的介绍。
 mathjax: true
@@ -14,7 +14,7 @@ mathjax: true
 
 下图为典型的反馈系统
 
-<img src="image-20250428164904694.png" alt="image-20250428164904694" style="zoom: 50%;" />
+<img src="image-20250428164904694.png" alt="" style="zoom: 50%;" />
 
 开环传递函数（环路增益/开环增益）为：
 $$
@@ -38,7 +38,7 @@ $$
 
 开环传递函数和闭环传递函数的幅频特性一般为：
 
-<img src="image-20250429154328285.png" alt="image-20250429154328285" style="zoom: 33%;" />
+<img src="image-20250429154328285.png" alt="" style="zoom: 33%;" />
 
 开环增益主要由$G(s)$决定，在低频时增益非常大，随频率增加逐渐降低。
 
@@ -72,7 +72,7 @@ $$
 
 下图就为相位裕度小于60°时的开环传递函数和闭环传递函数：
 
-<img src="image-20250429211202143.png" alt="image-20250429211202143" style="zoom: 33%;" />
+<img src="image-20250429211202143.png" alt="" style="zoom: 33%;" />
 
 
 
@@ -110,7 +110,7 @@ $$
 
 $K_d$：鉴相器增益，单位：<mark>v/rad</mark>。在数据手册中，为输出误差电压与相位差关系图的斜率，如下图：
 
-<img src="image-20250427213618298.png" alt="image-20250427213618298" style="zoom: 67%;" />
+<img src="image-20250427213618298.png" alt="" style="zoom: 67%;" />
 
 $F(s)$：环路滤波器的传输函数。
 
@@ -138,7 +138,7 @@ $N$：反馈分频比。
 
   鉴相器的输入输出特性如下：
 
-  <img src="image-20250427215420669.png" alt="image-20250427215420669" style="zoom:75%;" />
+  <img src="image-20250427215420669.png" alt="" style="zoom:75%;" />
 
   所以鉴相器增益：$K_d=\frac{5}{4\pi}\approx0.398(\mathrm{V/rad})$
 
@@ -154,7 +154,7 @@ $N$：反馈分频比。
 
   环路滤波器结构如下：
 
-  <img src="image-20250427220157668.png" alt="image-20250427220157668" style="zoom:50%;" />
+  <img src="image-20250427220157668.png" alt="" style="zoom:50%;" />
 
   所以环路滤波器的传输函数：$F(s)=\frac{Z_2+Z_3}{R_2+Z_2+Z_3}$，其中，$Z_2=\frac{1}{sC_2}$，$Z_3=R_3//(\frac{1}{sC_3})=\frac{R_3}{1+sR_3C_3}$
 
@@ -238,7 +238,7 @@ legend('增益 (dB)','相位 (deg)');
 
 ## 举例2
 
-<img src="image-20250428125904578.png" alt="image-20250428125904578" style="zoom:50%;" />
+<img src="image-20250428125904578.png" alt="" style="zoom:50%;" />
 
 - **鉴相器**
 
@@ -248,13 +248,13 @@ legend('增益 (dB)','相位 (deg)');
 
   VCO增益：$K_{VCO}=\frac{(2\pi\times3\times10^9)}{11}(\mathrm{rad/s}\cdot\mathrm{V})$
 
-  <img src="image-20250428131819121.png" alt="image-20250428131819121" style="zoom:50%;" />
+  <img src="image-20250428131819121.png" alt="" style="zoom:50%;" />
 
 - **环路滤波器**
 
   环路滤波器结构如下，为有源环路滤波器：
 
-  <img src="image-20250428130121204.png" alt="image-20250428130121204" style="zoom:67%;" />
+  <img src="image-20250428130121204.png" alt="" style="zoom:67%;" />
 
   传输函数：
   $$
@@ -264,7 +264,7 @@ legend('增益 (dB)','相位 (deg)');
 
   根据需要的环路带宽和相位裕度，该结构可以由以下表格计算电容电阻值：
 
-  <img src="image-20250428130656229.png" alt="image-20250428130656229" style="zoom: 80%;" />
+  <img src="image-20250428130656229.png" alt="" style="zoom: 80%;" />
 
   其中：$\phi$ 为相位裕度，$\omega c$ 为环路带宽（角频率），$\gamma$ 一般为1，$K_V$ 和 $K_{VCO}$ 为鉴相器增益和VCO增益，N 为分频比。
 
@@ -281,7 +281,6 @@ legend('增益 (dB)','相位 (deg)');
 闭环传递函数的博得图如下：
 
 ![](image-20250428153803375.png)
-
 
 
 
